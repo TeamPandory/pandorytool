@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include "CommandLineArguments.h"
 
@@ -13,7 +12,6 @@ int CommandLineArguments::getArgumentCount() {
 }
 
 std::string CommandLineArguments::getArgument(int n) {
-
     for (int i = 0; i < argumentCount; ++i) {
         if (i == n) {
             return std::string(argumentPointers[i]);

@@ -21,13 +21,19 @@ int ModeAdd::main() {
     if (!validate()) {
         return 1;
     }
-    std::string mc = targetDir.append("/mcgames");
+    std::string mc = targetDir + "/mcgames";
+    std::string mcInstall = mc + "/install.txt";
     if (!FileSystem::exists(mc)) {
+        std::cout << "Making " << mc << std::endl;
         bool result = FileSystem::makeDirectory(mc);
         if (!result) {
             std::cout << "Cannot create target" << std::endl;
             return 1;
         }
+    }
+    if (!FileSystem::exists(mcInstall)) {
+        // TODO: create file
+        int i =0;
     }
     return 0;
 }
