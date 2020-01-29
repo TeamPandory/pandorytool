@@ -7,7 +7,7 @@ PandoryTool::PandoryTool(int i, char **pString) {
 }
 
 int PandoryTool::main() {
-    std::cout << "Pandora 3D Add Game Utility, by dajoho" << std::endl;
+    std::cout << "Pandora 3D Add Game Utility, by emuchicken & dajoho" << std::endl;
     if (args.getArgumentCount() == 1) {
         usage();
         return 1;

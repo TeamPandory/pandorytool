@@ -2,21 +2,21 @@
 #define PANDORER_MODEADD_H
 
 #include <string>
-#include "../FileSystem.h"
+#include "../Fs.h"
+using namespace std;
 
 class ModeAdd {
 protected:
     std::string& sourceDir;
     std::string& targetDir;
-    FileSystem fs;
+    Fs fs;
+    bool validate();
+    bool createTargetDirectory();
+    string getMcGamesFolder();
+    void resetInstallFile();
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);
     int main();
-
-
-protected:
-    bool validate();
-public:
 };
 
 #endif //PANDORER_MODEADD_H
