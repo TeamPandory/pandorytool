@@ -44,7 +44,7 @@ int ModeAdd::main() {
 
 void ModeAdd::parseSourceDirectory() {
     for (const auto &entry : filesystem::directory_iterator(this->sourceDir)) {
-        std::string filePath = entry.path();
+        std::string filePath = std::string(entry.path());
         std::string basename = Fs::basename(filePath);
         std::string gameListXml = filePath + "/gamelist.xml";
         if (Fs::exists(gameListXml)) {
