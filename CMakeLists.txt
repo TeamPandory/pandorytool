@@ -7,6 +7,7 @@ link_directories(/usr/local/lib)
 
 if(MSVC OR MSYS OR MINGW)
     # for detecting Windows compilers
+    set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2 -static-libstdc++ -static -s")
 endif()
 
