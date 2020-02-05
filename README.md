@@ -17,5 +17,5 @@ git clone https://github.com/emuchicken/pandorytool.git
 mkdir -p pandorytool/build
 cd pandorytool/build
 cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
-cmake --build .g
+cmake --build .
 ```
