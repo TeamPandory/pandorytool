@@ -22,17 +22,17 @@ bool Fs::unlink(const string &file) {
 }
 
 string Fs::basename(const string &file) {
-    std::string base = std::filesystem::path(file).filename();
+    std::string base = std::filesystem::path(file).filename().string();
     return base;
 }
 
 string Fs::dirname(const string &file) {
-    std::string dirname = std::filesystem::path(file).parent_path();
+    std::string dirname = std::filesystem::path(file).parent_path().string();
     return dirname;
 }
 
 string Fs::getExtension(const string &file) {
-    std::string extension = std::filesystem::path(file).extension();
+    std::string extension = std::filesystem::path(file).extension().string();
     return extension;
 }
 
