@@ -31,6 +31,11 @@ string Fs::dirname(const string &file) {
     return dirname;
 }
 
+string Fs::getExtension(const string &file) {
+    std::string extension = std::filesystem::path(file).extension();
+    return extension;
+}
+
 int Fs::copy(std::string source, std::string destination)
 {
     //std::filesystem::create_directories(targetParent);

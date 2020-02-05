@@ -25,6 +25,9 @@ public:
     void copyRomToDestination(const string &rom, const string &destination);
 
     static string convertSystemName(string system);
+
+
+    string padRomName(string string, const size_t size, const char character);
 };
 
 #endif //PANDORER_MODEADD_H

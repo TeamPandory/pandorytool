@@ -12,7 +12,9 @@ public:
     static string basename(const string& file);
     static string dirname(const string& file);
 
-    int copy(string source, string destination);
+    static int copy(string source, string destination);
+
+    static string getExtension(const string &file);
 };
 
 

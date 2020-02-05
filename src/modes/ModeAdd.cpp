@@ -5,6 +5,16 @@
 #include <tinyxml2.h>
 
 
+std::string ModeAdd::padRomName(std::string string, const size_t size, const char character = ' ')
+{
+    if(size > string.size()) {
+        string.insert(0, size - string.size(), character);
+    }
+    return string;
+}
+
+
+
 bool ModeAdd::validate() {
     if (!Fs::exists(sourceDir)) {
         std::cout << sourceDir << " does not exist " << std::endl;
@@ -57,6 +67,7 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
     tinyxml2::XMLElement *provider = doc.FirstChildElement("gameList")->FirstChildElement("provider");
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
     std::string system = provider->FirstChildElement("System")->GetText();
+    int i = 1;
     for (tinyxml2::XMLElement *game = gameList->FirstChildElement("game");
          game != nullptr;
          game = game->NextSiblingElement("game")) {
@@ -65,16 +76,16 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
         std::string absoluteRomPath = directory + "/" + romPath;
         std::string shortSystemName = convertSystemName(system);
         if (!shortSystemName.empty()) {
-            std::string targetRomName = shortSystemName + "0001";
+            std::string targetRomName = shortSystemName + padRomName(std::to_string(i), 4, '0');
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
             copyRomToDestination(absoluteRomPath, targetRomDir);
             cout << "Found " << system << " ROM: " << romName << " [ " << Fs::basename(romPath) << " ]" << endl;
+            i++;
         } else {
             cout << "Unknown system in source XML:" << system << endl;
         }
     }
 }
-
 
 // Checks subfolders within “source rom folder”.
 // Copies both rom file – (and if available, mp4 file (from romsubfolder/media/videos))
@@ -87,7 +98,9 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
     if (!Fs::exists(destination)) {
         Fs::makeDirectory(destination);
     }
-    int x = 0;
+    std::string basename = Fs::basename(destination);
+    std::string extension = Fs::getExtension(rom);
+    Fs::copy(rom, destination + "/" + basename + extension);
 }
 
 
