@@ -17,6 +17,14 @@ protected:
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);
     int main();
+
+    void parseSourceDirectory();
+
+    void parseSourceGameXML(const string &gameListXml);
+
+    void copyRomToDestination(const string &rom, const string &destination);
+
+    static string convertSystemName(string system);
 };
 
 #endif //PANDORER_MODEADD_H

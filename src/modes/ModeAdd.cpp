@@ -3,15 +3,15 @@
 #include <filesystem>
 #include <map>
 #include <tinyxml2.h>
-using namespace std;
+
 
 bool ModeAdd::validate() {
     if (!Fs::exists(sourceDir)) {
-        cout << sourceDir << " does not exist " << endl;
+        std::cout << sourceDir << " does not exist " << std::endl;
         return false;
     }
     if (!Fs::exists(targetDir)) {
-        cout << targetDir << " does not exist " << endl;
+        std::cout << targetDir << " does not exist " << std::endl;
         return false;
     }
     return true;
@@ -21,42 +21,80 @@ ModeAdd::ModeAdd(string &sourceDir, string &targetDir) : sourceDir(sourceDir), t
 
 }
 
+// 1. Add games (MCGames)
 int ModeAdd::main() {
-    // 1. Add games (MCGames)
     if (!validate()) {
         return 1;
     }
-
     createTargetDirectory();
     resetInstallFile();
-
-    cout << "fs start...";
-
-    for (const auto & entry : filesystem::directory_iterator(sourceDir)) {
-        string filePath = entry.path();
-        string basename = Fs::basename(filePath);
-        cout << filePath << endl;
-        string gameListXml = filePath + "/gamelist.xml";
-        if (Fs::exists(gameListXml)) {
-            tinyxml2::XMLDocument doc;
-            doc.LoadFile( gameListXml.c_str() );
-            tinyxml2::XMLElement *provider = doc.FirstChildElement("gameList" )->FirstChildElement("provider" );
-            tinyxml2::XMLElement *game = doc.FirstChildElement("gameList" )->FirstChildElement("game" );
-            const char *system = provider->FirstChildElement("System")->GetText();
-            const char *romPath = game->FirstChildElement("path")->GetText();
-            const char *romName = game->FirstChildElement("name")->GetText();
-            cout << "Found " << system << " rom:" << romName << " (" << romPath << ")" << endl;
-            int x = 0;
-        }
-    }
-    cout << "...fs end";
+    parseSourceDirectory();
     return 0;
 }
+
+void ModeAdd::parseSourceDirectory() {
+    for (const auto &entry : filesystem::directory_iterator(this->sourceDir)) {
+        std::string filePath = entry.path();
+        std::string basename = Fs::basename(filePath);
+        std::string gameListXml = filePath + "/gamelist.xml";
+        if (Fs::exists(gameListXml)) {
+            parseSourceGameXML(gameListXml);
+        }
+    }
+}
+
+std::string ModeAdd::convertSystemName(std::string system) {
+    if (system == "Dreamcast") return "DC";
+    if (system == "Game Boy Advance") return "GBA";
+    if (system == "Game Boy Color") return "GBC";
+    return "";
+}
+
+void ModeAdd::parseSourceGameXML(const string &gameListXml) {
+    tinyxml2::XMLDocument doc;
+    doc.LoadFile(gameListXml.c_str());
+    std::string directory = Fs::dirname(gameListXml);
+    tinyxml2::XMLElement *provider = doc.FirstChildElement("gameList")->FirstChildElement("provider");
+    tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
+    std::string system = provider->FirstChildElement("System")->GetText();
+    for (tinyxml2::XMLElement *game = gameList->FirstChildElement("game");
+         game != nullptr;
+         game = game->NextSiblingElement("game")) {
+        const char *romPath = game->FirstChildElement("path")->GetText();
+        const char *romName = game->FirstChildElement("name")->GetText();
+        std::string absoluteRomPath = directory + "/" + romPath;
+        std::string shortSystemName = convertSystemName(system);
+        if (!shortSystemName.empty()) {
+            std::string targetRomName = shortSystemName + "0001";
+            std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
+            copyRomToDestination(absoluteRomPath, targetRomDir);
+            cout << "Found " << system << " ROM: " << romName << " [ " << Fs::basename(romPath) << " ]" << endl;
+        } else {
+            cout << "Unknown system in source XML:" << system << endl;
+        }
+    }
+}
+
+
+// Checks subfolders within “source rom folder”.
+// Copies both rom file – (and if available, mp4 file (from romsubfolder/media/videos))
+// – to usbdevice:\mcgames\DC0001 (if dreamcast game) – check “ARSENAME” below for naming convention.
+// Both DC0001.cdi and DC0001.mp4 should be within the mcgames/DC0001 folder.
+// Template.txt and template.xml (from template file) should be then copied to the DC0001 folder with the
+// following variables changed depending on system and game (see below)
+// mcgames/install.txt file should then be appended with the “ARSENAME” (DC0001)                                                                                    repeat / loop process until all roms have been added.
+void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &destination) {
+    if (!Fs::exists(destination)) {
+        Fs::makeDirectory(destination);
+    }
+    int x = 0;
+}
+
 
 void ModeAdd::resetInstallFile() {
     // remove mcgames/install.txt file if exists, open clear file
     string mcInstall = this->getMcGamesFolder() + "/install.txt";
-    FILE * foo;
+    FILE *foo;
     foo = fopen(mcInstall.c_str(), "w");
     fclose(foo);
 }

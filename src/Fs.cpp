@@ -1,7 +1,6 @@
 #include <sys/stat.h>
 #include <filesystem>
 #include "Fs.h"
-using namespace std;
 
 bool Fs::exists(const string& file) {
     struct stat buffer{};
@@ -23,6 +22,18 @@ bool Fs::unlink(const string &file) {
 }
 
 string Fs::basename(const string &file) {
-    string base = std::filesystem::path(file).filename();
+    std::string base = std::filesystem::path(file).filename();
     return base;
+}
+
+string Fs::dirname(const string &file) {
+    std::string dirname = std::filesystem::path(file).parent_path();
+    return dirname;
+}
+
+int Fs::copy(std::string source, std::string destination)
+{
+    //std::filesystem::create_directories(targetParent);
+    std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
+    return 0;
 }

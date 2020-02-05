@@ -10,6 +10,9 @@ public:
     static bool makeDirectory(const string& dir);
     static bool unlink(const string& file);
     static string basename(const string& file);
+    static string dirname(const string& file);
+
+    int copy(string source, string destination);
 };
 
 
