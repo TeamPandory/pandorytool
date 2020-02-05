@@ -9,12 +9,13 @@ A tool to automate ROM installation for the Pandora 3D
 pacman -Syu  # You'll have to close the terminal after this line
 pacman -Su
 pacman -S mingw-w64-x86_64-toolchain
-pacman -S msys/make
-pacman -S msys/cmake
+pacman -S make
+pacman -S mingw64/mingw-w64-x86_64-cmake
 pacman -S msys/git
 pacman -S mingw64/mingw-w64-x86_64-tinyxml2
 git clone https://github.com/emuchicken/pandorytool.git
 mkdir -p pandorytool/build
 cd pandorytool/build
-cmake .. && make
+cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
+cmake --build .g
 ```
