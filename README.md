@@ -14,6 +14,7 @@ pacman -S make
 pacman -S mingw64/mingw-w64-x86_64-cmake
 pacman -S msys/git
 pacman -S mingw64/mingw-w64-x86_64-tinyxml2
+pacman -S msys/upx
 ```
 
 ## Clone and compile
