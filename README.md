@@ -26,4 +26,4 @@ git clone https://github.com/emuchicken/pandorytool.git
 ./winbuild.sh
 ```
 
-Pandory will compile on other operating systems, such as MacOS/Linux as long as you have a gcc toolchain and the relevant libraries installed.
+Pandory will compile on other operating systems, such as MacOS/Linux, as long as you have a gcc toolchain and the relevant libraries installed.
