@@ -101,6 +101,12 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             std::string cdrom = "\U0001F4C0";
             int filesize = Fs::filesize(absoluteRomPath) / 1024 / 1024;
             std::string icon = (filesize <= 50) ? floppy : cdrom;
+            if (getenv("COMSPEC") != nullptr) {
+                std::string comspec = getenv("COMSPEC");
+                if (comspec.find("cmd.exe") != std::string::npos) {
+                    icon = "- ";
+                }
+            }
             std::cout << icon << " Found "
                  << extractXMLText(provider->FirstChildElement("System"))
                  << " ROM: " << romName << " [ " << Fs::basename(romPath)
