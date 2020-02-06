@@ -17,8 +17,8 @@ bool Fs::makeDirectory(const string& dir) {
     return -1 != error;
 }
 
-bool Fs::unlink(const string &file) {
-    return (bool) remove(file.c_str());
+bool Fs::remove(const string &file) {
+    return std::filesystem::remove_all(file.c_str());
 }
 
 string Fs::basename(const string &file) {

@@ -1,10 +1,8 @@
 #include <iostream>
-#include <fstream>
 #include "ModeAdd.h"
 #include <filesystem>
 #include <map>
 #include <tinyxml2.h>
-
 
 std::string ModeAdd::padRomName(std::string string, const size_t size, const char character = ' ')
 {
@@ -13,8 +11,6 @@ std::string ModeAdd::padRomName(std::string string, const size_t size, const cha
     }
     return string;
 }
-
-
 
 bool ModeAdd::validate() {
     if (!Fs::exists(sourceDir)) {
@@ -32,7 +28,7 @@ void ModeAdd::addRomToInstallFile(std::string rom)
 {
 }
 
-ModeAdd::ModeAdd(string &sourceDir, string &targetDir) : sourceDir(sourceDir), targetDir(targetDir) {
+ModeAdd::ModeAdd(std::string &sourceDir, std::string &targetDir) : sourceDir(sourceDir), targetDir(targetDir) {
 
 }
 
@@ -43,6 +39,7 @@ int ModeAdd::main() {
     }
     createTargetDirectory();
     resetInstallFile();
+    resetMcGamesFolder();
     parseSourceDirectory();
     return 0;
 }
@@ -86,7 +83,7 @@ void ModeAdd::closeInstallFileHandle()
     installFile.close();
 }
 
-void ModeAdd::parseSourceGameXML(const string &gameListXml) {
+void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
     tinyxml2::XMLDocument doc;
     doc.LoadFile(gameListXml.c_str());
     std::string directory = Fs::dirname(gameListXml);
@@ -130,13 +127,18 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
     Fs::copy(rom, destination + "/" + basename + extension);
 }
 
-
 // remove install.txt file if exists, open clear file
 void ModeAdd::resetInstallFile() {
-    string mcInstall = getInstallFilePath();
+    std::string mcInstall = getInstallFilePath();
     FILE *foo;
     foo = fopen(mcInstall.c_str(), "w");
     fclose(foo);
+}
+
+void ModeAdd::resetMcGamesFolder() {
+    std::string mgGamesFolder = getMcGamesFolder();
+    Fs::remove(getMcGamesFolder());
+    Fs::makeDirectory(getMcGamesFolder());
 }
 
 string ModeAdd::getInstallFilePath() {

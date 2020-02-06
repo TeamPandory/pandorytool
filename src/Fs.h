@@ -8,7 +8,7 @@ class Fs {
 public:
     static bool exists(const string& file);
     static bool makeDirectory(const string& dir);
-    static bool unlink(const string& file);
+    static bool remove(const string& file);
     static string basename(const string& file);
     static string dirname(const string& file);
 

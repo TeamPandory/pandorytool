@@ -30,6 +30,8 @@ public:
     void openInstallFileHandle();
 
     void closeInstallFileHandle();
+
+    void resetMcGamesFolder();
 };
 
 #endif //PANDORER_MODEADD_H
