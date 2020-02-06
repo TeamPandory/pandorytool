@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-mkdir -p winbuild;
-cd winbuild || exit;
-pwd;
-cmake -DCMAKE_TOOLCHAIN_FILE=../mingw64.cmake ..;
-make;
+mkdir -p build
+cd build || exit;
+cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
+cmake --build .
