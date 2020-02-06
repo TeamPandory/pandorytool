@@ -25,3 +25,5 @@ pacman -S mingw64/mingw-w64-x86_64-tinyxml2
 git clone https://github.com/emuchicken/pandorytool.git
 ./winbuild.sh
 ```
+
+Pandory will compile on other operating systems, such as MacOS/Linux as long as you have a gcc toolchain and the relevant libraries installed.
