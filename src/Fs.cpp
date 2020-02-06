@@ -42,3 +42,7 @@ int Fs::copy(std::string source, std::string destination)
     std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
     return 0;
 }
+
+int Fs::filesize(std::string src) {
+    return std::filesystem::file_size(src.c_str());
+}

@@ -12,6 +12,7 @@ public:
     static string basename(const string& file);
     static string dirname(const string& file);
 
+    static int filesize(std::string src);
     static int copy(string source, string destination);
 
     static string getExtension(const string &file);
