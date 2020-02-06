@@ -55,10 +55,15 @@ void ModeAdd::parseSourceDirectory() {
 
 std::string ModeAdd::convertSystemName(std::string system) {
     if (system == "Dreamcast") return "DC";
+    if (system == "Family Computer") return "NES";
     if (system == "Game Boy Advance") return "GBA";
     if (system == "Game Boy Color") return "GBC";
     if (system == "Genesis") return "MD";
+    if (system == "Nintendo 64") return "N64";
+    if (system == "Playstation") return "PS";
     if (system == "PSP") return "PSP";
+    if (system == "Super Famicom") return "SNES";
+    if (system == "TurboGrafx-16") return "PCE";    
     return "";
 }
 
