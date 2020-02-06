@@ -100,7 +100,8 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
 // Both DC0001.cdi and DC0001.mp4 should be within the mcgames/DC0001 folder.
 // Template.txt and template.xml (from template file) should be then copied to the DC0001 folder with the
 // following variables changed depending on system and game (see below)
-// mcgames/install.txt file should then be appended with the “ARSENAME” (DC0001)                                                                                    repeat / loop process until all roms have been added.
+// install.txt file should then be appended with the “ARSENAME” (DC0001)
+// repeat / loop process until all roms have been added.
 void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &destination) {
     if (!Fs::exists(destination)) {
         Fs::makeDirectory(destination);
@@ -112,8 +113,8 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
 
 
 void ModeAdd::resetInstallFile() {
-    // remove mcgames/install.txt file if exists, open clear file
-    string mcInstall = this->getMcGamesFolder() + "/install.txt";
+    // remove install.txt file if exists, open clear file
+    string mcInstall = this->targetDir + "/install.txt";
     FILE *foo;
     foo = fopen(mcInstall.c_str(), "w");
     fclose(foo);
