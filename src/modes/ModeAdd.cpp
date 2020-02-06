@@ -84,6 +84,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
     doc.LoadFile(gameListXml.c_str());
     std::string directory = Fs::dirname(gameListXml);
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
+    tinyxml2::XMLElement *provider = gameList->FirstChildElement("provider");
     std::string system = Fs::basename(directory);
     int i = 1;
     for (tinyxml2::XMLElement *game = gameList->FirstChildElement("game");
@@ -96,7 +97,10 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + padRomName(std::to_string(i), 4, '0');
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
-            cout << "Found " << system << " ROM: " << romName << " [ " << Fs::basename(romPath) << " ]" << endl;
+            cout << "Found "
+                 << extractXMLText(provider->FirstChildElement("System"))
+                 << " ROM: " << romName << " [ " << Fs::basename(romPath)
+                 << " ]" << endl;
             copyRomToDestination(absoluteRomPath, targetRomDir);
             installFile << targetRomName << std::endl;
             streamXMLGameData(game, shortSystemName, targetRomDir, targetRomName);
