@@ -57,6 +57,8 @@ std::string ModeAdd::convertSystemName(std::string system) {
     if (system == "Dreamcast") return "DC";
     if (system == "Game Boy Advance") return "GBA";
     if (system == "Game Boy Color") return "GBC";
+    if (system == "Genesis") return "MD";
+    if (system == "PSP") return "PSP";
     return "";
 }
 
