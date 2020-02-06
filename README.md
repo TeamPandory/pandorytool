@@ -5,6 +5,7 @@ A tool to automate ROM installation for the Pandora 3D
 - Install MSYS2
 - Start MSYS MINGW 64-Bit
 
+## Install dependencies
 ```
 pacman -Syu  # You'll have to close the terminal after this line
 pacman -Su
@@ -13,9 +14,10 @@ pacman -S make
 pacman -S mingw64/mingw-w64-x86_64-cmake
 pacman -S msys/git
 pacman -S mingw64/mingw-w64-x86_64-tinyxml2
+```
+
+## Clone and compile
+```
 git clone https://github.com/emuchicken/pandorytool.git
-mkdir -p pandorytool/build
-cd pandorytool/build
-cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
-cmake --build .
+./winbuild.sh
 ```
