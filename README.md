@@ -1,6 +1,10 @@
 # pandorytool
 A tool to automate ROM installation for the Pandora 3D
 
+## License
+pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
+
+
 ## How to compile
 - Install MSYS2
 - Start MSYS MINGW 64-Bit
