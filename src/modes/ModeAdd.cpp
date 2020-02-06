@@ -104,7 +104,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             if (getenv("COMSPEC") != nullptr) {
                 std::string comspec = getenv("COMSPEC");
                 if (comspec.find("cmd.exe") != std::string::npos) {
-                    icon = "- ";
+                    icon = "-";
                 }
             }
             std::cout << icon << " Found "
