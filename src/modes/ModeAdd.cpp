@@ -85,8 +85,8 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + padRomName(std::to_string(i), 4, '0');
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
-            copyRomToDestination(absoluteRomPath, targetRomDir);
             cout << "Found " << system << " ROM: " << romName << " [ " << Fs::basename(romPath) << " ]" << endl;
+            copyRomToDestination(absoluteRomPath, targetRomDir);
             i++;
         } else {
             cout << "Unknown system in source XML:" << system << endl;
