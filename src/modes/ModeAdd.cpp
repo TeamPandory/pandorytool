@@ -54,16 +54,18 @@ void ModeAdd::parseSourceDirectory() {
 }
 
 std::string ModeAdd::convertSystemName(std::string system) {
-    if (system == "Dreamcast") return "DC";
-    if (system == "Family Computer") return "NES";
-    if (system == "Game Boy Advance") return "GBA";
-    if (system == "Game Boy Color") return "GBC";
-    if (system == "Genesis") return "MD";
-    if (system == "Nintendo 64") return "N64";
-    if (system == "Playstation") return "PS";
-    if (system == "PSP") return "PSP";
-    if (system == "Super Famicom") return "SNES";
-    if (system == "TurboGrafx-16") return "PCE";    
+    if (system == "dreamcast") return "DC";
+    if (system == "gba") return "GBA";
+    if (system == "gbc") return "GBC";
+    if (system == "megadrive") return "MD";
+    if (system == "n64") return "N64";
+    if (system == "playstation") return "PS";
+    if (system == "psp") return "PSP";
+    if (system == "snes") return "SNES";
+    //if (system == "Family Computer") return "NES";
+    //if (system == "TurboGrafx-16") return "PCE";
+    //...MAME...
+    //...
     return "";
 }
 
@@ -73,7 +75,7 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
     std::string directory = Fs::dirname(gameListXml);
     tinyxml2::XMLElement *provider = doc.FirstChildElement("gameList")->FirstChildElement("provider");
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
-    std::string system = provider->FirstChildElement("System")->GetText();
+    std::string system = Fs::basename(directory);
     int i = 1;
     for (tinyxml2::XMLElement *game = gameList->FirstChildElement("game");
          game != nullptr;
