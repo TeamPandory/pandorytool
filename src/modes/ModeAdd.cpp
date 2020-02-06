@@ -99,7 +99,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
             std::string floppy = "\U0001F4BE";
             std::string cdrom = "\U0001F4C0";
-            int filesize = Fs::filesize(absoluteRomPath) / 1024;
+            int filesize = Fs::filesize(absoluteRomPath) / 1024 / 1024;
             std::string icon = (filesize <= 50) ? floppy : cdrom;
             std::cout << icon << " Found "
                  << extractXMLText(provider->FirstChildElement("System"))
