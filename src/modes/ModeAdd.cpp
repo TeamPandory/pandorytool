@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "ModeAdd.h"
 #include <filesystem>
 #include <map>
@@ -27,6 +28,10 @@ bool ModeAdd::validate() {
     return true;
 }
 
+void ModeAdd::addRomToInstallFile(std::string rom)
+{
+}
+
 ModeAdd::ModeAdd(string &sourceDir, string &targetDir) : sourceDir(sourceDir), targetDir(targetDir) {
 
 }
@@ -43,6 +48,7 @@ int ModeAdd::main() {
 }
 
 void ModeAdd::parseSourceDirectory() {
+    openInstallFileHandle();
     for (const auto &entry : filesystem::directory_iterator(this->sourceDir)) {
         std::string filePath = entry.path().string();
         std::string basename = Fs::basename(filePath);
@@ -51,6 +57,7 @@ void ModeAdd::parseSourceDirectory() {
             parseSourceGameXML(gameListXml);
         }
     }
+    closeInstallFileHandle();
 }
 
 std::string ModeAdd::convertSystemName(std::string system) {
@@ -69,11 +76,20 @@ std::string ModeAdd::convertSystemName(std::string system) {
     return "";
 }
 
+void ModeAdd::openInstallFileHandle()
+{
+    installFile.open(getInstallFilePath().c_str());
+}
+
+void ModeAdd::closeInstallFileHandle()
+{
+    installFile.close();
+}
+
 void ModeAdd::parseSourceGameXML(const string &gameListXml) {
     tinyxml2::XMLDocument doc;
     doc.LoadFile(gameListXml.c_str());
     std::string directory = Fs::dirname(gameListXml);
-    tinyxml2::XMLElement *provider = doc.FirstChildElement("gameList")->FirstChildElement("provider");
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
     std::string system = Fs::basename(directory);
     int i = 1;
@@ -89,9 +105,10 @@ void ModeAdd::parseSourceGameXML(const string &gameListXml) {
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
             cout << "Found " << system << " ROM: " << romName << " [ " << Fs::basename(romPath) << " ]" << endl;
             copyRomToDestination(absoluteRomPath, targetRomDir);
+            installFile << targetRomName << std::endl;
             i++;
         } else {
-            cout << "Unknown system in source XML:" << system << endl;
+            cout << "Unknown system detected in source folder: " << system << endl;
         }
     }
 }
@@ -114,12 +131,17 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
 }
 
 
+// remove install.txt file if exists, open clear file
 void ModeAdd::resetInstallFile() {
-    // remove install.txt file if exists, open clear file
-    string mcInstall = this->targetDir + "/install.txt";
+    string mcInstall = getInstallFilePath();
     FILE *foo;
     foo = fopen(mcInstall.c_str(), "w");
     fclose(foo);
+}
+
+string ModeAdd::getInstallFilePath() {
+    string mcInstall = this->targetDir + "/install.txt";
+    return mcInstall;
 }
 
 bool ModeAdd::createTargetDirectory() {
