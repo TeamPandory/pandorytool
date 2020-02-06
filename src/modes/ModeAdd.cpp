@@ -62,8 +62,8 @@ std::string ModeAdd::convertSystemName(std::string system) {
     if (system == "playstation") return "PS";
     if (system == "psp") return "PSP";
     if (system == "snes") return "SNES";
-    //if (system == "Family Computer") return "NES";
-    //if (system == "TurboGrafx-16") return "PCE";
+    if (system == "nes") return "NES";
+    if (system == "pcengine") return "PCE";
     //...MAME...
     //...
     return "";
