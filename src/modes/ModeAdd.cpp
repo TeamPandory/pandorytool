@@ -199,14 +199,15 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
 
     // # Game
     xml.OpenElement("game" );
-    // emulator type check code probably BS
-    int emutype=99;
-    cout << "short system name is " << shortSystemName << endl;
     
+    
+    // emulator type check code definitely bullshit- cant get this if statement to work ;(
+    int emutype=99;
+    //test cout << "short system name is " << shortSystemName << endl;
     if (shortSystemName == "GBC") 
         emutype==14;
     
-    cout << "emutype is " << emutype << endl;
+    // test cout << "emutype is " << emutype << endl;
     
     xml.PushAttribute("emulator", emutype);
     //xml.PushAttribute("emulator", shortSystemName.c_str());
