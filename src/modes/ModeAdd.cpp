@@ -202,9 +202,13 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     // emulator type check code probably BS
     int emutype;
     if (shortSystemName.c_str() == "GBC")
-        { emutype==14 };
+    {
+        emutype==14;
+    }
     else
-    { emutype==000 };
+    {
+        emutype==000;
+    }
         
     xml.PushAttribute("emulator", emutype);
     //xml.PushAttribute("emulator", shortSystemName.c_str());
