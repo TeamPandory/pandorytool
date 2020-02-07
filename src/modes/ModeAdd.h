@@ -18,7 +18,7 @@ protected:
     string getMcGamesFolder();
     void resetInstallFile();
     string getInstallFilePath();
-    string padRomName(string string, const size_t size, const char character);
+    string pad(string string, const size_t size, const char character);
     void streamXMLGameData(tinyxml2::XMLElement *sourceDocument, std::string shortSystemName, std::string romPath, std::string romName);
 
 public:

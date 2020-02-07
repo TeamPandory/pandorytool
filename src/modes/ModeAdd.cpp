@@ -4,7 +4,7 @@
 #include <map>
 #include <tinyxml2.h>
 
-std::string ModeAdd::padRomName(std::string string, const size_t size, const char character = ' ')
+std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ')
 {
     if(size > string.size()) {
         string.insert(0, size - string.size(), character);
@@ -102,7 +102,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         std::string absoluteRomPath = directory + "/" + romPath;
         std::string shortSystemName = convertSystemName(system);
         if (!shortSystemName.empty()) {
-            std::string targetRomName = shortSystemName + padRomName(std::to_string(i), 4, '0');
+            std::string targetRomName = shortSystemName + pad(std::to_string(i), 4, '0');
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
             /*std::string floppy = "\U0001F4BE";
             std::string cdrom = "\U0001F4C0";
@@ -204,13 +204,15 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype=99;
     //test cout << "short system name is " << shortSystemName << endl;
-    if (shortSystemName == "GBC") 
-        emutype==14;
+    if (shortSystemName == "GBC") {
+        emutype = 14;
+    }
+
+    std::string emuString = pad(std::to_string(emutype), 3, '0');
     
     // test cout << "emutype is " << emutype << endl;
     
-    xml.PushAttribute("emulator", emutype);
-    //xml.PushAttribute("emulator", shortSystemName.c_str());
+    xml.PushAttribute("emulator", emuString.c_str());
     xml.PushAttribute("name", romName.c_str());
     // ## Information
     xml.OpenElement("information" );
