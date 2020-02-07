@@ -1,8 +1,8 @@
 #include "McGamesXML.h"
 #include <tinyxml2.h>
 
-void McGamesXML::generate(std::string xmlFilename) {
-    std::FILE* fp = std::fopen(xmlFilename.c_str(), "w");
+void McGamesXML::generate(std::string filename) {
+    std::FILE* fp = std::fopen(filename.c_str(), "w");
     tinyxml2::XMLPrinter xml(fp);
     xml.PushDeclaration("xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"");
 
@@ -85,33 +85,4 @@ void McGamesXML::generate(std::string xmlFilename) {
     // ### /Config
 
     xml.CloseElement(); // game
-}
-
-
-void McGamesXML::setEmulatorName(const std::string &emulatorName) {
-    McGamesXML::emulatorName = emulatorName;
-}
-
-void McGamesXML::setRomName(const std::string &romName) {
-    McGamesXML::romName = romName;
-}
-
-void McGamesXML::setRomDescription(const std::string &romDescription) {
-    McGamesXML::romDescription = romDescription;
-}
-
-void McGamesXML::setLanguage(const std::string &language) {
-    McGamesXML::language = language;
-}
-
-void McGamesXML::setYear(int year) {
-    McGamesXML::year = year;
-}
-
-void McGamesXML::setRomDeveloper(const std::string &romDeveloper) {
-    McGamesXML::romDeveloper = romDeveloper;
-}
-
-void McGamesXML::setRomPath(const std::string &romPath) {
-    McGamesXML::romPath = romPath;
 }

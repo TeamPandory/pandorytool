@@ -4,6 +4,8 @@
 #include <tinyxml2.h>
 #include "ModeAdd.h"
 #include "../McGamesXML.h"
+#include "../McGamesTXT.h"
+
 #include "../SystemMapper.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ')
@@ -204,16 +206,27 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
     std::string targetXMLFile = romPath + "/" + romName + ".xml";
+    std::string targetTXTFile = romPath + "/" + romName + ".txt";
 
-    McGamesXML mcGames;
-    mcGames.setEmulatorName(emuString);
-    mcGames.setRomName(romName);
-    mcGames.setRomDescription(desc);
-    mcGames.setLanguage("EN"); //TODO is this always true?
-    mcGames.setYear(year);
-    mcGames.setRomDeveloper(developer);
-    mcGames.setRomPath(relativeRomPath);
-    mcGames.generate(targetXMLFile);
+    McGamesXML mcXML;
+    mcXML.setEmulatorName(emuString);
+    mcXML.setRomName(romName);
+    mcXML.setRomDescription(desc);
+    mcXML.setLanguage("EN"); //TODO is this always true?
+    mcXML.setYear(year);
+    mcXML.setRomDeveloper(developer);
+    mcXML.setRomPath(relativeRomPath);
+    mcXML.generate(targetXMLFile);
+
+    McGamesTXT mcTXT;
+    mcTXT.setEmulatorName(emuString);
+    mcTXT.setRomName(romName);
+    mcTXT.setRomDescription(desc);
+    mcTXT.setLanguage("EN"); //TODO is this always true?
+    mcTXT.setYear(year);
+    mcTXT.setRomDeveloper(developer);
+    mcTXT.setRomPath(relativeRomPath);
+    mcTXT.generate(targetTXTFile);
 }
 
 
