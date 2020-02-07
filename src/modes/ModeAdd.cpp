@@ -195,9 +195,39 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype=99;
     //test cout << "short system name is " << shortSystemName << endl;
-    if (shortSystemName = "GBC") {
-        emutype = 14;
-    }
+	    if (shortSystemName == "FBA") {
+        emutype = 0;}
+		if (shortSystemName == "MAME37") {
+		emutype = 2;}
+		if (shortSystemName == "MAME139") {
+		emutype = 3;}
+		if (shortSystemName == "MAME78") {
+		emutype = 4;}
+		if (shortSystemName == "PSP") {
+		emutype = 6;}
+		if (shortSystemName == "PS") {
+		emutype = 7;}
+		if (shortSystemName == "N64") {
+		emutype = 8;}
+		if (shortSystemName == "NES") {
+		emutype = 11;}
+		if (shortSystemName == "SNES") {
+		emutype = 12;}
+		if (shortSystemName == "GBA") {
+		emutype = 13;}
+		if (shortSystemName == "GBC") {
+		emutype = 14;}
+		if (shortSystemName == "MD") {
+		emutype = 15;}
+		if (shortSystemName == "WSWAN") {
+		emutype = 16;}
+		if (shortSystemName == "PCE") {
+		emutype = 17;}
+		if (shortSystemName == "DC") {
+		emutype = 18;}
+		if (shortSystemName == "MAME19") {
+		emutype = 19;}
+	
 
     std::string emuString = pad(std::to_string(emutype), 3, '0');
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
