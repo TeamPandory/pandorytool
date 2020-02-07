@@ -64,9 +64,9 @@ std::string ModeAdd::convertSystemName(std::string system) {
     if (system == "snes") return "SNES";
     if (system == "nes") return "NES";
     if (system == "pcengine") return "PCE";
-    //if (system == "fba") return "FBA";
+    if (system == "fba") return "FBA";
     
-    //if (system == "mame19") return "MAME19";
+    if (system == "mame19") return "MAME19";
     //if (system == "mame37") return "MAME37";
     //if (system == "mame139") return "MAME139";
     //if (system == "mame78") return "MAME78";
