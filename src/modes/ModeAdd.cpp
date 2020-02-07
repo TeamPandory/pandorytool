@@ -121,7 +121,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                  << " ]" << endl;
             copyRomToDestination(absoluteRomPath, targetRomDir);
             installFile << targetRomName << std::endl;
-            streamXMLGameData(game, shortSystemName, targetRomDir, targetRomName);
+            generateMcGamesMeta(game, shortSystemName, targetRomDir, targetRomName);
             i++;
         } else {
             cout << "Unknown system detected in source folder: " << system << endl;
@@ -192,7 +192,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem)
     return std::string();
 }
 
-void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romName) {
+void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romName) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype=99;
@@ -207,13 +207,14 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
     int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
+    std::string video = extractXMLText(sourceGame->FirstChildElement("video"));
     std::string targetXMLFile = romPath + "/" + romName + ".xml";
 
     McGamesXML mcGames;
     mcGames.setEmulatorName(emuString);
     mcGames.setRomName(romName);
     mcGames.setRomDescription(desc);
-    mcGames.setLanguage("EN");
+    mcGames.setLanguage("EN"); //TODO is this always true?
     mcGames.setYear(year);
     mcGames.setRomDeveloper(developer);
     mcGames.setRomPath(relativeRomPath);
