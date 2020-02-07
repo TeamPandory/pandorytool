@@ -203,7 +203,7 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     int emutype=99;
     cout << "short system name is " << (shortSystemName.c_str()) << endl;
     
-    if (shortSystemName.c_str() == GBC) 
+    if (shortSystemName.c_str() == "GBC") 
         emutype==14;
     
     cout << "emutype is " << emutype << endl;
