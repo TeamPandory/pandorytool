@@ -1,8 +1,9 @@
 #include <iostream>
-#include "ModeAdd.h"
 #include <filesystem>
 #include <map>
 #include <tinyxml2.h>
+#include "ModeAdd.h"
+#include "../McGamesXML.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ')
 {
@@ -192,15 +193,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem)
 }
 
 void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romName) {
-    std::string targetXMLFile = romPath + "/" + romName + ".xml";
-    std::FILE* fp = std::fopen(targetXMLFile.c_str(), "w");
-    tinyxml2::XMLPrinter xml(fp );
-    xml.PushDeclaration("xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"");
 
-    // # Game
-    xml.OpenElement("game" );
-    
-    
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype=99;
     //test cout << "short system name is " << shortSystemName << endl;
@@ -209,89 +202,22 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     }
 
     std::string emuString = pad(std::to_string(emutype), 3, '0');
-    
-    // test cout << "emutype is " << emutype << endl;
-    
-    xml.PushAttribute("emulator", emuString.c_str());
-    xml.PushAttribute("name", romName.c_str());
-    // ## Information
-    xml.OpenElement("information" );
-    // ### Description
-    xml.OpenElement("description");
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
-    xml.PushText(desc.c_str());
-    xml.CloseElement();
-    xml.OpenElement("cloneof" );
-    xml.CloseElement();
-    xml.OpenElement("language" );
-    xml.PushText("EN");
-    xml.CloseElement();
-    xml.OpenElement("year" );
-    std::string year = extractXMLText(sourceGame->FirstChildElement("releasedate")).substr(0, 4);
-    xml.PushText(year.c_str());
-    xml.CloseElement();
-    xml.OpenElement("manufacturer" );
-    std::string developer = extractXMLText(sourceGame->FirstChildElement("developer")).substr(0, 4);
-    xml.PushText(developer.c_str());
-    xml.CloseElement();
-    xml.OpenElement("player" );
-    xml.CloseElement();
-    xml.OpenElement("genre" );
-    xml.PushText(0);
-    xml.CloseElement();
-    xml.OpenElement("bootleg" );
-    xml.PushText(false);
-    xml.CloseElement();
-    // ### /Description
-    xml.CloseElement(); // ## /Information
+    std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
+    std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
+    int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
+    std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
+    std::string targetXMLFile = romPath + "/" + romName + ".xml";
 
-    // ### File
-    xml.OpenElement("file" );
-    xml.OpenElement("rom" );
-    xml.CloseElement();
-    xml.CloseElement();
-    // ### /File
-
-    // ### Translation
-    xml.OpenElement("translation" );
-    xml.OpenElement("string" );
-    xml.PushAttribute("language", "EN");
-    xml.OpenElement("name" );
-    std::string name = extractXMLText(sourceGame->FirstChildElement("name"));
-    xml.PushText(name.c_str());
-    xml.CloseElement(); // name
-    xml.OpenElement("detail" );
-    xml.PushText(desc.c_str());
-    xml.CloseElement(); // detail
-    xml.CloseElement(); // string
-    xml.CloseElement(); // translation
-    // ### /File
-
-    // ### Config
-    xml.OpenElement("config" );
-    xml.OpenElement("flag" );
-    xml.PushText(0);
-    xml.CloseElement(); // flag
-    xml.OpenElement("load_time" );
-    xml.PushText("ARSELOAD"); //TODO
-    xml.CloseElement(); // load_time
-
-    xml.OpenElement("free_play" );
-    xml.PushText(true); //TODO
-    xml.CloseElement(); // free_play
-
-    xml.OpenElement("save_state" );
-    xml.PushText(true); //TODO
-    xml.CloseElement(); // save_state
-
-    xml.OpenElement("start_directly" );
-    xml.PushText(true); //TODO
-    xml.CloseElement(); // start_directly
-
-    xml.CloseElement(); // config
-    // ### /Config
-
-    xml.CloseElement(); // game
+    McGamesXML mcGames;
+    mcGames.setEmulatorName(emuString);
+    mcGames.setRomName(romName);
+    mcGames.setRomDescription(desc);
+    mcGames.setLanguage("EN");
+    mcGames.setYear(year);
+    mcGames.setRomDeveloper(developer);
+    mcGames.setRomPath(relativeRomPath);
+    mcGames.generate(targetXMLFile);
 }
 
 
