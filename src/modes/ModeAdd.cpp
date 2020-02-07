@@ -67,9 +67,9 @@ std::string ModeAdd::convertSystemName(std::string system) {
     if (system == "fba") return "FBA";
     
     if (system == "mame19") return "MAME19";
-    //if (system == "mame37") return "MAME37";
-    //if (system == "mame139") return "MAME139";
-    //if (system == "mame78") return "MAME78";
+    if (system == "mame37") return "MAME37";
+    if (system == "mame139") return "MAME139";
+    if (system == "mame78") return "MAME78";
     
     //...MAME...
     //...
@@ -201,6 +201,8 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     xml.OpenElement("game" );
     // emulator type check code probably BS
     int emutype;
+    cout << "short system name is " << (shortSystemName.c_str()) << endl;
+    
     if (shortSystemName.c_str() == "GBC")
     {
         emutype==14;
@@ -209,7 +211,8 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     {
         emutype==000;
     }
-        
+    cout << "emutype is " << emutype << endl;
+    
     xml.PushAttribute("emulator", emutype);
     //xml.PushAttribute("emulator", shortSystemName.c_str());
     xml.PushAttribute("name", romName.c_str());
