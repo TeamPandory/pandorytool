@@ -27,14 +27,11 @@ public:
     void parseSourceDirectory();
     void parseSourceGameXML(const string &gameListXml);
     void copyRomToDestination(const string &rom, const string &destination);
-    static string convertSystemName(string system);
+    void copyRomVideoToDestination(const string &absoluteVideoPath, const string &destination);
 
     void openInstallFileHandle();
-
     void closeInstallFileHandle();
-
     void resetMcGamesFolder();
-
     string extractXMLText(tinyxml2::XMLElement *elem);
 };
 
