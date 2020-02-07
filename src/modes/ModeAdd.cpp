@@ -227,14 +227,20 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     xml.PushText("EN");
     xml.CloseElement();
     xml.OpenElement("year" );
+    std::string year = extractXMLText(sourceGame->FirstChildElement("releasedate")).substr(0, 4);
+    xml.PushText(year.c_str());
     xml.CloseElement();
     xml.OpenElement("manufacturer" );
+    std::string developer = extractXMLText(sourceGame->FirstChildElement("developer")).substr(0, 4);
+    xml.PushText(developer.c_str());
     xml.CloseElement();
     xml.OpenElement("player" );
     xml.CloseElement();
     xml.OpenElement("genre" );
+    xml.PushText(0);
     xml.CloseElement();
     xml.OpenElement("bootleg" );
+    xml.PushText(false);
     xml.CloseElement();
     // ### /Description
     xml.CloseElement(); // ## /Information
@@ -251,8 +257,11 @@ void ModeAdd::streamXMLGameData(tinyxml2::XMLElement *sourceGame, std::string sh
     xml.OpenElement("string" );
     xml.PushAttribute("language", "EN");
     xml.OpenElement("name" );
+    std::string name = extractXMLText(sourceGame->FirstChildElement("name"));
+    xml.PushText(name.c_str());
     xml.CloseElement(); // name
     xml.OpenElement("detail" );
+    xml.PushText(desc.c_str());
     xml.CloseElement(); // detail
     xml.CloseElement(); // string
     xml.CloseElement(); // translation
