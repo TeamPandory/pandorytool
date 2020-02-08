@@ -8,9 +8,8 @@
 
 #include "../SystemMapper.h"
 
-std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ')
-{
-    if(size > string.size()) {
+std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ') {
+    if (size > string.size()) {
         string.insert(0, size - string.size(), character);
     }
     return string;
@@ -57,13 +56,11 @@ void ModeAdd::parseSourceDirectory() {
     closeInstallFileHandle();
 }
 
-void ModeAdd::openInstallFileHandle()
-{
+void ModeAdd::openInstallFileHandle() {
     installFile.open(getInstallFilePath().c_str());
 }
 
-void ModeAdd::closeInstallFileHandle()
-{
+void ModeAdd::closeInstallFileHandle() {
     installFile.close();
 }
 
@@ -96,9 +93,9 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 }
             }*/
             std::cout << "- Found "
-                 << extractXMLText(provider->FirstChildElement("System"))
-                 << " ROM: " << romName << " [ " << Fs::basename(romPath)
-                 << " ]" << endl;
+                      << extractXMLText(provider->FirstChildElement("System"))
+                      << " ROM: " << romName << " [ " << Fs::basename(romPath)
+                      << " ]" << endl;
 
             if (!Fs::exists(targetRomDir)) {
                 Fs::makeDirectory(targetRomDir);
@@ -110,8 +107,9 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 videoPath = extractXMLText(game->FirstChildElement("video"));
                 std::string absoluteVideoPath = directory;
                 absoluteVideoPath += "/" + videoPath;
-		    if (!Fs::exists(absoluteVideoPath)) {
-			continue;}
+                if (!Fs::exists(absoluteVideoPath)) {
+                    continue;
+                }
                 copyRomVideoToDestination(absoluteVideoPath, targetRomDir);
             }
             installFile << targetRomName << std::endl;
@@ -135,8 +133,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
 
 // – (and if available, mp4 file (from romsubfolder/media/videos))
 // DC0001.mp4 should be within the mcgames/DC0001 folder.
-void ModeAdd::copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination)
-{
+void ModeAdd::copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination) {
     std::string basename = Fs::basename(destination);
     std::string extension = Fs::getExtension(absoluteVideoPath);
     Fs::copy(absoluteVideoPath, destination + "/" + basename + extension);
@@ -179,8 +176,7 @@ string ModeAdd::getMcGamesFolder() {
     return mc;
 }
 
-std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem)
-{
+std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
     if (elem->GetText() != nullptr) {
         return elem->GetText();
     }
@@ -192,63 +188,80 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem)
 // following variables changed depending on system and game (see below)
 // install.txt file should then be appended with the “ARSENAME” (DC0001)
 // repeat / loop process until all roms have been added.
-void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romName) {
+void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath,
+                                  std::string romName) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
-    int emutype=99;
-	int emuload=99;
+    int emutype = 99;
+    int emuload = 99;
     //test cout << "short system name is " << shortSystemName << endl;
-	    	if (shortSystemName == "FBA") {
-        	emutype = 1;
-			emuload = 1;}
-		if (shortSystemName == "MAME37") {
-		emutype = 2;
-		emuload = 1;}
-		if (shortSystemName == "MAME139") {
-		emutype = 3;
-		emuload = 1;}
-		if (shortSystemName == "MAME78") {
-		emutype = 4;
-		emuload = 1;}
-		if (shortSystemName == "PSP") {
-		emutype = 6;
-		emuload = 3;}
-		if (shortSystemName == "PS") {
-		emutype = 7;
-		emuload = 3;}
-		if (shortSystemName == "N64") {
-		emutype = 8;
-		emuload = 3;}
-		if (shortSystemName == "NES") {
-		emutype = 11;
-		emuload = 3;}
-		if (shortSystemName == "SNES") {
-		emutype = 12;
-		emuload = 0;}
-		if (shortSystemName == "GBA") {
-		emutype = 13;
-		emuload = 0;}
-		if (shortSystemName == "GBC") {
-		emutype = 14;
-		emuload = 0;}
-		if (shortSystemName == "MD") {
-		emutype = 15;
-		emuload = 3;}
-		if (shortSystemName == "WSWAN") {
-		emutype = 16;
-		emuload = 0;}
-		if (shortSystemName == "PCE") {
-		emutype = 17;
-		emuload = 0;}
-		if (shortSystemName == "DC") {
-		emutype = 18;
-		emuload = 3;}
-		if (shortSystemName == "MAME19") {
-		emutype = 19;
-		emuload = 1;}
-	
-std::string emuString = std::to_string(emutype);
-std::string emuStringload = std::to_string(emuload);
+    if (shortSystemName == "FBA") {
+        emutype = 1;
+        emuload = 1;
+    }
+    if (shortSystemName == "MAME37") {
+        emutype = 2;
+        emuload = 1;
+    }
+    if (shortSystemName == "MAME139") {
+        emutype = 3;
+        emuload = 1;
+    }
+    if (shortSystemName == "MAME78") {
+        emutype = 4;
+        emuload = 1;
+    }
+    if (shortSystemName == "PSP") {
+        emutype = 6;
+        emuload = 3;
+    }
+    if (shortSystemName == "PS") {
+        emutype = 7;
+        emuload = 3;
+    }
+    if (shortSystemName == "N64") {
+        emutype = 8;
+        emuload = 3;
+    }
+    if (shortSystemName == "NES") {
+        emutype = 11;
+        emuload = 3;
+    }
+    if (shortSystemName == "SNES") {
+        emutype = 12;
+        emuload = 0;
+    }
+    if (shortSystemName == "GBA") {
+        emutype = 13;
+        emuload = 0;
+    }
+    if (shortSystemName == "GBC") {
+        emutype = 14;
+        emuload = 0;
+    }
+    if (shortSystemName == "MD") {
+        emutype = 15;
+        emuload = 3;
+    }
+    if (shortSystemName == "WSWAN") {
+        emutype = 16;
+        emuload = 0;
+    }
+    if (shortSystemName == "PCE") {
+        emutype = 17;
+        emuload = 0;
+    }
+    if (shortSystemName == "DC") {
+        emutype = 18;
+        emuload = 3;
+    }
+    if (shortSystemName == "MAME19") {
+        emutype = 19;
+        emuload = 1;
+    }
+
+    std::string emuString = std::to_string(emutype);
+    std::string emuStringload = std::to_string(emuload);
 
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
@@ -260,7 +273,7 @@ std::string emuStringload = std::to_string(emuload);
 
     McGamesXML mcXML;
     mcXML.setEmulatorName(emuString);
-	mcXML.setEmulatorLoad(emuStringload);
+    mcXML.setEmulatorLoad(emuStringload);
     mcXML.setRomName(romName);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
