@@ -291,7 +291,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     McGamesTXT mcTXT;
     mcTXT.setEmulatorName(emuString);
     mcTXT.setEmulatorLoad(emuStringload);
-    mcXML.setRomName(name);
+    mcTXT.setRomName(name);
     mcTXT.setRomFileName(romFileName);
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
