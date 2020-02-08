@@ -7,6 +7,7 @@
 class McGamesXML : public McGamesAbstract {
 public:
     void generate(std::string filename) override;
+
 };
 
 

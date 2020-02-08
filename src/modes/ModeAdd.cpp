@@ -193,7 +193,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
 // install.txt file should then be appended with the “ARSENAME” (DC0001)
 // repeat / loop process until all roms have been added.
 void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath,
-                                  std::string romName) {
+                                  std::string romFileName) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype = 99;
@@ -267,18 +267,20 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     std::string emuString = std::to_string(emutype);
     std::string emuStringload = std::to_string(emuload);
 
+    std::string name = extractXMLText(sourceGame->FirstChildElement("name"));
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
     std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
     int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
-    std::string targetXMLFile = romPath + "/" + romName + ".xml";
-    std::string targetTXTFile = romPath + "/" + romName + ".txt";
+    std::string targetXMLFile = romPath + "/" + romFileName + ".xml";
+    std::string targetTXTFile = romPath + "/" + romFileName + ".txt";
 
     McGamesXML mcXML;
     mcXML.setEmulatorName(emuString);
     mcXML.setEmulatorLoad(emuStringload);
-    mcXML.setRomName(romName);
+    mcXML.setRomName(name);
+    mcXML.setRomFileName(romFileName + Fs::getExtension(relativeRomPath));
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);
@@ -289,7 +291,8 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     McGamesTXT mcTXT;
     mcTXT.setEmulatorName(emuString);
     mcTXT.setEmulatorLoad(emuStringload);
-    mcTXT.setRomName(romName);
+    mcXML.setRomName(name);
+    mcTXT.setRomFileName(romFileName);
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
     mcTXT.setYear(year);

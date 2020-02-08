@@ -8,8 +8,8 @@ void McGamesAbstract::setEmulatorLoad(const std::string &emulatorLoad) {
     McGamesAbstract::emulatorLoad = emulatorLoad;
 }
 
-void McGamesAbstract::setRomName(const std::string &romName) {
-    McGamesAbstract::romName = romName;
+void McGamesAbstract::setRomFileName(const std::string &romFileName) {
+    McGamesAbstract::romFileName = romFileName;
 }
 
 void McGamesAbstract::setRomDescription(const std::string &romDescription) {
@@ -30,4 +30,8 @@ void McGamesAbstract::setRomDeveloper(const std::string &romDeveloper) {
 
 void McGamesAbstract::setRomPath(const std::string &romPath) {
     McGamesAbstract::romPath = romPath;
+}
+
+void McGamesAbstract::setRomName(const std::string &romName) {
+    McGamesAbstract::romName = romName;
 }

@@ -8,6 +8,7 @@ protected:
     std::string emulatorName;
 	std::string emulatorLoad;
     std::string romName;
+    std::string romFileName;
     std::string romDescription;
     std::string language;
     int year;
@@ -22,6 +23,7 @@ public:
     void setRomDeveloper(const std::string &romDeveloper);
     void setEmulatorName(const std::string &emulatorName);
 	void setEmulatorLoad(const std::string &emulatorLoad);
+    void setRomFileName(const std::string &romFileName);
     void setRomName(const std::string &romName);
     void setRomDescription(const std::string &romDescription);
 };
