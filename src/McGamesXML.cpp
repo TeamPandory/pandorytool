@@ -1,5 +1,6 @@
 #include "McGamesXML.h"
 #include <tinyxml2.h>
+#include "Fs.h"
 
 void McGamesXML::generate(std::string filename) {
     std::FILE* fp = std::fopen(filename.c_str(), "w");
@@ -9,7 +10,7 @@ void McGamesXML::generate(std::string filename) {
     // # Game
     xml.OpenElement("game" );
     xml.PushAttribute("emulator", emulatorName.c_str());
-    xml.PushAttribute("name", romName.c_str());
+    xml.PushAttribute("name", romFileName.c_str());
     // ## Information
     xml.OpenElement("information" );
     // ### Description
@@ -41,7 +42,7 @@ void McGamesXML::generate(std::string filename) {
     // ### File
     xml.OpenElement("file" );
     xml.OpenElement("rom" );
-    xml.PushText(romFileName.c_str());
+    xml.PushText((romFileName + Fs::getExtension(romPath)).c_str());
     xml.CloseElement();
     xml.CloseElement();
     // ### /File
