@@ -271,6 +271,7 @@ std::string emuStringload = std::to_string(emuload);
 
     McGamesTXT mcTXT;
     mcTXT.setEmulatorName(emuString);
+    mcTXT.setEmulatorLoad(emuStringload);
     mcTXT.setRomName(romName);
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
