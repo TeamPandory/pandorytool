@@ -6,7 +6,7 @@ void McGamesTXT::generate(std::string filename) {
     fp.open(filename);
 
     fp << "display_name\t" << romName << std::endl;
-    fp << "loading_time\t" << emulatorLoad << std::endl;
+    fp << "loading_time\t" << emulatorLoad << std::endl; //TODO 
     fp << "emulator_type\t" << emulatorName << std::endl;
     fp << "genre\t" << "0" << std::endl;
     fp << "production\t" << "" << std::endl;
