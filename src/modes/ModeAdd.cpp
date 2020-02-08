@@ -78,6 +78,11 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         const char *romPath = game->FirstChildElement("path")->GetText();
         const char *romName = game->FirstChildElement("name")->GetText();
         std::string absoluteRomPath = directory + "/" + romPath;
+
+        if (!Fs::exists(absoluteRomPath)) {
+            continue;
+        }
+
         std::string shortSystemName = SystemMapper::convertDirectoryNameToSystemName(system);
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + pad(std::to_string(i), 4, '0');
@@ -107,10 +112,9 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 videoPath = extractXMLText(game->FirstChildElement("video"));
                 std::string absoluteVideoPath = directory;
                 absoluteVideoPath += "/" + videoPath;
-                if (!Fs::exists(absoluteVideoPath)) {
-                    continue;
+                if (Fs::exists(absoluteVideoPath)) {
+                    copyRomVideoToDestination(absoluteVideoPath, targetRomDir);
                 }
-                copyRomVideoToDestination(absoluteVideoPath, targetRomDir);
             }
             installFile << targetRomName << std::endl;
             generateMcGamesMeta(game, shortSystemName, targetRomDir, targetRomName);
