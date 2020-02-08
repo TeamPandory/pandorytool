@@ -6,6 +6,7 @@
 class McGamesAbstract {
 protected:
     std::string emulatorName;
+	std::string emulatorLoad;
     std::string romName;
     std::string romDescription;
     std::string language;
@@ -20,6 +21,7 @@ public:
     void setRomPath(const std::string &romPath);
     void setRomDeveloper(const std::string &romDeveloper);
     void setEmulatorName(const std::string &emulatorName);
+	void setEmulatorLoad(const std::string &emulatorLoad);
     void setRomName(const std::string &romName);
     void setRomDescription(const std::string &romDescription);
 };

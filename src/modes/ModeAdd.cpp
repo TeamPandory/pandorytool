@@ -194,42 +194,60 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype=99;
+	int emuload=99;
     //test cout << "short system name is " << shortSystemName << endl;
 	    	if (shortSystemName == "FBA") {
-        	emutype = 1;}
+        	emutype = 1;
+			emuload = 1;}
 		if (shortSystemName == "MAME37") {
-		emutype = 2;}
+		emutype = 2;
+		emuload = 1;}
 		if (shortSystemName == "MAME139") {
-		emutype = 3;}
+		emutype = 3;
+		emuload = 1;}
 		if (shortSystemName == "MAME78") {
-		emutype = 4;}
+		emutype = 4;
+		emuload = 1;}
 		if (shortSystemName == "PSP") {
-		emutype = 6;}
+		emutype = 6;
+		emuload = 3;}
 		if (shortSystemName == "PS") {
-		emutype = 7;}
+		emutype = 7;
+		emuload = 3;}
 		if (shortSystemName == "N64") {
-		emutype = 8;}
+		emutype = 8;
+		emuload = 3;}
 		if (shortSystemName == "NES") {
-		emutype = 11;}
+		emutype = 11;
+		emuload = 3;}
 		if (shortSystemName == "SNES") {
-		emutype = 12;}
+		emutype = 12;
+		emuload = 0;}
 		if (shortSystemName == "GBA") {
-		emutype = 13;}
+		emutype = 13;
+		emuload = 0;}
 		if (shortSystemName == "GBC") {
-		emutype = 14;}
+		emutype = 14;
+		emuload = 0;}
 		if (shortSystemName == "MD") {
-		emutype = 15;}
+		emutype = 15;
+		emuload = 3;}
 		if (shortSystemName == "WSWAN") {
-		emutype = 16;}
+		emutype = 16;
+		emuload = 0;}
 		if (shortSystemName == "PCE") {
-		emutype = 17;}
+		emutype = 17;
+		emuload = 0;}
 		if (shortSystemName == "DC") {
-		emutype = 18;}
+		emutype = 18;
+		emuload = 3;}
 		if (shortSystemName == "MAME19") {
-		emutype = 19;}
+		emutype = 19;
+		emuload = 1;}
 	
-std::string emuString = pad(std::to_string(emutype), 0, '0');
-   
+std::string emuString = pad(std::to_string(emutype), 0 , '0');
+std::string emuStringload = pad(std::to_string(emuload), 0 , '0');
+
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
     std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
@@ -240,6 +258,7 @@ std::string emuString = pad(std::to_string(emutype), 0, '0');
 
     McGamesXML mcXML;
     mcXML.setEmulatorName(emuString);
+	mcXML.setEmulatorLoad(emuStringload);
     mcXML.setRomName(romName);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?

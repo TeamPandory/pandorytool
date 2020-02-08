@@ -66,7 +66,8 @@ void McGamesXML::generate(std::string filename) {
     xml.PushText(0);
     xml.CloseElement(); // flag
     xml.OpenElement("load_time" );
-    xml.PushText("ARSELOAD"); //TODO
+	xml.PushText(emulatorLoad.c_str());
+    // xml.PushText("ARSELOAD"); //TODO
     xml.CloseElement(); // load_time
 
     xml.OpenElement("free_play" );

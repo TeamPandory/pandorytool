@@ -4,6 +4,10 @@ void McGamesAbstract::setEmulatorName(const std::string &emulatorName) {
     McGamesAbstract::emulatorName = emulatorName;
 }
 
+void McGamesAbstract::setEmulatorLoad(const std::string &emulatorLoad) {
+    McGamesAbstract::emulatorLoad = emulatorLoad;
+}
+
 void McGamesAbstract::setRomName(const std::string &romName) {
     McGamesAbstract::romName = romName;
 }

@@ -17,7 +17,7 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "mame37") return "MAME37";
     if (dir == "mame139") return "MAME139";
     if (dir == "mame78") return "MAME78";
-
+	if (dir == "wswan") return "WSWAN";
     //...MAME...
     //...
     return "";
