@@ -42,7 +42,7 @@ void McGamesXML::generate(std::string filename) {
     // ### File
     xml.OpenElement("file" );
     xml.OpenElement("rom" );
-    xml.PushText((romFileName + Fs::getExtension(romPath)).c_str());
+    xml.PushAttribute("name", (romFileName + Fs::getExtension(romPath)).c_str());
     xml.CloseElement();
     xml.CloseElement();
     // ### /File

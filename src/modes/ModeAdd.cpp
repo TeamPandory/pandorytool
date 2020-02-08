@@ -281,6 +281,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.setEmulatorLoad(emuStringload);
     mcXML.setRomName(name);
     mcXML.setRomFileName(romFileName);
+    mcXML.setPlayers(1);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);

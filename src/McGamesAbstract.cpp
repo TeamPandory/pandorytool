@@ -35,3 +35,7 @@ void McGamesAbstract::setRomPath(const std::string &romPath) {
 void McGamesAbstract::setRomName(const std::string &romName) {
     McGamesAbstract::romName = romName;
 }
+
+void McGamesAbstract::setPlayers(int players) {
+    McGamesAbstract::players = players;
+}
