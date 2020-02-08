@@ -158,7 +158,7 @@ void ModeAdd::resetMcGamesFolder() {
 }
 
 string ModeAdd::getInstallFilePath() {
-    string mcInstall = this->targetDir + "/install.txt";
+    string mcInstall = this->targetDir + "/mcgames/install.txt";
     return mcInstall;
 }
 
