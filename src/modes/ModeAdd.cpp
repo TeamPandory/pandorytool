@@ -247,8 +247,8 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
 		emutype = 19;
 		emuload = 1;}
 	
-std::string emuString = emutype;
-std::string emuStringload = emuload;
+std::string emuString = std::to_string(emutype);
+std::string emuStringload = std::to_string(emuload);
 
     std::string desc = extractXMLText(sourceGame->FirstChildElement("desc"));
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
