@@ -12,7 +12,7 @@ protected:
     std::string romDescription;
     std::string language;
     int year;
-    int players;
+    std::string players;
     std::string romDeveloper;
     std::string romPath;
 
@@ -20,7 +20,7 @@ public:
     virtual void generate(std::string filename) = 0;
     void setLanguage(const std::string &language);
     void setYear(int year);
-    void setPlayers(int players);
+    void setPlayers(const std::string &players);
     void setRomPath(const std::string &romPath);
     void setRomDeveloper(const std::string &romDeveloper);
     void setEmulatorName(const std::string &emulatorName);

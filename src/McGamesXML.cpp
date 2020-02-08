@@ -29,6 +29,7 @@ void McGamesXML::generate(std::string filename) {
     xml.PushText(romDeveloper.c_str());
     xml.CloseElement();
     xml.OpenElement("player" );
+    xml.PushText(players.c_str());
     xml.CloseElement();
     xml.OpenElement("genre" );
     xml.PushText(0);

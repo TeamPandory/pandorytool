@@ -272,6 +272,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
     std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
     int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
+    std::string players = extractXMLText(sourceGame->FirstChildElement("players"));
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
     std::string targetXMLFile = romPath + "/" + romFileName + ".xml";
     std::string targetTXTFile = romPath + "/" + romFileName + ".txt";
@@ -281,7 +282,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.setEmulatorLoad(emuStringload);
     mcXML.setRomName(name);
     mcXML.setRomFileName(romFileName);
-    mcXML.setPlayers(1);
+    mcXML.setPlayers(players);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);
