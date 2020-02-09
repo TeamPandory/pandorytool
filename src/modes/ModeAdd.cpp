@@ -105,7 +105,12 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             if (!Fs::exists(targetRomDir)) {
                 Fs::makeDirectory(targetRomDir);
             }
-            copyRomToDestination(absoluteRomPath, targetRomDir);
+            try {
+                copyRomToDestination(absoluteRomPath, targetRomDir);
+            } catch (...) {
+                std::cout << " ## ERROR COPYING: " << absoluteRomPath << " TO " << targetRomName << "...skipping" << std::endl;
+                continue;
+            }
 
             std::string videoPath;
             if (game->FirstChildElement("video") != nullptr) {
