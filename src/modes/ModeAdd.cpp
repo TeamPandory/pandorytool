@@ -120,7 +120,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 videoPath = extractXMLText(game->FirstChildElement("video"));
                 std::string absoluteVideoPath = directory;
                 absoluteVideoPath += "/" + videoPath;
-                if (Fs::exists(absoluteVideoPath)) {
+                if (Fs::exists(absoluteVideoPath) && !videoPath.empty()) {
                     copyRomVideoToDestination(absoluteVideoPath, targetRomDir);
                 }
             }
