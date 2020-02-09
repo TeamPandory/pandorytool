@@ -181,8 +181,10 @@ string ModeAdd::getMcGamesFolder() {
 }
 
 std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
-    if (elem->GetText() != nullptr) {
-        return elem->GetText();
+    if (elem != nullptr) {
+        if (elem->GetText() != nullptr) {
+            return elem->GetText();
+        }
     }
     return std::string();
 }
@@ -272,6 +274,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     std::string relativeRomPath = Fs::basename(extractXMLText(sourceGame->FirstChildElement("path")));
     std::string dateString = extractXMLText(sourceGame->FirstChildElement("releasedate"));
     int year = (!dateString.empty()) ? std::stoi(dateString.substr(0, 4)) : 0;
+  //  std::string players = "1";
     std::string players = extractXMLText(sourceGame->FirstChildElement("players"));
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
     std::string targetXMLFile = romPath + "/" + romFileName + ".xml";
