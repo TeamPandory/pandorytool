@@ -5,7 +5,7 @@
 #include "ModeAdd.h"
 #include "../McGamesXML.h"
 #include "../McGamesTXT.h"
-
+#include "../termcolor/termcolor.hpp"
 #include "../SystemMapper.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ') {
@@ -45,7 +45,7 @@ int ModeAdd::main() {
 
 void ModeAdd::parseSourceDirectory() {
     openInstallFileHandle();
-    for (const auto &entry : filesystem::directory_iterator(this->sourceDir)) {
+    for (const auto &entry : std::filesystem::directory_iterator(this->sourceDir)) {
         std::string filePath = entry.path().string();
         std::string basename = Fs::basename(filePath);
         std::string gameListXml = filePath + "/gamelist.xml";
@@ -97,10 +97,13 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                     icon = "-";
                 }
             }*/
-            std::cout << "- Found "
-                      << extractXMLText(provider->FirstChildElement("System"))
-                      << " ROM: " << romName << " [ " << Fs::basename(romPath)
-                      << " ]" << endl;
+            std::string systemName = extractXMLText(provider->FirstChildElement("System"));
+            std::cout << "- Found ";
+            SystemMapper::setConsoleColourBySystem(system);
+            std::cout << systemName;
+            std::cout << termcolor::reset;
+            std::cout << " ROM: " << romName << " [ " << Fs::basename(romPath);
+            std::cout << " ]" << std::endl;
 
             if (!Fs::exists(targetRomDir)) {
                 Fs::makeDirectory(targetRomDir);
@@ -125,7 +128,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             generateMcGamesMeta(game, shortSystemName, targetRomDir, targetRomName);
             i++;
         } else {
-            cout << "Unknown system detected in source folder: " << system << endl;
+            std::cout << "Unknown system detected in source folder: " << system << std::endl;
         }
     }
 }
@@ -162,26 +165,26 @@ void ModeAdd::resetMcGamesFolder() {
     Fs::makeDirectory(getMcGamesFolder());
 }
 
-string ModeAdd::getInstallFilePath() {
-    string mcInstall = this->targetDir + "/mcgames/install.txt";
+std::string ModeAdd::getInstallFilePath() {
+    std::string mcInstall = this->targetDir + "/mcgames/install.txt";
     return mcInstall;
 }
 
 bool ModeAdd::createTargetDirectory() {
-    string mc = getMcGamesFolder();
+    std::string mc = getMcGamesFolder();
     bool result = false;
     if (!Fs::exists(mc)) {
-        cout << "Making " << mc << endl;
+        std::cout << "Making " << mc << std::endl;
         result = Fs::makeDirectory(mc);
         if (!result) {
-            cout << "Cannot create target" << endl;
+            std::cout << "Cannot create target" << std::endl;
         }
     }
     return result;
 }
 
-string ModeAdd::getMcGamesFolder() {
-    string mc = this->targetDir + "/mcgames";
+std::string ModeAdd::getMcGamesFolder() {
+    std::string mc = this->targetDir + "/mcgames";
     return mc;
 }
 

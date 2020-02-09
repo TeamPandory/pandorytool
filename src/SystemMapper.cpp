@@ -1,4 +1,5 @@
 #include "SystemMapper.h"
+#include "termcolor/termcolor.hpp"
 
 std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "dreamcast") return "DC";
@@ -21,4 +22,8 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     //...MAME...
     //...
     return "";
+}
+
+void SystemMapper::setConsoleColourBySystem(const std::string& systemName) {
+    if (systemName == "gba") std::cout << termcolor::red;
 }
