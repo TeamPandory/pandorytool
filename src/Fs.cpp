@@ -2,13 +2,13 @@
 #include <filesystem>
 #include "Fs.h"
 
-bool Fs::exists(const string& file) {
+bool Fs::exists(const std::string& file) {
     struct stat buffer{};
     int result = (stat (file.c_str(), &buffer) == 0);
     return (bool)result;
 }
 
-bool Fs::makeDirectory(const string& dir) {
+bool Fs::makeDirectory(const std::string& dir) {
 #ifdef __MINGW32__
     const int error = mkdir(dir.c_str());
 #else
@@ -17,21 +17,21 @@ bool Fs::makeDirectory(const string& dir) {
     return -1 != error;
 }
 
-bool Fs::remove(const string &file) {
+bool Fs::remove(const std::string &file) {
     return std::filesystem::remove_all(file.c_str());
 }
 
-string Fs::basename(const string &file) {
+std::string Fs::basename(const std::string &file) {
     std::string base = std::filesystem::path(file).filename().string();
     return base;
 }
 
-string Fs::dirname(const string &file) {
+std::string Fs::dirname(const std::string &file) {
     std::string dirname = std::filesystem::path(file).parent_path().string();
     return dirname;
 }
 
-string Fs::getExtension(const string &file) {
+std::string Fs::getExtension(const std::string &file) {
     std::string extension = std::filesystem::path(file).extension().string();
     return extension;
 }

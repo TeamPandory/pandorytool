@@ -14,24 +14,24 @@ protected:
     Fs fs;
     bool validate();
     bool createTargetDirectory();
-    string getMcGamesFolder();
+    std::string getMcGamesFolder();
     void resetInstallFile();
-    string getInstallFilePath();
-    string pad(string string, const size_t size, const char character);
+    std::string getInstallFilePath();
+    std::string pad(std::string string, const size_t size, const char character);
     void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romFileName);
 
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);
     int main();
     void parseSourceDirectory();
-    void parseSourceGameXML(const string &gameListXml);
-    void copyRomToDestination(const string &rom, const string &destination);
-    void copyRomVideoToDestination(const string &absoluteVideoPath, const string &destination);
+    void parseSourceGameXML(const std::string &gameListXml);
+    void copyRomToDestination(const std::string &rom, const std::string &destination);
+    void copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination);
 
     void openInstallFileHandle();
     void closeInstallFileHandle();
     void resetMcGamesFolder();
-    string extractXMLText(tinyxml2::XMLElement *elem);
+    std::string extractXMLText(tinyxml2::XMLElement *elem);
 };
 
 #endif //PANDORER_MODEADD_H

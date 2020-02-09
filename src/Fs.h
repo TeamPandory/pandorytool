@@ -2,20 +2,19 @@
 #define PANDORER_FILESYSTEM_H
 
 #include <string>
-using namespace std;
 
 class Fs {
 public:
-    static bool exists(const string& file);
-    static bool makeDirectory(const string& dir);
-    static bool remove(const string& file);
-    static string basename(const string& file);
-    static string dirname(const string& file);
+    static bool exists(const std::string& file);
+    static bool makeDirectory(const std::string& dir);
+    static bool remove(const std::string& file);
+    static std::string basename(const std::string& file);
+    static std::string dirname(const std::string& file);
 
     static int filesize(std::string src);
-    static int copy(string source, string destination);
+    static int copy(std::string source, std::string destination);
 
-    static string getExtension(const string &file);
+    static std::string getExtension(const std::string &file);
 };
 
 
