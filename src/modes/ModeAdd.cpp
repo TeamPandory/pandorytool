@@ -5,6 +5,7 @@
 #include "ModeAdd.h"
 #include "../McGamesXML.h"
 #include "../McGamesTXT.h"
+#include "../ConsoleColour.h"
 
 #include "../SystemMapper.h"
 
@@ -97,10 +98,14 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                     icon = "-";
                 }
             }*/
-            std::cout << "- Found "
-                      << extractXMLText(provider->FirstChildElement("System"))
-                      << " ROM: " << romName << " [ " << Fs::basename(romPath)
-                      << " ]" << endl;
+            std::string systemName = extractXMLText(provider->FirstChildElement("System"));
+            std::cout << "- Found ";
+            ConsoleColour cc;
+            cc.setConsoleColour(5,0);
+            std::cout << systemName;
+            cc.setConsoleColour(7,0);
+            std::cout << " ROM: " << romName << " [ " << Fs::basename(romPath);
+            std::cout << " ]" << endl;
 
             if (!Fs::exists(targetRomDir)) {
                 Fs::makeDirectory(targetRomDir);

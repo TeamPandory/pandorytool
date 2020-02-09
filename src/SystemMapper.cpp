@@ -1,5 +1,10 @@
 #include "SystemMapper.h"
 
+int SystemMapper::getConsoleColour(std::string systemName) {
+    if (systemName == "GBA") return 5;
+    return 7;
+}
+
 std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "dreamcast") return "DC";
     if (dir == "gba") return "GBA";

@@ -5,6 +5,8 @@
 class SystemMapper {
 public:
     static std::string convertDirectoryNameToSystemName(std::string dir);
+
+    int getConsoleColour(std::string systemName);
 };
 
 
