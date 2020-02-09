@@ -5,11 +5,9 @@
 #include <tinyxml2.h>
 #include <fstream>
 #include "../Fs.h"
-#include "../ConsoleColour.h"
 
 class ModeAdd {
 protected:
-    ConsoleColour cc;
     std::ofstream installFile;
     std::string& sourceDir;
     std::string& targetDir;

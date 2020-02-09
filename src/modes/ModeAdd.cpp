@@ -6,7 +6,7 @@
 #include "../McGamesXML.h"
 #include "../McGamesTXT.h"
 #include "../ConsoleColour.h"
-
+#include "../termcolor/termcolor.hpp"
 #include "../SystemMapper.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ') {
@@ -100,9 +100,8 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             }*/
             std::string systemName = extractXMLText(provider->FirstChildElement("System"));
             std::cout << "- Found ";
-            cc.setConsoleColour(SystemMapper::getConsoleColour(system), 0);
+            std::cout << (SystemMapper::getConsoleColour(system), 0);
             std::cout << systemName;
-            cc.setDefaultConsoleColour();
             std::cout << " ROM: " << romName << " [ " << Fs::basename(romPath);
             std::cout << " ]" << endl;
 

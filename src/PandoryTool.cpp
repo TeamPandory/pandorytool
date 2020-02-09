@@ -1,15 +1,12 @@
 #include "CommandLineArguments.h"
 #include "PandoryTool.h"
 #include "modes/ModeAdd.h"
-#include "ConsoleColour.h"
 
 PandoryTool::PandoryTool(int i, char **pString) {
     args = CommandLineArguments(i, pString);
 }
 
 int PandoryTool::main() {
-    ConsoleColour cc;
-    cc.setDefaultConsoleColour();
     std::cout << "Pandora 3D Add Game Utility, by emuchicken & dajoho" << std::endl;
     if (args.getArgumentCount() == 1) {
         usage();
