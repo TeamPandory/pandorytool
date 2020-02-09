@@ -100,8 +100,9 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             }*/
             std::string systemName = extractXMLText(provider->FirstChildElement("System"));
             std::cout << "- Found ";
-            std::cout << (SystemMapper::getConsoleColour(system), 0);
+            SystemMapper::setConsoleColourBySystem(system);
             std::cout << systemName;
+            std::cout << termcolor::reset;
             std::cout << " ROM: " << romName << " [ " << Fs::basename(romPath);
             std::cout << " ]" << endl;
 
