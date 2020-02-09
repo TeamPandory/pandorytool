@@ -13,3 +13,8 @@ void ConsoleColour::setConsoleColour(int textcol, int backcol) {
     SetConsoleTextAttribute(hStdOut, wAttributes);
 #endif
 }
+
+void ConsoleColour::setDefaultConsoleColour()
+{
+    setConsoleColour(7,0);
+}

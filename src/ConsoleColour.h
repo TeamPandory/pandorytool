@@ -6,6 +6,7 @@ class ConsoleColour {
 public:
     void setConsoleColour(int textcol, int backcol);
 
+    void setDefaultConsoleColour();
 };
 
 
