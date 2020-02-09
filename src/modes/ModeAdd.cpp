@@ -67,7 +67,7 @@ void ModeAdd::closeInstallFileHandle() {
 void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
     tinyxml2::XMLDocument doc;
     FILE * xmlFile;
-    xmlFile = fopen(gameListXml.c_str(), "r");
+    xmlFile = fopen(gameListXml.c_str(), "rb");
     doc.LoadFile(xmlFile);
     std::string directory = Fs::dirname(gameListXml);
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
