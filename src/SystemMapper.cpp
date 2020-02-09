@@ -24,6 +24,7 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     return "";
 }
 
-void SystemMapper::setConsoleColourBySystem(const std::string& systemName) {
-    if (systemName == "gba") std::cout << termcolor::red;
+void SystemMapper::setConsoleColourBySystem(const std::string& dir) {
+    if (dir == "gba") std::cout << termcolor::grey;
+    if (dir == "mame78") std::cout << termcolor::green;
 }
