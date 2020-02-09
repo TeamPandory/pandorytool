@@ -88,6 +88,7 @@ void McGamesXML::generate(std::string filename) {
     // ### /Config
 
     xml.CloseElement(); // game
+    fclose(fp);
 }
 
 
