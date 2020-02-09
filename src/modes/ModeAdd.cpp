@@ -66,7 +66,8 @@ void ModeAdd::closeInstallFileHandle() {
 
 void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
     tinyxml2::XMLDocument doc;
-    doc.LoadFile(gameListXml.c_str());
+    FILE * xmlFile = fopen(gameListXml.c_str(), "r");
+    doc.LoadFile(xmlFile);
     std::string directory = Fs::dirname(gameListXml);
     tinyxml2::XMLElement *gameList = doc.FirstChildElement("gameList");
     tinyxml2::XMLElement *provider = gameList->FirstChildElement("provider");
@@ -131,6 +132,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             std::cout << "Unknown system detected in source folder: " << system << std::endl;
         }
     }
+    fclose(xmlFile);
 }
 
 // Checks subfolders within “source rom folder”.
