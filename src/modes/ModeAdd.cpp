@@ -214,7 +214,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
 // install.txt file should then be appended with the “ARSENAME” (DC0001)
 // repeat / loop process until all roms have been added.
 void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath,
-                                  std::string romFileName) {
+                                  std::string targetRomName) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype = 99;
@@ -296,19 +296,22 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
   //  std::string players = "1";
     std::string players = extractXMLText(sourceGame->FirstChildElement("players"));
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
-    std::string targetXMLFile = romPath + "/" + romFileName + ".xml";
-    std::string targetTXTFile = romPath + "/" + romFileName + ".txt";
+    std::string targetXMLFile = romPath + "/" + targetRomName + ".xml";
+    std::string targetTXTFile = romPath + "/" + targetRomName + ".txt";
     bool rename = SystemMapper::getSystemRenameFlag(system);
+    std::string romFileName = relativeRomPath;
+    if (rename) {
+        romFileName = targetRomName + Fs::getExtension(relativeRomPath);
+    } else {
+        romFileName = relativeRomPath;
+    }
 
     McGamesXML mcXML;
-    mcXML.setEmulatorName(emuString);
+    mcXML.setEmulatorId(emuString);
     mcXML.setEmulatorLoad(emuStringload);
-    mcXML.setRomName(name);
-    if (rename) {
-        mcXML.setRomFileName(romFileName);
-    } else {
-        mcXML.setRomFileName(std::filesystem::path(relativeRomPath).stem().c_str());
-    };
+    mcXML.setRomTitle(name);
+    mcXML.setRomFileName(romFileName);
+    mcXML.setRomShortId(targetRomName);
     mcXML.setPlayers(players);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
@@ -319,10 +322,10 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.generate(targetXMLFile);
 
     McGamesTXT mcTXT;
-    mcTXT.setEmulatorName(emuString);
+    mcTXT.setEmulatorId(emuString);
     mcTXT.setEmulatorLoad(emuStringload);
-    mcTXT.setRomName(name);
-    mcTXT.setRomFileName(romFileName);
+    mcTXT.setRomTitle(name);
+    mcTXT.setRomShortId(targetRomName);
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
     mcTXT.setYear(year);

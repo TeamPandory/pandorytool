@@ -9,8 +9,8 @@ void McGamesXML::generate(std::string filename) {
 
     // # Game
     xml.OpenElement("game" );
-    xml.PushAttribute("emulator", emulatorName.c_str());
-    xml.PushAttribute("name", romFileName.c_str());
+    xml.PushAttribute("emulator", emulatorId.c_str());
+    xml.PushAttribute("name", romShortId.c_str());
     // ## Information
     xml.OpenElement("information" );
     // ### Description
@@ -43,7 +43,7 @@ void McGamesXML::generate(std::string filename) {
     // ### File
     xml.OpenElement("file" );
     xml.OpenElement("rom" );
-    xml.PushAttribute("name", (romFileName + Fs::getExtension(romPath)).c_str());
+    xml.PushAttribute("name", romFileName.c_str());
     xml.CloseElement();
     xml.CloseElement();
     // ### /File
@@ -53,7 +53,7 @@ void McGamesXML::generate(std::string filename) {
     xml.OpenElement("string" );
     xml.PushAttribute("language", "EN");
     xml.OpenElement("name" );
-    xml.PushText(romName.c_str());
+    xml.PushText(romFullName.c_str());
     xml.CloseElement(); // name
     xml.OpenElement("detail" );
     xml.PushText(romDescription.c_str());

@@ -1,15 +1,15 @@
 #include "McGamesAbstract.h"
 
-void McGamesAbstract::setEmulatorName(const std::string &emulatorName) {
-    McGamesAbstract::emulatorName = emulatorName;
+void McGamesAbstract::setEmulatorId(const std::string &emulatorName) {
+    McGamesAbstract::emulatorId = emulatorName;
 }
 
 void McGamesAbstract::setEmulatorLoad(const std::string &emulatorLoad) {
     McGamesAbstract::emulatorLoad = emulatorLoad;
 }
 
-void McGamesAbstract::setRomFileName(const std::string &romFileName) {
-    McGamesAbstract::romFileName = romFileName;
+void McGamesAbstract::setRomShortId(const std::string &romFileName) {
+    McGamesAbstract::romShortId = romFileName;
 }
 
 void McGamesAbstract::setRomDescription(const std::string &romDescription) {
@@ -29,11 +29,11 @@ void McGamesAbstract::setRomDeveloper(const std::string &romDeveloper) {
 }
 
 void McGamesAbstract::setRomPath(const std::string &romPath) {
-    McGamesAbstract::romPath = romPath;
+    McGamesAbstract::romDirectory = romPath;
 }
 
-void McGamesAbstract::setRomName(const std::string &romName) {
-    McGamesAbstract::romName = romName;
+void McGamesAbstract::setRomTitle(const std::string &romTitle) {
+    McGamesAbstract::romFullName = romTitle;
 }
 
 void McGamesAbstract::setPlayers(const std::string &players) {
@@ -42,4 +42,9 @@ void McGamesAbstract::setPlayers(const std::string &players) {
 
 void McGamesAbstract::setSaveState(bool saveState) {
     McGamesAbstract::saveState = saveState;
+}
+
+void McGamesAbstract::setRomFileName(const std::string &romFileName) {
+    McGamesAbstract::romFileName = romFileName;
+
 }

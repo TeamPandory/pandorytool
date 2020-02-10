@@ -18,7 +18,7 @@ protected:
     void resetInstallFile();
     std::string getInstallFilePath();
     std::string pad(std::string string, const size_t size, const char character);
-    void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath, std::string romFileName);
+    void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath, std::string targetRomName);
 
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);

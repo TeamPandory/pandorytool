@@ -5,16 +5,17 @@
 
 class McGamesAbstract {
 protected:
-    std::string emulatorName;
+    std::string emulatorId;
 	std::string emulatorLoad;
-    std::string romName;
+    std::string romFullName;
+    std::string romShortId;
     std::string romFileName;
     std::string romDescription;
     std::string language;
     int year;
     std::string players;
     std::string romDeveloper;
-    std::string romPath;
+    std::string romDirectory;
     bool saveState;
 
 public:
@@ -24,10 +25,11 @@ public:
     void setPlayers(const std::string &players);
     void setRomPath(const std::string &romPath);
     void setRomDeveloper(const std::string &romDeveloper);
-    void setEmulatorName(const std::string &emulatorName);
+    void setEmulatorId(const std::string &emulatorName);
 	void setEmulatorLoad(const std::string &emulatorLoad);
+    void setRomShortId(const std::string &romFileName);
+    void setRomTitle(const std::string &romTitle);
     void setRomFileName(const std::string &romFileName);
-    void setRomName(const std::string &romName);
     void setRomDescription(const std::string &romDescription);
     void setSaveState(bool saveState);
 };
