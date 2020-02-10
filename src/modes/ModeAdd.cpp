@@ -111,7 +111,8 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 Fs::makeDirectory(targetRomDir);
             }
             try {
-                copyRomToDestination(absoluteRomPath, targetRomDir);
+                bool rename = SystemMapper::getSystemRenameFlag(system);
+                copyRomToDestination(absoluteRomPath, targetRomDir, rename);
             } catch (...) {
                 std::cout << " ## ERROR COPYING: " << absoluteRomPath << " TO " << targetRomName << "...skipping" << std::endl;
                 continue;
@@ -127,7 +128,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 }
             }
             installFile << targetRomName << std::endl;
-            generateMcGamesMeta(game, shortSystemName, targetRomDir, targetRomName);
+            generateMcGamesMeta(game, system, shortSystemName, targetRomDir, targetRomName);
             i++;
         } else {
             std::cout << "Unknown system detected in source folder: " << system << std::endl;
@@ -140,9 +141,16 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
 // Copies both rom file
 // – to usbdevice:\mcgames\DC0001 (if dreamcast game) – check “ARSENAME” below for naming convention.
 // Both DC0001.cdi should be within the mcgames/DC0001 folder.
-void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &destination) {
-    std::string basename = Fs::basename(destination);
-    std::string extension = Fs::getExtension(rom);
+void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &destination, bool rename) {
+    std::string basename;
+    std::string extension;
+    if (rename) {
+        basename = Fs::basename(destination);
+        extension = Fs::getExtension(rom);
+    } else {
+        basename = Fs::basename(rom);
+        extension = "";
+    }
     Fs::copy(rom, destination + "/" + basename + extension);
 }
 
@@ -205,7 +213,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
 // following variables changed depending on system and game (see below)
 // install.txt file should then be appended with the “ARSENAME” (DC0001)
 // repeat / loop process until all roms have been added.
-void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath,
+void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath,
                                   std::string romFileName) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
@@ -290,18 +298,24 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
     std::string targetXMLFile = romPath + "/" + romFileName + ".xml";
     std::string targetTXTFile = romPath + "/" + romFileName + ".txt";
+    bool rename = SystemMapper::getSystemRenameFlag(system);
 
     McGamesXML mcXML;
     mcXML.setEmulatorName(emuString);
     mcXML.setEmulatorLoad(emuStringload);
     mcXML.setRomName(name);
-    mcXML.setRomFileName(romFileName);
+    if (rename) {
+        mcXML.setRomFileName(romFileName);
+    } else {
+        mcXML.setRomFileName(std::filesystem::path(relativeRomPath).stem().c_str());
+    };
     mcXML.setPlayers(players);
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);
     mcXML.setRomDeveloper(developer);
     mcXML.setRomPath(relativeRomPath);
+    mcXML.setSaveState(SystemMapper::getSystemSaveState(system));
     mcXML.generate(targetXMLFile);
 
     McGamesTXT mcTXT;

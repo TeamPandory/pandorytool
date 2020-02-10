@@ -15,6 +15,7 @@ protected:
     std::string players;
     std::string romDeveloper;
     std::string romPath;
+    bool saveState;
 
 public:
     virtual void generate(std::string filename) = 0;
@@ -28,6 +29,7 @@ public:
     void setRomFileName(const std::string &romFileName);
     void setRomName(const std::string &romName);
     void setRomDescription(const std::string &romDescription);
+    void setSaveState(bool saveState);
 };
 
 

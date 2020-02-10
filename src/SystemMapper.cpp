@@ -28,3 +28,22 @@ void SystemMapper::setConsoleColourBySystem(const std::string& dir) {
     if (dir == "gba") std::cout << termcolor::grey;
     if (dir == "mame78") std::cout << termcolor::green;
 }
+
+int SystemMapper::getSystemSaveState(const std::string& dir) {
+    if (dir == "fba") return false;
+    if (dir == "n64") return false;
+    if (dir == "mame19") return false;
+    if (dir == "mame37") return false;
+    if (dir == "mame139") return false;
+    if (dir == "mame78") return false;
+    return true;
+}
+
+bool SystemMapper::getSystemRenameFlag(const std::string& dir) {
+    if (dir == "fba") return false;
+    if (dir == "mame19") return false;
+    if (dir == "mame37") return false;
+    if (dir == "mame139") return false;
+    if (dir == "mame78") return false;
+    return true;
+}

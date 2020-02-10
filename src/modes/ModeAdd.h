@@ -18,14 +18,14 @@ protected:
     void resetInstallFile();
     std::string getInstallFilePath();
     std::string pad(std::string string, const size_t size, const char character);
-    void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string shortSystemName, std::string romPath, std::string romFileName);
+    void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath, std::string romFileName);
 
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);
     int main();
     void parseSourceDirectory();
     void parseSourceGameXML(const std::string &gameListXml);
-    void copyRomToDestination(const std::string &rom, const std::string &destination);
+    void copyRomToDestination(const std::string &rom, const std::string &destination, bool rename = true);
     void copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination);
 
     void openInstallFileHandle();

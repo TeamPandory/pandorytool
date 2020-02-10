@@ -39,3 +39,7 @@ void McGamesAbstract::setRomName(const std::string &romName) {
 void McGamesAbstract::setPlayers(const std::string &players) {
     McGamesAbstract::players = players;
 }
+
+void McGamesAbstract::setSaveState(bool saveState) {
+    McGamesAbstract::saveState = saveState;
+}

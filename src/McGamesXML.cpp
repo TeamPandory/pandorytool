@@ -77,7 +77,7 @@ void McGamesXML::generate(std::string filename) {
     xml.CloseElement(); // free_play
 
     xml.OpenElement("save_state" );
-    xml.PushText(true); //TODO
+    xml.PushText(saveState);
     xml.CloseElement(); // save_state
 
     xml.OpenElement("start_directly" );
