@@ -88,6 +88,10 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         std::string shortSystemName = SystemMapper::convertDirectoryNameToSystemName(system);
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + pad(std::to_string(i), 4, '0');
+            if (!SystemMapper::getSystemRenameFlag(system)) {
+                targetRomName = Fs::stem(romPath);
+            }
+
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
             /*std::string floppy = "\U0001F4BE";
             std::string cdrom = "\U0001F4C0";
@@ -146,7 +150,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
     std::string extension;
     if (rename) {
         basename = Fs::basename(destination);
-        extension = Fs::getExtension(rom);
+        extension = Fs::extension(rom);
     } else {
         basename = Fs::basename(rom);
         extension = "";
@@ -158,7 +162,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
 // DC0001.mp4 should be within the mcgames/DC0001 folder.
 void ModeAdd::copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination) {
     std::string basename = Fs::basename(destination);
-    std::string extension = Fs::getExtension(absoluteVideoPath);
+    std::string extension = Fs::extension(absoluteVideoPath);
     Fs::copy(absoluteVideoPath, destination + "/" + basename + extension);
 }
 
@@ -301,7 +305,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     bool rename = SystemMapper::getSystemRenameFlag(system);
     std::string romFileName = relativeRomPath;
     if (rename) {
-        romFileName = targetRomName + Fs::getExtension(relativeRomPath);
+        romFileName = targetRomName + Fs::extension(relativeRomPath);
     } else {
         romFileName = relativeRomPath;
     }

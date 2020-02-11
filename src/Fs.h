@@ -14,7 +14,9 @@ public:
     static int filesize(std::string src);
     static int copy(std::string source, std::string destination);
 
-    static std::string getExtension(const std::string &file);
+    static std::string extension(const std::string &file);
+
+    static std::string stem(const std::string &file);
 };
 
 

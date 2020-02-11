@@ -21,6 +21,11 @@ bool Fs::remove(const std::string &file) {
     return std::filesystem::remove_all(file.c_str());
 }
 
+std::string Fs::stem(const std::string &file) {
+    std::string base = std::filesystem::path(file).stem().string();
+    return base;
+}
+
 std::string Fs::basename(const std::string &file) {
     std::string base = std::filesystem::path(file).filename().string();
     return base;
@@ -31,7 +36,7 @@ std::string Fs::dirname(const std::string &file) {
     return dirname;
 }
 
-std::string Fs::getExtension(const std::string &file) {
+std::string Fs::extension(const std::string &file) {
     std::string extension = std::filesystem::path(file).extension().string();
     return extension;
 }
