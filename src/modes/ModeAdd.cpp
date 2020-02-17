@@ -74,12 +74,27 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
     tinyxml2::XMLElement *provider = gameList->FirstChildElement("provider");
     std::string system = Fs::basename(directory);
     int i = 1;
+
     for (tinyxml2::XMLElement *game = gameList->FirstChildElement("game");
          game != nullptr;
          game = game->NextSiblingElement("game")) {
         const char *romPath = game->FirstChildElement("path")->GetText();
         const char *romName = game->FirstChildElement("name")->GetText();
         std::string absoluteRomPath = directory + "/" + romPath;
+
+#ifndef NO_SHAREWARE_LIMIT
+        int limit = 50;
+        if (i > limit) {
+            std::cout << std::endl;
+            std::cout << "pandorytool is shareware and is the product of many hours of blood, sweat and tears. " << std::endl;
+            std::cout << "This version is limited to " << limit << " roms." << std::endl;
+            std::cout << "If you wish to transfer more, you can compile the source ";
+            std::cout << "code yourself, or consider supporting us by grabbing us a coffee at" << std::endl;
+            std::cout << "https://www.buymeacoffee.com/CKZbiXa and we will send you a copy of the unlimited version. Thanks!";
+            std::cout << std::endl;
+            break;
+        }
+#endif
 
         if (!Fs::exists(absoluteRomPath)) {
             continue;
