@@ -7,3 +7,7 @@ cmake --build .
 if [ -x "$(command -v upx)" ]; then
   upx -9 pandory.exe
 fi
+
+ZIPFILE="pandory-"$(git rev-parse HEAD)
+rm -f $ZIPFILE;
+zip -v $ZIPFILE pandory.exe ../README.md;
