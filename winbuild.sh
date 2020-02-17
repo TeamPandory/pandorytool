@@ -8,6 +8,6 @@ if [ -x "$(command -v upx)" ]; then
   upx -9 pandory.exe
 fi
 
-ZIPFILE="pandory-"$(git rev-parse HEAD)
+ZIPFILE="pandory-"$(git rev-parse HEAD)".zip"
 rm -f $ZIPFILE;
-zip -v $ZIPFILE pandory.exe ../README.md;
+zip -jv $ZIPFILE pandory.exe ../README.md;
