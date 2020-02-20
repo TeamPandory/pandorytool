@@ -261,7 +261,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     }
     if (shortSystemName == "PS") {
         emutype = 7;
-        emuload = 3;
+        emuload = 0;
     }
     if (shortSystemName == "N64") {
         emutype = 8;
