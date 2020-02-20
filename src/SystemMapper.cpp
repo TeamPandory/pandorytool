@@ -18,15 +18,31 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "mame37") return "MAME37";
     if (dir == "mame139") return "MAME139";
     if (dir == "mame78") return "MAME78";
-	if (dir == "wswan") return "WSWAN";
+    if (dir == "wswan") return "WSWAN";
     //...MAME...
     //...
     return "";
 }
 
 void SystemMapper::setConsoleColourBySystem(const std::string& dir) {
-    if (dir == "gba") std::cout << termcolor::grey;
-    if (dir == "mame78") std::cout << termcolor::green;
+	if (dir == "dreamcast") std::cout << termcolor::blue;
+	if (dir == "gba") std::cout << termcolor::red;
+	if (dir == "gbc") std::cout << termcolor::red;
+	if (dir == "megadrive") std::cout << termcolor::blue;
+	if (dir == "n64") std::cout << termcolor::red;
+	if (dir == "playstation") std::cout << termcolor::green;
+	if (dir == "psp") std::cout << termcolor::green;
+	if (dir == "snes") std::cout << termcolor::red;
+    	if (dir == "nes") std::cout << termcolor::red;
+	if (dir == "pcengine") std::cout << termcolor::yellow;
+	if (dir == "fba") std::cout << termcolor::cyan;
+	if (dir == "mame19") std::cout << termcolor::magenta;
+	if (dir == "mame37") std::cout << termcolor::magenta;
+	if (dir == "mame139") std::cout << termcolor::magenta;
+	if (dir == "mame78") std::cout << termcolor::magenta;
+	if (dir == "wswan") std::cout << termcolor::yellow;
+	
+	
 }
 
 int SystemMapper::getSystemSaveState(const std::string& dir) {
