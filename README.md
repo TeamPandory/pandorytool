@@ -27,7 +27,7 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 ## Use *with Windows machine:
 
 1. Format a USB stick, exfat unit size 32kb
-2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly: *The archive will have all folders ready*
+2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:
 	
   Folder name						Required filetype
 	dreamcast						CDI
