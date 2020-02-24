@@ -10,8 +10,8 @@ A backup of your system is recommended - so clone your microsd with win32imager 
 
 ## Support Us!
 Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
-1 coffee : The current, UNLOCKED, version of Pandory will sent
-3 coffees : As above, and your email will be saved to a maillist, where you will be sent all major revisions of the UNLOCKED Pandorytool.
+1 coffee : The current, UNLOCKED, version of Pandory will sent.  
+3 coffees : As above, and your email will be saved to a maillist, where you will be sent all major revisions of the UNLOCKED Pandorytool.  
 5 coffees+ : All of above, and shall be remembered forever in the HIGHSCORE CHART underneath *with optional message*
 
 ## Clone and compile
