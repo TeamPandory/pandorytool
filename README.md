@@ -10,7 +10,7 @@ A backup of your system is recommended - so clone your microsd with win32imager 
 
 ## Support Us!
 pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
-* All users that donate will be provided with the latest, unlocked and compiled version of Pandory.  If required, we will 
+* All users that donate will be provided with the latest, unlocked, compiled version of Pandory.  Those that have donated shall be remembered forever in the THANKS HIGHSCORE CHART underneath *with optional message*
 
 ## Clone and compile
 ```
@@ -29,18 +29,18 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 	
   Folder name						Required filetype
 	dreamcast						CDI
-	fba								ZIP
-	gba								GBA / BIN / AGB / GBZ
-	gbc								GB / GBC / SGB
+	fba							ZIP
+	gba							GBA / BIN / AGB / GBZ
+	gbc							GB / GBC / SGB
 	mame139							ZIP
 	mame37							ZIP
 	mame78							ZIP
 	megadrive						MDX / MD / SMD / GEN / BIN / CUE / ISO / CHD / SMS / GG / SG
-	n64								N64
-	nes								FDS / NES / UNF / UNIF
+	n64							N64
+	nes							FDS / NES / UNF / UNIF
 	pcengine						PCE / CUE / CCD / CHD
 	playstation						IMG / PBP (possible??)
-	psp								ISO
+	psp							ISO
 	snes							SMC / SFC / SWC / FIG / BS
 	wswan							WSC
 
@@ -71,4 +71,5 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
 - All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.
 
-## Thanks
+## Thanks Highscore chart
+-currently zero-
