@@ -9,8 +9,10 @@ We will not take any responsibility on the destruction of your device, or for an
 A backup of your system is recommended - so clone your microsd with win32imager before any alterations are made.  Removing 2 PLAYER PSP titles at this time is IRREVERSIBLE!  Be careful of what you remove from your original PANDORA system.
 
 ## Support Us!
-pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
-* All users that donate will be provided with the latest, unlocked, compiled version of Pandory.  Those that have donated shall be remembered forever in the THANKS HIGHSCORE CHART underneath *with optional message*
+Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
+3 USD or more: The current, UNLOCKED, version of Pandory will sent
+10 USD or more: As above, and your email will be saved to a maillist, where you will be sent all major revisions of the UNLOCKED Pandorytool.
+15 USD or more: All of above, and shall be remembered forever in the HIGHSCORE CHART underneath *with optional message*
 
 ## Clone and compile
 ```
@@ -64,12 +66,19 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 
 6. Play!
 
+## Note:
+- The restricted version will only support up to 20 titles per system.  Once you have installed them, you will need to remove them in order to add more from that system.  If you don't, upon installation you will be given an error from the Pandora Games 3D unit.
+- This method will install games to the MicroSD inside the unit.  Please make sure you have enough space for the added titles.  However, if you want to install them to the same USB stick.  You will need to make a folder in the root of the stick named "games", and then inside this, "download".
+
 ## Issues:
 - The Pandora Games 3D encrypts the data when we use this (mcgames) method.  Unfortunately, at this point in time, we cannot change data once it's on the device, which means no changing of controls re: PSP analogue sticks, perhaps the N64 controls etc. If you want to do this, I'd place the rom in the games/download folder, then alter the data from the configs that were created once running the Pandora.  There may be a way around it if you used a USB N64 pad or something similar however, but more testing is needed.
 - PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed (Suspected faked ADHOC commands from within the emulator), we cannot easily add these with our current tools.
-- The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games.  Whilst this tool may work with other systems (I'm looking at the Pandora handheld, and the WIFI version), it will not be a universal PANDORA "KEY"
+- Playstation games tend to be finicky with the extension types.  According to the manual, only IMG is supported.
+- All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.  It may be that the emulator in the Pandora simply does not support this title.
+- The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
+- Whilst this tool may work with other systems (I'm looking at the Pandora handheld, and the WIFI version), it will not be a universal PANDORA "KEY".  
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
-- All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.
+
 
 ## Thanks Highscore chart
 -currently zero-
