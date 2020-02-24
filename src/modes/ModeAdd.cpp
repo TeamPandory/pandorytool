@@ -83,7 +83,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         std::string absoluteRomPath = directory + "/" + romPath;
 
 #ifndef NO_SHAREWARE_LIMIT
-        int limit = 50;
+        int limit = 20;
         if (i > limit) {
             std::cout << std::endl;
             std::cout << "pandorytool is shareware and is the product of many hours of blood, sweat and tears. " << std::endl;
