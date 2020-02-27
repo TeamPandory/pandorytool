@@ -1,5 +1,6 @@
 # pandorytool
 A tool to automate ROM installation for the Pandora Games 3D
+*Also compatible with PANDORA 9H (thanks akira84!)
 
 ## License
 pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
@@ -65,6 +66,9 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 	-Hit the A button to install games
 
 6. Play!
+
+## TUTORIAL GUIDE
+A step-by-step tutorial video can be found at https://youtu.be/10naz1ZUOC4 or https://www.bitchute.com/video/AgxJKugYWDU4/
 
 ## Note:
 - The restricted version will only support up to 20 titles per system.  Once you have installed them, you will need to remove them in order to add more from that system.  If you don't, upon installation you will be given an error from the Pandora Games 3D unit.
