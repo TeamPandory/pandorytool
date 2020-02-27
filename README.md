@@ -1,6 +1,7 @@
 # pandorytool
 A tool to automate ROM installation for the Pandora Games 3D  
 *Also compatible with PANDORA 9H (thanks akira84!)
+Work based upon the file "ex mame139 (manque rom zip).zip", uploaded by Thomas Bouvrette.
 
 ## License
 pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
@@ -83,7 +84,6 @@ https://youtu.be/10naz1ZUOC4 or https://www.bitchute.com/video/AgxJKugYWDU4/
 - The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
 - Whilst this tool may work with other systems (I'm looking at the Pandora handheld, and the WIFI version), it will not be a universal PANDORA "KEY".  
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
-
 
 ## Thanks Highscore chart
 -currently zero-
