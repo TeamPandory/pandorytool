@@ -1,6 +1,6 @@
 # pandorytool
 A tool to automate ROM installation for the Pandora Games 3D  
-*Also compatible with PANDORA 9H (thanks akira84!)
+*Also compatible with PANDORA 9H (thanks akira84!)  	
 Work based upon the file "ex mame139 (manque rom zip).zip", uploaded by Thomas Bouvrette.
 
 ## License
