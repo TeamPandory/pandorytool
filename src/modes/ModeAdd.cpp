@@ -245,15 +245,15 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     }
     if (shortSystemName == "MAME37") {
         emutype = 2;
-        emuload = 2;
+        emuload = 0;
     }
     if (shortSystemName == "MAME139") {
         emutype = 3;
-        emuload = 2;
+        emuload = 0;
     }
     if (shortSystemName == "MAME78") {
         emutype = 4;
-        emuload = 2;
+        emuload = 0;
     }
     if (shortSystemName == "PSP") {
         emutype = 6;
@@ -301,7 +301,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     }
     if (shortSystemName == "MAME19") {
         emutype = 19;
-        emuload = 2;
+        emuload = 0;
     }
 
     std::string emuString = std::to_string(emutype);
