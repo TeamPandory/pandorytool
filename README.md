@@ -31,8 +31,24 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 
 ## Use *with Windows machine:
 
-1. Format a USB stick, exfat unit size 32kb
+1. Ready destination for roms.
+note: - Pandora searches for a main games folder in the order of drive: "USB Stick" > "microSD".  If it finds no such folder it will try installing it to the Pandora internal memory.
+
+(choose one from below)
+1a. "Notty stick" - prep USB stick for rom installation- Does not alter Pandora microSD.  When removed, original Pandora games playable.
+- Format a USB stick, exfat unit size 32kb
+- Create a folder in the root, named "games" then continue to step 2.
+
+1b. Creating a fresh microSD. - No Chinese games, but will miss 2 player functionality on PSP titles. (currently not supported)
+- Format your microSD, exfat unit size 32kb.
+- Create a folder in the root, named "games"
+- Make sure no games folder exists in the root folder of your USB STICK in step 5.
+
+1c. Add to current microSD in Pandora - May break games, so be careful.  It is recommended to CLONE your microsd before you alter it! (use win32imager or alternative).
+- Keep microSD with Pandora games in system when you insert USB stick in step 5.
+
 2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:
+- Pandory already has the folder ready in the release build.  You can easily extract it from the archive.
 	
   Folder name						Required filetype
 	dreamcast						CDI
