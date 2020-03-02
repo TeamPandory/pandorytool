@@ -15,7 +15,7 @@ If you wish to provide feedback, need help, or just come to say hi! - Please joi
 
 ## Support Us!
 Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
-*1 coffee* : The current, UNLOCKED, version of Pandory will sent.  
+*1 coffee* : The current, *unlocked*, version of Pandory will sent.  (more than 20 roms per system limit lifted)
 *3 coffees* : As above, and your email will be saved to a maillist, where you will be sent all major revisions of the UNLOCKED Pandorytool.  
 *5 coffees+* : All of above, and shall be remembered forever in the HIGHSCORE CHART underneath *with optional message*
 
@@ -57,22 +57,23 @@ Users who have destroyed their Pandora games library can start here.
 **2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:**
 - Pandory already has the folder ready in the release build.  You can easily extract it from the archive.
 	
-  Folder name						Required filetype
-	dreamcast						CDI
-	fba							ZIP
-	gba							GBA / BIN / AGB / GBZ
-	gbc							GB / GBC / SGB
-	mame139							ZIP
-	mame37							ZIP
-	mame78							ZIP
-	megadrive						MDX / MD / SMD / GEN / BIN / CUE / ISO / CHD / SMS / GG / SG
-	n64							N64
-	nes							FDS / NES / UNF / UNIF
-	pcengine						PCE / CUE / CCD / CHD
-	playstation						IMG / PBP (possible??)
-	psp							ISO
-	snes							SMC / SFC / SWC / FIG / BS
-	wswan							WSC
+Folder name|Required filetype
+-----------|-----------------
+dreamcast|CDI
+fba|ZIP
+gba|GBA, BIN, AGB, GBZ
+gbc|GB, GBC, SGB
+mame139|ZIP
+mame37|ZIP
+mame78|ZIP
+megadrive|MDX, MD, SMD, GEN, BIN, CUE, ISO, CHD, SMS, GG, SG
+n64|N64
+nes|FDS, NES, UNF, UNIF
+pcengine|PCE, CUE, CCD, CHD
+playstation|IMG, PBP (possible??)
+psp|ISO
+snes|SMC, SFC, SWC, FIG, BS
+wswan|WSC
 
 **3. Scrape the game data.**
 	-Download Skraper (skraper.net)
