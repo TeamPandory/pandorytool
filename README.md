@@ -31,21 +31,21 @@ Pandory will compile on other operating systems, such as MacOS/Linux, as long as
 
 ## Use *windows*
 
-###1. Drive preparation for roms.
+**1. Drive preparation for roms.**
 Note: - Pandora searches for a main games folder in the order of drive: "USB Stick" > "microSD".  If it finds no such folder it will try installing it to the Pandora internal memory.
 
 *(choose one from below)*
-####1a. Add to current microSD in Pandora**
+**1a. Add to current microSD in Pandora**
 May break games, so be careful.  It is recommended to CLONE your microsd before you alter it! (use win32imager or alternative).
 - Format a USB stick, exfat unit size 32kb
 - Keep microSD with Pandora games in system when you insert USB stick in step 5.
 
-####1b. "Notty stick"
+**1b. "Notty stick"**
 Prep USB stick for rom installation- Does not alter Pandora microSD.  When removed, original Pandora games from the microsd are playable.
 - Format a USB stick, exfat unit size 32kb
 - Create a folder in the root of the USB Stick, named "games" then continue to step 2.
 
-####1c. Creating a fresh microSD
+**1c. Creating a fresh microSD**
 No Chinese games, but will miss 2 player functionality on PSP titles. (currently not supported)
 Users who have destroyed their Pandora games library can start here.
 
@@ -54,7 +54,7 @@ Users who have destroyed their Pandora games library can start here.
 - Create a folder in the root of ONLY the microSD, named "games"
 - Make sure no games folder exists in the root folder of your USB STICK in step 5.
 
-###2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:
+**2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:**
 - Pandory already has the folder ready in the release build.  You can easily extract it from the archive.
 	
   Folder name						Required filetype
@@ -74,25 +74,25 @@ Users who have destroyed their Pandora games library can start here.
 	snes							SMC / SFC / SWC / FIG / BS
 	wswan							WSC
 
-###3. Scrape the game data.
+**3. Scrape the game data.**
 	-Download Skraper (skraper.net)
 	-Use the setup wizard. Create RECALBOX file type, select the root ROM folder (step 2), and check "include non-Recalbox rom folders".  Check NEXT, then FINISH.
 	-Add missing arcade MAME systems using the add system option.  Click the + button next to the "Wizard", Under "Emulation Arcade" click MAME, then OK.  The new box should be highlighted, click the "GAMES & FRONTEND" then change the folder to the first mame139 directory.  Repeat this step for mame37 and mame78.
 	-Click ALL SYSTEMS on the left, then MEDIA.  Click on the 4 IMAGES MIX, then change MEDIA TYPE to VIDEO.  Click on BOX 3D, then the minus to remove it.
 	-HIT THE PLAY BUTTON (bottom right) to start scraping.
 
-###4. Run pandory tool to prepare the USB stick
+**4. Run pandory tool to prepare the USB stick**
 	-Load up command prompt (windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
 	-Use the tool.  (If roms directory was C:/roms, and the USB stick was drive O:)
 			pandory add c:/roms o:/
 	-Let the tool prepare the stick, then safely remove.
 
-###5. Install the games!
+**5. Install the games!**
 	-Turn on your Pandora Games 3D.
 	-When on the games menu, insert USB stick to the BOTTOM USB port of the Pandora Games 3D.
 	-Hit the A button to install games
 
-###6. Play!
+**6. Play!**
 
 ## TUTORIAL GUIDE
 A step-by-step tutorial video can be found at:
