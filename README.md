@@ -30,7 +30,7 @@ cd build
 cmake ..
 ```
 
-Pandory will compile on other operating systems, such as MacOS/Linux, as long as you have a gcc toolchain, make, cmake and the relevant libraries installed.
+Pandory will also compile on operating systems for grown-ups, such as MacOS/Linux, as long as you have a gcc toolchain, make, cmake and the relevant libraries installed.
 
 ## Use *windows*
 
