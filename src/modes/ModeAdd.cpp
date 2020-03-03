@@ -170,6 +170,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
         basename = Fs::basename(rom);
         extension = "";
     }
+    transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
     Fs::copy(rom, destination + "/" + basename + extension);
 }
 
@@ -324,6 +325,13 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     } else {
         romFileName = relativeRomPath;
     }
+
+    std::string romFileNameBase = Fs::stem(romFileName);
+    std::string romFileNameExt = Fs::extension(romFileName);
+    std::string romFolder = Fs::dirname(romFileName);
+    transform(romFileNameExt.begin(), romFileNameExt.end(), romFileNameExt.begin(), ::tolower);
+
+    romFileName = romFolder + romFileNameBase + romFileNameExt;
 
     McGamesXML mcXML;
     mcXML.setEmulatorId(emuString);
