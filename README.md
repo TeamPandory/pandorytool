@@ -100,8 +100,11 @@ wswan|WSC
 	-Make sure the added games are on by 
 
 ## TUTORIAL GUIDE
-A step-by-step tutorial video can be found at:
-https://youtu.be/10naz1ZUOC4 or https://www.bitchute.com/video/AgxJKugYWDU4/
+A step-by-step tutorial video can be found here:
+
+[![Pandory tutorial](https://raw.githubusercontent.com/emuchicken/pandorytool/assets/videos/youtube-10naz1ZUOC4.jpg)](https://www.youtube.com/watch?v=10naz1ZUOC4)
+
+or here: https://www.bitchute.com/video/AgxJKugYWDU4/
 
 ## Installation fail
 There is a possibility that the install will fail.  Please go through this checklist before asking for further assistance.
