@@ -94,23 +94,32 @@ wswan|WSC
 	-Hit the A button to install games
 
 **6. Play!**
+	-Make sure the added games are on by 
 
 ## TUTORIAL GUIDE
 A step-by-step tutorial video can be found at:
 https://youtu.be/10naz1ZUOC4 or https://www.bitchute.com/video/AgxJKugYWDU4/
 
+## Installation fail
+There is a possibility that the install will fail.  Please go through this checklist before asking for further assistance.
+
+1. No more space on destination drive.  Make some space by hitting the back "settings" button on the back of your Pandora device, then go to Games Settings, remove game.
+
+2. Pandory already installed games of that device at an earlier date.  
+In order to automate the process, our tool renames files in bulk.  Starting the tool once more, the counter starts from 1, so it'd be like you are trying to install a file with the same name.  As above, push the "settings" button on the back of your Pandora, Games Settings, and remove all the games you have added- FOR THAT SYSTEM ONLY.  You can then re-run Pandory and the installation process.
+
 ## Note:
-- The restricted version will only support up to 20 titles per system.  Once you have installed them, you will need to remove them in order to add more from that system.  If you don't, upon installation you will be given an error from the Pandora Games 3D unit.
+- The restricted version will only support up to 20 titles per system.  Unrestrict by throwing us a cuppa!
 - This method will install games to the MicroSD inside the unit.  Please make sure you have enough space for the added titles.  However, if you want to install them to the same USB stick.  You will need to make a folder in the root of the stick named "games", and then inside this, "download".
 
 ## Issues:
 - The Pandora Games 3D encrypts the data when we use this (mcgames) method.  Unfortunately, at this point in time, we cannot change data once it's on the device, which means no changing of controls re: PSP analogue sticks, perhaps the N64 controls etc. If you want to do this, I'd place the rom in the games/download folder, then alter the data from the configs that were created once running the Pandora.  There may be a way around it if you used a USB N64 pad or something similar however, but more testing is needed.
-- PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed (Suspected faked ADHOC commands from within the emulator), we cannot easily add these with our current tools.
 - Playstation games tend to be finicky with the extension types.  According to the manual, only IMG is supported.
+- PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed (Suspected faked ADHOC commands from within the emulator), we cannot easily add these with our current tools.
 - All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.  It may be that the emulator in the Pandora simply does not support this title.
 - The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
 - Whilst this tool may work with other systems (I'm looking at the Pandora handheld, and the WIFI version), it will not be a universal PANDORA "KEY".  
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
 
 ## Thanks Highscore chart
--currently zero-
+1. Runningman2020 - 5
