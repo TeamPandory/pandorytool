@@ -73,7 +73,7 @@ megadrive|MDX, MD, SMD, GEN, BIN, CUE, ISO, CHD, SMS, GG, SG
 n64|N64
 nes|FDS, NES, UNF, UNIF
 pcengine|PCE, CUE, CCD, CHD
-playstation|IMG, PBP (possible??)
+playstation|IMG, PBP
 psp|ISO
 snes|SMC, SFC, SWC, FIG, BS
 wswan|WSC
@@ -120,7 +120,6 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 
 ## Issues:
 - The Pandora Games 3D encrypts the data when we use this (mcgames) method.  Unfortunately, at this point in time, we cannot change data once it's on the device, which means no changing of controls re: PSP analogue sticks, perhaps the N64 controls etc. If you want to do this, I'd place the rom in the games/download folder, then alter the data from the configs that were created once running the Pandora.  There may be a way around it if you used a USB N64 pad or something similar however, but more testing is needed.
-- Playstation games tend to be finicky with the extension types.  According to the manual, only IMG is supported.
 - PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed (Suspected faked ADHOC commands from within the emulator), we cannot easily add these with our current tools.
 - All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.  It may be that the emulator in the Pandora simply does not support this title.
 - The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
