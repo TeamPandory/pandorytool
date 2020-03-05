@@ -8,7 +8,7 @@ layout: default
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="/pandorytool{{ post.url }}">{{ post.title }}</a>
+       <a href="/pandorytool{{ post.url }}">{{ post.date | date: "%-d %B %Y" }}  -  {{ post.title }}</a>
       {{ post.excerpt }}
     </li>
   {% endfor %}
