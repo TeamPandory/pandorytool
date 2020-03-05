@@ -48,10 +48,10 @@ void SystemMapper::setConsoleColourBySystem(const std::string& dir) {
 int SystemMapper::getSystemSaveState(const std::string& dir) {
    // if (dir == "fba") return false; - My bad, I think this emulator actually saves :o
     if (dir == "n64") return false;
-    if (dir == "mame19") return false;
-    if (dir == "mame37") return false;
-    if (dir == "mame139") return false;
-    if (dir == "mame78") return false;
+    //if (dir == "mame19") return false;
+    //if (dir == "mame37") return false;
+    //if (dir == "mame139") return false;
+    //if (dir == "mame78") return false;
     return true;
 }
 
