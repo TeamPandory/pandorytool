@@ -32,7 +32,7 @@ cmake ..
 
 Pandory will also compile on operating systems for grown-ups, such as MacOS/Linux, as long as you have a gcc toolchain, make, cmake and the relevant libraries installed.
 
-## Use *windows*
+## Use *Windows*
 
 **1. Drive preparation for roms.**
 Note: - Pandora searches for a main games folder in the order of drive: "USB Stick" > "microSD".  If it finds no such folder it will try installing it to the Pandora internal memory.
@@ -86,7 +86,7 @@ wswan|WSC
 	-HIT THE PLAY BUTTON (bottom right) to start scraping.
 
 **4. Run pandory tool to prepare the USB stick**
-	-Load up command prompt (windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
+	-Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
 	-Use the tool.  (If roms directory was C:/roms, and the USB stick was drive O:)
 			pandory add c:/roms o:/
 	-Let the tool prepare the stick, then safely remove.
@@ -97,7 +97,6 @@ wswan|WSC
 	-Hit the A button to install games
 
 **6. Play!**
-	-Make sure the added games are on by 
 
 ## TUTORIAL GUIDE
 A step-by-step tutorial video can be found here:
@@ -120,10 +119,10 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 
 ## Issues:
 - The Pandora Games 3D encrypts the data when we use this (mcgames) method.  Unfortunately, at this point in time, we cannot change data once it's on the device, which means no changing of controls re: PSP analogue sticks, perhaps the N64 controls etc. If you want to do this, I'd place the rom in the games/download folder, then alter the data from the configs that were created once running the Pandora.  There may be a way around it if you used a USB N64 pad or something similar however, but more testing is needed.
-- PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed (Suspected faked ADHOC commands from within the emulator), we cannot easily add these with our current tools.
-- All games have not been tested, so if anything is found to be not working, please add it to the games compatibility thread in the github.  It may be that the emulator in the Pandora simply does not support this title.
-- The current device this was programmed for is the Pandora Games 3D (BLUE BOARD), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
-- Whilst this tool may work with other systems (I'm looking at the Pandora handheld, and the WIFI version), it will not be a universal PANDORA "KEY".  
+- PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed, we cannot easily add these with our current tools.
+- It is impossible to test every single game imported.  If you find a game that doesn't work, please include in the Games Compatibility list on the Pandory github.
+- The current device this was programmed for is the Pandora Games 3D (GB3000), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
+- Whilst this tool may work with other systems, it will not be a universal PANDORA "KEY".  There are too many models / clones!
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
 
 ## Thanks Highscore chart
