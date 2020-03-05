@@ -23,8 +23,8 @@ email: emuchicken@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Pandorytool is a utility to automate ROM installation for the Pandora Games 3D
   and similar games consoles.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/pandorytool" # the subpath of your site, e.g. /blog
+url: "https://emuchicken.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: emuchicken
 github_username:  emuchicken
 repository: emuchicken/pandorytool
