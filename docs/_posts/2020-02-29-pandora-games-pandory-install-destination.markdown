@@ -9,4 +9,4 @@ categories: teaser
 
 The Pandora Games 3D can store games in several different destinations. This video shows you which options are available. 
 
-[![Pandory trailer](assets/youtube-MnucxXFcoyw.png)](https://www.youtube.com/watch?v=MnucxXFcoyw)
+[![Pandory Game Destinations](assets/youtube-MnucxXFcoyw.png)](https://www.youtube.com/watch?v=MnucxXFcoyw)
