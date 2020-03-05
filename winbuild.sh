@@ -10,4 +10,4 @@ fi
 
 ZIPFILE="pandory-"$(git rev-parse HEAD)".zip"
 rm -f $ZIPFILE;
-zip -jv $ZIPFILE pandory.exe ../README.md;
+zip -jv $ZIPFILE pandory.exe ../README.md ../HISTORY.md;
