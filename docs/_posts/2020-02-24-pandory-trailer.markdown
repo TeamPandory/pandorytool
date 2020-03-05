@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Pandorytool Teaser"
-author: dajoho
+author: emuchicken
 date:   2020-02-24 20:40:28 +0100
 tags: pandorytool pandora-games-3d
 categories: teaser
