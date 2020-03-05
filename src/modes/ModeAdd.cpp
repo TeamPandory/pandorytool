@@ -304,6 +304,14 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
         emutype = 19;
         emuload = 0;
     }
+    if (shortSystemName == "MS") {
+        emutype = 15;
+        emuload = 3;
+    }
+    if (shortSystemName == "GG") {
+        emutype = 15;
+        emuload = 3;
+    }
 
     std::string emuString = std::to_string(emutype);
     std::string emuStringload = std::to_string(emuload);
