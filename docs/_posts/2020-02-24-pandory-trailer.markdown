@@ -7,7 +7,7 @@ tags: pandorytool pandora-games-3d
 categories: teaser
 ---
 
-[![Pandory trailer](/assets/youtube-SU2iwxVzdmE.jpg)](https://www.youtube.com/watch?v=SU2iwxVzdmE)
+[![Pandory trailer](assets/youtube-SU2iwxVzdmE.jpg)](https://www.youtube.com/watch?v=SU2iwxVzdmE)
 
 
 Pandorytool is a utility to automate ROM installation for the Pandora Games 3D and similar game consoles.
