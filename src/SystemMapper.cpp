@@ -5,6 +5,8 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "dreamcast") return "DC";
     if (dir == "gba") return "GBA";
     if (dir == "gbc") return "GBC";
+    if (dir == "gamegear") return "GG";
+    if (dir == "mastersystem") return "MS";
     if (dir == "megadrive") return "MD";
     if (dir == "n64") return "N64";
     if (dir == "playstation") return "PS";
@@ -12,8 +14,8 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "snes") return "SNES";
     if (dir == "nes") return "NES";
     if (dir == "pcengine") return "PCE";
+    
     if (dir == "fba") return "FBA";
-
     if (dir == "mame19") return "MAME19";
     if (dir == "mame37") return "MAME37";
     if (dir == "mame139") return "MAME139";
@@ -29,6 +31,8 @@ void SystemMapper::setConsoleColourBySystem(const std::string& dir) {
 	if (dir == "gba") std::cout << termcolor::red;
 	if (dir == "gbc") std::cout << termcolor::red;
 	if (dir == "megadrive") std::cout << termcolor::blue;
+	if (dir == "mastersystem") std::cout << termcolor::blue;
+	if (dir == "gamegear") std::cout << termcolor::blue;
 	if (dir == "n64") std::cout << termcolor::red;
 	if (dir == "playstation") std::cout << termcolor::green;
 	if (dir == "psp") std::cout << termcolor::green;
