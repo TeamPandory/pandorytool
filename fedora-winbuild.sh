@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-mkdir -p build
-cd build || exit;
+mkdir -p build-win
+cd build-win || exit;
 mingw64-cmake ..
 make
 
