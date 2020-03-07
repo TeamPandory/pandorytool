@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # windows-build
-sudo dnf install mingw64-gcc mingw64-gcc-c++ mingw64-winpthreads-static.noarch 
+sudo dnf -y install mingw64-gcc mingw64-gcc-c++ mingw64-winpthreads-static.noarch 
 
 # linux-build
-sudo dnf install gcc gcc-c++ tinyxml2.x86_64 tinyxml2-devel.x86_64
+sudo dnf -y install gcc gcc-c++ tinyxml2.x86_64 tinyxml2-devel.x86_64
 
 # generic build tools
-sudo dnf install cmake make upx 
+sudo dnf -y install cmake make upx 
 
 HERE=`pwd`
 
