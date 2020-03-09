@@ -56,6 +56,7 @@ void PandoryTool::usage() {
     std::cout << "=> Take all ROMS from <sourceDir> and prepare them for your Pandora console in <destDir>" << std::endl;
     std::cout << "\tpandory add     <sourceDir> <destDir>" << std::endl;
     std::cout << "\tExample: pandory add C:\\roms F:\\" << std::endl;
+    std::cout << std::endl;
 }
 
 int PandoryTool::add() {
