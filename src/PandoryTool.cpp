@@ -19,9 +19,18 @@ std::string PandoryTool::getCommitHash() {
     return version;
 }
 
+std::string PandoryTool::getAppSuffix() {
+    std::string suffix = " [Full Edition]";
+#ifndef NO_SHAREWARE_LIMIT
+    suffix = " [Shareware Edition]";
+#endif
+    return suffix;
+}
+
 
 int PandoryTool::main() {
-    std::cout << "Pandora 3D Add Game Utility, by emuchicken & dajoho   [Version: " << getCommitHash() << "]" << std::endl;
+
+    std::cout << "Pandora 3D Add Game Utility" << getAppSuffix() << " by emuchicken & dajoho   [Version: " << getCommitHash() << "]" << std::endl;
     std::cout << "== Join us on Discord! https://discord.gg/Az94Rxn" << std::endl;
 #ifndef NO_SHAREWARE_LIMIT
     std::cout << "== Pandorytool has been worked on with blood, sweat and tears. If you would like us to continue " << std::endl;

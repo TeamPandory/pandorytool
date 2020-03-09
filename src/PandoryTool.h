@@ -11,9 +11,9 @@ public:
     int prepare();
     int main();
 
-    void LogGitCommitHash();
-
     std::string getCommitHash();
+
+    std::string getAppSuffix();
 };
 
 #endif //PANDORERAPP_H
