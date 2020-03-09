@@ -56,13 +56,17 @@ int PandoryTool::main() {
 void PandoryTool::usage() {
     std::cout << "Usage: " << std::endl;
 
-    std::cout << "=> Create a folder with the correct structure for your ROMS:" << std::endl;
+    std::cout << "1) Create a folder with the correct structure for your ROMS:" << std::endl;
     std::cout << "\tpandory prepare <sourceDir>" << std::endl;
     std::cout << "\tExample: pandory prepare C:\\roms" << std::endl;
-
     std::cout << std::endl;
 
-    std::cout << "=> Take all ROMS from <sourceDir> and prepare them for your Pandora console in <destDir>" << std::endl;
+    std::cout << "2) Put your ROMS in the correct subfolders and scrape them with Skraper:" << std::endl;
+    std::cout << "   == Tutorial video [Using Skraper]: https://www.youtube.com/watch?v=10naz1ZUOC4" << std::endl;
+    std::cout << "   == Tutorial video [Advanced scraping]: https://www.youtube.com/watch?v=10naz1ZUOC4" << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "3) => Take all the scraped ROMS from <sourceDir> and prepare them for your Pandora console in <destDir>" << std::endl;
     std::cout << "\tpandory add     <sourceDir> <destDir>" << std::endl;
     std::cout << "\tExample: pandory add C:\\roms F:\\" << std::endl;
     std::cout << std::endl;
