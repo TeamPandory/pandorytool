@@ -24,6 +24,10 @@ void McGamesAbstract::setYear(int year) {
     McGamesAbstract::year = year;
 }
 
+void McGamesAbstract::setGenre(int genre) {
+    McGamesAbstract::genre = genre;
+}
+
 void McGamesAbstract::setRomDeveloper(const std::string &romDeveloper) {
     McGamesAbstract::romDeveloper = romDeveloper;
 }

@@ -325,6 +325,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
   //  std::string players = "1";
     std::string players = extractXMLText(sourceGame->FirstChildElement("players"));
     std::string developer = extractXMLText(sourceGame->FirstChildElement("developer"));
+    std::string genre = extractXMLText(sourceGame->FirstChildElement("genre"));
     std::string targetXMLFile = romPath + "/" + targetRomName + ".xml";
     std::string targetTXTFile = romPath + "/" + targetRomName + ".txt";
     bool rename = SystemMapper::getSystemRenameFlag(system);
@@ -352,6 +353,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);
+    mcXML.setGenre(SystemMapper::getGenre(genre));
     mcXML.setRomDeveloper(developer);
     mcXML.setRomPath(relativeRomPath);
     mcXML.setSaveState(SystemMapper::getSystemSaveState(system));
@@ -365,6 +367,7 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
     mcTXT.setYear(year);
+    mcTXT.setGenre(SystemMapper::getGenre(genre));
     mcTXT.setRomDeveloper(developer);
     mcTXT.setRomPath(relativeRomPath);
     mcTXT.generate(targetTXTFile);

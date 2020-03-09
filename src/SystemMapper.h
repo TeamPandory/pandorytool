@@ -11,6 +11,8 @@ public:
     static int getSystemSaveState(const std::string &dir);
 
     static bool getSystemRenameFlag(const std::string& dir);
+
+    static int getGenre(const std::string& genre);
 };
 
 

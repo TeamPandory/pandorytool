@@ -32,7 +32,7 @@ void McGamesXML::generate(std::string filename) {
     xml.PushText(players.c_str());
     xml.CloseElement();
     xml.OpenElement("genre" );
-    xml.PushText(0);
+    xml.PushText(genre);
     xml.CloseElement();
     xml.OpenElement("bootleg" );
     xml.PushText(false);

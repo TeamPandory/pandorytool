@@ -12,6 +12,7 @@ protected:
     std::string romFileName;
     std::string romDescription;
     std::string language;
+    int genre;
     int year;
     std::string players;
     std::string romDeveloper;
@@ -22,6 +23,7 @@ public:
     virtual void generate(std::string filename) = 0;
     void setLanguage(const std::string &language);
     void setYear(int year);
+    void setGenre(int genre);
     void setPlayers(const std::string &players);
     void setRomPath(const std::string &romPath);
     void setRomDeveloper(const std::string &romDeveloper);
