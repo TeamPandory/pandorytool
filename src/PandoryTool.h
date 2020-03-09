@@ -1,6 +1,5 @@
-#ifndef TESTC_PANDORERAPP_H
-#define TESTC_PANDORERAPP_H
-
+#ifndef PANDORERAPP_H
+#define PANDORERAPP_H
 
 class PandoryTool {
 protected:
@@ -9,8 +8,8 @@ public:
     PandoryTool(int i, char **pString);
     static void usage();
     int add();
+    int prepare();
     int main();
 };
 
-
-#endif //TESTC_PANDORERAPP_H
+#endif //PANDORERAPP_H

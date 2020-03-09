@@ -3,4 +3,5 @@ cmake-build-debug/
 build/
 build-win/
 build-linux/
+winbuild/
 testdata
