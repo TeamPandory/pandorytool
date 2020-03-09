@@ -67,7 +67,7 @@ void PandoryTool::usage() {
     std::cout << std::endl;
 
     std::cout << "3) => Take all the scraped ROMS from <sourceDir> and prepare them for your Pandora console in <destDir>" << std::endl;
-    std::cout << "\tpandory add     <sourceDir> <destDir>" << std::endl;
+    std::cout << "\tpandory add <sourceDir> <destDir>" << std::endl;
     std::cout << "\tExample: pandory add C:\\roms F:\\" << std::endl;
     std::cout << std::endl;
 }
