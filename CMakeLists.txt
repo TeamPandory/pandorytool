@@ -5,6 +5,14 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
 
+execute_process(
+        COMMAND git log -1 --format=%h
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        OUTPUT_VARIABLE GIT_COMMIT_HASH
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+add_definitions("-DGIT_COMMIT_HASH=\"${GIT_COMMIT_HASH}\"")
+
 if(MSVC OR MSYS OR MINGW)
     # for detecting Windows compilers
     set(DCMAKE_SH="CMAKE_SH-NOTFOUND")

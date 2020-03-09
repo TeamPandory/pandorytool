@@ -10,6 +10,10 @@ public:
     int add();
     int prepare();
     int main();
+
+    void LogGitCommitHash();
+
+    std::string getCommitHash();
 };
 
 #endif //PANDORERAPP_H
