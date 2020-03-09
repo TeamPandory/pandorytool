@@ -13,6 +13,10 @@ execute_process(
 )
 add_definitions("-DGIT_COMMIT_HASH=\"${GIT_COMMIT_HASH}\"")
 
+if($ENV{NO_SHAREWARE_LIMIT})
+add_definitions("-DNO_SHAREWARE_LIMIT=1")
+endif()
+
 if(MSVC OR MSYS OR MINGW)
     # for detecting Windows compilers
     set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
