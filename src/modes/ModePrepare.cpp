@@ -19,6 +19,7 @@ int ModePrepare::main() {
     mkdir("mame139");
     mkdir("mame37");
     mkdir("mame78");
+    mkdir("mastersystem");
     mkdir("megadrive");
     mkdir("n64");
     mkdir("nes");
