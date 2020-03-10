@@ -11,7 +11,7 @@ int ModePrepare::mkdir(std::string systemType) {
 
 int ModePrepare::main() {
     std::cout << "Making skraper directory structure in: " << sourceDir << std::endl;
-    mkdir("foo");
+    mkdir("32x");
     mkdir("dreamcast");
     mkdir("fba");
     mkdir("gba");
