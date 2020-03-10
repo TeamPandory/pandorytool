@@ -4,6 +4,7 @@
 #include "termcolor/termcolor.hpp"
 
 std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
+    if (dir == "32x") return "32X";
     if (dir == "dreamcast") return "DC";
     if (dir == "gba") return "GBA";
     if (dir == "gbc") return "GBC";
@@ -29,6 +30,7 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
 }
 
 void SystemMapper::setConsoleColourBySystem(const std::string &dir) {
+    if (dir == "32x") std::cout << termcolor::blue;
     if (dir == "dreamcast") std::cout << termcolor::blue;
     if (dir == "gba") std::cout << termcolor::red;
     if (dir == "gbc") std::cout << termcolor::red;
