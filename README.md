@@ -121,8 +121,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - The Pandora Games 3D encrypts the data when we use this (mcgames) method.  Unfortunately, at this point in time, we cannot change data once it's on the device, which means no changing of controls re: PSP analogue sticks, perhaps the N64 controls etc. If you want to do this, I'd place the rom in the games/download folder, then alter the data from the configs that were created once running the Pandora.  There may be a way around it if you used a USB N64 pad or something similar however, but more testing is needed.
 - PSP games imported with this tool will not include "2 player support".  Due to the way it's programmed, we cannot easily add these with our current tools.
 - It is impossible to test every single game imported.  If you find a game that doesn't work, please include in the Games Compatibility list on the Pandory github.
-- The current device this was programmed for is the Pandora Games 3D (GB3000), which came with a ton of games. (I bought mine from https://s.click.aliexpress.com/e/_d6LyHNX )
-- Whilst this tool may work with other systems, it will not be a universal PANDORA "KEY".  There are too many models / clones!
+- The current device this was programmed for is the Pandora Games 3D (GB3000, blue board), which came with many titles preinstalled.  Whilst this tool may work with other systems, it will not be a universal PANDORA "KEY".  There are too many models / clones!
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
 
 ## Thanks Highscore chart
