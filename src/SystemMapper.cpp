@@ -74,13 +74,16 @@ int SystemMapper::getGenre(const std::string &genreString) {
     std::string genre = genreString;
     std::transform(genre.begin(), genre.end(), genre.begin(), ::tolower);
 
-    if (genre.find("fight") != std::string::npos) {
+    if (genre.find("fight") != std::string::npos
+       || genre.find("beat") != std::string::npos
+       ) {
         return 1;
     } else if (genre.find("action") != std::string::npos
                || genre.find("platform") != std::string::npos
                || genre.find("adventure") != std::string::npos
                || genre.find("role") != std::string::npos
                || genre.find("pinball") != std::string::npos
+               || genre.find("simulation") != std::string::npos
               ) {
         return 2;
     } else if (genre.find("shoot") != std::string::npos) {
