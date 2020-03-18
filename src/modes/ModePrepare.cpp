@@ -16,6 +16,7 @@ int ModePrepare::main() {
     mkdir("fba");
     mkdir("gba");
     mkdir("gbc");
+    mkdir("mame19");
     mkdir("mame139");
     mkdir("mame37");
     mkdir("mame78");
