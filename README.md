@@ -7,7 +7,8 @@ Work based upon the file "ex mame139 (manque rom zip).zip", uploaded by Thomas B
 
 
 ## License
-pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
+pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), with the additional condition that you do not provide/redistribute compiled binaries of the source code. 
+If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
 
 ## IMPORTANT:
 We will not take any responsibility on the destruction of your device, or for anything done with this tool.
