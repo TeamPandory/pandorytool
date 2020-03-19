@@ -12,4 +12,4 @@ cp -Rv ../controls/ ./;
 
 ZIPFILE="pandory-"$(git rev-parse HEAD)".zip"
 rm -f $ZIPFILE;
-zip -jv $ZIPFILE pandory.exe ../README.md ../HISTORY.md;
+zip -jv -r $ZIPFILE pandory.exe controls ../README.md ../HISTORY.md ;
