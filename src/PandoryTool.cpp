@@ -30,11 +30,14 @@ std::string PandoryTool::getAppSuffix() {
 
 int PandoryTool::main() {
 
-    std::cout << "Pandora 3D Add Game Utility" << getAppSuffix() << " by emuchicken & dajoho   [Version: " << getCommitHash() << "]" << std::endl;
+    std::cout << "Pandora Games 3D - Utility" << getAppSuffix() << " by emuchicken & dajoho   [Version: " << getCommitHash() << "]" << std::endl;
     std::cout << "== Join us on Discord! https://discord.gg/Az94Rxn" << std::endl;
 #ifndef NO_SHAREWARE_LIMIT
     std::cout << "== Pandorytool has been worked on with blood, sweat and tears. If you would like us to continue " << std::endl;
     std::cout << "== work on this tool, please consider grabbing us a coffee at https://www.buymeacoffee.com/CKZbiXa." << std::endl;
+    std::cout << std::endl;
+    std::cout << "== Modded ROM controls contributed by (in order of beauty): filepirate" << std::endl;
+
 #endif
     std::cout << std::endl;
 
