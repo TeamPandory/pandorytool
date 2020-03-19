@@ -12,6 +12,8 @@ protected:
     std::string romFileName;
     std::string romDescription;
     std::string language;
+    std::string additionalRomName;
+
     int genre;
     int year;
     std::string players;
@@ -34,6 +36,7 @@ public:
     void setRomFileName(const std::string &romFileName);
     void setRomDescription(const std::string &romDescription);
     void setSaveState(bool saveState);
+    void addAdditionalRom(std::string &additionalRomName);
 };
 
 

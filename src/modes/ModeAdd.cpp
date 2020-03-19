@@ -148,7 +148,15 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 }
             }
             installFile << targetRomName << std::endl;
-            generateMcGamesMeta(game, system, shortSystemName, targetRomDir, targetRomName);
+
+            std::string additionalRom;
+            std::string controlsPath = "./controls/" + system + "/" + targetRomName + ".cfg";
+            if (Fs::exists(controlsPath)) {
+                additionalRom = Fs::basename(controlsPath);
+                copyRomToDestination(controlsPath, targetRomDir, false);
+            }
+
+            generateMcGamesMeta(game, system, shortSystemName, targetRomDir, targetRomName, additionalRom);
             i++;
         } else {
             std::cout << "Unknown system detected in source folder: " << system << std::endl;
@@ -235,7 +243,7 @@ std::string ModeAdd::extractXMLText(tinyxml2::XMLElement *elem) {
 // install.txt file should then be appended with the “ARSENAME” (DC0001)
 // repeat / loop process until all roms have been added.
 void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath,
-                                  std::string targetRomName) {
+                                  std::string targetRomName, std::string additionalRom) {
 
     // emulator type check code definitely bullshit- cant get this if statement to work ;(
     int emutype = 99;
@@ -360,6 +368,11 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.setRomDeveloper(developer);
     mcXML.setRomPath(relativeRomPath);
     mcXML.setSaveState(SystemMapper::getSystemSaveState(system));
+
+    if (!additionalRom.empty()) {
+        mcXML.addAdditionalRom(additionalRom);
+    }
+
     mcXML.generate(targetXMLFile);
 
     McGamesTXT mcTXT;

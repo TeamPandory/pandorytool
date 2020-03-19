@@ -50,5 +50,8 @@ void McGamesAbstract::setSaveState(bool saveState) {
 
 void McGamesAbstract::setRomFileName(const std::string &romFileName) {
     McGamesAbstract::romFileName = romFileName;
+}
 
+void McGamesAbstract::addAdditionalRom(std::string &additionalRomName) {
+    McGamesAbstract::additionalRomName = additionalRomName;
 }

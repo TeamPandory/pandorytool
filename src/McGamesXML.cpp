@@ -45,8 +45,19 @@ void McGamesXML::generate(std::string filename) {
     xml.OpenElement("rom" );
     xml.PushAttribute("name", romFileName.c_str());
     xml.CloseElement();
+
+    if (additionalRomName != "") {
+        xml.OpenElement("rom" );
+        xml.PushAttribute("name", additionalRomName.c_str());
+        xml.CloseElement();
+    }
+
+
     xml.CloseElement();
     // ### /File
+
+
+
 
     // ### Translation
     xml.OpenElement("translation" );
@@ -90,5 +101,6 @@ void McGamesXML::generate(std::string filename) {
     xml.CloseElement(); // game
     fclose(fp);
 }
+
 
 
