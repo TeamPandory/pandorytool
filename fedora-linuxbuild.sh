@@ -7,3 +7,4 @@ make
 if [ -x "$(command -v upx)" ]; then
   upx -9 pandory
 fi
+cp -Rv controls/ build-linux/;
