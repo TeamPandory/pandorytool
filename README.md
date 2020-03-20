@@ -37,7 +37,8 @@ Pandory will also compile on operating systems for grown-ups, such as MacOS/Linu
 **1. Target Drive preparation for roms.**
 Note: - Your Pandora device searches for a main games folder in the order of drive: "USB Stick" > "microSD".  If it finds no such folder it will try installing it to the Pandora internal memory.
 
-*(choose one from below)*
+*(choose one from below)*  
+
 **1a. Add to current microSD in Pandora**
 May break games, so be careful.  It is recommended to CLONE your microsd before you alter it! (use win32imager or alternative).
 - Format a USB stick, exfat unit size 32kb
