@@ -151,3 +151,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - FilePirate: Providing information re: game configs- and the headaches. 
 - akira84: Confirmation on working / PANDORA 9H 
 - CrashCat: Confirmation on working / GoldenSky G6 
+- Noise Complaint: Allowing us to use their music @ https://noise-complaint.bandcamp.com/
+- Dirty Clide: Allowing us to use their music @ https://dirtyclide.bandcamp.com/
+- Lyndsay Bullock: Allowing the use of her "Pyro" work on our default skin @ https://www.facebook.com/lyndsaybullock.artist/
+- and... YOU!  To anyone who has supported us!
