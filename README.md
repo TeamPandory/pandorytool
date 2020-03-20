@@ -147,7 +147,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 
 ## THANKS from team-Pandory:
 - Thomas Bouvrette: Providing the original pbobble3 archive demonstrating how to add roms to the Pandora unit 
-- Querol: Providing some informative Pandora Games 3D pdf's to the community. 
+- Querol: Providing some informative Pandora Games 3D pdfs to the community. 
 - FilePirate: Providing information re: game configs- and the headaches. 
 - akira84: Confirmation on working / PANDORA 9H 
 - CrashCat: Confirmation on working / GoldenSky G6 
