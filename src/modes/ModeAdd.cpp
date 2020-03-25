@@ -149,8 +149,15 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             }
             installFile << targetRomName << std::endl;
 
+            // mame controls
             std::string additionalRom;
             std::string controlsPath = "./controls/" + system + "/" + targetRomName + ".cfg";
+
+            // psp controls
+            if (system == "psp") {
+                controlsPath = "./controls/" + system + "/controls.ini";
+            }
+
             if (Fs::exists(controlsPath)) {
                 additionalRom = Fs::basename(controlsPath);
                 copyRomToDestination(controlsPath, targetRomDir, false);
