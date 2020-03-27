@@ -15,6 +15,7 @@ int ModePrepare::main() {
     mkdir("dreamcast");
     mkdir("fba");
     mkdir("gba");
+    mkdir("gb");
     mkdir("gbc");
     mkdir("mame19");
     mkdir("mame139");
