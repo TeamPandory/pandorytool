@@ -296,6 +296,10 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
         emutype = 13;
         emuload = 0;
     }
+     if (shortSystemName == "GB") {
+        emutype = 14;
+        emuload = 0;
+    }
     if (shortSystemName == "GBC") {
         emutype = 14;
         emuload = 0;
