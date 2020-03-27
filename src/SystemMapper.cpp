@@ -7,6 +7,7 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "32x") return "32X";
     if (dir == "dreamcast") return "DC";
     if (dir == "gba") return "GBA";
+    if (dir == "gb") return "GB";
     if (dir == "gbc") return "GBC";
     if (dir == "gamegear") return "GG";
     if (dir == "mastersystem") return "MS";
@@ -33,6 +34,7 @@ void SystemMapper::setConsoleColourBySystem(const std::string &dir) {
     if (dir == "32x") std::cout << termcolor::blue;
     if (dir == "dreamcast") std::cout << termcolor::blue;
     if (dir == "gba") std::cout << termcolor::red;
+    if (dir == "gb") std::cout << termcolor::red;
     if (dir == "gbc") std::cout << termcolor::red;
     if (dir == "megadrive") std::cout << termcolor::blue;
     if (dir == "mastersystem") std::cout << termcolor::blue;
