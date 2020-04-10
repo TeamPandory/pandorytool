@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+busybox ash /system/bin/pandory.sh &
+
+while true; do busybox sleep 10; done;
