@@ -1,5 +1,11 @@
 #!/system/bin/sh
 
+if [ -f "/data/autoexec.sh" ]; then 
+	cd /data/;
+	busybox ash /data/autoexec.sh; 
+fi
+
+
 while true; do
 
 if [ -f "/storage/external_storage/sda1/pandory.sh" ]; then 
