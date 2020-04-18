@@ -24,6 +24,6 @@ mv pandorytool-controls/ controls/;
 
 cp ../*.md .;
 
-ZIPFILE="pandory-"$(git rev-parse HEAD)".zip"
+ZIPFILE="pandory-"$(git rev-parse --short HEAD)".zip"
 rm -f $ZIPFILE;
 zip -v -r $ZIPFILE pandory.exe controls/ sticks/ *.md;
