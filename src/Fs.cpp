@@ -63,6 +63,7 @@ int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::p
     catch (std::exception& e)
     {
     }
+    return 0;
 }
 
 int Fs::filesize(std::string src) {
