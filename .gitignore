@@ -1,7 +1,6 @@
 .idea/
 cmake-build-debug/
-build/
-build-win/
+build-win32/
 build-linux/
 winbuild/
 testdata
