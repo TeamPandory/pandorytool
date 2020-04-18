@@ -23,7 +23,8 @@ bool Fs::remove(const std::string &file) {
 
 std::string Fs::getCurrentPath()
 {
-    return std::filesystem::current_path();
+    std::string currentPath = std::filesystem::current_path();
+    return currentPath;
 }
 
 std::string Fs::stem(const std::string &file) {
