@@ -1,6 +1,6 @@
 #ifndef PANDORER_FILESYSTEM_H
 #define PANDORER_FILESYSTEM_H
-
+#include <filesystem>
 #include <string>
 
 class Fs {
@@ -17,6 +17,10 @@ public:
     static std::string extension(const std::string &file);
 
     static std::string stem(const std::string &file);
+
+    static std::string getCurrentPath();
+
+    static int copyRecursive(const std::filesystem::path &src, const std::filesystem::path &target);
 };
 
 

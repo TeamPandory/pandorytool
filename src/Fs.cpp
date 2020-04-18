@@ -21,6 +21,11 @@ bool Fs::remove(const std::string &file) {
     return std::filesystem::remove_all(file.c_str());
 }
 
+std::string Fs::getCurrentPath()
+{
+    return std::filesystem::current_path();
+}
+
 std::string Fs::stem(const std::string &file) {
     std::string base = std::filesystem::path(file).stem().string();
     return base;
@@ -46,6 +51,17 @@ int Fs::copy(std::string source, std::string destination)
     //std::filesystem::create_directories(targetParent);
     std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
     return 0;
+}
+
+int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::path &target)
+{
+    try
+    {
+        std::filesystem::copy(src, target, std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+    }
+    catch (std::exception& e)
+    {
+    }
 }
 
 int Fs::filesize(std::string src) {

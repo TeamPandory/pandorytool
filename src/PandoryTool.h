@@ -14,6 +14,10 @@ public:
     std::string getCommitHash();
 
     std::string getAppSuffix();
+
+    int pspStockfix();
+
+    int stick();
 };
 
 #endif //PANDORERAPP_H
