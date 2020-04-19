@@ -18,7 +18,6 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "snes") return "SNES";
     if (dir == "nes") return "NES";
     if (dir == "pcengine") return "PCE";
-
     if (dir == "fba") return "FBA";
     if (dir == "mame19") return "MAME19";
     if (dir == "mame37") return "MAME37";

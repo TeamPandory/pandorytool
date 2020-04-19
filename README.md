@@ -68,7 +68,8 @@ Folder name|Required filetype|Rom-set|
 dreamcast|CDI||
 fba|ZIP|FBA 0.2.97.42|
 gba|GBA, BIN, AGB, GBZ||
-gbc|GB, GBC, SGB||
+gbc|GB, SGB||
+gbc|GBC, SGB||
 mame19|ZIP|Mame 0.190 (0.185 ok)|
 mame139|ZIP|Mame 0.139|
 mame37|ZIP|Mame 0.37b5|
@@ -124,6 +125,39 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - The restricted free build will only support up to 20 titles per system.  Unrestrict this by donating a cup of coffee @ https://www.buymeacoffee.com/CKZbiXa
 - This method will install games to the MicroSD inside the unit.  Please make sure you have enough space for the added titles.  If you would like to install them to the same USB stick, you need to create a folder in the root of the stick named "games", and then inside this, "download".
 
+# STICK
+- From Pandory 1.0.4, we have included the "stick" modifier to the pandory tool.  We can create USB sticks to perform different tasks for our PG3D.  For these operations, make sure we have a cleanly formatted exfat w/ 32kb partition size.
+
+## 1. STICK BACKUP
+1. Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
+2. Use the tool.  *If the USB stick was drive O:*  pandory.exe stick backup O:/
+4. Let the tool prepare the stick, then safely remove.
+5. Start up your Pandora (with microsd inserted)
+6. Insert your usb stick into bottom USB port, and wait.
+7. Once finished, your Pandora should reboot into the games menu.
+8. Turn off system, insert usbstick into PC, then copy off all files to your computer for safe keeping.
+	
+*note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may hang on the Android robot screen-  if this is the case, please wait a little longer, longer than 30 minutes? Then try a reboot and start once more.
+
+## 2. STICK JAILBREAK
+## PLEASE BACKUP USING STICK BACKUP BEFORE TRYING THIS!
+
+1. Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
+2. Use the tool.  *If the USB stick was drive O:* -  pandory.exe stick jailbreak O:/
+3. Let the tool prepare the stick, then safely remove.
+4. Start up your Pandora (with microsd inserted)
+5. Insert your usb stick into bottom USB port, and wait.
+6. Once Jailbreak has finished, you should be greeted by a new video and bumped into the Android menu.
+
+- Now every time you wish to enter Android- please enter this same stick.  This is now your "Android stick".
+
+*note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may take 2-3 times to work, if any reason it should fail, please start from the first step.
+
+## 3. ALTERNATIVE STICKS
+
+Now that we have the Jailbreak on the system, we can add other scripts to bump into said emulator on usb insertion-  These will be added in the near future after testing.
+
+
 ## MAME139 CONFIG FILES
 - cfg files that are in the controls/mame139 will automatically be applied to the install when adding games with pandory.  It compares the .zip rom filenames, so if you are using a split rom, please rename the controller config to reflect that.
 - You can update your controller cfg files by visiting the pandory github, and downloading from the controls master, or check out our discord
@@ -143,15 +177,18 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - If the rom is not found in skraper, you can change the names of them, which may help SKRAPER find them.  If your game video has not been found, that is not the fault of the PANDORY tool.
 
 ## THANKS HIGHSCORE CHART:
-1. Runningman2020 - 5
+1. Runningman2020
+2. Someone
+3. tinkleman710
+4. G.M.Spectre
 
 ## THANKS from team-Pandory:
 - Thomas Bouvrette: Providing the original pbobble3 archive demonstrating how to add roms to the Pandora unit 
 - Querol: Providing some informative Pandora Games 3D pdfs to the community. 
-- FilePirate: Providing information re: game configs- and the headaches. 
+- FilePirate: Providing information re: game configs, the headaches.
 - akira84: Confirmation on working / PANDORA 9H 
 - CrashCat: Confirmation on working / GoldenSky G6 
 - Noise Complaint: Allowing us to use their music @ https://noise-complaint.bandcamp.com/
 - Dirty Clide: Allowing us to use their music @ https://dirtyclide.bandcamp.com/
 - Lyndsay Bullock: Allowing the use of her "Pyro" work on our default skin @ https://www.facebook.com/lyndsaybullock.artist/
-- and... YOU!  To anyone who has supported us!
+- and... YOU!  To anyone who has supported us, and continues to help share info with other Pandora users.
