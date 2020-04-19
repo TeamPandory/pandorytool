@@ -1,5 +1,11 @@
 # Releases
 
+# Pandory v1.0.4 - 19-Apr-2020 (JAILBREAK!)
+1. Added JAILBREAK.  Bumps system into Android 4.4.  Custom APK installation now possible- can also load up scripts from gamemenu.
+2. Added BACKUP AUTOMATION.  Pandory can now create a quick and easy way to automate the backup processe.
+3. Added GB folder. Now we can easily separate the GB and GBC titles.
+4. New MAME139 cfgs added to the stack (aburner, aburner2, btimem, captcomm, gangwars, indyheat, mspacman, offroadt, qbert, ssprint)
+
 # Pandory v1.0.3 - 20-Mar-2020
 1. Added genre automation.  Automatically applies genre generated from the scrape.
 2. Added Sega 32X emulation (32x folder)
