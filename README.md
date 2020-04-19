@@ -129,26 +129,34 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - From Pandory 1.0.4, we have included the "stick" modifier to the pandory tool.  We can create USB sticks to perform different tasks for our PG3D.  For these operations, make sure we have a cleanly formatted exfat w/ 32kb partition size.
 
 ## 1. STICK BACKUP
--Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
-	-Use the tool.  If the USB stick was drive O:)
-			pandory.exe stick backup O:/
-	-Let the tool prepare the stick, then safely remove.
-	-Start up your Pandora (with microsd inserted)
-	-Insert your usb stick into bottom USB port, and wait.
-	-Once finished, your Pandora should reboot into the games menu.
-	- Turn off system, insert usbstick into PC, then copy off all files to your computer for safe keeping.
+1. Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
+2. Use the tool.  *If the USB stick was drive O:*  pandory.exe stick backup O:/
+4. Let the tool prepare the stick, then safely remove.
+5. Start up your Pandora (with microsd inserted)
+6. Insert your usb stick into bottom USB port, and wait.
+7. Once finished, your Pandora should reboot into the games menu.
+8. Turn off system, insert usbstick into PC, then copy off all files to your computer for safe keeping.
 	
 *note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may hang on the Android robot screen-  if this is the case, please wait a little longer, longer than 30 minutes? Then try a reboot and start once more.
 
 ## 2. STICK JAILBREAK
-## PLEASE BACKUP USING STICK BACKUP BEFORE TRYING THIS!
--Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
-	-Use the tool.  If the USB stick was drive O:)
-			pandory.exe stick jailbreak O:/
-	-Let the tool prepare the stick, then safely remove.
-	-Start up your Pandora (with microsd inserted)
-	-Insert your usb stick into bottom USB port, and wait.
+# PLEASE BACKUP USING STICK BACKUP BEFORE TRYING THIS!
+
+1. Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
+2. Use the tool.  *If the USB stick was drive O:* -  pandory.exe stick jailbreak O:/
+3. Let the tool prepare the stick, then safely remove.
+4. Start up your Pandora (with microsd inserted)
+5. Insert your usb stick into bottom USB port, and wait.
+6. Once Jailbreak has finished, you should be greeted by a new video and bumped into the Android menu.
+
+- Now every time you wish to enter Android- please enter this same stick.  This is now your "Android stick".
+
 *note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may take 2-3 times to work, if any reason it should fail, please start from the first step.
+
+## 3. ALTERNATIVE STICKS
+
+Now that we have the Jailbreak on the system, we can add other scripts to bump into said emulator on usb insertion.  We have provided a few folders that you can extract the contents to a usbstick to test out- More will be added in the future.
+
 
 ## MAME139 CONFIG FILES
 - cfg files that are in the controls/mame139 will automatically be applied to the install when adding games with pandory.  It compares the .zip rom filenames, so if you are using a split rom, please rename the controller config to reflect that.
