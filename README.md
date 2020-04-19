@@ -155,7 +155,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 
 ## 3. ALTERNATIVE STICKS
 
-Now that we have the Jailbreak on the system, we can add other scripts to bump into said emulator on usb insertion.  We have provided a few folders that you can extract the contents to a usbstick to test out- More will be added in the future.
+Now that we have the Jailbreak on the system, we can add other scripts to bump into said emulator on usb insertion-  These will be added in the near future after testing.
 
 
 ## MAME139 CONFIG FILES
