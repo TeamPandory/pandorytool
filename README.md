@@ -125,7 +125,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 - The restricted free build will only support up to 20 titles per system.  Unrestrict this by donating a cup of coffee @ https://www.buymeacoffee.com/CKZbiXa
 - This method will install games to the MicroSD inside the unit.  Please make sure you have enough space for the added titles.  If you would like to install them to the same USB stick, you need to create a folder in the root of the stick named "games", and then inside this, "download".
 
-## STICK
+# STICK
 - From Pandory 1.0.4, we have included the "stick" modifier to the pandory tool.  We can create USB sticks to perform different tasks for our PG3D.  For these operations, make sure we have a cleanly formatted exfat w/ 32kb partition size.
 
 ## 1. STICK BACKUP
@@ -140,7 +140,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 *note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may hang on the Android robot screen-  if this is the case, please wait a little longer, longer than 30 minutes? Then try a reboot and start once more.
 
 ## 2. STICK JAILBREAK
-# PLEASE BACKUP USING STICK BACKUP BEFORE TRYING THIS!
+## PLEASE BACKUP USING STICK BACKUP BEFORE TRYING THIS!
 
 1. Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
 2. Use the tool.  *If the USB stick was drive O:* -  pandory.exe stick jailbreak O:/
