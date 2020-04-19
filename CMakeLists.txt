@@ -55,6 +55,8 @@ add_executable(
 
 target_link_libraries(
     pandory
-    tinyxml2
     archive
+    tinyxml2
+    iconv
+    z
 )
