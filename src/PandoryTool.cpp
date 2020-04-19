@@ -39,7 +39,7 @@ int PandoryTool::main() {
     std::cout << "== Pandorytool has been worked on with blood, sweat and tears. If you would like us to continue " << std::endl;
     std::cout << "== work on this tool, please consider grabbing us a coffee at https://www.buymeacoffee.com/CKZbiXa." << std::endl;
     std::cout << std::endl;
-    std::cout << " * Various modded ROM controls contributed by: filepirate" << std::endl;
+    std::cout << " * Various MAME cfgs contributed by the community (check each cfg for credits)" << std::endl;
 #endif
     std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
 
