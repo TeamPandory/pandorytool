@@ -1,6 +1,6 @@
 # pandorytool
-A tool to automate ROM installation for the Pandora Games 3D  
-*Also compatible with PANDORA 9H, and GOLDENSKY G6
+A tool to automate ROM installation for the Pandora Games 3D and PANDORA 3D SAGA
+*Jailbreak may not work for GOLDENSKY G6 and PANDORA 9H*
 
 [![Pandory trailer](https://raw.githubusercontent.com/emuchicken/pandorytool/assets/videos/youtube-SU2iwxVzdmE.jpg)](https://www.youtube.com/watch?v=SU2iwxVzdmE)
 
