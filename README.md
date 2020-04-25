@@ -1,9 +1,10 @@
-# pandorytool
+# Pandorytool + Jailbreak
 A tool to automate ROM installation for the Pandora Games 3D and PANDORA 3D SAGA
 (*Jailbreak may not work for GOLDENSKY G6 / PANDORA 9H*)
 
-[![Pandory trailer](https://raw.githubusercontent.com/emuchicken/pandorytool/assets/videos/youtube-SU2iwxVzdmE.jpg)](https://www.youtube.com/watch?v=SU2iwxVzdmE)
-
+<p align="center">
+  <img width="600" src="https://raw.githubusercontent.com/emuchicken/pandorytool/master/docs/pandory.gif">
+</p>
 
 ## License
 pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), with the additional condition that you do not provide/redistribute compiled binaries of the source code. 
