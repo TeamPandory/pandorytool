@@ -1,6 +1,6 @@
 # pandorytool
 A tool to automate ROM installation for the Pandora Games 3D and PANDORA 3D SAGA
-*Jailbreak may not work for GOLDENSKY G6 and PANDORA 9H*
+(*Jailbreak may not work for GOLDENSKY G6 / PANDORA 9H*)
 
 [![Pandory trailer](https://raw.githubusercontent.com/emuchicken/pandorytool/assets/videos/youtube-SU2iwxVzdmE.jpg)](https://www.youtube.com/watch?v=SU2iwxVzdmE)
 
@@ -188,7 +188,12 @@ Now that we have the Jailbreak on the system, we can add other scripts to bump i
 - FilePirate: Providing information re: game configs, the headaches.
 - akira84: Confirmation on working / PANDORA 9H 
 - CrashCat: Confirmation on working / GoldenSky G6 
+- Xaviertb78: Confirmation on working / Pandora SAGA units
+- Robinvenderkuijl - Goldensky G6 testing - Glass breaking
+- Those active, that keep us sane- Gazza7126, TotalKI, spokito, sutart, gmspectre, etc
+- ALL in our discord and FB groups that keep the wheels turning
 - Noise Complaint: Allowing us to use their music @ https://noise-complaint.bandcamp.com/
 - Dirty Clide: Allowing us to use their music @ https://dirtyclide.bandcamp.com/
 - Lyndsay Bullock: Allowing the use of her "Pyro" work on our default skin @ https://www.facebook.com/lyndsaybullock.artist/
+- OCRemix - for allowing us to share awesome remixes, not pissing on content creators
 - and... YOU!  To anyone who has supported us, and continues to help share info with other Pandora users.
