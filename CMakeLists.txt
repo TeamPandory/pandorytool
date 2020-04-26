@@ -51,6 +51,9 @@ add_executable(
         src/libarchive.h
         src/StickExtractor.cpp
         src/StickExtractor.h
+        src/definitions/PSPMapper.cpp
+        src/definitions/PSPMapper.h
+        src/types.h
 )
 
 target_link_libraries(

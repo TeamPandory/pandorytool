@@ -1,14 +1,7 @@
 #include <string>
-#include <map>
+#include "PSPMapper.h"
 
-struct pspGameDef {
-    int controlType = 0;
-    int ppssppSettings = 0;
-    int players = 0;
-};
-
-int junk() {
-    std::map<std::string, pspGameDef> stockGames;
+PSPMapper::PSPMapper() {
     stockGames["tk6"] = {0,1,2};
     stockGames["TK5"] = {0,1,2};
     stockGames["MortalKombat"] = {0,1,1};
@@ -45,4 +38,8 @@ int junk() {
     stockGames["Numpla10000Mon"] = {0,1,1};
     stockGames["7wonders"] = {0,1,1};
     stockGames["Numblast"] = {0,1,1};
+}
+
+const std::map<std::string, pspConfigGameDef> &PSPMapper::getStockGames() const {
+    return stockGames;
 }
