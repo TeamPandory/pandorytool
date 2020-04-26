@@ -56,7 +56,7 @@ int Fs::copy(std::string source, std::string destination)
 {
 #ifdef __MINGW32__
     // Windows users... get forked!
-    std::string cmd = "copy /Y " + source + " " + destination;
+    std::string cmd = "copy /Y " + winSlashes(source + " " + destination);
     system(cmd.c_str());
 #else
     // Proper operating systems
