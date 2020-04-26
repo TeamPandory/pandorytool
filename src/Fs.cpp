@@ -17,6 +17,11 @@ bool Fs::makeDirectory(const std::string& dir) {
     return -1 != error;
 }
 
+std::string winSlashes(std::string path) {
+    std::replace(path.begin(),path.end(),'/','\\');
+    return path;
+}
+
 bool Fs::remove(const std::string &file) {
     return std::filesystem::remove_all(file.c_str());
 }
@@ -49,9 +54,15 @@ std::string Fs::extension(const std::string &file) {
 
 int Fs::copy(std::string source, std::string destination)
 {
-    //std::filesystem::create_directories(targetParent);
+#ifdef __MINGW32__
+    // Windows users... get forked!
+    std::string cmd = "copy /Y " + source + " " + destination;
+    system(cmd.c_str());
+#else
+    // Proper operating systems
     std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
-    return 0;
+#endif
+    return 0; // this is fine
 }
 
 int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::path &target)

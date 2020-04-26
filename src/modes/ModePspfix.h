@@ -4,14 +4,14 @@
 #include <string>
 #include "../types.h"
 
-class ModePspStockfix {
+class ModePspfix {
 protected:
     std::string& targetDir;
 
 public:
-    explicit ModePspStockfix(std::string &targetDir);
+    explicit ModePspfix(std::string &targetDir);
     int patchControlFolder(std::string source, std::string target, pspConfigGameDef gameDef);
-    int main();
+    int stock();
 };
 
 #endif //PANDORY_STOCKFIX_H

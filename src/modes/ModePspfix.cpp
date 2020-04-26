@@ -1,9 +1,9 @@
 #include <iostream>
-#include "ModePspStockfix.h"
+#include "ModePspfix.h"
 #include "../definitions/PSPMapper.h"
 #include "../Fs.h"
 
-int ModePspStockfix::main() {
+int ModePspfix::stock() {
     std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
 
     std::string path = targetDir + "/games/data/family/PSP0000/";
@@ -31,11 +31,11 @@ int ModePspStockfix::main() {
     return 0;
 }
 
-ModePspStockfix::ModePspStockfix(std::string &targetDir) : targetDir(targetDir) {
+ModePspfix::ModePspfix(std::string &targetDir) : targetDir(targetDir) {
 
 }
 
-int ModePspStockfix::patchControlFolder(std::string source, std::string target, pspConfigGameDef gameDef) {
+int ModePspfix::patchControlFolder(std::string source, std::string target, pspConfigGameDef gameDef) {
     Fs::makeDirectory(target + "PSP");
     Fs::makeDirectory(target + "PSP/SYSTEM");
     Fs::copy(source + "controls" + std::to_string(gameDef.controlType) +".ini", target + "PSP/SYSTEM/controls.ini");

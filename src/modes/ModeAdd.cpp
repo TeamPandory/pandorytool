@@ -153,12 +153,6 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             std::string additionalRom;
             std::string controlsPath = "./controls/" + system + "/" + targetRomName + ".cfg";
 
-            // psp controls
-            // deactivated. wrong concept
-            //if (system == "psp") {
-            //    controlsPath = "./controls/" + system + "/controls.ini";
-            //}
-
             if (Fs::exists(controlsPath)) {
                 additionalRom = Fs::basename(controlsPath);
                 copyRomToDestination(controlsPath, targetRomDir, false);

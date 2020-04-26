@@ -44,8 +44,8 @@ add_executable(
         src/McGamesAbstract.h
         src/modes/ModePrepare.cpp
         src/modes/ModePrepare.h
-        src/modes/ModePspStockfix.cpp
-        src/modes/ModePspStockfix.h
+        src/modes/ModePspfix.cpp
+        src/modes/ModePspfix.h
         src/modes/ModeStick.cpp
         src/modes/ModeStick.h
         src/libarchive.h

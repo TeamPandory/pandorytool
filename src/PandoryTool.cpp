@@ -2,7 +2,7 @@
 #include "PandoryTool.h"
 #include "modes/ModeAdd.h"
 #include "modes/ModePrepare.h"
-#include "modes/ModePspStockfix.h"
+#include "modes/ModePspfix.h"
 #include "modes/ModeStick.h"
 
 PandoryTool::PandoryTool(int i, char **pString) {
@@ -131,8 +131,8 @@ int PandoryTool::pspStockfix() {
         usage();
         return 1;
     }
-    ModePspStockfix stockfix(targetDir);
-    return stockfix.main();
+    ModePspfix stockfix(targetDir);
+    return stockfix.stock();
 }
 
 int PandoryTool::stick() {
