@@ -2,5 +2,6 @@
 cmake-build-debug/
 build-win32/
 build-linux/
+stick/
 winbuild/
 testdata
