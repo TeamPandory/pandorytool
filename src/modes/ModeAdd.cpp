@@ -182,6 +182,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
         extension = "";
     }
     std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
+    Fs::makeDirectory(destination);
     Fs::copy(rom, destination + "/" + basename + extension);
 }
 
@@ -190,6 +191,7 @@ void ModeAdd::copyRomToDestination(const std::string &rom, const std::string &de
 void ModeAdd::copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination) {
     std::string basename = Fs::basename(destination);
     std::string extension = Fs::extension(absoluteVideoPath);
+    Fs::makeDirectory(destination);
     Fs::copy(absoluteVideoPath, destination + "/" + basename + extension);
 }
 
