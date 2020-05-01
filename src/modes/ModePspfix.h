@@ -7,11 +7,15 @@
 class ModePspfix {
 protected:
     std::string& targetDir;
-
+    std::string stockPath = "/games/data/family/PSP0000/";
+    std::string getStockPath();
 public:
     explicit ModePspfix(std::string &targetDir);
     int patchControlFolder(std::string source, std::string target, pspConfigGameDef gameDef);
-    int stock();
+    int stockFix();
+    int otherFix();
+
+    int checkStockPath();
 };
 
 #endif //PANDORY_STOCKFIX_H

@@ -3,16 +3,21 @@
 #include "../definitions/PSPMapper.h"
 #include "../Fs.h"
 
-int ModePspfix::stock() {
-    std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
-
-    std::string path = targetDir + "/games/data/family/PSP0000/";
+int ModePspfix::checkStockPath() {
+    std::string path = getStockPath();
     if (!Fs::exists(path)) {
         std::cout << path << " could not be found " << std::endl;
         std::cout << "Please install the PSP0000 game using `pandory add` in order to use pspstockfix." << std::endl;
         return 1;
     }
+}
 
+int ModePspfix::stockFix() {
+    std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
+    if (!checkStockPath()) {
+        return 1;
+    }
+    std::string path = getStockPath();
     patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
 
     auto pspMapper = new PSPMapper;
@@ -31,6 +36,26 @@ int ModePspfix::stock() {
     return 0;
 }
 
+int ModePspfix::otherFix() {
+    std::cout << "Attempting to fix non-stock PSP game controls..." << std::endl;
+    if (!checkStockPath()) {
+        return 1;
+    }
+
+    std::string romsPath = targetDir + "/games/data/family/";
+    std::string path = getStockPath();
+    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
+
+    for (const auto & entry : std::filesystem::directory_iterator(romsPath)) {
+        std::string romFolder = Fs::basename(entry.path().string());
+        if (romFolder.substr(0, 3) == "PSP" && romFolder != "PSP0000") {
+            std::cout << romFolder << std::endl;
+            patchControlFolder(path, entry.path().string() + "/", pspConfigGameDef{0, 1, 1});
+        }
+    }
+    return 0;
+}
+
 ModePspfix::ModePspfix(std::string &targetDir) : targetDir(targetDir) {
 
 }
@@ -41,4 +66,9 @@ int ModePspfix::patchControlFolder(std::string source, std::string target, pspCo
     Fs::copy(source + "controls" + std::to_string(gameDef.controlType) +".ini", target + "PSP/SYSTEM/controls.ini");
     Fs::copy(source + "ppsspp" +std::to_string(gameDef.ppssppSettings)+ ".ini", target + "PSP/SYSTEM/ppsspp.ini");
     return 0;
+}
+
+std::string ModePspfix::getStockPath() {
+    std::string path = targetDir + "/games/data/family/PSP0000/";
+    return path;
 }

@@ -60,6 +60,10 @@ int PandoryTool::main() {
         return pspStockfix();
     }
 
+    if (mode == "pspfix") {
+        return pspFix();
+    }
+
     if (mode == "stick") {
         return stick();
     }
@@ -85,6 +89,8 @@ void PandoryTool::usage() {
     std::cout << "\t\tExample: pandory add C:\\roms F:\\" << std::endl;
     std::cout << std::endl;
 
+    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+
     std::cout << "PANDORY JAILBREAK! - PLEASE BACK UP YOUR SYSTEM FIRST!" << std::endl;
     std::cout << "   == Tutorial video [Pandora MicroSD backup]: https://www.youtube.com/watch?v=sOluaeOtTX4" << std::endl;
     std::cout << "   == Tutorial video [Full system backups]   : https://www.youtube.com/watch?v=HdLaEymH0ok" << std::endl;
@@ -100,6 +106,17 @@ void PandoryTool::usage() {
     std::cout << "\t\tpandory stick jailbreak <destDrive>" << std::endl;
     std::cout << "\t\tExample: pandory stick jailbreak F:\\" << std::endl;
     std::cout << std::endl;
+
+    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+
+    std::cout << "FIX PSP CONTROLS!" << std::endl;
+    std::cout << "6) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;
+    std::cout << "\t\tpandory pspstockfix <destDrive>" << std::endl;
+    std::cout << "\t\tpandory pspfix <destDrive>" << std::endl;
+    std::cout << "\t\tExample: pandory pspstockfix F:\\" << std::endl;
+    std::cout << "\t\tExample: pandory pspfix F:\\" << std::endl;
+    std::cout << std::endl;
+
 
 }
 
@@ -131,9 +148,22 @@ int PandoryTool::pspStockfix() {
         usage();
         return 1;
     }
-    ModePspfix stockfix(targetDir);
-    return stockfix.stock();
+    ModePspfix pspfix(targetDir);
+    return pspfix.stockFix();
 }
+
+int PandoryTool::pspFix() {
+    std::string targetDir = args.getArgument(2);
+    if (targetDir.empty()) {
+        usage();
+        return 1;
+    }
+    ModePspfix pspfix(targetDir);
+    return pspfix.otherFix();
+}
+
+
+
 
 int PandoryTool::stick() {
     std::string stickType = args.getArgument(2);

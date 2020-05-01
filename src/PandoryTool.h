@@ -18,6 +18,8 @@ public:
     int pspStockfix();
 
     int stick();
+
+    int pspFix();
 };
 
 #endif //PANDORERAPP_H
