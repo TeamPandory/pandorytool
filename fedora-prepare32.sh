@@ -7,7 +7,7 @@ sudo dnf -y install mingw32-gcc mingw32-gcc-c++ mingw32-winpthreads-static.noarc
 sudo dnf -y install gcc gcc-c++ tinyxml2.x86_64 tinyxml2-devel.x86_64
 
 # generic build tools
-sudo dnf -y install cmake make upx 
+sudo dnf -y install cmake make
 
 HERE=`pwd`
 

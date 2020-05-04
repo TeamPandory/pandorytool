@@ -4,10 +4,6 @@ cd build-win32 || exit;
 mingw32-cmake ..
 make
 
-if [ -x "$(command -v upx)" ]; then
-  upx -9 pandory.exe
-fi
-
 rm -rf sticks;
 mkdir sticks;
 cd sticks;
