@@ -17,9 +17,11 @@ if($ENV{NO_SHAREWARE_LIMIT})
 add_definitions("-DNO_SHAREWARE_LIMIT=1")
 endif()
 
+find_package(wxWidgets REQUIRED COMPONENTS net core base)
+
 if(MSVC OR MSYS OR MINGW)
     # for detecting Windows compilers
-    set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
+    #set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O3 -static-libstdc++ -static -s")
 endif()
 
@@ -62,4 +64,5 @@ target_link_libraries(
     tinyxml2
     iconv
     z
+    ${wxWidgets_LIBRARIES}
 )
