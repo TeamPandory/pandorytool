@@ -4,6 +4,6 @@
 
 class StickExtractor {
 public:
-    int exractToFolder(std::string &stickType, std::string &targetFolder);
+    int exractToFolder(std::string &stickName, std::string &tarPath, std::string &targetFolder);
 };
 #endif //PANDORY_STICKEXTRACTOR_H

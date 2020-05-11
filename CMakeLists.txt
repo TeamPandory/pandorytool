@@ -56,13 +56,15 @@ add_executable(
         src/definitions/PSPMapper.cpp
         src/definitions/PSPMapper.h
         src/types.h
-)
+        src/StickDownloader.cpp src/StickDownloader.h src/UserFolders.cpp src/UserFolders.h)
 
 target_link_libraries(
     pandory
     archive
     tinyxml2
     iconv
+    curlpp
+    curl
     z
     ${wxWidgets_LIBRARIES}
 )

@@ -42,8 +42,15 @@ PSPMapper::PSPMapper() {
     stockGames["CiKeXT"] = {0,2,1};
     stockGames["pes2012"] = {0,2,4};
     stockGames["gwlrP3"] = {0,2,1};
+
+    stockTwoPlayerCodes["tk5"] = {std::string("ULUS10139_1.00") };
+    stockTwoPlayerCodes["TK6"] = {std::string("ULUS10466_1.00") };
 }
 
 const std::map<std::string, pspConfigGameDef> &PSPMapper::getStockGames() const {
     return stockGames;
+}
+
+const std::map<std::string, pspConfigTwoPlayer> &PSPMapper::getTwoPlayerCodes() const {
+    return stockTwoPlayerCodes;
 }

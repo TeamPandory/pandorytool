@@ -1,27 +1,33 @@
 #include "StickExtractor.h"
 #include "libarchive.h"
 #include "Fs.h"
-#include <iostream>
+#include "UserFolders.h"
 #include <algorithm>
 
-int StickExtractor::exractToFolder(std::string &stickType, std::string &targetFolder) {
+int StickExtractor::exractToFolder(std::string &stickName, std::string &tarPath, std::string &targetFolder) {
     std::string curDir = Fs::getCurrentPath();
-    std::string tarPath = curDir + "/sticks/stick-" + stickType + ".tar.gz";
-    std::string tmpDir = curDir + "/tmp/";
+
+    UserFolders uf;
+    std::string tmpDir = uf.getTemporaryFolder() + "/pandoryTemp/";
     Fs::remove(tmpDir);
     Fs::makeDirectory(tmpDir);
 
     chdir(tmpDir.c_str());
-    extract(tarPath.c_str());
+    const char * foo = tarPath.c_str();
+    extract(foo);
 
-    std::string extractedFolder = tmpDir+"pandorytool-stick-"+stickType;
+    std::string extractedFolder = tmpDir + "pandorytool-stick";
+    Fs::remove(extractedFolder);
+    Fs::makeDirectory(extractedFolder);
     chdir(curDir.c_str());
-    std::string cmd = extractedFolder + "/*.* " + targetFolder; 
-    std::replace(cmd.begin(),cmd.end(),'/','\\'); 
-    // TODO: cross-platform copy. locked to windows temporarily
-    //std::cout << cmd << std::endl;
+#ifdef __MINGW32__
+    std::string cmd = extractedFolder + "/*.* " + targetFolder;
+    std::replace(cmd.begin(),cmd.end(),'/','\\');
     std::string execCmd = "xcopy /E " + cmd;
     system(execCmd.c_str());
-    //Fs::copyRecursive(extractedFolder, targetFolder);
+#else
+    Fs::copyRecursive(extractedFolder, targetFolder);
+#endif
     return 0;
 }
+

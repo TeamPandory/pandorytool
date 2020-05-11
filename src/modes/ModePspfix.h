@@ -11,7 +11,7 @@ protected:
     std::string getStockPath();
 public:
     explicit ModePspfix(std::string &targetDir);
-    int patchControlFolder(std::string source, std::string target, pspConfigGameDef gameDef);
+    int patchControlFolder(const std::string& source, const std::string& target, pspConfigGameDef gameDef);
     int stockFix();
     int otherFix();
 

@@ -109,7 +109,7 @@ void PandoryTool::usage() {
 
     std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
 
-    std::cout << "FIX PSP CONTROLS!" << std::endl;
+    std::cout << "FIX PSP CONTROLS & TWO-PLAYER MODES!" << std::endl;
     std::cout << "6) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;
     std::cout << "\t\tpandory pspstockfix <destDrive>" << std::endl;
     std::cout << "\t\tpandory pspfix <destDrive>" << std::endl;
