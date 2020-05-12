@@ -15,7 +15,9 @@ struct pspConfigTwoPlayer {
 
 struct stick {
     std::string stickName;
+    std::string stickPath;
     std::string stickUrl;
+    std::string stickDescription;
 };
 
 #endif //PANDORY_TYPES_H

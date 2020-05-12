@@ -4,7 +4,7 @@
 #include "UserFolders.h"
 #include <algorithm>
 
-int StickExtractor::exractToFolder(std::string &stickName, std::string &tarPath, std::string &targetFolder) {
+int StickExtractor::exractToFolder(const stick &stick, std::string &tarPath, std::string &targetFolder) {
     std::string curDir = Fs::getCurrentPath();
 
     UserFolders uf;
@@ -14,11 +14,10 @@ int StickExtractor::exractToFolder(std::string &stickName, std::string &tarPath,
 
     chdir(tmpDir.c_str());
     const char * foo = tarPath.c_str();
-    extract(foo);
-
-    std::string extractedFolder = tmpDir + "pandorytool-stick";
+    std::string extractedFolder = tmpDir + stick.stickPath+"/";
     Fs::remove(extractedFolder);
     Fs::makeDirectory(extractedFolder);
+    extract(foo);
     chdir(curDir.c_str());
 #ifdef __MINGW32__
     std::string cmd = extractedFolder + "/*.* " + targetFolder;
@@ -26,7 +25,7 @@ int StickExtractor::exractToFolder(std::string &stickName, std::string &tarPath,
     std::string execCmd = "xcopy /E " + cmd;
     system(execCmd.c_str());
 #else
-    Fs::copyRecursive(extractedFolder, targetFolder);
+    Fs::copyRecursive(extractedFolder, targetFolder+"/");
 #endif
     return 0;
 }

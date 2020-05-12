@@ -28,7 +28,7 @@ std::string PandoryTool::getAppSuffix() {
 
 
 int PandoryTool::main() {
-    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
     std::cout << "Pandora Games 3D - Utility" << getAppSuffix() << " by emuchicken & dajoho   [Version: " << getCommitHash() << "]" << std::endl;
     std::cout << "== Join us on Discord! https://discord.gg/Az94Rxn" << std::endl;
     std::cout << "== Like us on Facebook! https://www.facebook.com/groups/2522039741415070/" << std::endl;
@@ -41,7 +41,7 @@ int PandoryTool::main() {
     std::cout << std::endl;
     std::cout << " * Various MAME cfgs contributed by the community (check each cfg for credits)" << std::endl;
 #endif
-    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
 
     if (args.getArgumentCount() == 1) {
         usage();
@@ -89,7 +89,7 @@ void PandoryTool::usage() {
     std::cout << "\t\tExample: pandory add C:\\roms F:\\" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
 
     std::cout << "PANDORY JAILBREAK! - PLEASE BACK UP YOUR SYSTEM FIRST!" << std::endl;
     std::cout << "   == Tutorial video [Pandora MicroSD backup]: https://www.youtube.com/watch?v=sOluaeOtTX4" << std::endl;
@@ -107,7 +107,7 @@ void PandoryTool::usage() {
     std::cout << "\t\tExample: pandory stick jailbreak F:\\" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "---------------------------------------------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------------------------------------------------------------------------" << std::endl;
 
     std::cout << "FIX PSP CONTROLS & TWO-PLAYER MODES!" << std::endl;
     std::cout << "6) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;

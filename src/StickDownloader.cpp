@@ -3,8 +3,14 @@
 #include "UserFolders.h"
 #include <curl/curl.h>
 
+int writeCount = 0;
 size_t WriteCallback(char *ptr, size_t size, size_t nmemb, void *f) {
     FILE *file = (FILE *) f;
+    std::cout << ".";
+    writeCount++;
+    if (writeCount % 100 == 0) {
+        std::cout << std::endl;
+    }
     return fwrite(ptr, size, nmemb, file);
 };
 
@@ -27,6 +33,6 @@ std::string StickDownloader::download(const stick &stick) {
         curl_easy_cleanup(curl);
         fclose(fp);
     }
-    std::cout << targetFile << std::endl;
+    std::cout << std::endl;
     return targetFile;
 }

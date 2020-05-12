@@ -73,6 +73,7 @@ int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::p
     }
     catch (std::exception& e)
     {
+        int x = 0;
     }
     return 0;
 }

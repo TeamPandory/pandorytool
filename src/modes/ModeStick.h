@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include "../types.h"
 
 class ModeStick {
 protected:
@@ -14,9 +15,9 @@ public:
 
     int main();
 
-    int jailbreak();
+    int makeStick(const std::string &stickName);
 
-    int backup();
+    int makeStick(stick stickData);
 };
 
 
