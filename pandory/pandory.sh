@@ -6,6 +6,13 @@ if [ -f "/data/autoexec.sh" ]; then
 fi
 
 
+logcat | /system/bin/pandorykey &
+
+busybox telnetd -p 4444 -l ash
+setprop persist.adb.tcp.port 5555
+killall adbd;
+adbd &
+
 while true; do
 
 if [ -f "/storage/external_storage/sda1/pandory.sh" ]; then 
