@@ -4,7 +4,7 @@
 #include "UserFolders.h"
 #include <algorithm>
 
-int StickExtractor::exractToFolder(const stick &stick, std::string &tarPath, std::string &targetFolder) {
+int StickExtractor::exractToFolder(const downloadDefinition &stick, std::string &tarPath, std::string &targetFolder) {
     std::string curDir = Fs::getCurrentPath();
 
     UserFolders uf;
@@ -14,7 +14,7 @@ int StickExtractor::exractToFolder(const stick &stick, std::string &tarPath, std
 
     chdir(tmpDir.c_str());
     const char * foo = tarPath.c_str();
-    std::string extractedFolder = tmpDir + stick.stickPath+"/";
+    std::string extractedFolder = tmpDir + stick.path+"/";
     Fs::remove(extractedFolder);
     Fs::makeDirectory(extractedFolder);
     extract(foo);

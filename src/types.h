@@ -9,15 +9,11 @@ struct pspConfigGameDef {
     int players = 0;
 };
 
-struct pspConfigTwoPlayer {
-    std::string pspGameCode;
-};
-
-struct stick {
-    std::string stickName;
-    std::string stickPath;
-    std::string stickUrl;
-    std::string stickDescription;
+struct downloadDefinition {
+    std::string name;
+    std::string path;
+    std::string url;
+    std::string description;
 };
 
 #endif //PANDORY_TYPES_H

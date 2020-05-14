@@ -6,11 +6,11 @@
 
 class Sticks {
 protected:
-    std::map<std::string, stick> sticks;
+    std::map<std::string, downloadDefinition> sticks;
 
 public:
     Sticks();
-    stick getStickByName(const std::string &stickName);
+    downloadDefinition getStickByName(const std::string &name);
 };
 
 

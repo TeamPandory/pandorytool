@@ -6,7 +6,7 @@
 class StickDownloader {
 
 public:
-    std::string download(const stick &stick);
+    std::string download(const downloadDefinition &stick);
 };
 
 #endif //PANDORY_STICKDOWNLOADER_H

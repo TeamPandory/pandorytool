@@ -14,8 +14,9 @@ public:
     int patchControlFolder(const std::string& source, const std::string& target, pspConfigGameDef gameDef);
     int stockFix();
     int otherFix();
+    int stage1();
 
-    int checkStockPath();
+    bool checkStockPath();
 };
 
 #endif //PANDORY_STOCKFIX_H

@@ -21,7 +21,7 @@ std::string PandoryTool::getCommitHash() {
 std::string PandoryTool::getAppSuffix() {
     std::string suffix = " [Full Edition]";
 #ifndef NO_SHAREWARE_LIMIT
-    suffix = " [Shareware Edition]";
+    suffix = " [Standard Edition]";
 #endif
     return suffix;
 }
@@ -153,13 +153,25 @@ int PandoryTool::pspStockfix() {
 }
 
 int PandoryTool::pspFix() {
-    std::string targetDir = args.getArgument(2);
-    if (targetDir.empty()) {
+    std::string subMode = args.getArgument(2);
+    std::string targetDir = args.getArgument(3);
+    if (targetDir.empty() || subMode.empty()) {
         usage();
         return 1;
     }
     ModePspfix pspfix(targetDir);
-    return pspfix.otherFix();
+
+    if (subMode == "stock") {
+        return pspfix.stockFix();
+    }
+    else if (subMode == "other") {
+        return pspfix.otherFix();
+    }
+    else if (subMode == "stage1") {
+        return pspfix.stage1();
+    }
+    usage();
+    return 1;
 }
 
 

@@ -8,14 +8,11 @@
 class PSPMapper {
     protected:
         std::map<std::string, pspConfigGameDef> stockGames;
-        std::map<std::string, pspConfigTwoPlayer> stockTwoPlayerCodes;
-
+        std::map<std::string, downloadDefinition> controlFixes;
 public:
     PSPMapper();
-
     [[nodiscard]] const std::map<std::string, pspConfigGameDef> &getStockGames() const;
-    [[nodiscard]] const std::map<std::string, pspConfigTwoPlayer> &getTwoPlayerCodes() const;
-
+    [[nodiscard]] const std::map<std::string, downloadDefinition> &getControlFixes() const;
 };
 
 

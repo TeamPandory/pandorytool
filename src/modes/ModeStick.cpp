@@ -8,9 +8,9 @@
 
 int ModeStick::main() {
     Sticks sticks;
-    stick selectedStick = sticks.getStickByName(stickType);
+    downloadDefinition selectedStick = sticks.getStickByName(stickType);
 
-    if (!selectedStick.stickName.empty()) {
+    if (!selectedStick.name.empty()) {
         return makeStick(selectedStick);
     }
 
@@ -18,18 +18,18 @@ int ModeStick::main() {
     return 1;
 }
 
-int ModeStick::makeStick(stick stickData) {
+int ModeStick::makeStick(downloadDefinition stickData) {
     if (!Fs::exists(targetDir)) {
         std::cout << "Could not create stick. " << targetDir << " does not exist." << std::endl;
         return 1;
     }
-    std::cout << "Creating " << stickData.stickName << "-stick at " << targetDir << std::endl;
+    std::cout << "Creating " << stickData.name << "-stick at " << targetDir << std::endl;
 
     StickDownloader sdl;
     std::string tar = sdl.download(stickData);
     StickExtractor stickExtractor;
     stickExtractor.exractToFolder(stickData, tar, targetDir);
-    std::cout << stickData.stickDescription << std::endl;
+    std::cout << stickData.description << std::endl;
     return 0;
 }
 ModeStick::ModeStick(std::string &stickType, std::string &targetDir) : stickType(stickType), targetDir(targetDir) {}

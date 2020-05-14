@@ -5,12 +5,13 @@ Sticks::Sticks() {
             "pandorytool-stick-jailbreak",
             "https://github.com/emuchicken/pandorytool/archive/stick-jailbreak.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
-            "`pandory.sh` is a bash-shellscript. By default, it starts the android launcher, but can\n"
-            "be configured to do anything you like. This means you can use this stick as a base to make your\n"
-            "own sticks.\n\n"
-            "After a successful jailbreak, the stick is reconfigured to act as a dedicated `Launch Android`-Stick.\n"
-            "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"
-            "reboot the machine and try again.\n"
+            "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
+            "The jailbreak also enables adb over wifi on port 5555 and telnet on port 4444, which enables you to\n"
+            "remotely log in using:\n\n"
+            "adb connect ip-of-pandora:5555\n"
+            "adb shell\n"
+            "  OR  \n"
+            "telnet ip-of-pandora-box:4444"
     };
 
     sticks["backup"] = {
@@ -35,12 +36,12 @@ Sticks::Sticks() {
     };
 }
 
-stick Sticks::getStickByName(const std::string &stickName) {
-    std::map<std::string, stick>::iterator it;
+downloadDefinition Sticks::getStickByName(const std::string &name) {
+    std::map<std::string, downloadDefinition>::iterator it;
     for (it = sticks.begin(); it != sticks.end(); it++) {
-        if (it->first == stickName) {
+        if (it->first == name) {
             return it->second;
         }
     }
-    return stick{};
+    return downloadDefinition{};
 }

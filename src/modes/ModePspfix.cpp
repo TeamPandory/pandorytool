@@ -1,38 +1,28 @@
 #include <iostream>
+#include <fstream>
 #include "ModePspfix.h"
 #include "../definitions/PSPMapper.h"
 #include "../Fs.h"
 #include "../StickDownloader.h"
-
 #include "../types.h"
 #include "../UserFolders.h"
+#include "../StickExtractor.h"
 
-int ModePspfix::checkStockPath() {
+bool ModePspfix::checkStockPath() {
     std::string path = getStockPath();
     if (!Fs::exists(path)) {
         std::cout << path << " could not be found " << std::endl;
-        std::cout << "Please install the PSP0000 stick using `pandory stick psp0000` in order to use pspstockfix."
+        std::cout << "Please run `pandory pspfix stage1`, install the PSP injector on your Pandora console" << std::endl
+                  << "and then insert your SD card into drive " << targetDir << " in order to fix stock games."
                   << std::endl;
-        return 1;
+        return false;
     }
-    return 0;
+    return true;
 }
 
 int ModePspfix::stockFix() {
-
     UserFolders uf;
     std::string tempFolder = uf.getTemporaryFolder();
-
-    stick backupStick = {
-            "backup",
-            "https://github.com/emuchicken/pandorytool/archive/stick-backup.tar.gz"
-    };
-    StickDownloader sdl;
-    sdl.download(backupStick);
-
-    return EXIT_SUCCESS;
-
-
     std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
     if (!checkStockPath()) {
         return 1;
@@ -90,4 +80,39 @@ int ModePspfix::patchControlFolder(const std::string &source, const std::string 
 std::string ModePspfix::getStockPath() {
     std::string path = targetDir + "/games/data/family/PSP0000/";
     return path;
+}
+
+int ModePspfix::stage1() {
+    std::cout << "Installing PSP injector to " << targetDir << std::endl;
+    std::string mcGames = targetDir + "/mcgames/";
+    std::string pspRomFolder = mcGames + "PSP0000";
+    Fs::makeDirectory(mcGames);
+    Fs::makeDirectory(pspRomFolder);
+    if (!Fs::exists(mcGames)) {
+        std::cout << "Cannot create " << targetDir << ", exiting." << std::endl;
+        return 1;
+    }
+
+    std::ofstream installFile;
+    installFile.open(mcGames+"install.txt");
+    installFile << "PSP0000" << std::endl;
+    installFile.close();
+
+    StickDownloader stickDl;
+    StickExtractor stickExt;
+    PSPMapper pm;
+    std::map<std::string, downloadDefinition>balls = pm.getControlFixes();
+    std::map<std::string, downloadDefinition>::iterator it;
+    for (it = balls.begin(); it != balls.end(); it++) {
+        std::string stickName = it->second.name;
+        downloadDefinition def = it->second;
+        std::cout << "Downloading " << def.name << " control files..." << std::endl;
+        std::string tarGz = stickDl.download(def);
+        if (!Fs::exists(tarGz)) {
+            std::cout << "Could not download " << stickName << ", exiting." << std::endl;
+        }
+        stickExt.exractToFolder(def, tarGz, pspRomFolder);
+    }
+    int foo = 2;
+    return 0;
 }

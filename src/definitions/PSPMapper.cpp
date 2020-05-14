@@ -43,14 +43,77 @@ PSPMapper::PSPMapper() {
     stockGames["pes2012"] = {0,2,4};
     stockGames["gwlrP3"] = {0,2,1};
 
-    stockTwoPlayerCodes["tk5"] = {std::string("ULUS10139_1.00") };
-    stockTwoPlayerCodes["TK6"] = {std::string("ULUS10466_1.00") };
+    controlFixes["psp0000"] = {
+        "PSP Injector",
+        "pandory-media-psp0000",
+        "https://github.com/emuchicken/pandory-media/archive/psp0000.tar.gz",
+    };
+
+    controlFixes["ULAS42289-opes2012"] = {
+            "Pes 2012",
+            "pandory-media-ULAS42289-pes2012",
+            "https://github.com/emuchicken/pandory-media/archive/ULAS42289-pes2012.tar.gz",
+    };
+
+    controlFixes["ULES00353-MortalKombat"] = {
+            "Mortal Kombat",
+            "pandory-media-ULES00353-MortalKombat",
+            "https://github.com/emuchicken/pandory-media/archive/ULES00353-MortalKombat.tar.gz",
+    };
+
+    controlFixes["ULJM05355-GuiltyGear"] = {
+            "Guilty Gear",
+            "pandory-media-ULJM05355-GuiltyGear",
+            "https://github.com/emuchicken/pandory-media/archive/ULJM05355-GuiltyGear.tar.gz",
+    };
+
+    controlFixes["ULJM05450-Weekly"] = {
+            "Weekly",
+            "pandory-media-ULJM05450-Weekly",
+            "https://github.com/emuchicken/pandory-media/archive/ULJM05450-Weekly.tar.gz",
+    };
+
+    controlFixes["ULJS00202-SoulcaliburBrokenDestiny"] = {
+            "Soulcalibur Broken Destiny",
+            "pandory-media-ULJS00202-SoulcaliburBrokenDestiny",
+            "https://github.com/emuchicken/pandory-media/archive/ULJS00202-SoulcaliburBrokenDestiny.tar.gz",
+    };
+
+    controlFixes["ULUS10139-TK5"] = {
+            "Tekken 5",
+            "pandory-media-ULUS10139-TK5",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10139-TK5.tar.gz",
+    };
+
+    controlFixes["ULUS10466-tk6"] = {
+            "Tekken 6",
+            "pandory-media-ULUS10466-tk6",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10466-tk6.tar.gz",
+    };
+
+    controlFixes["ULUS10544-WWEAllStars"] = {
+            "WWE All-Stars",
+            "pandory-media-ULUS10544-WWEAllStars",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10544-WWEAllStars.tar.gz",
+    };
+
+    controlFixes["ULUS10579-CangYiMSL2"] = {
+            "CangYiMSL2",
+            "pandory-media-ULUS10579-CangYiMSL2",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10579-CangYiMSL2.tar.gz",
+    };
+
+    controlFixes["PowerStoneCollection"] = {
+            "PowerStoneCollection",
+            "pandory-media-ULUS10171-PowerStoneCollection",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10171-PowerStoneCollection.tar.gz",
+    };
 }
 
 const std::map<std::string, pspConfigGameDef> &PSPMapper::getStockGames() const {
     return stockGames;
 }
 
-const std::map<std::string, pspConfigTwoPlayer> &PSPMapper::getTwoPlayerCodes() const {
-    return stockTwoPlayerCodes;
+const std::map<std::string, downloadDefinition> &PSPMapper::getControlFixes() const {
+    return controlFixes;
 }

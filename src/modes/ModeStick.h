@@ -15,9 +15,9 @@ public:
 
     int main();
 
-    int makeStick(const std::string &stickName);
+    int makeStick(const std::string &name);
 
-    int makeStick(stick stickData);
+    int makeStick(downloadDefinition stickData);
 };
 
 
