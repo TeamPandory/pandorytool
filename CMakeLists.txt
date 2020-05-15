@@ -25,18 +25,20 @@ endif()
 #find_package(wxWidgets REQUIRED COMPONENTS net core base)
 
 
-if(WIN32 AND !JETBRAINS_CLION_IDE)
+if(MSVC OR MSYS OR MINGW)
+    if (NOT JETBRAINS_CLION_IDE)
     option(CURL_STATICLIB "Set to ON to build libcurl with static linking."  ON)
     add_definitions("-DCURL_STATICLIB")
+    endif()
 endif()
 set(CURL_LIBRARY "-lcurl") 
 find_package(CURL REQUIRED) 
 include_directories(${CURL_INCLUDE_DIR})
 
 if(MSVC OR MSYS OR MINGW)
+    if (NOT JETBRAINS_CLION_IDE)
     # for detecting Windows compilers
     #set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
-    if (!JETBRAINS_CLION_IDE)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O3 -static-libstdc++ -static -s")
     endif()
 endif()
