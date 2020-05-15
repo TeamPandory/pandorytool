@@ -17,7 +17,18 @@ if($ENV{NO_SHAREWARE_LIMIT})
 add_definitions("-DNO_SHAREWARE_LIMIT=1")
 endif()
 
-find_package(wxWidgets REQUIRED COMPONENTS net core base)
+#find_package(wxWidgets REQUIRED COMPONENTS net core base)
+
+option(CURL_STATICLIB "Set to ON to build libcurl with static linking."  ON)
+
+if(WIN32)
+    add_definitions("-DCURL_STATICLIB")
+endif()
+set(CURL_LIBRARY "-lcurl") 
+find_package(CURL REQUIRED) 
+include_directories(${CURL_INCLUDE_DIR})
+
+
 
 if(MSVC OR MSYS OR MINGW)
     # for detecting Windows compilers
@@ -60,11 +71,25 @@ add_executable(
 
 target_link_libraries(
     pandory
+   
+
     archive
     tinyxml2
     iconv
-    curlpp
+
     curl
+
+    ssl 
+    crypto 
+    crypt32 
+    gdi32 
+    ws2_32
+    
+    ssh2
+    idn2
+    wldap32
+
     z
-    ${wxWidgets_LIBRARIES}
+
+    # ${wxWidgets_LIBRARIES}
 )
