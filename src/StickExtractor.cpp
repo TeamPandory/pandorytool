@@ -14,19 +14,13 @@ int StickExtractor::exractToFolder(const downloadDefinition &stick, std::string 
 
     chdir(tmpDir.c_str());
     const char * foo = tarPath.c_str();
-    std::string extractedFolder = tmpDir + stick.path+"/";
+    std::string extractedFolder = tmpDir + stick.path;
     Fs::remove(extractedFolder);
     Fs::makeDirectory(extractedFolder);
     extract(foo);
     chdir(curDir.c_str());
-#ifdef __MINGW32__
-    std::string cmd = extractedFolder + "/*.* " + targetFolder;
-    std::replace(cmd.begin(),cmd.end(),'/','\\');
-    std::string execCmd = "xcopy /E " + cmd;
-    system(execCmd.c_str());
-#else
-    Fs::copyRecursive(extractedFolder, targetFolder+"/");
-#endif
-    return 0;
+
+    int result = Fs::copyRecursive(extractedFolder, targetFolder);
+    return result;
 }
 

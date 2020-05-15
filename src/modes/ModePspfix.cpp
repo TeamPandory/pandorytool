@@ -103,6 +103,7 @@ int ModePspfix::stage1() {
     PSPMapper pm;
     std::map<std::string, downloadDefinition>balls = pm.getControlFixes();
     std::map<std::string, downloadDefinition>::iterator it;
+    int result;
     for (it = balls.begin(); it != balls.end(); it++) {
         std::string stickName = it->second.name;
         downloadDefinition def = it->second;
@@ -111,8 +112,10 @@ int ModePspfix::stage1() {
         if (!Fs::exists(tarGz)) {
             std::cout << "Could not download " << stickName << ", exiting." << std::endl;
         }
-        stickExt.exractToFolder(def, tarGz, pspRomFolder);
+        result = stickExt.exractToFolder(def, tarGz, pspRomFolder);
+        if (result == 1) {
+            std::cout << "There was a problem extracting " << stickName << ", exiting." << std::endl;
+        }
     }
-    int foo = 2;
-    return 0;
+    return result;
 }

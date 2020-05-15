@@ -1,5 +1,6 @@
 #include <sys/stat.h>
 #include <filesystem>
+#include <iostream>
 #include "Fs.h"
 
 bool Fs::exists(const std::string& file) {
@@ -67,13 +68,17 @@ int Fs::copy(std::string source, std::string destination)
 
 int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::path &target)
 {
+    std::filesystem::path copySrc = src.lexically_normal();
+    std::filesystem::path copyTarget = target.lexically_normal();
+
     try
     {
-        std::filesystem::copy(src, target, std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+        std::filesystem::copy(copySrc, copyTarget, std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
     }
     catch (std::exception& e)
     {
-        int x = 0;
+        return 1;
+        std::cout << e.what() << std::endl;
     }
     return 0;
 }
