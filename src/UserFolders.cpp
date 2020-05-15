@@ -3,7 +3,10 @@
 #include <iostream>
 
 std::string UserFolders::getTemporaryFolder() {
+#ifdef __MINGW32__
+    std::string tmpFolder = getenv("TEMP");
+#else
     std::string tmpFolder = std::filesystem::temp_directory_path().string();
-    std::cout << "TEMP FOLDER:" << tmpFolder << std::endl;
+#endif
     return tmpFolder;
 }
