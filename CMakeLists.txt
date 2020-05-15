@@ -24,6 +24,8 @@ endif()
 
 #find_package(wxWidgets REQUIRED COMPONENTS net core base)
 
+set(CURL_LIBRARY "-lcurl")
+find_package(CURL REQUIRED)
 
 #if(MSVC OR MSYS OR MINGW)
 #    if (NOT JETBRAINS_CLION_IDE)
@@ -32,14 +34,14 @@ endif()
 #    endif()
 #endif()
 
-set(CURL_LIBRARY "-lcurl") 
-find_package(CURL REQUIRED) 
-include_directories(${CURL_INCLUDE_DIR})
+
 
 if(MSVC OR MSYS OR MINGW)
     if (NOT JETBRAINS_CLION_IDE)
     # for detecting Windows compilers
     #set(DCMAKE_SH="CMAKE_SH-NOTFOUND")
+    add_definitions("-DCURL_STATICLIB")
+
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O3 -static-libstdc++ -static -s")
     endif()
 endif()
@@ -86,17 +88,12 @@ target_link_libraries(
     iconv
 
     ${CURL_LIBRARIES}
-
-    #curl
-    #ssl
-    #crypto
-    #crypt32
-    #gdi32
-    #ws2_32
-    
-    #ssh2
-    #idn2
-    #wldap32
+    idn2
+    ssl
+    crypto
+    ssh2
+    ws2_32
+    wldap32
 
     z
 
