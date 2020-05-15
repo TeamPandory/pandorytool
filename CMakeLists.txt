@@ -85,17 +85,18 @@ target_link_libraries(
     tinyxml2
     iconv
 
-    curl
+    ${CURL_LIBRARIES}
 
-    ssl 
-    crypto 
-    crypt32 
-    gdi32 
-    ws2_32
+    #curl
+    #ssl
+    #crypto
+    #crypt32
+    #gdi32
+    #ws2_32
     
-    ssh2
-    idn2
-    wldap32
+    #ssh2
+    #idn2
+    #wldap32
 
     z
 
