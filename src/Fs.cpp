@@ -73,12 +73,20 @@ int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::p
 
     try
     {
+#ifdef __MINGW32__
+        // Windows users... get forked!
+        // It is terrible we have to do this to get reliable copy_recursive.
+        std::string cmd = "xcopy /Y \"" + copySrc.string() + "\" \"" + copyTarget.string() + "\" > NUL";
+        system(cmd.c_str());
+#else
         std::filesystem::copy(copySrc, copyTarget, std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+#endif
+
     }
     catch (std::exception& e)
     {
-        return 1;
         std::cout << e.what() << std::endl;
+        return 1;
     }
     return 0;
 }

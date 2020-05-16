@@ -84,6 +84,12 @@ std::string ModePspfix::getStockPath() {
 
 int ModePspfix::stage1() {
     std::cout << "Installing PSP injector to " << targetDir << std::endl;
+
+    if (!Fs::exists(targetDir)) {
+        std::cout << targetDir << " does not exist, exiting." << std::endl;
+        return 1;
+    }
+
     std::string mcGames = targetDir + "/mcgames/";
     std::string pspRomFolder = mcGames + "PSP0000";
     Fs::makeDirectory(mcGames);
@@ -103,7 +109,7 @@ int ModePspfix::stage1() {
     PSPMapper pm;
     std::map<std::string, downloadDefinition>balls = pm.getControlFixes();
     std::map<std::string, downloadDefinition>::iterator it;
-    int result;
+    int result = 0;
     for (it = balls.begin(); it != balls.end(); it++) {
         std::string stickName = it->second.name;
         downloadDefinition def = it->second;
