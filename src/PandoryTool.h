@@ -20,6 +20,8 @@ public:
     int stick();
 
     int pspFix();
+
+    std::string getCompileDate();
 };
 
 #endif //PANDORERAPP_H

@@ -10,13 +10,17 @@ if ($ENV{JETBRAINS_IDE})
 endif ($ENV{JETBRAINS_IDE})
 
 
+
 execute_process(
-        COMMAND git log -1 --format=%h
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        OUTPUT_VARIABLE GIT_COMMIT_HASH
-        OUTPUT_STRIP_TRAILING_WHITESPACE
+    COMMAND git log -1 --format=%h
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_COMMIT_HASH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 add_definitions("-DGIT_COMMIT_HASH=\"${GIT_COMMIT_HASH}\"")
+
+string(TIMESTAMP TODAY "%Y%m%d")
+add_definitions("-DGIT_COMPILE_DATE=\"${TODAY}\"")
 
 if($ENV{NO_SHAREWARE_LIMIT})
 add_definitions("-DNO_SHAREWARE_LIMIT=1")
@@ -27,12 +31,6 @@ endif()
 set(CURL_LIBRARY "-lcurl")
 find_package(CURL REQUIRED)
 
-#if(MSVC OR MSYS OR MINGW)
-#    if (NOT JETBRAINS_CLION_IDE)
-#   option(CURL_STATICLIB "Set to ON to build libcurl with static linking."  ON)
-#    add_definitions("-DCURL_STATICLIB")
-#    endif()
-#endif()
 
 
 
@@ -43,6 +41,7 @@ if(MSVC OR MSYS OR MINGW)
     add_definitions("-DCURL_STATICLIB")
 
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O3 -static-libstdc++ -static -s")
+    set(WINDOWS_STATIC_LIBS "idn2 ssl crypto ssh2 ws2_32 wldap32")
     endif()
 endif()
 
@@ -88,12 +87,7 @@ target_link_libraries(
     iconv
 
     ${CURL_LIBRARIES}
-    idn2
-    ssl
-    crypto
-    ssh2
-    ws2_32
-    wldap32
+    ${WINDOWS_STATIC_LIBS}
 
     z
 
