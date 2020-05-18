@@ -12,9 +12,10 @@ protected:
 public:
     explicit ModePspfix(std::string &targetDir);
     int patchControlFolder(const std::string& source, const std::string& target, pspConfigGameDef gameDef);
-    int stockFix();
     int otherFix();
+    int stockFix();
     int stage1();
+    int stage2();
 
     bool checkStockPath();
 };

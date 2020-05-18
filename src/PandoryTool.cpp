@@ -152,7 +152,7 @@ int PandoryTool::pspStockfix() {
         return 1;
     }
     ModePspfix pspfix(targetDir);
-    return pspfix.stockFix();
+    return pspfix.stage2();
 }
 
 int PandoryTool::pspFix() {
@@ -165,7 +165,7 @@ int PandoryTool::pspFix() {
     ModePspfix pspfix(targetDir);
 
     if (subMode == "stock") {
-        return pspfix.stockFix();
+        return pspfix.stage2();
     }
     else if (subMode == "other") {
         return pspfix.otherFix();

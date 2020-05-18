@@ -8,6 +8,10 @@
 #include "../UserFolders.h"
 #include "../StickExtractor.h"
 
+ModePspfix::ModePspfix(std::string &targetDir) : targetDir(targetDir) {
+
+}
+
 bool ModePspfix::checkStockPath() {
     std::string path = getStockPath();
     if (!Fs::exists(path)) {
@@ -18,55 +22,6 @@ bool ModePspfix::checkStockPath() {
         return false;
     }
     return true;
-}
-
-int ModePspfix::stockFix() {
-    UserFolders uf;
-    std::string tempFolder = uf.getTemporaryFolder();
-    std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
-    if (!checkStockPath()) {
-        return 1;
-    }
-    std::string path = getStockPath();
-    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
-
-    auto pspMapper = new PSPMapper;
-    auto pspGames = pspMapper->getStockGames();
-    std::map<std::string, pspConfigGameDef>::iterator it;
-    for (it = pspGames.begin(); it != pspGames.end(); it++) {
-        std::string romPath = targetDir + "/games/data/family/" + it->first;
-        if (Fs::exists(romPath) && it->second.players == 1) {
-            std::cout << "Fixing settings/controls for: " << it->first << std::endl;
-            patchControlFolder(path, romPath + "/", it->second);
-        } else {
-            std::cout << "Skipping ROM settings fix: " << it->first << std::endl;
-        }
-    }
-    return 0;
-}
-
-int ModePspfix::otherFix() {
-    std::cout << "Attempting to fix non-stock PSP game controls..." << std::endl;
-    if (!checkStockPath()) {
-        return 1;
-    }
-
-    std::string romsPath = targetDir + "/games/data/family/";
-    std::string path = getStockPath();
-    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
-
-    for (const auto &entry : std::filesystem::directory_iterator(romsPath)) {
-        std::string romFolder = Fs::basename(entry.path().string());
-        if (romFolder.substr(0, 3) == "PSP" && romFolder != "PSP0000") {
-            std::cout << romFolder << std::endl;
-            patchControlFolder(path, entry.path().string() + "/", pspConfigGameDef{0, 1, 1});
-        }
-    }
-    return 0;
-}
-
-ModePspfix::ModePspfix(std::string &targetDir) : targetDir(targetDir) {
-
 }
 
 int ModePspfix::patchControlFolder(const std::string &source, const std::string &target, pspConfigGameDef gameDef) {
@@ -81,6 +36,7 @@ std::string ModePspfix::getStockPath() {
     std::string path = targetDir + "/games/data/family/PSP0000/";
     return path;
 }
+
 
 int ModePspfix::stage1() {
     std::cout << "Installing PSP injector to " << targetDir << std::endl;
@@ -125,3 +81,54 @@ int ModePspfix::stage1() {
     }
     return result;
 }
+
+int ModePspfix::stage2() {
+
+}
+
+int ModePspfix::stockFix() {
+    UserFolders uf;
+    std::string tempFolder = uf.getTemporaryFolder();
+    std::cout << "Attempting to fix stock PSP game controls..." << std::endl;
+    if (!checkStockPath()) {
+        return 1;
+    }
+    std::string path = getStockPath();
+    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
+
+    auto pspMapper = new PSPMapper;
+    auto pspGames = pspMapper->getStockGames();
+    std::map<std::string, pspConfigGameDef>::iterator it;
+    for (it = pspGames.begin(); it != pspGames.end(); it++) {
+        std::string romPath = targetDir + "/games/data/family/" + it->first;
+        if (Fs::exists(romPath) && it->second.players == 1) {
+            std::cout << "Fixing settings/controls for: " << it->first << std::endl;
+            patchControlFolder(path, romPath + "/", it->second);
+        } else {
+            std::cout << "Skipping ROM settings fix: " << it->first << std::endl;
+        }
+    }
+    return 0;
+}
+
+int ModePspfix::otherFix() {
+    std::string path = getStockPath();
+    std::cout << "Attempting to fix non-stock PSP game controls..." << std::endl;
+    if (!checkStockPath()) {
+        return 1;
+    }
+
+    std::string romsPath = targetDir + "/games/data/family/";
+    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
+
+    for (const auto &entry : std::filesystem::directory_iterator(romsPath)) {
+        std::string romFolder = Fs::basename(entry.path().string());
+        if (romFolder.substr(0, 3) == "PSP" && romFolder != "PSP0000") {
+            std::cout << romFolder << std::endl;
+            patchControlFolder(path, entry.path().string() + "/", pspConfigGameDef{0, 1, 1});
+        }
+    }
+    return 0;
+}
+
+
