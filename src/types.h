@@ -11,7 +11,6 @@ struct pspConfigGameDef {
 };
 
 struct downloadDefinition {
-    std::string ident;
     std::string name;
     std::string path;
     std::string url;

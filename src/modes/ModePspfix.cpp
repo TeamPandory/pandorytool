@@ -6,6 +6,9 @@
 #include "../StickDownloader.h"
 #include "../UserFolders.h"
 #include "../StickExtractor.h"
+#include <chrono>
+#include <thread>
+
 
 ModePspfix::ModePspfix(std::string &targetDir) : targetDir(targetDir) {
 
@@ -124,9 +127,6 @@ bool ModePspfix::stockFix() {
         std::string romPath = targetDir + "/games/data/family/" + it->first;
         std::string baseRom = Fs::basename(romPath);
         if (Fs::exists(romPath)) {
-#ifndef NO_SHAREWARE_LIMIT
-            message = "Optimizing controls for: ";
-#endif
             pos = controlFixes.find(baseRom);
             if (pos == controlFixes.end()) {
                 std::cout << "Patching stock rom: " << baseRom << std::endl;
