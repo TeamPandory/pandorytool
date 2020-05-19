@@ -1,5 +1,7 @@
 .idea/
-cmake-build-debug/
+.DS_Store
+.gitignore
+cmake-build-*/
 build-win32/
 build-linux/
 stick/

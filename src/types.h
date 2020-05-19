@@ -2,6 +2,7 @@
 #define PANDORY_TYPES_H
 
 #include <string>
+#include <vector>
 
 struct pspConfigGameDef {
     int controlType = 0;
@@ -10,10 +11,15 @@ struct pspConfigGameDef {
 };
 
 struct downloadDefinition {
+    std::string ident;
     std::string name;
     std::string path;
     std::string url;
     std::string description;
+    std::string saveState0;
+    std::string saveState1;
+    std::string saveState2p;
+    std::string keyRecord;
 };
 
 #endif //PANDORY_TYPES_H

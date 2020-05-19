@@ -12,12 +12,14 @@ protected:
 public:
     explicit ModePspfix(std::string &targetDir);
     int patchControlFolder(const std::string& source, const std::string& target, pspConfigGameDef gameDef);
-    int otherFix();
-    int stockFix();
+    bool otherFix();
+    bool stockFix();
     int stage1();
     int stage2();
 
     bool checkStockPath();
+
+    void replaceRomFile(const std::string& romPath, const std::string& srcSave, const std::string& targetSave, const std::string& targetFolder);
 };
 
 #endif //PANDORY_STOCKFIX_H

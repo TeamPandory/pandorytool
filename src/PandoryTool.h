@@ -15,10 +15,7 @@ public:
 
     std::string getAppSuffix();
 
-    int pspStockfix();
-
     int stick();
-
     int pspFix();
 
     std::string getCompileDate();

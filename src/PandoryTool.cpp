@@ -60,10 +60,6 @@ int PandoryTool::main() {
         return prepare();
     }
 
-    if (mode == "pspstockfix") {
-        return pspStockfix();
-    }
-
     if (mode == "pspfix") {
         return pspFix();
     }
@@ -115,11 +111,10 @@ void PandoryTool::usage() {
 
     std::cout << "FIX PSP CONTROLS & TWO-PLAYER MODES!" << std::endl;
     std::cout << "5) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;
+    std::cout << "      Stage 1: Add some preparation files to your USB stick. Install this onto your Pandora Games 3D." << std::endl;
     std::cout << "\t\tpandory pspfix stage1 <destDrive>" << std::endl;
-    std::cout << "\t\tpandory pspfix stock <destDrive>" << std::endl;
-    std::cout << "\t\tpandory pspfix other <destDrive>" << std::endl;
-    std::cout << "\t\tExample: pandory pspstockfix F:\\" << std::endl;
-    std::cout << "\t\tExample: pandory pspfix F:\\" << std::endl;
+    std::cout << "      Stage 2: Take out your SD card after stage 1 and run stage 2 to fix your PSP configuration." << std::endl;
+    std::cout << "\t\tpandory pspfix stage2 <destDrive>" << std::endl;
     std::cout << std::endl;
 }
 
@@ -144,17 +139,6 @@ int PandoryTool::prepare() {
     return prepare.main();
 }
 
-
-int PandoryTool::pspStockfix() {
-    std::string targetDir = args.getArgument(2);
-    if (targetDir.empty()) {
-        usage();
-        return 1;
-    }
-    ModePspfix pspfix(targetDir);
-    return pspfix.stage2();
-}
-
 int PandoryTool::pspFix() {
     std::string subMode = args.getArgument(2);
     std::string targetDir = args.getArgument(3);
@@ -164,14 +148,11 @@ int PandoryTool::pspFix() {
     }
     ModePspfix pspfix(targetDir);
 
-    if (subMode == "stock") {
-        return pspfix.stage2();
-    }
-    else if (subMode == "other") {
-        return pspfix.otherFix();
-    }
-    else if (subMode == "stage1") {
+    if (subMode == "stage1") {
         return pspfix.stage1();
+    }
+    else if (subMode == "stage2") {
+        return pspfix.stage2();
     }
     usage();
     return 1;
