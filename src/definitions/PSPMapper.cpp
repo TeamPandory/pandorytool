@@ -155,6 +155,8 @@ PSPMapper::PSPMapper() {
             "https://github.com/emuchicken/pandory-media/archive/ULUS10171-PowerStoneCollection.tar.gz",
             "",
             "ULUS10171_1.00_0.ini",
+            "",
+            "",
             ""
     };
 }
