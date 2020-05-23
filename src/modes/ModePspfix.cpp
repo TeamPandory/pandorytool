@@ -173,7 +173,7 @@ void ModePspfix::replaceRomFile(const std::string &romPath, const std::string &s
     copyDestPath += romPath;
     copyDestPath += targetFolder;
     copyDestPath += targetSave;
-    if (!Fs::exists(copySrcPath) || !Fs::exists(copyDestPath)) {
+    if (!Fs::exists(copySrcPath)) {
         std::cout << "Error: " << std::filesystem::path(copySrcPath).lexically_normal() << " is missing or " << std::filesystem::path(copyDestPath).lexically_normal() << " could not be written " << std::endl;
         return;
     }
