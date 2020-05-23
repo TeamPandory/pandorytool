@@ -167,7 +167,7 @@ bool ModePspfix::stockFix() {
 
 void ModePspfix::replaceRomFile(const std::string &romPath, const std::string &srcSave, const std::string &targetSave,
                                 const std::string &targetFolder) {
-    std::cout << "  - Copying save state: " << srcSave << std::endl;
+    std::cout << "  - Copying file: " << srcSave << std::endl;
     std::string copySrcPath = getStockPath() + srcSave;
     std::string copyDestPath;
     copyDestPath += romPath;

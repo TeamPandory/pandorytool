@@ -44,7 +44,6 @@ PSPMapper::PSPMapper() {
     stockGames["gwlrP3"] = {0, 2, 1};
 
     controlFixes["psp0000"] = {
-            "psp0000"
             "PSP Injector",
             "pandory-media-psp0000",
             "https://github.com/emuchicken/pandory-media/archive/psp0000.tar.gz",
