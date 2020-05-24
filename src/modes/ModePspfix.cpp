@@ -31,7 +31,9 @@ bool ModePspfix::checkStockPath() {
 int ModePspfix::patchControlFolder(const std::string &source, const std::string &target, pspConfigGameDef gameDef) {
     Fs::makeDirectory(target + "PSP");
     Fs::makeDirectory(target + "PSP/SYSTEM");
-    Fs::copy(source + "controls" + std::to_string(gameDef.controlType) + ".ini", target + "PSP/SYSTEM/controls.ini");
+    std::string copySrc = source + "controls" + std::to_string(gameDef.controlType) + ".ini";
+    std::string copyTarget = target + "PSP/SYSTEM/controls.ini";
+    Fs::copy(copySrc, copyTarget);
 #ifdef NO_SHAREWARE_LIMIT
     Fs::copy(source + "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini", target + "PSP/SYSTEM/ppsspp.ini");
 #endif
@@ -128,6 +130,16 @@ bool ModePspfix::stockFix() {
         std::string baseRom = Fs::basename(romPath);
         if (Fs::exists(romPath)) {
             pos = controlFixes.find(baseRom);
+
+#ifdef NO_SHAREWARE_LIMIT
+            if (!it->second.ident.empty()) {
+                std::string gameSpecificConfig = romPath + "/PSP/SYSTEM/" + it->second.ident + "_ppsspp.ini";
+                if (Fs::exists(gameSpecificConfig)) {
+                    Fs::remove(gameSpecificConfig);
+                }
+            }
+#endif
+
             if (pos == controlFixes.end()) {
                 std::cout << "Patching stock rom: " << baseRom << std::endl;
                 patchControlFolder(path, romPath + "/", it->second);

@@ -8,6 +8,7 @@ struct pspConfigGameDef {
     int controlType = 0;
     int ppssppSettings = 0;
     int players = 0;
+    std::string ident = "";
 };
 
 struct downloadDefinition {

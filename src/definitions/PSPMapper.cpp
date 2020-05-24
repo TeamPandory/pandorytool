@@ -2,16 +2,16 @@
 #include "PSPMapper.h"
 
 PSPMapper::PSPMapper() {
-    stockGames["tk6"] = {6, 1, 2};
-    stockGames["TK5"] = {6, 1, 2};
-    stockGames["MortalKombat"] = {6, 1, 2};
+    stockGames["tk6"] = {6, 1, 2, "ULUS10466"};
+    stockGames["TK5"] = {6, 1, 2, "ULUS10139"};
+    stockGames["MortalKombat"] = {6, 1, 2, "ULES00353"};
     stockGames["SoulEater"] = {6, 1, 2};
-    stockGames["Weekly"] = {6, 1, 2};
-    stockGames["WWEAllStar"] = {6, 1, 2};
+    stockGames["Weekly"] = {6, 1, 2, "ULJM05450"};
+    stockGames["WWEAllStar"] = {6, 1, 2, "ULUS10544"};
     stockGames["KidouSenshiGundam"] = {6, 1, 1};
     stockGames["NarutoShippuuden"] = {0, 5, 1};
     stockGames["Daxter"] = {0, 5, 1};
-    stockGames["CangYiMSL2"] = {6, 1, 2};
+    stockGames["CangYiMSL2"] = {6, 1, 2, "ULUS10579"};
     stockGames["NBA06"] = {0, 1, 1};
     stockGames["RidgeRacer2"] = {2, 5, 1};
     stockGames["HeatSeeker"] = {6, 2, 1};
@@ -23,10 +23,10 @@ PSPMapper::PSPMapper() {
     stockGames["taoguiZ"] = {0, 1, 1};
     stockGames["WuShuangDS"] = {0, 1, 1};
     stockGames["zs5"] = {0, 1, 1};
-    stockGames["GuiltyGear"] = {6, 3, 2};
+    stockGames["GuiltyGear"] = {6, 3, 2, "ULJM05355"};
     stockGames["FateUnlimitedCode"] = {6, 5, 1};
-    stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 1};
-    stockGames["PowerStoneCollection"] = {6, 5, 1};
+    stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 1, "ULJS00202"};
+    stockGames["PowerStoneCollection"] = {6, 5, 1, "ULUS10171"};
     stockGames["StreetFighterAlpha3Max"] = {0, 4, 2};
     stockGames["DragonBallZ"] = {6, 4, 1};
     stockGames["bleach"] = {0, 2, 1};
@@ -40,7 +40,7 @@ PSPMapper::PSPMapper() {
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {0, 2, 1};
     stockGames["CiKeXT"] = {0, 2, 1};
-    stockGames["pes2012"] = {0, 2, 4};
+    stockGames["pes2012"] = {0, 2, 4, "ULAS42289"};
     stockGames["gwlrP3"] = {0, 2, 1};
 
     controlFixes["psp0000"] = {
@@ -57,7 +57,7 @@ PSPMapper::PSPMapper() {
             "ULAS42289_1.00_0.ini",
             "ULAS42289_1.00_1.ini",
             "ULAS42289_2p.ini",
-            "KeyRecordpes2012.ini"
+            "KeyRecordpes_2012.ini"
     };
 
     controlFixes["MortalKombat"] = {
@@ -67,8 +67,8 @@ PSPMapper::PSPMapper() {
             "",
             "ULES00353_1.03_0.ini",
             "ULES00353_1.03_1.ini",
-            "",
-            "KeyRecordMortalKombat.ini"
+            "ULES00353_2p.ini",
+            "KeyRecord_MortalKombat.ini"
     };
 
     controlFixes["GuiltyGear"] = {
@@ -90,7 +90,7 @@ PSPMapper::PSPMapper() {
             "ULJM05450_1.05_0.ini",
             "ULJM05450_1.05_1.ini",
             "ULJM05450_2p.ini",
-            "KeyRecordMortalKombat.ini"
+            "KeyRecord_Weekly.ini"
     };
 
     controlFixes["SoulcaliburBrokenDestiny"] = {
@@ -101,7 +101,7 @@ PSPMapper::PSPMapper() {
             "ULJS00202_1.01_0.ini",
             "ULJS00202_1.01_1.ini",
             "ULJS00202_2p.ini",
-            "KeyRecordSoulcaliburBrokenDestiny.ini"
+            "KeyRecord_SoulcaliburBrokenDestiny.ini"
     };
 
     controlFixes["TK5"] = {
@@ -112,7 +112,7 @@ PSPMapper::PSPMapper() {
             "ULUS10139_1.00_0.ini",
             "ULUS10139_1.00_1.ini",
             "ULUS10139_2p.ini",
-            "KeyRecordTK5.ini"
+            "KeyRecord_TK5.ini"
     };
 
     controlFixes["tk6"] = {
@@ -123,10 +123,10 @@ PSPMapper::PSPMapper() {
             "ULUS10466_1.00_0.ini",
             "ULUS10466_1.00_1.ini",
             "ULUS10466_2p.ini",
-            "KeyRecordtk6.ini"
+            "KeyRecord_tk6.ini"
     };
 
-    controlFixes["WWEAllStars"] = {
+    controlFixes["WWEAllStar"] = {
             "WWE All-Stars",
             "pandory-media-ULUS10544-WWEAllStars",
             "https://github.com/emuchicken/pandory-media/archive/ULUS10544-WWEAllStars.tar.gz",
@@ -134,7 +134,7 @@ PSPMapper::PSPMapper() {
             "ULUS10544_1.00_0.ini",
             "ULUS10544_1.00_1.ini",
             "ULUS10544_2p.ini",
-            "KeyRecordWWEAllStar.ini"
+            "KeyRecord_WWEAllStar.ini"
     };
 
     controlFixes["CangYiMSL2"] = {
