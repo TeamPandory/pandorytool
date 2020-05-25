@@ -32,9 +32,11 @@ int ModePspfix::patchControlFolder(const std::string &source, const std::string 
     Fs::makeDirectory(target + "PSP");
     Fs::makeDirectory(target + "PSP/SYSTEM");
     std::string copySrc = source + "controls" + std::to_string(gameDef.controlType) + ".ini";
+    std::cout << "  - Copying control file: " << "controls" + std::to_string(gameDef.controlType) + ".ini" << std::endl;
     std::string copyTarget = target + "PSP/SYSTEM/controls.ini";
     Fs::copy(copySrc, copyTarget);
 #ifdef NO_SHAREWARE_LIMIT
+    std::cout << "  - Copying setting file: " << "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini" << std::endl;
     Fs::copy(source + "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini", target + "PSP/SYSTEM/ppsspp.ini");
 #endif
     return 0;
@@ -139,13 +141,27 @@ bool ModePspfix::stockFix() {
                 }
             }
 #endif
+            std::cout << "Patching stock rom: " << baseRom << std::endl;
 
-            if (pos == controlFixes.end()) {
-                std::cout << "Patching stock rom: " << baseRom << std::endl;
+            if (it->second.fixVideo) {
+                std::string videoSrc = baseRom + "_vid.ini";
+                std::string videoTarget = "/" + baseRom + ".mp4";
+                replaceRomFile(romPath, videoSrc, videoTarget, "/");
+            }
+
+            // Pandory the explory was here
+            replaceRomFile(romPath, "notice.ini", "notice.txt", "/");
+
+            bool ultimate = false;
+#ifdef NO_SHAREWARE_LIMIT
+            ultimate = true;
+#endif
+
+            if (pos == controlFixes.end() || !ultimate) {
                 patchControlFolder(path, romPath + "/", it->second);
             } else {
                 downloadDefinition def = pos->second;
-                std::cout << "Patching two-player game: " << def.name << std::endl;
+                std::cout << "  => Patching two-player game support" << std::endl;
                 if (it->second.players == 2) {
                     Fs::makeDirectory(romPath + "/2p");
                     Fs::makeDirectory(romPath + "/2p/PSP");
@@ -164,8 +180,6 @@ bool ModePspfix::stockFix() {
                     // Multiplayer P2
                     replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
                     replaceRomFile(romPath, "controls9.ini", "controls.ini", "/2p/PSP/SYSTEM/");
-                    // Pandory the explory was here
-                    replaceRomFile(romPath, "notice.ini", "notice.txt", "/");
                     // Keyrecord
                     if (!def.keyRecord.empty()) {
                         replaceRomFile(romPath, def.keyRecord, "KeyRecord.ini", "/");

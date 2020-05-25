@@ -27,11 +27,11 @@ PSPMapper::PSPMapper() {
     stockGames["FateUnlimitedCode"] = {6, 5, 1};
     stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 1, "ULJS00202"};
     stockGames["PowerStoneCollection"] = {6, 5, 1, "ULUS10171"};
-    stockGames["StreetFighterAlpha3Max"] = {0, 4, 2};
+    stockGames["StreetFighterAlpha3Max"] = {0, 4, 2, "", true};
     stockGames["DragonBallZ"] = {6, 4, 1};
     stockGames["bleach"] = {0, 2, 1};
     stockGames["PacManWorld3"] = {0, 1, 1};
-    stockGames["MegaManX"] = {0, 5, 1};
+    stockGames["MegaManX"] = {0, 5, 1, "", true};
     stockGames["LocoRoco"] = {3, 1, 1};
     stockGames["AuditionPortable"] = {6, 1, 1};
     stockGames["Luxor"] = {0, 1, 1};
@@ -47,6 +47,12 @@ PSPMapper::PSPMapper() {
             "PSP Injector",
             "pandory-media-psp0000",
             "https://github.com/emuchicken/pandory-media/archive/psp0000.tar.gz",
+    };
+
+    controlFixes["video"] = {
+            "Video fixes",
+            "pandory-media-video",
+            "https://github.com/emuchicken/pandory-media/archive/video.tar.gz",
     };
 
     controlFixes["pes2012"] = {

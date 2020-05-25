@@ -9,6 +9,7 @@ struct pspConfigGameDef {
     int ppssppSettings = 0;
     int players = 0;
     std::string ident = "";
+    bool fixVideo = false;
 };
 
 struct downloadDefinition {
