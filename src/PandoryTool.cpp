@@ -61,7 +61,7 @@ int PandoryTool::main() {
         usage();
         return 1;
     }
-    std::string mode = args.getPathArgument(1);
+    std::string mode = args.getArgument(1);
     if (mode == "add") {
         return add();
     }
@@ -159,7 +159,7 @@ int PandoryTool::prepare() {
 }
 
 int PandoryTool::pspFix() {
-    std::string subMode = args.getPathArgument(2);
+    std::string subMode = args.getArgument(2);
     std::string targetDir = args.getPathArgument(3);
     if (targetDir.empty() || subMode.empty()) {
         usage();
@@ -177,7 +177,7 @@ int PandoryTool::pspFix() {
 }
 
 int PandoryTool::stick() {
-    std::string stickType = args.getPathArgument(2);
+    std::string stickType = args.getArgument(2);
     std::string target = args.getPathArgument(3);
     if (stickType.empty() || target.empty()) {
         usage();

@@ -23,9 +23,12 @@ std::string CommandLineArguments::getArgument(int n) {
 std::string CommandLineArguments::getPathArgument(int n) {
     std::string arg = getArgument(n);
     if (!arg.empty()) {
-        if (arg.substr(-1) == ":") {
+        int len = arg.length();
+        std::string end = arg.substr(len-1, 1);
+        if (end == ":") {
             arg += "/";
         }
+        return arg;
     }
     return std::string();
 }
