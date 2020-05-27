@@ -63,7 +63,7 @@ PSPMapper::PSPMapper() {
             "ULAS42289_1.00_0.ini",
             "ULAS42289_1.00_1.ini",
             "ULAS42289_2p.ini",
-            "KeyRecordpes_2012.ini"
+            "KeyRecord_pes2012.ini"
     };
 
     controlFixes["MortalKombat"] = {
