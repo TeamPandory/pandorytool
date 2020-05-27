@@ -88,6 +88,17 @@ PSPMapper::PSPMapper() {
             ""
     };
 
+    controlFixes["StreetFighterAlpha3Max"] = {
+            "Street Fighter Alpha 3Max",
+            "pandory-media-ULUS10062-StreetFighterAlpha3Max",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10062-StreetFighterAlpha3Max.tar.gz",
+            "",
+            "ULUS10062_1.00_0.ini",
+            "",
+            "",
+            ""
+    };
+
     controlFixes["Weekly"] = {
             "Weekly",
             "pandory-media-ULJM05450-Weekly",
@@ -141,6 +152,17 @@ PSPMapper::PSPMapper() {
             "ULUS10544_1.00_1.ini",
             "ULUS10544_2p.ini",
             "KeyRecord_WWEAllStar.ini"
+    };
+
+    controlFixes["CangYiMSL2"] = {
+            "CangYiMSL2",
+            "pandory-media-ULUS10579-CangYiMSL2",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10579-CangYiMSL2.tar.gz",
+            "",
+            "ULUS10579_1.01_0.ini",
+            "",
+            "",
+            ""
     };
 }
 
