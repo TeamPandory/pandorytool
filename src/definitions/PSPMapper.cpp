@@ -12,7 +12,7 @@ PSPMapper::PSPMapper() {
     stockGames["NarutoShippuuden"] = {0, 5, 1};
     stockGames["Daxter"] = {0, 5, 1};
     stockGames["CangYiMSL2"] = {6, 1, 2, "ULUS10579"};
-    stockGames["NBA06"] = {0, 1, 1};
+    stockGames["NBA06"] = {0, 1, 2, "UCUS98626"};
     stockGames["RidgeRacer2"] = {2, 5, 1};
     stockGames["HeatSeeker"] = {6, 2, 1};
     stockGames["InitialD"] = {2, 1, 1};
@@ -25,8 +25,8 @@ PSPMapper::PSPMapper() {
     stockGames["zs5"] = {0, 1, 1};
     stockGames["GuiltyGear"] = {6, 3, 2, "ULJM05355"};
     stockGames["FateUnlimitedCode"] = {6, 5, 1};
-    stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 1, "ULJS00202"};
-    stockGames["PowerStoneCollection"] = {6, 5, 1, "ULUS10171"};
+    stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 2, "ULJS00202"};
+    stockGames["PowerStoneCollection"] = {6, 5, 1};
     stockGames["StreetFighterAlpha3Max"] = {0, 4, 2, "", true};
     stockGames["DragonBallZ"] = {6, 4, 1};
     stockGames["bleach"] = {0, 2, 1};
@@ -40,7 +40,7 @@ PSPMapper::PSPMapper() {
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {0, 2, 1};
     stockGames["CiKeXT"] = {0, 2, 1};
-    stockGames["pes2012"] = {0, 2, 4, "ULAS42289"};
+    stockGames["pes2012"] = {0, 2, 2, "ULAS42289"};
     stockGames["gwlrP3"] = {0, 2, 1};
 
     controlFixes["psp0000"] = {
@@ -83,8 +83,8 @@ PSPMapper::PSPMapper() {
             "https://github.com/emuchicken/pandory-media/archive/ULJM05355-GuiltyGear.tar.gz",
             "",
             "ULJM05355_1.00_0.ini",
-            "ULJM05355_1.00_1.ini",
-            "ULJM05355_2p.ini",
+            "",
+            "",
             ""
     };
 
@@ -141,28 +141,6 @@ PSPMapper::PSPMapper() {
             "ULUS10544_1.00_1.ini",
             "ULUS10544_2p.ini",
             "KeyRecord_WWEAllStar.ini"
-    };
-
-    controlFixes["CangYiMSL2"] = {
-            "CangYiMSL2",
-            "pandory-media-ULUS10579-CangYiMSL2",
-            "https://github.com/emuchicken/pandory-media/archive/ULUS10579-CangYiMSL2.tar.gz",
-            "",
-            "ULUS10579_1.01_0.ini",
-            "ULUS10579_1.01_1.ini",
-            "ULUS10579_2p.ini",
-            ""
-    };
-
-    controlFixes["PowerStoneCollection"] = {
-            "PowerStoneCollection",
-            "pandory-media-ULUS10171-PowerStoneCollection",
-            "https://github.com/emuchicken/pandory-media/archive/ULUS10171-PowerStoneCollection.tar.gz",
-            "",
-            "ULUS10171_1.00_0.ini",
-            "",
-            "",
-            ""
     };
 }
 
