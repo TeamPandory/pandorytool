@@ -164,6 +164,18 @@ PSPMapper::PSPMapper() {
             "",
             ""
     };
+
+    controlFixes["NBA06"] = {
+            "NBA 06",
+            "pandory-media-UCUS98626-NBA06",
+            "https://github.com/emuchicken/pandory-media/archive/UCUS98626-NBA06.tar.gz",
+            "",
+            "UCUS98626_1.00_0.ini",
+            "UCUS98626_1.00_1.ini",
+            "UCUS98626_2p.ini",
+            "KeyRecord_NBA06.ini"
+    };
+
 }
 
 const std::map<std::string, pspConfigGameDef> &PSPMapper::getStockGames() const {

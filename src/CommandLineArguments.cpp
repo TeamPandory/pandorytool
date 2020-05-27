@@ -20,6 +20,16 @@ std::string CommandLineArguments::getArgument(int n) {
     return std::string();
 }
 
+std::string CommandLineArguments::getPathArgument(int n) {
+    std::string arg = getArgument(n);
+    if (!arg.empty()) {
+        if (arg.substr(-1) == ":") {
+            arg += "/";
+        }
+    }
+    return std::string();
+}
+
 
 
 
