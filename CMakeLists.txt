@@ -76,7 +76,7 @@ add_executable(
         src/definitions/PSPMapper.cpp
         src/definitions/PSPMapper.h
         src/types.h
-        src/StickDownloader.cpp src/StickDownloader.h src/UserFolders.cpp src/UserFolders.h src/definitions/Sticks.cpp src/definitions/Sticks.h)
+        src/StickDownloader.cpp src/StickDownloader.h src/UserFolders.cpp src/UserFolders.h src/definitions/Sticks.cpp src/definitions/Sticks.h src/EditionCheck.cpp src/EditionCheck.h)
 
 target_link_libraries(
     pandory

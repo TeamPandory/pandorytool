@@ -1,8 +1,11 @@
 #ifndef PANDORERAPP_H
 #define PANDORERAPP_H
 
+#include "EditionCheck.h"
+
 class PandoryTool {
 protected:
+    EditionCheck editionCheck;
     CommandLineArguments args = CommandLineArguments(0, nullptr);
 public:
     PandoryTool(int i, char **pString);

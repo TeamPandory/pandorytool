@@ -49,6 +49,7 @@ PSPMapper::PSPMapper() {
             "https://github.com/emuchicken/pandory-media/archive/psp0000.tar.gz",
     };
 
+
     controlFixes["video"] = {
             "Video fixes",
             "pandory-media-video",
@@ -63,7 +64,7 @@ PSPMapper::PSPMapper() {
             "ULAS42289_1.00_0.ini",
             "ULAS42289_1.00_1.ini",
             "ULAS42289_2p.ini",
-            "KeyRecordpes_2012.ini"
+            "KeyRecord_pes2012.ini"
     };
 
     controlFixes["MortalKombat"] = {
@@ -83,6 +84,17 @@ PSPMapper::PSPMapper() {
             "https://github.com/emuchicken/pandory-media/archive/ULJM05355-GuiltyGear.tar.gz",
             "",
             "ULJM05355_1.00_0.ini",
+            "",
+            "",
+            ""
+    };
+
+    controlFixes["StreetFighterAlpha3Max"] = {
+            "Street Fighter Alpha 3Max",
+            "pandory-media-ULUS10062-StreetFighterAlpha3Max",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10062-StreetFighterAlpha3Max.tar.gz",
+            "",
+            "ULUS10062_1.00_0.ini",
             "",
             "",
             ""
@@ -142,6 +154,29 @@ PSPMapper::PSPMapper() {
             "ULUS10544_2p.ini",
             "KeyRecord_WWEAllStar.ini"
     };
+
+    controlFixes["CangYiMSL2"] = {
+            "CangYiMSL2",
+            "pandory-media-ULUS10579-CangYiMSL2",
+            "https://github.com/emuchicken/pandory-media/archive/ULUS10579-CangYiMSL2.tar.gz",
+            "",
+            "ULUS10579_1.01_0.ini",
+            "",
+            "",
+            ""
+    };
+
+    controlFixes["NBA06"] = {
+            "NBA 06",
+            "pandory-media-UCUS98626-NBA06",
+            "https://github.com/emuchicken/pandory-media/archive/UCUS98626-NBA06.tar.gz",
+            "",
+            "UCUS98626_1.00_0.ini",
+            "UCUS98626_1.00_1.ini",
+            "UCUS98626_2p.ini",
+            "KeyRecord_NBA06.ini"
+    };
+
 }
 
 const std::map<std::string, pspConfigGameDef> &PSPMapper::getStockGames() const {

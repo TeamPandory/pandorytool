@@ -3,9 +3,11 @@
 
 #include <string>
 #include "../types.h"
+#include "../EditionCheck.h"
 
 class ModePspfix {
 protected:
+    EditionCheck editionCheck;
     std::string& targetDir;
     std::string stockPath = "/games/data/family/PSP0000/";
     std::string getStockPath();

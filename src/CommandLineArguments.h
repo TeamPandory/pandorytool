@@ -12,6 +12,7 @@ public:
     int getArgumentCount();
     std::string getArgument(int n);
 
+    std::string getPathArgument(int n);
 };
 
 #endif //TESTC_COMMANDLINEARGUMENTS_H

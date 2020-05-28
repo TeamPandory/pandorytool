@@ -6,6 +6,8 @@
 #include "../StickDownloader.h"
 #include "../UserFolders.h"
 #include "../StickExtractor.h"
+#include "../EditionCheck.h"
+
 #include <chrono>
 #include <thread>
 
@@ -35,10 +37,12 @@ int ModePspfix::patchControlFolder(const std::string &source, const std::string 
     std::cout << "  - Copying control file: " << "controls" + std::to_string(gameDef.controlType) + ".ini" << std::endl;
     std::string copyTarget = target + "PSP/SYSTEM/controls.ini";
     Fs::copy(copySrc, copyTarget);
-#ifdef NO_SHAREWARE_LIMIT
-    std::cout << "  - Copying setting file: " << "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini" << std::endl;
-    Fs::copy(source + "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini", target + "PSP/SYSTEM/ppsspp.ini");
-#endif
+
+    if (editionCheck.isUltimate()) {
+        std::cout << "  - Copying setting file: " << "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini"
+                  << std::endl;
+        Fs::copy(source + "ppsspp" + std::to_string(gameDef.ppssppSettings) + ".ini", target + "PSP/SYSTEM/ppsspp.ini");
+    }
     return 0;
 }
 
@@ -46,7 +50,6 @@ std::string ModePspfix::getStockPath() {
     std::string path = targetDir + "/games/data/family/PSP0000/";
     return path;
 }
-
 
 int ModePspfix::stage1() {
     std::cout << "Installing PSP injector to " << targetDir << std::endl;
@@ -107,15 +110,15 @@ bool ModePspfix::stockFix() {
     UserFolders uf;
     std::string tempFolder = uf.getTemporaryFolder();
     std::cout << "Attempting to fix controls and performance for game:" << std::endl;
-#ifndef NO_SHAREWARE_LIMIT
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    std::cout << "**** Did you know that ultimate-edition users also get optimized PSP performance tweaks and extra two-player game support? ****" << std::endl;
-    for (int i=10;i>=1;i--) {
-        std::cout << std::to_string(i) + "...";
+    if (editionCheck.isShareware()) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        std::cout << "**** Did you know that ultimate-edition users also get optimized PSP performance tweaks and extra two-player game support? ****" << std::endl;
+        for (int i=10;i>=1;i--) {
+            std::cout << std::to_string(i) + "...";
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
-#endif
     if (!checkStockPath()) {
         return false;
     }
@@ -133,14 +136,14 @@ bool ModePspfix::stockFix() {
         if (Fs::exists(romPath)) {
             pos = controlFixes.find(baseRom);
 
-#ifdef NO_SHAREWARE_LIMIT
-            if (!it->second.ident.empty()) {
-                std::string gameSpecificConfig = romPath + "/PSP/SYSTEM/" + it->second.ident + "_ppsspp.ini";
-                if (Fs::exists(gameSpecificConfig)) {
-                    Fs::remove(gameSpecificConfig);
+            if (editionCheck.isUltimate()) {
+                if (!it->second.ident.empty()) {
+                    std::string gameSpecificConfig = romPath + "/PSP/SYSTEM/" + it->second.ident + "_ppsspp.ini";
+                    if (Fs::exists(gameSpecificConfig)) {
+                        Fs::remove(gameSpecificConfig);
+                    }
                 }
             }
-#endif
             std::cout << "Patching stock rom: " << baseRom << std::endl;
 
             if (it->second.fixVideo) {
@@ -152,37 +155,36 @@ bool ModePspfix::stockFix() {
             // Pandory the explory was here
             replaceRomFile(romPath, "notice.ini", "notice.txt", "/");
 
-            bool ultimate = false;
-#ifdef NO_SHAREWARE_LIMIT
-            ultimate = true;
-#endif
-
-            if (pos == controlFixes.end() || !ultimate) {
+            if (pos == controlFixes.end()) {
                 patchControlFolder(path, romPath + "/", it->second);
             } else {
                 downloadDefinition def = pos->second;
-                std::cout << "  => Patching two-player game support" << std::endl;
-                if (it->second.players == 2) {
-                    Fs::makeDirectory(romPath + "/2p");
-                    Fs::makeDirectory(romPath + "/2p/PSP");
-                    Fs::makeDirectory(romPath + "/2p/PSP/SYSTEM");
-                    Fs::makeDirectory(romPath + "/2p/PSP/PPSSPP_STATE");
-                    if (!def.saveState2p.empty()) {
-                        replaceRomFile(romPath, def.saveState2p, Fs::stem(def.saveState0) + ".ppst",
-                                       "/2p/PSP/PPSSPP_STATE/");
-                        replaceRomFile(romPath, def.saveState1, "2p.ppst", "/PSP/PPSSPP_STATE/");
-                    }
-                    replaceRomFile(romPath, def.saveState0, Fs::stem(def.saveState0) + ".ppst", "/PSP/PPSSPP_STATE/");
+                std::cout << "  => Patching player-one save state" << std::endl;
+                replaceRomFile(romPath, def.saveState0, Fs::stem(def.saveState0) + ".ppst", "/PSP/PPSSPP_STATE/");
 
-                    // Multiplayer P1
-                    replaceRomFile(romPath, "ppsspp10.ini", "ppsspp.ini", "/PSP/SYSTEM/");
-                    replaceRomFile(romPath, "controls8.ini", "controls.ini", "/PSP/SYSTEM/");
-                    // Multiplayer P2
-                    replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
-                    replaceRomFile(romPath, "controls9.ini", "controls.ini", "/2p/PSP/SYSTEM/");
-                    // Keyrecord
-                    if (!def.keyRecord.empty()) {
-                        replaceRomFile(romPath, def.keyRecord, "KeyRecord.ini", "/");
+                if (editionCheck.isUltimate()) {
+                    std::cout << "  => Patching two-player game support" << std::endl;
+                    if (it->second.players == 2) {
+                        Fs::makeDirectory(romPath + "/2p");
+                        Fs::makeDirectory(romPath + "/2p/PSP");
+                        Fs::makeDirectory(romPath + "/2p/PSP/SYSTEM");
+                        Fs::makeDirectory(romPath + "/2p/PSP/PPSSPP_STATE");
+                        if (!def.saveState2p.empty()) {
+                            replaceRomFile(romPath, def.saveState2p, Fs::stem(def.saveState0) + ".ppst",
+                                           "/2p/PSP/PPSSPP_STATE/");
+                            replaceRomFile(romPath, def.saveState1, "2p.ppst", "/PSP/PPSSPP_STATE/");
+                        }
+
+                        // Multiplayer P1
+                        replaceRomFile(romPath, "ppsspp10.ini", "ppsspp.ini", "/PSP/SYSTEM/");
+                        replaceRomFile(romPath, "controls8.ini", "controls.ini", "/PSP/SYSTEM/");
+                        // Multiplayer P2
+                        replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
+                        replaceRomFile(romPath, "controls9.ini", "controls.ini", "/2p/PSP/SYSTEM/");
+                        // Keyrecord
+                        if (!def.keyRecord.empty()) {
+                            replaceRomFile(romPath, def.keyRecord, "KeyRecord.ini", "/");
+                        }
                     }
                 }
             }
