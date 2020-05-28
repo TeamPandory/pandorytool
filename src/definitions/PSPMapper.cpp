@@ -12,9 +12,9 @@ PSPMapper::PSPMapper() {
     stockGames["NarutoShippuuden"] = {0, 5, 1};
     stockGames["Daxter"] = {0, 5, 1};
     stockGames["CangYiMSL2"] = {6, 1, 2, "ULUS10579"};
-    stockGames["NBA06"] = {0, 1, 2, "UCUS98626"};
+    stockGames["NBA06"] = {6, 1, 2, "UCUS98626"};
     stockGames["RidgeRacer2"] = {2, 5, 1};
-    stockGames["HeatSeeker"] = {6, 2, 1};
+    stockGames["HeatSeeker"] = {0, 2, 1};
     stockGames["InitialD"] = {2, 1, 1};
     stockGames["GTCar"] = {2, 1, 1};
     stockGames["wipeout"] = {5, 2, 1};
@@ -23,12 +23,12 @@ PSPMapper::PSPMapper() {
     stockGames["taoguiZ"] = {0, 1, 1};
     stockGames["WuShuangDS"] = {0, 1, 1};
     stockGames["zs5"] = {0, 1, 1};
-    stockGames["GuiltyGear"] = {6, 3, 2, "ULJM05355"};
+    stockGames["GuiltyGear"] = {6, 3, 1, "ULJM05355"};
     stockGames["FateUnlimitedCode"] = {6, 5, 1};
     stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 2, "ULJS00202"};
     stockGames["PowerStoneCollection"] = {6, 5, 1};
-    stockGames["StreetFighterAlpha3Max"] = {0, 4, 2, "", true};
-    stockGames["DragonBallZ"] = {6, 4, 1};
+    stockGames["StreetFighterAlpha3Max"] = {0, 4, 1, "", true};
+    stockGames["DragonBallZ"] = {0, 4, 1};
     stockGames["bleach"] = {0, 2, 1};
     stockGames["PacManWorld3"] = {0, 1, 1};
     stockGames["MegaManX"] = {0, 5, 1, "", true};
