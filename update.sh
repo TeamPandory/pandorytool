@@ -21,6 +21,7 @@ busybox cp -R /usbstick/pandory/skin/ /sdcard/;
 busybox rm -rf /usbstick/pandory*;
 busybox touch /system/pandory_was_here;
 busybox umount /system;
+busybox umount /data;
 busybox umount /sdcard;
 busybox rm -rf /usbstick/update.sh;
 busybox sleep 5;
