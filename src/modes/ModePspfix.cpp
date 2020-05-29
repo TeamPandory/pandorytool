@@ -136,6 +136,7 @@ bool ModePspfix::stockFix() {
     std::map<std::string, downloadDefinition>::iterator pos;
     for (it = pspGames.begin(); it != pspGames.end(); it++) {
         pspConfigGameDef configGameDef = it->second;
+        std::string romFolderName = it->first;
         std::string romPath = targetDir + "/games/data/family/" + it->first;
         std::string baseRom = Fs::basename(romPath);
         if (Fs::exists(romPath)) {
@@ -182,8 +183,15 @@ bool ModePspfix::stockFix() {
                         }
 
                         // Multiplayer P1 + P2
-                        replaceRomFile(romPath, "ppsspp10.ini", "ppsspp.ini", "/PSP/SYSTEM/");
-                        replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
+                        // special case for TK5 & MK
+                        if (romFolderName == "TK5" || romFolderName == "MortalKombat") {
+                            replaceRomFile(romPath, "ppsspp9.ini", "ppsspp.ini", "/PSP/SYSTEM/");
+                            replaceRomFile(romPath, "ppsspp12.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
+                        } else {
+                            replaceRomFile(romPath, "ppsspp10.ini", "ppsspp.ini", "/PSP/SYSTEM/");
+                            replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
+                        }
+
                         if (configGameDef.controlType == 0) {
                             replaceRomFile(romPath, "controls3.ini", "controls.ini", "/PSP/SYSTEM/");
                             replaceRomFile(romPath, "controls4.ini", "controls.ini", "/2p/PSP/SYSTEM/");
