@@ -88,11 +88,13 @@ int ModePspfix::stage1() {
             std::cout << "Could not download " << stickName << ", exiting." << std::endl;
         }
         result = stickExt.exractToFolder(def, tarGz, pspRomFolder);
-        if (result == 1) {
+        if (result > 0) {
             std::cout << "There was a problem extracting " << stickName << ", exiting." << std::endl;
+            return result;
         }
     }
-    return result;
+    std::cout << "** Done. Have fun!" << std::endl;
+    return 0;
 }
 
 int ModePspfix::stage2() {
@@ -112,8 +114,10 @@ bool ModePspfix::stockFix() {
     std::cout << "Attempting to fix controls and performance for game:" << std::endl;
     if (editionCheck.isShareware()) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-        std::cout << "**** Did you know that ultimate-edition users also get optimized PSP performance tweaks and extra two-player game support? ****" << std::endl;
-        for (int i=10;i>=1;i--) {
+        std::cout
+                << "**** Did you know that ultimate-edition users also get optimized PSP performance tweaks and extra two-player game support? ****"
+                << std::endl;
+        for (int i = 10; i >= 1; i--) {
             std::cout << std::to_string(i) + "...";
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
@@ -131,22 +135,24 @@ bool ModePspfix::stockFix() {
     std::map<std::string, downloadDefinition> controlFixes = pspMapper->getControlFixes();
     std::map<std::string, downloadDefinition>::iterator pos;
     for (it = pspGames.begin(); it != pspGames.end(); it++) {
+        pspConfigGameDef configGameDef = it->second;
         std::string romPath = targetDir + "/games/data/family/" + it->first;
         std::string baseRom = Fs::basename(romPath);
         if (Fs::exists(romPath)) {
             pos = controlFixes.find(baseRom);
-
             if (editionCheck.isUltimate()) {
-                if (!it->second.ident.empty()) {
-                    std::string gameSpecificConfig = romPath + "/PSP/SYSTEM/" + it->second.ident + "_ppsspp.ini";
-                    if (Fs::exists(gameSpecificConfig)) {
-                        Fs::remove(gameSpecificConfig);
+                // LOOP HERE
+                for (const auto &entry : std::filesystem::directory_iterator(romPath + "/PSP/SYSTEM/")) {
+                    std::string filePath = entry.path().string();
+                    std::string gameSpecificConfig = filePath.substr(filePath.length() - 11, 11);
+                    if (gameSpecificConfig == "_ppsspp.ini") {
+                        Fs::remove(filePath);
                     }
                 }
             }
             std::cout << "Patching stock rom: " << baseRom << std::endl;
 
-            if (it->second.fixVideo) {
+            if (configGameDef.fixVideo) {
                 std::string videoSrc = baseRom + "_vid.ini";
                 std::string videoTarget = "/" + baseRom + ".mp4";
                 replaceRomFile(romPath, videoSrc, videoTarget, "/");
@@ -156,7 +162,7 @@ bool ModePspfix::stockFix() {
             replaceRomFile(romPath, "notice.ini", "notice.txt", "/");
 
             if (pos == controlFixes.end()) {
-                patchControlFolder(path, romPath + "/", it->second);
+                patchControlFolder(path, romPath + "/", configGameDef);
             } else {
                 downloadDefinition def = pos->second;
                 std::cout << "  => Patching player-one save state" << std::endl;
@@ -164,7 +170,7 @@ bool ModePspfix::stockFix() {
 
                 if (editionCheck.isUltimate()) {
                     std::cout << "  => Patching two-player game support" << std::endl;
-                    if (it->second.players == 2) {
+                    if (configGameDef.players == 2) {
                         Fs::makeDirectory(romPath + "/2p");
                         Fs::makeDirectory(romPath + "/2p/PSP");
                         Fs::makeDirectory(romPath + "/2p/PSP/SYSTEM");
@@ -175,12 +181,17 @@ bool ModePspfix::stockFix() {
                             replaceRomFile(romPath, def.saveState1, "2p.ppst", "/PSP/PPSSPP_STATE/");
                         }
 
-                        // Multiplayer P1
+                        // Multiplayer P1 + P2
                         replaceRomFile(romPath, "ppsspp10.ini", "ppsspp.ini", "/PSP/SYSTEM/");
-                        replaceRomFile(romPath, "controls8.ini", "controls.ini", "/PSP/SYSTEM/");
-                        // Multiplayer P2
                         replaceRomFile(romPath, "ppsspp11.ini", "ppsspp.ini", "/2p/PSP/SYSTEM/");
-                        replaceRomFile(romPath, "controls9.ini", "controls.ini", "/2p/PSP/SYSTEM/");
+                        if (configGameDef.controlType == 0) {
+                            replaceRomFile(romPath, "controls3.ini", "controls.ini", "/PSP/SYSTEM/");
+                            replaceRomFile(romPath, "controls4.ini", "controls.ini", "/2p/PSP/SYSTEM/");
+                        } else {
+                            replaceRomFile(romPath, "controls8.ini", "controls.ini", "/PSP/SYSTEM/");
+                            replaceRomFile(romPath, "controls9.ini", "controls.ini", "/2p/PSP/SYSTEM/");
+                        }
+
                         // Keyrecord
                         if (!def.keyRecord.empty()) {
                             replaceRomFile(romPath, def.keyRecord, "KeyRecord.ini", "/");
@@ -202,7 +213,8 @@ void ModePspfix::replaceRomFile(const std::string &romPath, const std::string &s
     copyDestPath += targetFolder;
     copyDestPath += targetSave;
     if (!Fs::exists(copySrcPath)) {
-        std::cout << "Error: " << std::filesystem::path(copySrcPath).lexically_normal() << " is missing or " << std::filesystem::path(copyDestPath).lexically_normal() << " could not be written " << std::endl;
+        std::cout << "Error: " << std::filesystem::path(copySrcPath).lexically_normal() << " is missing or "
+                  << std::filesystem::path(copyDestPath).lexically_normal() << " could not be written " << std::endl;
         return;
     }
     Fs::copy(copySrcPath, copyDestPath);
@@ -216,7 +228,6 @@ bool ModePspfix::otherFix() {
     }
 
     std::string romsPath = targetDir + "/games/data/family/";
-    patchControlFolder(path, path, pspConfigGameDef{0, 2, 1});
 
     for (const auto &entry : std::filesystem::directory_iterator(romsPath)) {
         std::string romFolder = Fs::basename(entry.path().string());
