@@ -11,13 +11,13 @@ PSPMapper::PSPMapper() {
     stockGames["KidouSenshiGundam"] = {6, 1, 1};
     stockGames["NarutoShippuuden"] = {0, 5, 1};
     stockGames["Daxter"] = {0, 5, 1};
-    stockGames["CangYiMSL2"] = {6, 1, 2, "ULUS10579"};
-    stockGames["NBA06"] = {6, 1, 2, "UCUS98626"};
+    //stockGames["CangYiMSL2"] = {6, 1, 2, "ULUS10579"};
+    stockGames["NBA06"] = {0, 1, 2, "UCUS98626"};
     stockGames["RidgeRacer2"] = {2, 5, 1};
     stockGames["HeatSeeker"] = {0, 2, 1};
     stockGames["InitialD"] = {2, 1, 1};
     stockGames["GTCar"] = {2, 1, 1};
-    stockGames["wipeout"] = {5, 2, 1};
+    stockGames["wipeout"] = {5, 1, 1};
     stockGames["JiaTingJS"] = {6, 1, 1};
     stockGames["MouFaSNNY"] = {6, 1, 1};
     stockGames["taoguiZ"] = {0, 1, 1};
@@ -27,13 +27,13 @@ PSPMapper::PSPMapper() {
     stockGames["FateUnlimitedCode"] = {6, 5, 1};
     stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 2, "ULJS00202"};
     stockGames["PowerStoneCollection"] = {6, 5, 1};
-    stockGames["StreetFighterAlpha3Max"] = {0, 4, 1, "", true};
+    stockGames["StreetFighterAlpha3Max"] = {6, 4, 1, "", true};
     stockGames["DragonBallZ"] = {0, 4, 1};
     stockGames["bleach"] = {0, 2, 1};
     stockGames["PacManWorld3"] = {0, 1, 1};
     stockGames["MegaManX"] = {0, 5, 1, "", true};
-    stockGames["LocoRoco"] = {3, 1, 1};
-    stockGames["AuditionPortable"] = {6, 1, 1};
+    stockGames["LocoRoco"] = {7, 1, 1};
+    stockGames["AuditionPortable"] = {2, 1, 1};
     stockGames["Luxor"] = {0, 1, 1};
     stockGames["Numpla10000Mon"] = {6, 1, 1};
     stockGames["7wonders"] = {6, 4, 1};
@@ -48,7 +48,6 @@ PSPMapper::PSPMapper() {
             "pandory-media-psp0000",
             "https://github.com/emuchicken/pandory-media/archive/psp0000.tar.gz",
     };
-
 
     controlFixes["video"] = {
             "Video fixes",
@@ -157,6 +156,8 @@ PSPMapper::PSPMapper() {
             "KeyRecord_WWEAllStar.ini"
     };
 
+
+    /*
     controlFixes["CangYiMSL2"] = {
             "CangYiMSL2",
             "pandory-media-ULUS10579-CangYiMSL2",
@@ -167,6 +168,7 @@ PSPMapper::PSPMapper() {
             "",
             ""
     };
+     */
 
     controlFixes["NBA06"] = {
             "NBA 06",

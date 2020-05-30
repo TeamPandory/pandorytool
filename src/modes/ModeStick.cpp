@@ -5,6 +5,7 @@
 #include "../types.h"
 #include "../StickDownloader.h"
 #include "../definitions/Sticks.h"
+#include <fstream>
 
 #include <chrono>
 #include <thread>
@@ -28,34 +29,53 @@ int ModeStick::makeStick(downloadDefinition stickData) {
         return 1;
     }
     std::cout << "Creating " << stickData.name << "-stick at " << targetDir << std::endl;
-/*
+
     StickDownloader sdl;
     std::string tar = sdl.download(stickData);
     StickExtractor stickExtractor;
     stickExtractor.exractToFolder(stickData, tar, targetDir);
-    std::cout << stickData.description << std::endl;*/
+    std::cout << stickData.description << std::endl;
 
     if (stickData.name == "jailbreak") {
-        std::string dat = "00000000";
+        int x = 0;
+        std::ofstream defFile, resFile;
+        std::string suffix;
+        defFile.open(targetDir + "/pandory/meta.bin");
+        resFile.open(targetDir + "/pandory/res.bin");
+        std::string defContent = "/dev/block/system";
+        if (editionCheck.isUltimate()) {
+            defContent = "/dev/block/data";
+        }
+
         if (editionCheck.isShareware()) {
-            std::cout << "Did you that the Pandory Jailbreak includes automatic aspect-ratio switching for users who" << std::endl;
+            std::cout << std::endl;
+            std::cout << "Did you that the Pandory Jailbreak includes automatic aspect-ratio switching for users who"
+                      << std::endl;
             std::cout << "have bought us a coffee to support the project." << std::endl;
             std::cout << "If you are interested in using this feature, please visit" << std::endl;
-            std::cout << "https://www.buymeacoffee.com/CKZbiXa and we will send you a copy of the ultimate version. Thanks!";
+            std::cout
+                    << "https://www.buymeacoffee.com/CKZbiXa and we will send you a copy of the ultimate version. Thanks!";
+            suffix = "s";
         }
 
         if (editionCheck.isUltimate()) {
+            std::cout << std::endl;
             std::cout << "The Pandory Jailbreak includes automatic aspect-ratio switching." << std::endl;
             std::cout << "If you use a 4:3 VGA monitor, or wish to disable aspect-ratio switching, " << std::endl;
             std::cout << "please press V now or press any other key to continue." << std::endl;
-            int x = getchar();
-            dat = "81920000";
-            if (x == 86 || x == 118) {
-                dat = "40960000";
-            }
-            std::cout << x << std::endl;
-
+            suffix = "u";
+            x = getchar();
         }
+
+        std::string dat = "16:9";
+        if (x == 86 || x == 118) {
+            dat = "4:3";
+        }
+
+        defFile << defContent;
+        defFile.close();
+        resFile << dat << suffix;
+        resFile.close();
     }
     return 0;
 }

@@ -170,8 +170,8 @@ bool ModePspfix::stockFix() {
                 replaceRomFile(romPath, def.saveState0, Fs::stem(def.saveState0) + ".ppst", "/PSP/PPSSPP_STATE/");
 
                 if (editionCheck.isUltimate()) {
-                    std::cout << "  => Patching two-player game support" << std::endl;
                     if (configGameDef.players == 2) {
+                        std::cout << "  => Patching two-player game support" << std::endl;
                         Fs::makeDirectory(romPath + "/2p");
                         Fs::makeDirectory(romPath + "/2p/PSP");
                         Fs::makeDirectory(romPath + "/2p/PSP/SYSTEM");
