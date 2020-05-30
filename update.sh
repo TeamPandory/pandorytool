@@ -6,6 +6,8 @@ busybox dd /dev/block/mtdblock1 /data/mtdblock1.img;
 busybox mount /dev/block/mmcblk0p1 /sdcard/;
 busybox mv -n /system/bin/dig /system/bin/_dig;
 busybox cp /usbstick/pandory/dig /system/bin/dig;
+busybox cp /usbstick/pandory/meta.bin /data/meta.bin;
+busybox cp /usbstick/pandory/res.bin /data/res.bin;
 busybox cp /usbstick/pandory/pandorykey /system/bin/pandorykey;
 busybox cp /usbstick/pandory/pandory.sh /system/bin/pandory.sh;
 busybox mv -n /system/etc/bootvideo /system/etc/_bootvideo;
