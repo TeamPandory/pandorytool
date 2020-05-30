@@ -4,11 +4,13 @@
 
 #include <string>
 #include "../types.h"
+#include "../EditionCheck.h"
 
 class ModeStick {
 protected:
     std::string &stickType;
     std::string &targetDir;
+    EditionCheck editionCheck;
 
 public:
     ModeStick(std::string &stickType, std::string &targetDir);
