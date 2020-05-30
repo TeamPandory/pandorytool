@@ -39,8 +39,8 @@ PSPMapper::PSPMapper() {
     stockGames["7wonders"] = {6, 4, 1};
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {6, 2, 1};
-    stockGames["CiKeXT"] = {0, 2, 1};
-    stockGames["pes2012"] = {0, 2, 2, "ULAS42289"};
+    stockGames["CiKeXT"] = {0, 5, 1};
+    stockGames["pes2012"] = {6, 2, 2, "ULAS42289"};
     stockGames["gwlrP3"] = {0, 2, 1};
 
     controlFixes["psp0000"] = {
