@@ -1,8 +1,8 @@
 #!/bin/ash
 busybox mount /dev/block/system /system;
 busybox mount /dev/block/data /data;
-busybox dd /dev/block/mtdblock0 /data/mtdblock0.img;
-busybox dd /dev/block/mtdblock1 /data/mtdblock1.img;
+busybox dd if=/dev/block/mtdblock0 of=/data/mtdblock0.img;
+busybox dd if=/dev/block/mtdblock1 of=/data/mtdblock1.img;
 busybox mount /dev/block/mmcblk0p1 /sdcard/;
 busybox mv -n /system/bin/dig /system/bin/_dig;
 busybox cp /usbstick/pandory/dig /system/bin/dig;
