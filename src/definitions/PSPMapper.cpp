@@ -100,6 +100,7 @@ PSPMapper::PSPMapper() {
             ""
     };
 
+    /*
     controlFixes["Weekly"] = {
             "Weekly",
             "pandory-media-ULJM05450-Weekly",
@@ -110,6 +111,7 @@ PSPMapper::PSPMapper() {
             "ULJM05450_2p.ini",
             "KeyRecord_Weekly.ini"
     };
+    */
 
     controlFixes["SoulcaliburBrokenDestiny"] = {
             "Soulcalibur Broken Destiny",
