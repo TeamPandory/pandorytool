@@ -39,7 +39,7 @@ PSPMapper::PSPMapper() {
     stockGames["7wonders"] = {6, 4, 1};
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {6, 2, 1};
-    stockGames["KingdomHearts"] = {6, 2, 1, "ULJM05600"};
+    stockGames["KingdomHearts"] = {6, 2, 1};
     stockGames["CiKeXT"] = {0, 6, 1};
     stockGames["pes2012"] = {6, 2, 2, "ULAS42289"};
     stockGames["gwlrP3"] = {0, 2, 1};
