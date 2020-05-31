@@ -33,13 +33,13 @@ PSPMapper::PSPMapper() {
     stockGames["PacManWorld3"] = {0, 1, 1};
     stockGames["MegaManX"] = {0, 5, 1, "", true};
     stockGames["LocoRoco"] = {7, 1, 1};
-    stockGames["AuditionPortable"] = {2, 1, 1};
+    stockGames["AuditionPortable"] = {6, 1, 1};
     stockGames["Luxor"] = {0, 1, 1};
     stockGames["Numpla10000Mon"] = {6, 1, 1};
     stockGames["7wonders"] = {6, 4, 1};
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {6, 2, 1};
-    stockGames["CiKeXT"] = {0, 5, 1};
+    stockGames["CiKeXT"] = {0, 6, 1};
     stockGames["pes2012"] = {6, 2, 2, "ULAS42289"};
     stockGames["gwlrP3"] = {0, 2, 1};
 
