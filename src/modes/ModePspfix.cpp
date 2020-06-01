@@ -162,9 +162,10 @@ bool ModePspfix::stockFix() {
             // Pandory the explory was here
             replaceRomFile(romPath, "notice.ini", "notice.txt", "/");
 
-            if (pos == controlFixes.end()) {
-                patchControlFolder(path, romPath + "/", configGameDef);
-            } else {
+            // Patch all the things!
+            patchControlFolder(path, romPath + "/", configGameDef);
+
+            if (pos != controlFixes.end()) {
                 downloadDefinition def = pos->second;
                 std::cout << "  => Patching player-one save state" << std::endl;
                 replaceRomFile(romPath, def.saveState0, Fs::stem(def.saveState0) + ".ppst", "/PSP/PPSSPP_STATE/");

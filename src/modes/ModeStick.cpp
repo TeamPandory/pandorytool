@@ -44,7 +44,8 @@ int ModeStick::makeStick(downloadDefinition stickData) {
         resFile.open(targetDir + "/pandory/res.bin");
         std::string defContent = "/dev/block/system";
         if (editionCheck.isUltimate()) {
-            defContent = "/dev/block/data";
+            defContent = "/dev/block/d";
+            defContent += "ata";
         }
 
         if (editionCheck.isShareware()) {

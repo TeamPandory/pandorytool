@@ -127,6 +127,8 @@ void PandoryTool::usage() {
               << std::endl;
 
     std::cout << "FIX PSP CONTROLS & TWO-PLAYER MODES!" << std::endl;
+    std::cout << "Note: These fixes directly modify files on your SD card. Please make a backup before you" << std::endl;
+    std::cout << "attempt any of these modifications!" << std::endl << std::endl;
     std::cout << "5) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;
     std::cout << "      Stage 1: Add some preparation files to your USB stick. Install this onto your Pandora Games 3D."
               << std::endl;
