@@ -1,4 +1,3 @@
-#include <conio.h>
 #include "CommandLineArguments.h"
 #include "PandoryTool.h"
 #include "modes/ModeAdd.h"
@@ -97,7 +96,7 @@ void PandoryTool::usage() {
     std::cout << std::endl;
 
     std::cout << "Press any key to continue..." << std::endl << std::endl;
-    getch();
+    getchar();
 
     std::cout << "-----------------------------------------------------------------------------------------------------"
               << std::endl;
