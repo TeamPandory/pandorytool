@@ -3,7 +3,7 @@
 
 PSPMapper::PSPMapper() {
     stockGames["tk6"] = {6, 1, 2, "ULUS10466"};
-    stockGames["TK5"] = {6, 1, 2, "ULUS10139"};
+    stockGames["TK5"] = {6, 5, 2, "ULUS10139"};
     stockGames["MortalKombat"] = {6, 1, 2, "ULES00353"};
     //stockGames["SoulEater"] = {6, 1, 2};
     //stockGames["Weekly"] = {6, 1, 2, "ULJM05450"};
@@ -17,7 +17,7 @@ PSPMapper::PSPMapper() {
     stockGames["HeatSeeker"] = {0, 2, 1};
     stockGames["InitialD"] = {2, 1, 1};
     stockGames["GTCar"] = {2, 1, 1};
-    stockGames["wipeout"] = {5, 1, 1};
+    stockGames["wipeout"] = {5, 2, 1};
     stockGames["JiaTingJS"] = {6, 1, 1};
     stockGames["MouFaSNNY"] = {6, 1, 1};
     stockGames["taoguiZ"] = {0, 1, 1};
