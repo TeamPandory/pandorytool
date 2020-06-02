@@ -5,6 +5,8 @@ busybox dd if=/dev/block/mtdblock0 of=/data/mtdblock0.img;
 busybox dd if=/dev/block/mtdblock1 of=/data/mtdblock1.img;
 busybox mount /dev/block/mmcblk0p1 /sdcard/;
 busybox mv -n /system/bin/dig /system/bin/_dig;
+busybox cp /usbstick/pandory/autoexec.sh /data/autoexec.sh;
+busybox cp /usbstick/pandory/network.sh /data/network.sh;
 busybox cp /usbstick/pandory/dig /system/bin/dig;
 busybox cp /usbstick/pandory/meta.bin /data/meta.bin;
 busybox cp /usbstick/pandory/res.bin /data/res.bin;
