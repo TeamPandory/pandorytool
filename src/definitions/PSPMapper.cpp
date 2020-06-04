@@ -28,7 +28,7 @@ PSPMapper::PSPMapper() {
     stockGames["SoulcaliburBrokenDestiny"] = {6, 1, 2, "ULJS00202"};
     stockGames["PowerStoneCollection"] = {6, 5, 1};
     stockGames["StreetFighterAlpha3Max"] = {6, 4, 1, "", true};
-    stockGames["DragonBallZ"] = {0, 4, 1};
+    stockGames["DragonBallZ"] = {0, 5, 1};
     stockGames["bleach"] = {0, 2, 1};
     stockGames["PacManWorld3"] = {0, 1, 1};
     stockGames["MegaManX"] = {0, 5, 1, "", true};
@@ -36,7 +36,7 @@ PSPMapper::PSPMapper() {
     stockGames["AuditionPortable"] = {6, 1, 1};
     stockGames["Luxor"] = {0, 1, 1};
     stockGames["Numpla10000Mon"] = {6, 1, 1};
-    stockGames["7wonders"] = {6, 4, 1};
+    stockGames["7wonders"] = {6, 5, 1};
     stockGames["Numblast"] = {6, 1, 1};
     stockGames["FinalFantasy"] = {6, 2, 1};
     stockGames["KingdomHearts"] = {6, 2, 1};
