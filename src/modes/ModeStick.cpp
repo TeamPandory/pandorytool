@@ -78,6 +78,7 @@ int ModeStick::makeStick(downloadDefinition stickData) {
         resFile << dat << suffix;
         resFile.close();
     }
+    std::cout << std::endl << "Jailbreak stick complete. Have fun!" << std::endl;
     return 0;
 }
 ModeStick::ModeStick(std::string &stickType, std::string &targetDir) : stickType(stickType), targetDir(targetDir) {}
