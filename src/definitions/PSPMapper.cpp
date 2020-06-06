@@ -16,7 +16,7 @@ PSPMapper::PSPMapper() {
     stockGames["RidgeRacer2"] = {2, 5, 1};
     stockGames["HeatSeeker"] = {0, 2, 1};
     stockGames["InitialD"] = {2, 1, 1};
-    stockGames["GTCar"] = {2, 1, 1};
+    stockGames["GTCar"] = {2, 0, 1};
     stockGames["wipeout"] = {6, 0, 1};
     stockGames["JiaTingJS"] = {6, 1, 1};
     stockGames["MouFaSNNY"] = {6, 1, 1};
