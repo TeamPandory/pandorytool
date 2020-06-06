@@ -42,7 +42,7 @@ PSPMapper::PSPMapper() {
     stockGames["KingdomHearts"] = {6, 2, 1};
     stockGames["CiKeXT"] = {0, 6, 1};
     stockGames["pes2012"] = {6, 2, 2, "ULAS42289"};
-    stockGames["gwlrP3"] = {0, 2, 1};
+    stockGames["gwlrP3"] = {0, 4, 1};
 
     controlFixes["psp0000"] = {
             "PSP Injector",
