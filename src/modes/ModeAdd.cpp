@@ -8,6 +8,7 @@
 #include "../McGamesTXT.h"
 #include "../termcolor/termcolor.hpp"
 #include "../SystemMapper.h"
+#include "../EditionCheck.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ') {
     if (size > string.size()) {
@@ -104,6 +105,12 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         std::string shortSystemName = SystemMapper::convertDirectoryNameToSystemName(system);
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + pad(std::to_string(i), 4, '0');
+            EditionCheck ed;
+            if (ed.isUltimate()) {
+                // less annoying file names
+                const char *hash = game->FirstChildElement("hash")->GetText();
+                targetRomName = shortSystemName + hash;
+            }
             if (!SystemMapper::getSystemRenameFlag(system)) {
                 targetRomName = Fs::stem(romPath);
             }
