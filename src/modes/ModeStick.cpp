@@ -50,10 +50,10 @@ int ModeStick::makeStick(downloadDefinition stickData) {
 
         if (editionCheck.isShareware()) {
             std::cout << std::endl;
-            std::cout << "Did you know that the Pandory Jailbreak includes an additional automatic aspect-ratio switching ";
+            std::cout << "Did you know that the Pandory Jailbreak includes an additional automatic aspect-ratio switching" <<std::endl;
             std::cout << "feature for users who have supported the project by buying us a coffee?" << std::endl;
             std::cout << "If you are interested in using this feature, please visit https://www.buymeacoffee.com/CKZbiXa " << std::endl;
-            std::cout << "and we will send you a copy of the ultimate version. Thanks!";
+            std::cout << "and we will send you a copy of the ultimate version. Thanks!" << std::endl;
             suffix = "s";
         }
 
