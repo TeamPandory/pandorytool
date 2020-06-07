@@ -108,8 +108,11 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             EditionCheck ed;
             if (ed.isUltimate()) {
                 // less annoying file names
-                const char *hash = game->FirstChildElement("hash")->GetText();
-                targetRomName = shortSystemName + hash;
+                tinyxml2::XMLElement *hashElement = game->FirstChildElement("hash");
+                if (hashElement != nullptr) {
+                    const char *hash = hashElement->GetText();
+                    targetRomName = shortSystemName + hash;
+                }
             }
             if (!SystemMapper::getSystemRenameFlag(system)) {
                 targetRomName = Fs::stem(romPath);
