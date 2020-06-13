@@ -111,7 +111,9 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 tinyxml2::XMLElement *hashElement = game->FirstChildElement("hash");
                 if (hashElement != nullptr) {
                     const char *hash = hashElement->GetText();
-                    targetRomName = shortSystemName + hash;
+                    if (hash != nullptr) {
+                        targetRomName = shortSystemName + hash;
+                    }
                 }
             }
             if (!SystemMapper::getSystemRenameFlag(system)) {
