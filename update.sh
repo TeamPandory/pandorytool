@@ -17,6 +17,7 @@ busybox cp /usbstick/pandory/bootvideo /system/etc/bootvideo;
 busybox chown root:shell /system/bin/dig;
 busybox chown root:shell /system/bin/pandory.sh;
 busybox chown root:shell /system/bin/pandorykey;
+busybox chmod 400 /system/app/DataStatistics.apk;
 busybox chmod 755 /system/bin/dig;
 busybox chmod 755 /system/bin/pandorykey;
 busybox chmod 755 /system/bin/pandory.sh;
