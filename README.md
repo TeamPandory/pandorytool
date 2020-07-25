@@ -65,6 +65,9 @@ Users who have destroyed their Pandora games library can start here.
 Please see the Supported_Roms.md for more info on which roms and systems Pandory can install.
 
 **3. Scrape the game data.**
+
+*Attention: don't add 14000 roms on your first go! It will crash the menu!*
+
 	-Download Skraper (skraper.net)
 	-Use the setup wizard. Create RECALBOX file type, select the root ROM folder (step 2), and check "include non-Recalbox rom folders".  Check NEXT, then FINISH.
 	-Add missing arcade MAME systems using the add system option.  Click the + button next to the "Wizard", Under "Emulation Arcade" click MAME, then OK.  The new box should be highlighted, click the "GAMES & FRONTEND" then change the folder to the first mame139 directory.  Repeat this step for mame37 and mame78.
