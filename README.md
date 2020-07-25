@@ -102,7 +102,7 @@ There is a possibility that the install will fail.  Please go through this check
 2. Pandory already installed games of that device at an earlier date.  
 In order to automate the process, our tool renames files in bulk.  Starting the tool once more, the counter starts from 1, so it'd be like you are trying to install a file with the same name.  As above, push the "settings" button on the back of your Pandora, Games Settings, and remove all the games you have added- FOR THAT SYSTEM ONLY.  You can then re-run Pandory and the installation process.
 
-3. MAME title has multiple entries.  Even if the folder is separate, the Pandora unit places the MAME titles in the same folder, and the filenames cannot be altered.  Please go through your selection and select one title- OR use a rom with another filename.  An example being captcomm.zip (parent rom) and captcommu.zip (the USA release)
+3. MAME title has multiple entries.  Even if the folder is separate, the Pandora unit places the MAME/FBA titles in the same folder, and the filenames cannot be altered.  Please go through your selection and select one title- OR use a rom with another filename.  An example being captcomm.zip (parent rom) and captcommu.zip (the USA release)
 
 ## Note:
 - The restricted free build will only support up to 20 titles per system.  Unrestrict this by donating a cup of coffee @ https://www.buymeacoffee.com/CKZbiXa
