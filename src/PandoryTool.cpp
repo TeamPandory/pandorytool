@@ -39,7 +39,7 @@ int PandoryTool::main() {
               << std::endl;
     std::cout << "Pandory Tool - Open your Pandora Games 3D" << " by emuchicken & dajoho        [" << getAppSuffix()
               << ": " << getCompileDate() << "/" << getCommitHash() << "]" << std::endl;
-    std::cout << "== Join us on Discord! https://discord.gg/Az94Rxn" << std::endl;
+    std::cout << "== Join us on Discord! https://discord.gg/rPKhJCT" << std::endl;
     std::cout << "== Like us on Facebook! https://www.facebook.com/groups/2522039741415070/" << std::endl;
     std::cout << "== Visit us on PG3D-HAX! https://pg3d-hax.uk" << std::endl;
     std::cout << std::endl;
