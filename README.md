@@ -15,7 +15,7 @@ We will not take any responsibility on the destruction of your device, or for an
 A backup of your system is recommended - so clone your microsd with win32imager before any alterations are made.  Removing 2 PLAYER PSP titles at this time is IRREVERSIBLE!  Be careful of what you remove from your original PANDORA system.
 
 ## Contact & Feedback
-If you wish to provide feedback, need help, or just come to say hi! - Please join the Discord channel @ https://discord.gg/Az94Rxn  Any major issues can be added to the github.
+If you wish to provide feedback, need help, or just come to say hi! - Please join the Discord channel @ https://discord.gg/rPKhJCT Any major issues can be added to the github.
 
 ## Support Us!
 Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
