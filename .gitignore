@@ -1,1 +1,4 @@
-.idea
+/.idea
+/obj
+/libs
+/cmake-build-debug
