@@ -31,8 +31,8 @@ std::string StickDownloader::download(const downloadDefinition &stick) {
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-	curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-	CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+        CURLcode res;
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         fclose(fp);

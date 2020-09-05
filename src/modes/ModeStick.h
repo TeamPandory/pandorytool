@@ -5,12 +5,16 @@
 #include <string>
 #include "../types.h"
 #include "../EditionCheck.h"
+#include "../ModeJailbreakStick.h"
+#include "../definitions/Sticks.h"
 
 class ModeStick {
 protected:
     std::string &stickType;
     std::string &targetDir;
     EditionCheck editionCheck;
+    ModeJailbreakStick modeJailbreakStick;
+    Sticks sticks;
 
 public:
     ModeStick(std::string &stickType, std::string &targetDir);
@@ -19,7 +23,7 @@ public:
 
     int makeStick(const std::string &name);
 
-    int makeStick(downloadDefinition stickData);
+    int makeStick(const downloadDefinition &stickData);
 };
 
 

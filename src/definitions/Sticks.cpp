@@ -2,6 +2,13 @@
 Sticks::Sticks() {
     sticks["jailbreak"] = {
             "jailbreak",
+            "",
+            "",
+            "Virtual stick definition"
+    };
+
+    sticks["jailbreak3D"] = {
+            "jailbreak3D",
             "pandorytool-jb-1.0.5",
             "https://github.com/emuchicken/pandorytool/archive/jb-1.0.5.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
@@ -14,6 +21,18 @@ Sticks::Sticks() {
             "adb shell\n"
             "  OR  \n"
             "telnet ip-of-pandora-box:4444"
+    };
+
+    sticks["jailbreak7"] = {
+            "jailbreak7",
+            "pandorytool-jb7-1.0.6",
+            "https://github.com/emuchicken/pandorytool/archive/jb7-1.0.6.tar.gz",
+            "The jailbreak also enables telnet on port 4444, which enables you to\n"
+            "remotely log in using:\n"
+            "telnet ip-of-pandora-box:4444\n\n"
+            "WARNING: KEY7 CONSOLES DO NOT ALL HAVE A RECOVERY MODE\n"
+            "AND YOU MAY NOT BE ABLE TO RECOVER YOUR SYSTEM IF SOMETHING\n"
+            "GOES WRONG DURING THE JAILBREAK. THIS JAILBREAK COMES WITH NO WARRANTY!\n"
     };
 
     sticks["backup"] = {
