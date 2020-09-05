@@ -1,0 +1,591 @@
+kof97	拳王97	KOF97	KOF 97
+kof99p	拳王99	KOF99	KOF 99
+kof2000n	拳王2000	K0F2000	KOF 2000
+kof2001	拳王2001	K0F2001	KOF 2001
+kof2002	拳王2002	K0F2002	KOF 2002
+kof2003	拳王2003	K0F2003	KOF 2003
+kof94	拳王94	K0F94	KOF 94
+kof95	拳王95	K0F95	KOF 95
+kof96	拳王96	K0F96	KOF 96
+kof95h	拳王95加强	K0F95+	K0F95+
+kof96h	拳王96加强	K0F96+	K0F96+
+kof97pls	拳王97风云再起	K0F97 Plus	KOF97 플러스
+kof2000	拳王2000加强版	K0F2000 Plus	K0F2000 Plus
+kof2001h	拳王2001加强	K0F2001 Plus	K0F2001 Plus
+kf2k2pla	拳王2002加强	K0F2002 Plus	K0F2002 Plus
+kf2k2mp	拳王2002魔幻一	K0F2002 Magic	K0F2002 Magic
+kf2k2mp2	拳王2002魔幻二	K0F2002 Magic II	KOF 2002 매직II
+kf2k2pls	拳王2002风云再起	K0F2002 Super	K0F2002 Super
+kof2002b	拳王2002冰蓝	K0F2002 ICE BLUE	K0F2002 ICE BLUE
+cthd2003	卧虎藏龙2003	Cth2003	Cth2003
+kf2k3bl	拳王 2003（自制版）	The King of Fighters 2003 	킹 오브 파이터즈 2003 
+kf2k3pl	拳王 2004 EX Hero 	The King of Fighters 2004 Plus 	킹 오브 파이터즈 2004 Plus 
+kf2k3upl	拳王 2004 EX 风云 Plus 	The King of Fighters 2004 Ultra Plus 	킹 오브 파이터즈 2004 울트라 Plus 
+kf2k5uni	拳王10周年魔幻II	K0F10Th Unique II	KOF 10주년유니크II
+kf10thep	拳王 十周年纪念	The King of Fighters 10th Anniversary Extra Plus	킹 오브 파이터즈 10주년 기념판 엑스트라 Plus
+svcsplus	拳王对街霸加强版	SNK Vs Capcom Plus	SNK VS 캡콤플러스
+mslug	合金弹头	Metal Slug	메탈슬러그
+mslug2	合金弹头2	Metal Slug 2	메탈슬러그 2
+mslug3	合金弹头3	Metal Slug 3	메탈슬러그 3
+mslug4	合金弹头4	Metal Slug 4	메탈슬러그 4
+mslug5	合金弹头5	Metal Slug 5	메탈슬러그 5
+mslug3b6	合金弹头6	Metal Slug 6	메탈슬러그 6
+mslugx	合金弹头X	Metal Slug X	메탈슬러그 X
+mslug3h	合金弹头3加强版	Metal Slug 3+	메탈슬러그 3 플러스
+ms5plus	合金弹头5加强版	Metal Slug 5 Plus	메탈슬러그 5 플러스
+sf2	街头霸王 II - 天下斗士 	Street Fighter II: The World Warrior 	스트리트 파이터 II - 월드 워리어 	
+sf2ud	街头霸王 II - 天下斗士（U）	Street Fighter II: The World Warrior (U)	스트리트 파이터 II - 월드 워리어 (U) 	
+sf2hf	街头霸王 II - 战斗宣言 	Street Fighter II': Hyper Fighting 	스트리트 파이터 II' 터보 - 하이퍼 파이팅 	
+sf2hfj	街头霸王 II - 战斗宣言（加速版） 	Street Fighter II' Turbo: Hyper Fighting 	스트리트 파이터 II' 터보 - 하이퍼 파이팅 	
+sf2hfu	街头霸王 II - 战斗宣言（U） 	Street Fighter II': Hyper Fighting(U) 	스트리트 파이터 II' 터보 - 하이퍼 파이팅 (U)	
+sf2rb2	街头霸王 II - 四大天王 	Street Fighter II': Champion Edition 	스트리트 파이터 II' - 챔피언 에디션 	
+sf2red	街头霸王 II - 赤色波动 	Street Fighter II': Champion Edition 	스트리트 파이터 II' - 챔피언 에디션 	
+sf2dkot2	街霸2四大天王KO TURBO	SFII-T Hy Fighting KO	SFII-T Hy Fighting KO	
+ldrun3j	超级运动员 3j - 魔神的复活	Lode Runner III+ - The Golden Labyrinth	로드 러너 III+ - 황금 미로
+captcomm	名将	Captain Commando 	캡틴 코만도	
+dino	恐龙快打	Cadillacs and Dinosaurs	캐딜락 공룡신세기	
+xmen2pj	X - 战警 (2 Players)	X-Men (2 Players)	엑스맨 (2인용)	
+xmen	X - 战警 (4 Players)	X-Men (4 Players)	엑스맨 (4인용)	
+wof3js	三剑圣	Warriors Of Fate 3Js	천지를먹다 2 해킹버전	
+wofhfh	火凤凰	Huo Fenghuang	천지를먹다 2 해킹버전2	
+tdragon2	雷龙 2	Thunder Dragon 2	뇌용 2	
+1942	1942 - 空中大战 	1942 I	1942	
+1942a	1942 - 空中大战 II	1942 II	1942 II	
+1943	1943 - 中途岛海战 	1943 The Battle of Midway 	1943 미드웨이 해전 	
+1943u	1943 - 中途岛海战 II	1943 The Battle of Midway II	1943 미드웨이 해전 II	
+1945kiii	1945k III	1945k III	1945k III	
+ffight	快打旋风 	Final Fight 	파이널 파이트 	
+ldrun	超级运动员 	Lode Runner 	로드 러너 	
+ldrun2	超级运动员 2 - 帝国的逆袭	Lode Runner II - The Bungeling Strikes Back	로드 러너 II - 번질링 스트라이크 백	
+ldrun3	超级运动员 3 - 魔神的复活	Lode Runner III - The Golden Labyrinth	로드 러너 III - 황금 미로	
+ldrun4	超级运动员 4 - 帝国的脱出	Lode Runner IV - Teikoku Karano Dasshutsu	로드 러너 IV - 제국으로부터의 탈출	
+ldruna	超级运动员 II	Lode Runner II	로드 러너 II	
+3in1semi	欢乐三合一	XESS	제스	
+3kokushi	三刻志 	Sankokushi 	삼각지 	
+3stooges	三个傀儡	The Three Stooges In Brides Is Brides	세명의 바보들	
+3wonders	奇迹三合一	Three Wonders	쓰리 원더스	
+4dwarrio	四次元战士	4-D Warriors	4-D 워리어즈	
+4in1	欢乐四合一	4 Fun in 1	4 펀 인 1	
+4in1boot	益智游戏王	Puzzle King	퍼즐왕	
+800fath	海底潜航 - 800 海里	800 Fathoms	800 패덤즈	
+mariner	海底潜航 - 水手	Mariner	매리너	
+88games	'88游戏	'88 Games	'88 게임즈	
+konami88	科乐美运动会 '88	Konami '88	코나미 '88	
+99lstwar	'99 最后战争	'99 The Last War	'99 라스트 워	
+actfancr	战斗机器	Act-Fancer Cybernetick Hyper Weapon	액트팬서 사이버네틱 하이퍼 웨폰	
+aeroboto	变形战机 Z Aeroboto	Aeroboto	에어로보토	
+aerofgt	四国战机	Aero Fighters	에어로 파이터즈	
+aerofgtb	四国战机 II	Aero Fighters II	에어로 파이터즈 II	
+afighter	战斗任务	Action Fighter	액션 파이터	
+agallet	石破天惊	Air Gallet	에어 갈렛	
+agress	阿古雷司 - 导弹大战略	Agress	어그레스	
+airattck	空袭 	Air Attack 	공습 	
+airbustr	空中堡垒	Air Buster	에어 버스터	
+ajax	飓风直升机	Ajax	A 잭스	
+typhoon	飓风 Typhoon	Typhoon	타이푼	
+alexkidd	天空魔城 	Alex Kidd	알렉스 키드	
+alexkidd1	天空魔城 II	Alex Kidd II	알렉스 키드 II	
+aliens	异形	Aliens	에일리언스	
+aliencha	星宿会战 	Alien Challenge	에일리언 챌린지	
+aliensec	星际争霸 	Alien Sector	에일리언 섹터	
+aliensyn	异形入侵	Alien Syndrome 	에일리언 신드롬 	
+aliensyn5	异形入侵 5	Alien Syndrome 5	에일리언 신드롬 5	
+alphamis	阿尔法任务	Alpha Mission	알파 미션	
+alphaxz	阿尔法任务 Z 	The Alphax Z 	알펙스 Z 	
+arian	组合战机	Arian Mission	아리언 미션	
+amatelas	圣战士阿玛迪斯	Sei Senshi Amatelass	성전사 아마테라스	
+amazon	亚马逊女战士	Soldier Girl Amazon	아마존 여전사	
+arabian	阿拉丁	Arabian	아라비안	
+arabiana	阿拉丁 II	Arabian II	아라비안 II	
+area88	战区 88 I	Area 88 I	에어리어 88 I	
+area88r	战区 88 II	Area 88 II	에어리어 88 II	
+arkarea	宇宙飞艇	Ark Area	아크 에어리어	
+armedff	武装编队 2	Armed Formation 2	암드 포메이션 2	
+astorm3	异形风暴	Alien Storm 	에일리언 스톰 	
+ashnojoe	小拳王	Ashita no Joe	내일의 죠	
+ashurau	阿修罗风暴	Ashura Blaster	아수라 블래스터	
+asterixaad	美丽新世界	Asterix	아스테릭스	
+astyanax	战王之王	The Astyanax	아스티아낙스	
+asuka	飞鸟 	Asuka 	아스카 	
+asukaj	飞鸟 II 	Asuka II	아스카 II	
+asurabld	血剑王朝 - 魔刃降临	Asura Blade - Sword of Dynasty	아수라 블레이드 - 왕조의 검	
+asurabus	血剑王朝 2 - 永恒的战士	Asura Buster - Eternal Warriors	아수라 버스터 - 영원한 전사들	
+atetris	俄罗斯方块	Tetris	테트리스	
+atlantis	亚特兰蒂斯大作战 I	Battle of Atlantis I	아틀란티스 전투 I	
+atomicp	俄罗斯方块解谜	Atomic Point	아토믹 포인트	
+aurail1	光环 	Aurail  	아우레일  	
+aurail	光环 II	Aurail II 	아우레일 II	
+avspirit	复仇精灵	Avenging Spirit	어벤징 스피릿
+backfirt	烽火佳人	Back Fire	백 파이어	
+baddudes	龙行忍者	Bad Dudes vs. Dragonninja	드래곤 닌자 	
+drgninja	龙行忍者 2	Dragonninja 2	드래곤 닌자 2	
+bakubrkr	爆裂战机	Bakuretsu Breaker	폭열 브레이커 (일본판)	
+bakutotu	爆突机铳艇	Bakutotsu Kijuutei	폭돌기총정 바라듀크 Ⅱ 	
+balcube	弹跳方块	Bal Cube	밸 큐브	
+ballbros	气球兄弟	Balloon Brothers	벌룬 브러더스	
+batlbubl	碰碰球 II	Battle Bubble II	배틀 버블 II	
+bankp	银行惊魂记	Bank Panic	은행강도	
+baraduke	爆突	Baraduke	바라듀크	
+battlane	战斗之路 	Battle Lane 	배틀 레인 	
+battlane2	战斗之路 II	Battle Lane II	배틀 레인 II	
+battlex	战斗飞梭	Battle Cross	배틀 크로스	
+battlnts	反战英雄	Battlantis	배틀란티스	
+battroad	赛车之路	The Battle-Road	배틀로드	
+bayroute	海湾战争 	Bay Route 	베이 루트 	
+gulfwar2	海湾战争 II	Gulf War II	걸프 워 II	
+bbros	魔鬼气泡	Buster Bros	버스터 형제	
+bchopper	希利大冒险	Battle Chopper	배틀 초퍼	
+bcstry	原始人梦语	B.C. Story 	B.C. 스토리 	
+bcstrya	原始人梦语 II	B.C. Story II	B.C. 스토리 II	
+berabohm	超绝伦人	Beraboh Man	초절륜인 베라보맨	
+berlwall	柏林墙	The Berlin Wall	베를린 장벽	
+bermudat	百慕大魔鬼三角	Bermuda Triangle	버뮤다 삼각지	
+bermudata	百慕大魔鬼三角 (世界大战)	Bermuda Triangle (World Wars)	버뮤다 삼각지 - 세계대전	
+bestbest	霸中霸	Best Of Best	베스트 오브 베스트	
+bestleag	大联盟足球 (意甲 A)	Best League ( Italian Serie A)	베스트 리그 (세리에 A)	
+bestleaw	大联盟足球 (世界杯)	Best League (World Cup)	베스트 리그 (월드컵)	
+bestri	打星星	Bestri 	베스트라이	
+bgaregga	空战之路	Battle Garegga	배틀 가레가	
+bigbang	大轰动	Big Bang	빅뱅	
+bigkarnk	古埃及卡纳克传说	Big Karnak	빅 카낙	
+bigstrik	大联盟足球	Big Striker	빅 스트라이커	
+biomtoy	生化玩具兵	Biomechanical Toy	Biomechanical Toy	
+bionicc	希特勒复活	Bionic Commando	바이오닉 코만도		
+bladestl	金牌冰上曲棍球	Blades of Steel	블레이드 오브 스틸 	
+blandia	快打布兰达	Blandia	블랜디아	
+blastoff	原爆战机 	Blast Off	블래스트 오프	
+blazeon	魂之光辉	Blaze On	블레이즈 온	
+blazer	坦克先锋	Blazer	블레이저	
+blkhole	黑洞	Black Hole	블랙홀	
+blkpnthr	黑豹	Black Panther	블랙 팬더	
+blktiger	暗黑之虎	Black Tiger	블랙 타이거	
+blmbycar	意大利巡回赛车	Blomby Car	블롬비 카	
+blockcar	黑色嘉年华	Block Carnival / Thunder & Lightning 2	썬더 & 라이트닝 2 / 블럭 카니발	
+blockhl	俄罗斯方块 - 黑洞	Block Hole	블럭홀	
+blockout2	立体空间方块 II	Block Out II	블럭 아웃 II	
+bloodbro	勇士们 - 血兄弟 I	Blood Bros. I	블러드 브러더스 I	
+bloodbroa	勇士们 - 血兄弟 II	Blood Bros. II	블러드 브러더스 II	
+bluehawk	鹰击蓝空	Blue Hawk	블루 호크	
+bluehawkn	鹰击蓝空 (NTC)	Blue Hawk (NTC)	블루 호크 (NTC)	
+blueprnt	蓝色拼图	Blue Print	블루 프린트		
+brubber	金龟车	Burnin' Rubber	버닝 러버	
+upndown	超级金龟车	Up'n Down 	업 앤 다운 	
+bodyslam	女子摔角	Body Slam	바디 슬램 	
+boggy84	弹跳王 '84	Boggy '84	보기 '84	
+bombjack	炸弹杰克 	Bomb Jack 	봄 잭 	
+bjtwin	炸弹杰克 II	Bombjack Twin 	봄 잭 트윈 II	
+bjtwina	炸弹杰克 III	Bombjack Twin III	봄 잭 트윈 III	
+bombkick	炸弹脚力	Bomb Kick	봄 킥	
+bonzeadv	地狱小和尚	Bonze Adventure 	지옥순례 	
+bottom9	世界棒球 (T)	Bottom of the Ninth (T)	9회말 야구 (T)	
+bouldash	钻石小子	Boulder Dash 2	보울더 대쉬 2	
+bounty	游艇危机	The Bounty	바운티	
+brain	太空登陆战	Brain	브레인	
+shackled	链狱谜城	Shackled	셔클드	
+breywood	链狱谜城 2	Breywood 2	브레이우드  2	
+brkthru	强行突破 	Break Thru 	강행돌파 	
+forcebrk	强行突破 II	Force Break II	포스 브레이크 II	
+bssoccer	街头足球	Back Street Soccer	백 스트리트 축구	
+btime	汉堡时代 	Burger Time 	버거 타임 	
+btimem	汉堡时代 II	Burger Time II	버거 타임 II	
+btlfieldb	时空战士	Battle Field	배틀 필드 	
+btlkroad	世界武术格斗比赛	Battle K-Road	배틀 K-로드	
+bubl2000	泡泡野人版 2000	Bubble 2000	버블 2000	
+bub68705	魔幻气泡	Bubble Bobble	버블보블	
+bublbobl	魔幻气泡 IV	Bubble Bobble IV	버블보블 IV	
+bublboblr	魔幻气泡 (有选择模式)	Bubble Bobble (with mode select)	버블보블 (슈퍼모드 선택버전)	
+bucky	宇宙野兔 	Bucky O'Hare 	버키 오 헤어 	
+buccanrs	海盗 	Buccaneers 	버커니어스 	
+buccanrsa	海盗 II	Buccaneers II	버커니어스 II	
+bullfgt	斗牛 	Bullfight 	불파이트 	
+thetogyu	斗牛 II 	The Togyu II 	투우 II	
+burglarx	夜盗 X	Burglar X	버글러 X	
+burnforc	燃烧之魂	Burning Force 	버닝 포스	
+bwings	B-计划	B-Wings	B-윙즈 
+cabal	勇士们 	Cabal 	카발	
+cachat	能源方块	Cachat 	카찻 	
+cactus	仙人掌	Cactus 	선인장 	
+cadash	卡达叙传说 	Cadash	카다쉬 	
+cairblad	空刃	Change Air Blade	체인지 에어 블레이드 	
+calibr50	点五零	Caliber 50	캘리버 50	
+candance	麒麟 - 加农舞者	Cannon Dancer 	캐논 댄서 	
+osman	麒麟 - OS 战警 	Osman	캐논 댄서	
+cannball	佳能球气泡 (直立型)	Cannon Ball (horizontal)	캐논볼 (가로화면)	
+cannballv	佳能球气泡  (垂直型)	Cannon Ball (vertical)	캐논볼 (세로화면)	
+cavenger	宇宙复仇者	Cosmic Avenger	코즈믹 어벤저	
+cbuster	暴力克星	Crude Buster 	크루드 버스터 	
+cclimbr2	疯狂爬梯者 2 	Crazy Climber 2 	크레이지 클라이머 2 	
+cclimbr2a	疯狂爬梯者 2 (难度加强版)	Crazy Climber 2 (Harder)	크레이지 클라이머 2 (고난이도)	
+chainrec	魔法方块'95	Chain Reaction'95	매지컬 드롭'95	
+magdrop	魔法方块 	Magical Drop	매지컬 드롭 	
+magdropp	魔法方块 Plus 	Magical Drop Plus	매지컬 드롭 Plus	
+pnickj	魔法方块'94 	Pnickies'94	프닉키즈'94	
+chameleo	变色龙	Chameleon	카멜레온	
+charlien	糊涂忍者	Charlie Ninja	찰리 닌자	
+checkman	检查人	Check Man	체크맨	
+cheekyms	打老鼠	Cheeky Mouse	치키 마우스	
+chimerab	原生兽 	Chimera Beast 	키메라 비스트 	
+chinatwn	唐人街	China Town 	차이나 타운	
+chokchok	魔鬼气泡海中对战	Choky! Choky!	초키! 초키!	
+chukatai	中华大仙 	Chuka Taisen 	중화대선 	
+champwr	冠军摔跤	Champion Wrestler	챔피언 레슬러	
+circusc	马戏团 - 小丑查理 I	Circus Charlie I	서커스 찰리 I	
+circusc2	马戏团 - 小丑查理 II	Circus Charlie II	서커스 찰리 II	
+citybomb	炸弹赛车 	City Bomber 	시티 봄버 	
+citycon	碰碰车 I	City Connection I	시티 커넥션 I	
+citycona	碰碰车 II	City Connection II	시티 커넥션 II	
+motos	莫托斯	Motos	모토스	
+cobracom	眼睛蛇指令	Cobra-Command 	코브라 커맨드 	
+hexa	魔法宝石 II	Hexa II	Hexa II	
+combh	战斗神鹰	Combat Hawk	컴뱃 호크	
+commando	战场之狼 I	Commando II	코만도 I	
+commandou	战场之狼 II	Commando II	코만도 II	
+commsega	桂河大桥 	Commando 	코만도 	
+condor	秃鹰 	Condor 	콘도르 	
+congo	刚果阿古	Congo Bongo	콩고 봉고	
+contra	魂斗罗 	Contra 	혼두라 (魂斗羅) 	
+scontra	超级魂斗罗	Super Contra	슈퍼 혼두라 (魂斗羅)	
+cookbib	曲吉鼠解谜	Cookie & Bibi	쿠키 & 비비	
+cookbib2	曲吉鼠解谜 2	Cookie & Bibi 2	쿠키 & 비비 2	
+cookbib3	曲吉鼠解谜 3	Cookie & Bibi 3	쿠키 & 비비 3	
+gallop	雷驰 - 武装警察 	Gallop - Armed Police Unit  	갤럽 - 암드 폴리스 유니트  	
+cosmogng	外星人趣味射击 	Cosmo Gang the Video 	코스모 갱 더 비디오 	
+cotton	棉花小魔女	Cotton	코튼	
+crimec	罪恶都市	Crime City 	크라임 시티	
+vendetta2pd	罪恶战士 2 (2 Players )	Vendetta (2 Players)	Vendetta (2 Players)	
+vendetta	罪恶战士 2 (4 Players)	Vendetta (4 Players)	벤데타 (4인용)	
+crush	顽皮鬼 	Crush Roller 	크러쉬 롤러 	
+crusherm	破碎机	Crusher Makochan	크러셔 마코짱	
+hcastle	恶魔城堡	Haunted Castle	악마성 드라큘라	
+cuebrick	砖块拼图大考验 	Cue Brick 	큐 브릭 	
+dadandrn	究极战队 I	Kyukyoku Sentai Dadandarn I	구극 전대 다단단 I	
+mmaulers	究极战队 II	Monster Maulers II	구극 전대 다단단 II	
+daisenpu	大旋风	Daisenpu 	대선풍 	
+dangseed	魔种 	Dangerous Seed	데인져러스 시드	
+darkmist	失落的城堡	The Lost Castle In Darkmist	다크 미스트	
+darkseal	暗黑封印 - 毁灭之门 	Dark Seal 	다크 씰 	
+darktowr	黑暗之塔	Dark Tower	다크 타워	
+darwin	黑暗之风 	Darwin 4078 	다윈 4078	
+dblewing	双翼	Double Wings	쌍날개 - 더블 윙즈 (한국판)	
+dblpoint	夜上海 I	Double Point I	더블 포인트 I	
+dblpointd	夜上海 II	Double Point II	더블 포인트 II	
+dbreed	龙族少年	Dragon Breed 	드래곤 브리드	
+dcon	地球防卫军	D-Con	D-콘	
+ddonpach	怒首领蜂 I	DoDonPachi II 	도돈파치 I	
+ddonpachj	怒首领蜂 II	DoDonPachi II 	도돈파치 II	
+ddragon	双截龙	Double Dragon	더블드래곤	
+ddragon2	双截龙II	Double Dragon II	더블드래곤 2	
+ddragon3	双截龙III	Double Dragon III	더블드래곤 3	
+ddux1	怪鸭冒险记 I	Dynamite Dux I	다이너마이트 덕스 I	
+ddux	怪鸭冒险记 II	Dynamite Dux II	다이너마이트 덕스 II	
+deadconx	死亡边缘 	Dead Connection 	데드 커넥션 	
+demonwld	步步惊魂 I	Demon's World I 	데몬스 월드 I	
+devilw	魔兽王国	Devil World 	데빌 월드	
+devstors	饿流祸 	Devastators 	약탈자 	
+dfeveron	弹铳 I	Dangun Feveron 	탄총 피버론 	
+feversos	弹铳 II	Fever SOS 	피버 SOS	
+dharmak	达摩道场 II	Dharma Doujou II	망치맨 달마도장 II	
+dietgo	乐乐小子 	Diet Go Go 	다이어트 Go Go 	
+digdug2	挖金子 	Dig Dug 	디그 더그 	
+shippumd	疾风魔法大作战 I	Shippu Mahou Daisakusen (Japan)	질풍 마법대작전 (일본판)	
+kingdmgp	疾风魔法大作战 II	Kingdom Grandprix	킹덤 그랑프리 (세계판)	
+diverboy	潜水宝宝	Diver Boy	다이버 보이	
+dland	梦想大陆	Dream Land	드림랜드	
+docastle	嘟先生的城堡 I 	Mr. Do's Castle I 	미스터 도의 성 I	
+dogfight	空中缠斗 	Dog Fight 	도그 파이트 	
+dogosoke	怒号层圈 II	Dogou Souken II 	노호층권 II	
+dondokod	木匠兄弟 I	Don Doko Don I	돈 도코 돈 I	
+dondokodu	木匠兄弟 II	Don Doko Don II	돈 도코 돈 II	
+donpachi	首领蜂 I	DonPachi I	수령봉 I	
+donpachikr	首领蜂 II	DonPachi II	수령봉 (首領蜂)II 	
+dowild	嘟先生的暴走	Mr. Do's Wild Ride	미스터 도 와일드 라이드	
+dreamwld	梦想世界	Dream World	드림월드	
+drgnbowl	七龙珠	Dragon Bowl	드래곤 보울	
+drgnbstr	屠龙记	Dragon Buster	드래곤 버스터	
+drgnunit	魔城龙魂	Dragon Unit / Castle of Dragon	드래곤 유닛 / 캐슬 오브 드래곤	
+drgw2	中国龙 II	Dragon World II	중국룡 II	
+drmicro	米克罗博士	Dr. Micro	마이크로 박사	
+drtoppel	托比博士探险队 	Dr. Toppel's Adventure 	토플박사의 모험 	
+dspirit	龙魂 	Dragon Spirit 	드래곤 스피릿 	
+dyger	特攻队I	Dyger I	다이거 I	
+dygera	特攻队 II	Dyger II	다이거 II	
+dynablst	炸弹人 I 	Bomber Man I	봄버맨 I	
+bombrman	炸弹人 II	Bomber Man II	봄버맨 II	
+dynagear	恐龙时代	Dyna Gear	다이나 기어	
+dynwar	吞食天地	Dynasty Wars	삼국지	
+earthjkr	地球战役	Earth Joker	어스 조커	
+edf	地球防卫军	Earth Defense Force	지구방위군	
+eightfrc	8 号火力	Eight Forces	에이트 포스	
+esckids	脱线行大运 (4 Players)	Escape Kids (4 Players)	이스케이프 키즈 (4인용)	
+esckidsj	脱线行大运 (2 Players)	Escape Kids (2 Players)	이스케이프 키즈 (2인용)	
+esprade	长空超少年	ESP Ra.De.	에스프레이드 	
+eto	古今东西干支物语 	Kokontouzai Eto Monogatari 	동서고금 십이지 이야기 	
+evilston	魔门地狱石	Evil Stone	에빌 스톤	
+excelsr	破坏王	Excelsior	엑셀시오르	
+exedexes	超浮游要塞	Exed Exes	엑시드 엑시즈	
+skyfox	天狐 II	Sky Fox	스카이 폭스	
+explbrkr	爆裂战机 	Explosive Breaker	익스플로시브 브레이커	
+extdwnhl	极限滑降 	Extreme Downhill 	익스트림 다운힐 	
+exzisus	行星任务 	Exzisus 	익스지서스 	
+fantland	魔幻大地 I	Fantasy Land I	판타지 랜드 I	
+fantlanda	魔幻大地 II	Fantasy Land II	판타지 랜드 II	
+fantzonep	神奇地带特别版	Fantasy Zone p	판타지 존 p	
+farmer	农夫叛乱物语 	Farmers Rebellion	파머즈 레벨리온	
+ikki	农夫叛乱物语 II 	Ikki  	농부의 반란 	
+fastfred	飞天快手佛莱迪	Fast Freddie	패스트 프레디	
+fhawk	战斗猎鹰 	Fighting Hawk 	파이팅 호크 	
+finalizr	超级变形战机	Super Transformation	슈퍼 트랜스포메이션	
+finalttr	俄罗斯方块终结者	Final Tetris	파이널 테트리스	
+finehour	决战时刻	Finest Hour 	파이니스트 아워 	
+firehawk	火鹰 	Fire Hawk	파이어 호크	
+fixeight	地狱英雄传说	FixEight 	지옥의 영웅전설	
+flashgal	霹雳娇娃	Flashgal 	플래시걸 	
+flickys1	小鸟妃奇 I	Flicky I	플릭키 I	
+flicky	小鸟妃奇 II	Flicky II	플릭키 II	
+flipull	小鸡益智方块	Flipull	플리풀 	
+plotting	小鸡益智方块 I 	Plotting I	플로팅 I	
+plottingu	小鸡益智方块 II 	Plotting II	플로팅 II	
+flyboy	飞天男孩	Fly-Boy	플라이 보이	
+flytiger	飞虎队	Flying Tiger	플라잉 타이거	
+fncywld	异想世界	Fancy World	팬시 월드	
+fnkyfish	疯狂的鱼	Funky Fish	펑키 피쉬	
+footchmp	冠军杯足球赛	Football Champ 	풋볼 챔프	
+formatz	变形战机 Z	Formation Z	포메이션 Z	
+freeze	太空人迷宫	Freeze	프리즈	
+frogger	青蛙过河	Frogger	프로거	
+fround	拳击决赛 I	The Final Round 	파이널 라운드 	
+hpuncher	拳击决赛 II	Hard Puncher 	피투성이가 된 영광	
+fshark	飞翔鲛 I	Flying Shark I	플라잉 샤크 I	
+fsharkbt	飞翔鲛 II	Flying Shark II	플라잉 샤크 II	
+hishouza	飞翔鲛 III	Hishou Zame III	비상 상어 III	
+skyshark	飞鲨	Sky Shark 	스카이 샤크	
+fstarfrc	最终星际武力	Final Star Force 	파이널 스타포스 	
+funkybee	疯狂蜜蜂	Funky Bee	펑키 비	
+funybubl	性感谜球回路	Funny Bubble	퍼니 버블	
+funybublc	性感谜球回路 II 	Funny Bubble II	퍼니 버블 II	
+fx	星际任务	F-X	F-X	
+galaxygn	星系炮火	Galaxy Gunners	갤럭시 거너즈	
+galhustl	开仑骗子	Gals Hustler	갈스 허슬러	
+galmedes	高米达斯星战 	Galmedes 	갈메데스	
+ganryu	武藏严流记	Ganryu	무장암류기	
+gardia	巡弋飞艇	Gardia 	가르디아 	
+garogun	韩语问答	Garogun Seroyang	가로군 세로양 	
+garyoret	卧龙列传	Garyo Retsuden	와룡열전 	
+gaunt2	圣铠 II	Gauntlet II	건틀렛 II	
+gaunt22p1	圣铠 II (2 Players)	Gauntlet II (2 Players)	건틀렛 II (2인용)	
+gberet	绿色兵团	Green Beret	그린베레	
+gbusters	疯狂警察 I	Gang Busters I	갱 버스터즈 I	
+gbustersa	疯狂警察 II	Gang Busters II	갱 버스터즈 II	
+gemini	捉虫敢死队	Gemini Wing	Gemini Wing	
+genix	魔鬼气泡牛仔版	Genix Family	제닉스 패밀리	
+ghostb3	迷宫猎人 G (3 Players)	The Real Ghostbusters (3 Players)	리얼 고스트버스터 (3인용)	
+gigasm2b	打砖块战斗台 2	Gigas Mark II	기가스 마크 II	
+gijoe	特种部队	G.I. Joe	G.I. 조	
+ginganin	银河任侠传 	Ginga NinkyouDen 	은하임협전 	
+gmgalax	小精灵	Ghostmuncher	고스트멍커 갤럭시안 	
+goldnaxej	战斧 II	Golden Axe II	골든 엑스 II	
+gotcha	科乐美迷你游戏97 	Got-cha Mini Game Festival 97	빠샤빠샤 미니게임 페스티벌 97	
+bishi	科乐美迷你游戏 	Bishi Bashi Championship Mini Game Senshuken	비시바시 챔피언쉽 미니게임 선수권	
+ppchamp	迷你游戏  	Pasha Pasha Champ Mini Game Festival	빠샤빠샤 미니게임 페스티벌	
+grdians	电神魔傀 II	Denjin Makai II	전신마괴 II	
+grdnstrm	圣战 - 守护风暴	Guardian Storm	전신 - 가디언 스톰	
+grobda	坦克大战 	Grobda 	그로브다 	
+grobda3	坦克大战 II	Grobda II	그로브다  II	
+gtmrusa	1000 英里大师赛车	Great 1000 Miles Rally	그레이트 1000마일 랠리	
+gtmr2	1000 英里大师赛车 2	Mille Miglia 2: Great 1000 Miles Rally	그레이트 1000마일 랠리 2	
+gulfstrm	海湾风暴	Gulf Storm	걸프 스톰	
+gunbird	武装飞鸟 I	Gunbird I	건버드 I	
+gunbirdk	武装飞鸟 II	Gunbird II	건버드 II	
+gundhara	铳弹岚	Gundhara	총탄남	
+gundl94	枪牌 94	Gun Dealer '94	건 딜러 '94	
+gunfront	枪之国度 I	Gun & Frontier I	건 & 프론티어 I	
+gunfrontj	枪之国度 II	Gun Frontier II	건 프론티어 II	
+gunmast	枪王	Gun Master	건 마스터	
+gunsmoke	荒野大镖客 	Gun.Smoke 	건 스모크
+gyrodine	战斗直升机	Gyrodine	자이로다인	
+hachoo	破兆	Hachoo!	파조!	
+hal21	骇物 21	HAL21	HAL21	
+hardhead	铁头小子	Hard Head	짱구박사	
+hardhea2	铁头小子 2	Hard Head 2	짱구박사 2	
+hasamu	霸沙梦	Hasamu 	패사몽 	
+hellfire	地狱火 (2P 版)	Hellfire (2P set)	헬파이어 (2인용)	
+heuksun	五子棋 	Heuk Sun Baek Sa 	흑선백사 	
+hexion	蜂巢俄罗斯方块 	Hexion 	헥시온 	
+hexpoola	魔法台球 	Hex Pool 	헥스 풀 	
+racknrol	魔法台球 II	Rack + Roll	랙 + 롤	
+hharry	大工之源先生	Hammerin' Harry 	망치소년	
+higemaru	海盗船水手	Pirate Ship Higemaru	히게마루 해적선	
+honeydol	蜜蜂玩偶	Honey Dolls	허니 돌	
+hopmappy	跳跳鼠	Hopping Mappy	호핑 매피	
+hopprobo	弹簧机器人	Hopper Robo	호퍼 로보	
+horizon	飞越地平线	Horizon	호라이즌	
+hotbubl	泡泡野人版 	Hot Bubble	핫 버블	
+hotdogst	眩之风暴	Hotdog Storm 	핫도그 스톰 	
+htchctch	魔法绿兵卫	Hatch Catch	해치 캐치 (한국판)	
+hyperpac	疯狂小精灵	Hyper Pacman	하이퍼 팩맨	
+hypsptsp	疯狂运动会	Hyper Sports	하이퍼 스포츠 스페셜 	
+imgfight	梦幻战机	Image Fight 	이미지 파이트 	
+insectx	杀虫战记	Insector X	인섹터 X 	
+ironhors	大列车强盗	Iron Horse	대열차 강도	
+jackal	赤色要塞	Jackal	특수부대 자칼	
+jjack	跳跃杰克	Jumping Jack	점핑 잭	
+jjsquawk	鹦鹉历险记	J. J. Squawkers	J. J. 스쿼커즈	
+joinem	精灵鬼	Joinem	조인엠	
+jumppop	吸尘器小子 II	Jumping Pop II	점핑 팝 II	
+tumblep	吸尘器小子 特别版	Tumble Pop 	텀블 팝 	
+jrpacman	小精灵 Jr.	Jr. Pac-Man	쥬니어 팩맨	
+jumpbug	跳跳车	Jump Bug	점프 버그	
+jumpcoas	跳跃游乐园	Jump Coaster	점프 코스터	
+jumpkids	跳跃顽童	Jump Kids	점프 키즈	
+junofrst	第一战机	Juno First	주노 퍼스트	
+kageki	火激 	Kageki 	화격	
+kamenrid	假面骑士俱乐部	Masked Riders Club Battle Race	가면라이더 클럽 배틀 레이스	
+kangaroo	袋鼠	Kangaroo	캥거루	
+karatblzu	斗神光辉 	Karate Blazers 	가라데 블레이저스 	
+karianx	卡琳魔宝 	Karian Cross 	카리안 크로스 	
+kbash2	猫王 2 	Knuckle Bash 2 	너클 배쉬 2 	
+kickboy	踢球少年	Kick Boy	킥 보이	
+kickoff	足球开幕赛 	Kick Off 	킥 오프 	
+kickridr	暴力机车赛	Kick Rider	킥 라이더	
+kidniki	快杰洋枪	Kid Niki - Radical Ninja 	쾌걸 얀차마루	
+kikcubic	迷宫岛 	Meikyu Jima 	미궁도	
+kikcubicb	迷宫岛 II	Kickle Cubele	킥클 큐벨레	
+kingball	国王与气球 	King & Balloon 	킹 & 벌룬 	
+kncljoe	惩奸锄恶 	Knuckle Joe 	너클 죠 	
+knights	圆桌骑士	Knights of the Round 	원탁의 기사 	
+ksayakyu	草野球	Kusayakyuu	동네야구	
+ktiger	究极虎	Kyukyoku Tiger 	구극 타이거 	
+kuhga	空牙 - 行动代号	Kuhga - Operation Code 'Vapor Trail'	공아(空牙) - 오퍼레이션 코드 '베이퍼 트레일'	
+vaportra	空牙 - 行动代号 II	Vapor Trail - Hyper Offence Formation	공아(空牙) - 베이퍼 트레일	
+kungfum	成龙踢馆	Kung-Fu Master	쿵후 마스터	
+kyros	柯罗斯传说	Kyros	카이로스	
+kyrosj	柯罗斯传说 II	Kyros No Yakata II	카이로스의 저택 II	
+kyustrkr	最后足球	Last Striker	라스트 스트라이커	
+labyrunrk	拉比林特斯森林 	Labyrinth Runner 	라비린스 러너 	
+tricktrp	拉比林特斯森林 II	Trick Trap II	트릭 트랩 II	
+ladybug	小瓢虫	Lady Bug	무당벌레	
+ladymstr	新功夫少女	Lady Master of Kung Fu	레이디 마스터 오브 쿵후	
+lastday	末日危机 	The Last Day 	라스트 데이	
+lastdaya	末日危机 II	The Last Day II	라스트 데이 II	
+lastduel	行星战争 2012 	Last Duel 	라스트 듀얼 	
+lastfort	牌砦	Last Fortress - Toride	패채 (牌砦)	
+lastmisn	最终任务 	Last Mission 	라스트 미션 	
+lastmisnj	最终任务 II	Last Mission II	라스트 미션 II	
+ledstorm	道路风暴 	Led Storm 	레드 스톰 	
+legend	传奇	Legend	레전드	
+legion	超时迷宫 	Legion - Spinner-87 	초시미궁 레지온 	
+lifefrce	沙罗曼蛇 	Lifeforce (US)	라이프포스 (미국판)	
+salamand	沙罗曼蛇 II	Salamander II	사라만사 II	
+liquidk	丑八怪大冒险 	Liquid Kids 	리퀴드 키즈 	
+lizwiz	蜥蜴巫师大作战	Lizard Wizard	리자드 위자드	
+cottong	轨道拼图 Cotocoto Cottong	Cotocoto Cottong	코토코토 코통	
+gutangtn	轨道拼图 II 	Guttang Gottong	구땅 가땅	
+locomotn	轨道拼图 III 	Loco-Motion	로코 모션	
+lomakai	魔魁传说	Legend of Makai	레전드 오브 마카이	
+makaiden	魔魁传说 II	Makai Densetsu	마계전설	
+lordofk	战斗之王	The Lord of King 	로드 오브 킹 	
+losttomb	盗募者 (容易版)	Lost Tomb (easy)	잃어버린 무덤 (저난이도)	
+losttombh	盗募者 (困难版)	Lost Tomb (hard)	잃어버린 무덤 (고난이도)	
+lotlot	空间转移	Lot Lot	로트 로트	
+lwings	翼人 	Legendary Wings 	레전더리 윙스 	
+lwings2	翼人 II	Legendary Wings II	레전더리 윙스 II	
+m660	太空任务 660 	Mission 660 	미션 660 	
+macross2	超时空要塞 II	Super Spacefortress Macross II 	초시공요새 마크로스 II	
+madgear	疯狂机车	Mad Gear 	매드 기어 	
+madshark	狂鲨任务	Mad Shark	매드 샤크	
+magicbub	魔法泡泡	Magic Bubble	매직 버블	
+mahoudai	魔法大作战 	Mahou Daisakusen	마법대작전	
+mangchi	曼翅	Mang-Chi	망치 (한국판)	
+maniacsq	疯狂方块 	Maniac Square 	매니악 스퀘어 	
+manybloc	拉霸拼图	Many Block	매니 블럭	
+mappy	猫捉老鼠 	Mappy 	매피 	
+markham	飞碟入侵	Markham	마캄	
+matchit2	四川省 II	Match It II	사천성 II / 매치 잇 II	
+mazinger	铁甲万能侠	Mazinger	마징가 	
+mbombrd	摔跤霸王 - 最终之战 	Ultimate Team Battle	머슬봄버 듀오 - 얼티메이트 팀 배틀	
+mcatadv	魔猫森林	Magical Cat Adventure	매지컬 캣 어드벤처	
+mchampdx	Multi 冠军 豪华版	Multi Champ Deluxe 	멀티 챔프 디럭스	
+megablst	空间战机 	Mega Blast 	메가 블라스트 	
+meikyuh	迷宫猎人 G 	Meikyuu Hunter G 	미궁 헌터 G 	
+meikyuha	迷宫猎人 G II	Meikyuu Hunter G II	미궁 헌터 G II	
+mercs	战场之狼 II 	Mercs 	전장의 이리 II	
+metafox	沙漠之狐	Meta Fox	메타 폭스	
+metalb	黑色合金 	Metal Black 	메탈 블랙 	
+metamrph	兽化变形战士	Metamorphic Force	메타몰픽 포스	
+metlsavr	合金救助者	Metal Saver	메탈 세이버	
+metmqstr	隐忍 	Metamoqester 	은인 - 닌자 마스터	
+metrocrs	追赶跑跳碰 I	Metro-Cross I 	메트로 크로스 I 	
+metrocrsa	追赶跑跳碰 II	Metro-Cross (set 2)	메트로 크로스 (세트 2)	
+mgcrystl	魔法水晶 	Magical Crystals 	매지컬 크리스탈 	
+mia	绿色兵团 2 	M.I.A. - Missing in Action 	그린베레 2 / 미싱 인 액션 	
+midresu	午夜攻击 	Midnight Resistance 	미드나이트 레지스탕스 	
+mirax	鲸鱼星座	Mirax	미락스	
+miraxa	鲸鱼星座 II	Mirax (set 2)	미락스 (세트 2)	 	
+mmaze	爱丽丝冒险世界 	Marchen Maze 	메르헨 메이즈 	
+mofflott	赛车迷宫 	Maze of Flott 	메이즈 오브 플로트 	
+momoko	桃子 120%	Momoko 120%	모모코 120% / 시집가는 날	
+moonal2	小蜜蜂 2 - 月球异形 2	Moon Alien Part 2	문 에일리언 파트 2	
+moonqsr	月球类星体 - 三台合体	Moon Quasar	문 퀘이사	
+moremore	益智迷你游戏	More More	퍼즐특급 모아 모아	
+moremorp	益智迷你游戏 加强版	More More Plus	퍼즐특급 모아 모아 Plus	
+motorace	横越美国 摩托大赛	MotoRace USA	모터레이스 USA	
+mouser	老鼠不得了	Mouser	마우저	
+mrflea	弗列克惊异大冒险	The Amazing Adventures of Mr. F. Lea	미스터 F. Lea의 어메이징 어드벤쳐	
+mrgoemon	五右卫门先生 	Mr. Goemon 	미스터 고에몽 	
+kov	三国战记	Knights Of Valour	삼국전기
+kovpls	三国战记2007	Kov 2007	삼국전기 2007
+kovplus	三国战记加强版	KOV Plus	삼국전기플러스
+kovqyz	三国战记群英传	KOV QunYingZhuan	삼국전기히어로
+kovsh	三国风云再起	KOV Super Heroes	삼국전기슈퍼히어로
+kovshf	三国武将争霸反	KOV Super Heros F	삼국전기슈퍼히어로 F
+kovshz	三国武将争霸正	KOV Super Heros Z	삼국전기슈퍼히어로 Z
+kovplusf	三国战记集气快	KOV Plus Power Fast	삼국전기플러스파워패스트
+kovplusf2	三国战记2007集气快	KOV 2007 Power Fast	삼국전기 2007 파워패스트
+kovshp	三国战纪乱世枭雄	KOV Splus	삼국전기 S플러스
+kovytzy	三国战纪一统中原	KOV Ytzy2	삼국전기일통중원2
+kovshy	三国一统中原	KOV Ytzy1	삼국전기일통중원1
+kov2	三国战记2	Knights Of Valour 2	삼국전쟁기 2
+kov2p204	三国战记2加强	Knights Of Valour 2+	삼국전쟁기 2 강화하다
+kov2p205	三国战记2雄霸三国	KOV 2 Dragons	삼국전기 2 드래곤
+orlegend	西游记	Oriental Legend	서유기
+olds103t	西游记2	Oriental Legend Super	서유기슈퍼
+oldsplus	西游2之群魔乱舞	Oriental Legend SP	서유기스폐셜
+killbldp	傲剑狂刀	The Killing Blade +	傲剑마니아칼
+martmast	形意拳	Martial Masters	마샬마스터즈
+theglad	 神剑伏魔录	theglad	theglad
+sfiii3nr1	街霸3最终冲击	Street Fighter III 3Rd S	스트리트파이터 III 3rd 스트라이크
+sfiii2n	街霸3第二冲击	Street Fighter III 2ND	스트리트파이터 II 2nd
+sfiiij	街霸3新的时代	Street Fighter III	스트리프파이터 III
+sfiii3	街霸3最终冲击	Street Fighter III	스트리트파이터 III
+jojonr2	奇妙冒险	Jojo's Venture	조조의기묘한모험 V
+jojoban	奇妙冒险2	Jojo's Bizarre Adv	조조의기묘한모험 B
+s1945	彩京1945	Strikers 1945	스트라이커스 1945
+s1945p	彩京1945 Plus	Strikes 1945 Plus	스트라이커즈 1945 플러스
+s1945ii	彩京1945II	Strikers 1945 II	스트라이커스 1945 II
+s1945iii	彩京1945III	Strikers 1945 III	스트라이커스 1945 III
+sf2tlona	街霸2四大天王屠龙	SFII-Tu Long	SF2-Tu Long
+wof3js	三剑圣	Warriors Of Fate 3Js	천지를먹다 2 해킹버전
+knightsh	铁甲英豪	Knights Of The Round2	원탁의기사해킹버전
+shinfz	忍FZ-2006	Shinobi . FZ-2006	시노비 FZ-2006
+jojon	奇妙冒险	Jojo's Venture	조조의기묘한모험 V
+jojobaner1	奇妙冒险2	Jojo's Bizarre Adv	조조의기묘한모험 B
+arcadian	雷暴英雄	Arcadia	아카디아
+chinagat	中华门	China Gate	장쑤성
+astorm	异形风暴	Alien Storm	에어리언스톰
+bonkadv	原始人	Bonk's Adventure	PC 고인돌
+desertbr	大漠之王	Desert Breaker	데저트브레이커
+redeartn	赤色大地	Red Earth	레드어스
+svg	圣魔世纪	SPECTRAL VS GENERATION	SPECTRAL VS GENERATION	
+dmnfrnt	魔域战线	Demon Front	Demon Front
+baddudes	龙行忍者	Dragonninja	드래곤닌자
+eswatbl	霹雳双警	E-Swat Cyber Police	E스왓사이버폴리스
+ssriders	西部牛仔	Sunset Riders	선셋라이더스
+ctribe	流氓大混战	The Combatribes	컴뱃트라이브스
+ddragon3	双截龙III	Double Dragon III	더블드래곤 3
+aodk	热血进行曲	Aggressors of Dark Kombat	A.D.K공급사
+sdodgeb	超级躲避球	Super Dodge Ball	테크노스 재팬
+batsuguna	疯狂枪支	Batsugun	바츠군
+batsugunsp	疯狂枪支特别版	Batsugun-Special	바츠군SP
+sfa	少年街霸 	Street Fighter Alpha 	스트리트 파이터 알파
+sfa2	少年街霸 2 	Street Fighter Alpha 2 	스트리트 파이터 알파 2 	
+sfa3	少年街霸 3 	Street Fighter Alpha 3 	스트리트 파이터 알파 3
