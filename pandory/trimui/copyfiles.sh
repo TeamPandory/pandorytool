@@ -1,3 +1,3 @@
 #!/bin/sh
-logcat | /system/bin/pandorykey &
+logcat | /data/bin/pandorykey &
 source /system/etc/copyfiles2.sh
