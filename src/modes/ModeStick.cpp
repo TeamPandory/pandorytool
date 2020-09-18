@@ -51,8 +51,8 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
         int x = 0;
         std::ofstream defFile, resFile;
         std::string suffix;
-        defFile.open(targetDir + "/pandory/meta.bin");
-        resFile.open(targetDir + "/pandory/res.bin");
+        defFile.open(targetDir + "OTA/pandory/meta.bin");
+        resFile.open(targetDir + "OTA/pandory/res.bin");
         std::string defContent = "/dev/block/system";
         if (editionCheck.isUltimate()) {
             defContent = "/dev/block/d";
