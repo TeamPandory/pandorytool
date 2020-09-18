@@ -9,8 +9,13 @@ Sticks::Sticks() {
 
     sticks["jailbreak3D"] = {
             "jailbreak3D",
+#ifdef NO_SHAREWARE_LIMIT
+            "pOTAto1.0.7",
+            "https://pg3d-hax.uk/downloads/pOTAto1.0.7.zip",
+#else
             "pandorytool-jb-1.0.5",
             "https://github.com/emuchicken/pandorytool/archive/jb-1.0.5.tar.gz",
+#endif
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
             "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
             "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"

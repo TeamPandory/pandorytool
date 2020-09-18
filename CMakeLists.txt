@@ -9,8 +9,6 @@ if ($ENV{JETBRAINS_IDE})
     set(JETBRAINS_CLION_IDE True CACHE BOOL "Build under CLion")
 endif ($ENV{JETBRAINS_IDE})
 
-
-
 execute_process(
     COMMAND git log -1 --format=%h
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -26,11 +24,14 @@ if($ENV{NO_SHAREWARE_LIMIT})
 add_definitions("-DNO_SHAREWARE_LIMIT=1")
 endif()
 
+if($ENV{JAILBREAK_URL})
+    add_definitions("-DJAILBREAK_URL=$ENV{JAILBREAK_URL}")
+endif()
+
 #find_package(wxWidgets REQUIRED COMPONENTS net core base)
 
 set(CURL_LIBRARY "-lcurl")
 find_package(CURL REQUIRED)
-
 
 
 
