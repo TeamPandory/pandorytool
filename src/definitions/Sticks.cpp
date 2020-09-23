@@ -28,6 +28,22 @@ Sticks::Sticks() {
             "telnet ip-of-pandora-box:4444"
     };
 
+    sticks["jailbreak3DPlus"] = {
+            "jailbreak3DPlus",
+            "pOTAtoPlus1.0.7",
+            "https://pg3d-hax.uk/downloads/pOTAtoPlus1.0.7.zip",
+            "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
+            "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
+            "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"
+            "reboot the machine and try again.\n"
+            "The jailbreak also enables adb over wifi on port 5555 and telnet on port 4444, which enables you to\n"
+            "remotely log in using:\n\n"
+            "adb connect ip-of-pandora:5555\n"
+            "adb shell\n"
+            "  OR  \n"
+            "telnet ip-of-pandora-box:4444"
+    };
+
     sticks["jailbreak7"] = {
             "jailbreak7",
             "pandorytool-jb7-1.0.6",

@@ -33,6 +33,8 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
         if (choice == 1) {
             stickToDownload = sticks.getStickByName("jailbreak3D");
         } else if (choice == 2) {
+            stickToDownload = sticks.getStickByName("jailbreak3DPlus");
+        }else if (choice == 3) {
             stickToDownload = sticks.getStickByName("jailbreak7");
         } else {
             exit(0);
@@ -47,7 +49,7 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
     stickExtractor.exractToFolder(stickToDownload, tar, targetDir);
     std::cout << stickToDownload.description << std::endl;
 
-    if (stickToDownload.name == "jailbreak3D" || stickToDownload.name == "jailbreak7") {
+    if (stickToDownload.name == "jailbreak3D" || stickToDownload.name == "jailbreak3DPlus"  || stickToDownload.name == "jailbreak7") {
         int x = 0;
         std::ofstream defFile, resFile;
         std::string suffix;
