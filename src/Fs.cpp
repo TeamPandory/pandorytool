@@ -1,6 +1,7 @@
 #include <sys/stat.h>
 #include <filesystem>
 #include <iostream>
+#include <algorithm>
 #include "Fs.h"
 
 bool Fs::exists(const std::string& file) {
