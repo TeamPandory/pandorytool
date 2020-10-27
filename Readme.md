@@ -273,7 +273,7 @@ As it alters a files, it is wise to make sure you have a backup, just in case th
 - akira84: Confirmation on working / PANDORA 9H 
 - CrashCat: Confirmation on working / GoldenSky G6 
 - Xaviertb78: Confirmation on working / Pandora SAGA units
-- Robinvenderkuijl - Goldensky G6 testing - Glass breaking
+- Robinvanderkuijl - Goldensky G6 testing - Glass breaking
 - Those active, that keep us sane- Gazza7126, TotalKI, spokito, sutart, gmspectre, jpino3786, supercoco, projectquestor, bonsey and MORE! :o
 - ALL in our discord and FB groups that keep the wheels turning
 - Noise Complaint: Allowing us to use their music @ https://noise-complaint.bandcamp.com/
