@@ -1,10 +1,11 @@
+#include <gtkmm.h>
 #include "CommandLineArguments.h"
 #include "PandoryTool.h"
 #include "modes/ModeAdd.h"
 #include "modes/ModePrepare.h"
 #include "modes/ModePspfix.h"
 #include "modes/ModeStick.h"
-#include "EditionCheck.h"
+#include "FrmMain.h"
 
 PandoryTool::PandoryTool(int i, char **pString) {
     args = CommandLineArguments(i, pString);
@@ -29,17 +30,18 @@ std::string PandoryTool::getAppSuffix() {
     if (editionCheck.isUltimate()) {
         suffix = "Ultimate";
     } else {
-        suffix = "Shareware";
+        suffix = "Freeware";
     }
     return suffix;
 }
 
-int PandoryTool::main() {
+int PandoryTool::main(int argc, char **argv) {
+
     std::cout << "-----------------------------------------------------------------------------------------------------"
               << std::endl;
     std::cout << "Pandory Tool - Open your Pandora Games 3D" << " by emuchicken & dajoho        [" << getAppSuffix()
               << ": " << getCompileDate() << "/" << getCommitHash() << "]" << std::endl;
-    std::cout << "== Join us on Discord! https://discord.gg/rPKhJCT" << std::endl;
+    std::cout << "== Join us on Discord! https://pg3d-hax.uk/discord" << std::endl;
     std::cout << "== Like us on Facebook! https://www.facebook.com/groups/2522039741415070/" << std::endl;
     std::cout << "== Visit us on PG3D-HAX! https://pg3d-hax.uk" << std::endl;
     std::cout << std::endl;
@@ -50,16 +52,35 @@ int PandoryTool::main() {
         std::cout
                 << "== work on this tool, please consider grabbing us a coffee at https://www.buymeacoffee.com/CKZbiXa."
                 << std::endl;
+        std::cout
+                << "== Patreons get early-access to new versions: https://pg3d-hax.uk/donate."
+                << std::endl;
         std::cout << std::endl;
         std::cout << " * Various MAME cfgs contributed by the community (check each cfg for credits)" << std::endl;
     }
     std::cout << "-----------------------------------------------------------------------------------------------------"
               << std::endl;
 
+    /*
+    Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(
+            argc,
+            argv,
+            "uk.pg3d-hax.pandory"
+    );
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file("gui.glade");
+
+    FrmMain *frm;
+    builder->get_widget_derived("frmMain", frm);
+    int x = 0;
+    app->run(*frm);
+    return 0;
+     */
+
     if (args.getArgumentCount() == 1) {
         usage();
         return 1;
     }
+
     std::string mode = args.getArgument(1);
     if (mode == "add") {
         return add();
@@ -95,9 +116,6 @@ void PandoryTool::usage() {
     std::cout << "\t\tExample: pandory add C:\\roms F:\\" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Press any key to continue..." << std::endl << std::endl;
-    getchar();
-
     std::cout << "-----------------------------------------------------------------------------------------------------"
               << std::endl;
 
@@ -126,7 +144,8 @@ void PandoryTool::usage() {
               << std::endl;
 
     std::cout << "FIX PSP CONTROLS & TWO-PLAYER MODES!" << std::endl;
-    std::cout << "Note: These fixes directly modify files on your SD card. Please make a backup before you" << std::endl;
+    std::cout << "Note: These fixes directly modify files on your SD card. Please make a backup before you"
+              << std::endl;
     std::cout << "attempt any of these modifications!" << std::endl << std::endl;
     std::cout << "5) => Fix controls for inbuilt (stock) or pandory-added games" << std::endl;
     std::cout << "      Stage 1: Add some preparation files to your USB stick. Install this onto your Pandora Games 3D."

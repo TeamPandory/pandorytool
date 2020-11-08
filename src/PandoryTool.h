@@ -1,6 +1,7 @@
 #ifndef PANDORERAPP_H
 #define PANDORERAPP_H
 
+#include <gtkmm/application.h>
 #include "EditionCheck.h"
 
 class PandoryTool {
@@ -12,7 +13,7 @@ public:
     static void usage();
     int add();
     int prepare();
-    int main();
+    int main(int argc, char **argv);
 
     std::string getCommitHash();
 

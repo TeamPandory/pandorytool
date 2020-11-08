@@ -7,40 +7,34 @@ Sticks::Sticks() {
             "Virtual stick definition"
     };
 
+    sticks["backup"] = {
+            "backup",
+            "",
+            "",
+            "Virtual stick definition"
+    };
+
     sticks["jailbreak3D"] = {
             "jailbreak3D",
-#ifdef NO_SHAREWARE_LIMIT
-            "pOTAto1.0.7",
-            "https://pg3d-hax.uk/downloads/pOTAto1.0.7.zip",
-#else
-            "pandorytool-jb-1.0.5",
-            "https://github.com/emuchicken/pandorytool/archive/jb-1.0.5.tar.gz",
-#endif
+            "pOTAto1.0.7public",
+            "https://pg3d-hax.uk/downloads/pOTAto1.0.7public.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
             "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
-            "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"
-            "reboot the machine and try again.\n"
-            "The jailbreak also enables adb over wifi on port 5555 and telnet on port 4444, which enables you to\n"
+            "Insert this USB while booted.\n"
+            "The jailbreak also enables telnet on port 4444 and FTP on port 7777, which enables you to\n"
             "remotely log in using:\n\n"
-            "adb connect ip-of-pandora:5555\n"
-            "adb shell\n"
-            "  OR  \n"
             "telnet ip-of-pandora-box:4444"
     };
 
     sticks["jailbreak3DPlus"] = {
             "jailbreak3DPlus",
-            "pOTAtoPlus1.0.7",
-            "https://pg3d-hax.uk/downloads/pOTAtoPlus1.0.7.zip",
+            "pOTAtoPlus1.0.7public",
+            "https://pg3d-hax.uk/downloads/pOTAtoPlus1.0.7public.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
             "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
-            "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"
-            "reboot the machine and try again.\n"
-            "The jailbreak also enables adb over wifi on port 5555 and telnet on port 4444, which enables you to\n"
+            "Insert this USB while booted.\n"
+            "The jailbreak also enables telnet on port 4444 and FTP on port 7777, which enables you to\n"
             "remotely log in using:\n\n"
-            "adb connect ip-of-pandora:5555\n"
-            "adb shell\n"
-            "  OR  \n"
             "telnet ip-of-pandora-box:4444"
     };
 
@@ -56,13 +50,22 @@ Sticks::Sticks() {
             "GOES WRONG DURING THE JAILBREAK. THIS JAILBREAK COMES WITH NO WARRANTY!\n"
     };
 
-    sticks["backup"] = {
-            "backup",
+    sticks["backup3D"] = {
+            "backup3D",
             "pandorytool-stick-backup",
             "https://github.com/emuchicken/pandorytool/archive/stick-backup.tar.gz",
             "This stick will backup your machine system/data-partitions to your USB drive\n"
             "Insert this USB while booted. If the update gets stuck on a black screen with chinese text, \n"
             "reboot the machine and try again."
+    };
+
+    sticks["backup3DPlus"] = {
+            "backup3DPlus",
+            "pOTAtoPlus-backup",
+            "https://pg3d-hax.uk/downloads/pOTAtoPlus-backup.tar.gz",
+            "This stick will backup your machine system/data-partitions to your USB drive\n"
+            "Insert this USB while booted. A chinese progress bar will appear. Leave it for 20-30 minutes! \n"
+            "The progress bar will not move. You may need TWO attempts for the backup to start."
     };
 
     sticks["reicast"] = {

@@ -29,13 +29,22 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
     downloadDefinition stickToDownload;
 
     if (stickData.name == "jailbreak") {
-        int choice = modeJailbreakStick.getChoice();
+        int choice = modeJailbreakStick.getJailbreakChoice();
         if (choice == 1) {
             stickToDownload = sticks.getStickByName("jailbreak3D");
         } else if (choice == 2) {
             stickToDownload = sticks.getStickByName("jailbreak3DPlus");
         }else if (choice == 3) {
             stickToDownload = sticks.getStickByName("jailbreak7");
+        } else {
+            exit(0);
+        }
+    } else if (stickData.name == "backup") {
+        int choice = modeJailbreakStick.getBackupChoice();
+        if (choice == 1) {
+            stickToDownload = sticks.getStickByName("backup3D");
+        } else if (choice == 2) {
+            stickToDownload = sticks.getStickByName("backup3DPlus");
         } else {
             exit(0);
         }
@@ -90,8 +99,7 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
         resFile << dat << suffix;
         resFile.close();
     }
-    std::cout << std::endl << "Jailbreak stick complete. Have fun!" << std::endl;
+    std::cout << std::endl << "Stick creation complete. Have fun!" << std::endl;
     return 0;
 }
 ModeStick::ModeStick(std::string &stickType, std::string &targetDir) : stickType(stickType), targetDir(targetDir) {}
-

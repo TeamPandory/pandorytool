@@ -88,7 +88,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
         int limit = 20;
         if (i > limit) {
             std::cout << std::endl;
-            std::cout << "pandorytool is shareware and is the product of many hours of blood, sweat and tears. " << std::endl;
+            std::cout << "pandorytool is freeware and is the product of many hours of blood, sweat and tears. " << std::endl;
             std::cout << "This version is limited to " << limit << " roms." << std::endl;
             std::cout << "If you wish to transfer more, you can compile the source ";
             std::cout << "code yourself, or consider supporting us by grabbing us a coffee at" << std::endl;

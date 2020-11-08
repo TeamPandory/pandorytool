@@ -4,7 +4,8 @@
 class ModeJailbreakStick {
 
 public:
-    int getChoice();
+    int getBackupChoice();
+    int getJailbreakChoice();
 };
 
 #endif //PANDORY_MODEJAILBREAKSTICK_H

@@ -4,6 +4,6 @@
 
 int main(int argc, char *argv[]) {
     PandoryTool app(argc, argv);
-    app.main();
+    app.main(argc, argv);
     return 0;
 }
