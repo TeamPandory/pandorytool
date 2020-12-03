@@ -5,7 +5,6 @@
 #include "modes/ModePrepare.h"
 #include "modes/ModePspfix.h"
 #include "modes/ModeStick.h"
-#include "FrmMain.h"
 
 PandoryTool::PandoryTool(int i, char **pString) {
     args = CommandLineArguments(i, pString);

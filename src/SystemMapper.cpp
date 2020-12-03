@@ -3,10 +3,31 @@
 #include "SystemMapper.h"
 #include "termcolor/termcolor.hpp"
 
+SystemDefinition SystemMapper::getSystemDefinition(const std::string &dir) {
+    if (dir == "fba") return SystemDefinition(1,2, "FBA", "", true, false);
+    if (dir == "mame37") return SystemDefinition(2,0, "MAME37", "", true, false);
+    if (dir == "mame139") return SystemDefinition(3,0, "MAME139", "", true, false);
+    if (dir == "mame78") return SystemDefinition(4,0, "MAME139", "", true, false);
+    if (dir == "psp") return SystemDefinition(6,3, "PSP", "", true, true);
+    if (dir == "playstation") return SystemDefinition(7,0, "PS", "", true, true);
+    if (dir == "n64") return SystemDefinition(8,3, "N64", "", false, true);
+    if (dir == "nes") return SystemDefinition(11,3, "NES", "", true, true);
+    if (dir == "snes") return SystemDefinition(12,0, "SNES", "", true, true);
+    if (dir == "gba") return SystemDefinition(13,0, "GBA", "", true, true);
+    if (dir == "gb") return SystemDefinition(14,0, "GB", "", true, true);
+    if (dir == "gbc") SystemDefinition(14,0, "GBC", "", true, true);
+    if (dir == "32x") return SystemDefinition(15,3, "32X", "", true, true);
+    if (dir == "gamegear") SystemDefinition(15,0, "GG", "", true, true);
+    if (dir == "mastersystem") SystemDefinition(15,0, "MS", "", true, true);
+    if (dir == "megadrive") SystemDefinition(15,3, "MD", "", true, true);
+    if (dir == "wswan") return SystemDefinition(16,0, "WSWAN", "", true, false);
+    if (dir == "pcengine") return SystemDefinition(17,0, "PCE", "", true, true);
+    if (dir == "dreamcast") return SystemDefinition(18,3, "DC", "", true, true);
+    if (dir == "mame19") return SystemDefinition(19,0, "MAME19", "", true, false);
+    return SystemDefinition();
+}
+
 std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
-    if (dir == "32x") return "32X";
-    if (dir == "dreamcast") return "DC";
-    if (dir == "gba") return "GBA";
     if (dir == "gb") return "GB";
     if (dir == "gbc") return "GBC";
     if (dir == "gamegear") return "GG";
@@ -30,8 +51,6 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
 }
 
 void SystemMapper::setConsoleColourBySystem(const std::string &dir) {
-    if (dir == "32x") std::cout << termcolor::blue;
-    if (dir == "dreamcast") std::cout << termcolor::blue;
     if (dir == "gba") std::cout << termcolor::red;
     if (dir == "gb") std::cout << termcolor::red;
     if (dir == "gbc") std::cout << termcolor::red;

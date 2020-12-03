@@ -1,13 +1,10 @@
 #include <iostream>
 #include <filesystem>
 #include <algorithm>
-#include <map>
 #include <tinyxml2.h>
 #include "ModeAdd.h"
-#include "../McGamesXML.h"
 #include "../McGamesTXT.h"
 #include "../termcolor/termcolor.hpp"
-#include "../SystemMapper.h"
 #include "../EditionCheck.h"
 
 std::string ModeAdd::pad(std::string string, const size_t size, const char character = ' ') {
@@ -30,7 +27,19 @@ bool ModeAdd::validate() {
 }
 
 ModeAdd::ModeAdd(std::string &sourceDir, std::string &targetDir) : sourceDir(sourceDir), targetDir(targetDir) {
+}
 
+void ModeAdd::getScreenScraperDetails() {
+    std::cout << "To add games, you need to have a free ScreenScraper.fr account." << std::endl;
+    std::cout << "Register one here: https://screenscraper.fr/membreinscription.php" << std::endl << std::endl;
+    std::cout << "Please enter your screenscraper.fr username: ";
+    std::cin >> screenscrapeUsername;
+    scrapeService.setUsername(screenscrapeUsername);
+    std::cout << "Please enter your screenscraper.fr password: ";
+    console.disableEcho();
+    std::cin >> screenscrapePassword;
+    scrapeService.setPassword(screenscrapeUsername);
+    console.enableEcho();
 }
 
 // 1. Add games (MCGames)
@@ -38,9 +47,17 @@ int ModeAdd::main() {
     if (!validate()) {
         return 1;
     }
+    // getScreenScraperDetails();
+    if (screenscrapeUsername.empty() || screenscrapePassword.empty()) {
+        return 1;
+    }
+    if (!Fs::exists("scrapes")) {
+        Fs::makeDirectory("scrapes");
+    }
     createTargetDirectory();
     resetInstallFile();
     resetMcGamesFolder();
+
     parseSourceDirectory();
     return 0;
 }
@@ -50,13 +67,30 @@ void ModeAdd::parseSourceDirectory() {
     for (const auto &entry : std::filesystem::directory_iterator(this->sourceDir)) {
         std::string filePath = entry.path().string();
         std::string basename = Fs::basename(filePath);
-        std::string gameListXml = filePath + "/gamelist.xml";
-        if (Fs::exists(gameListXml)) {
-            parseSourceGameXML(gameListXml);
-        }
+        parseRomFolder(filePath);
     }
     closeInstallFileHandle();
 }
+
+void ModeAdd::parseRomFolder(const std::string& romFolder) {
+    for (const auto &entry : std::filesystem::directory_iterator(romFolder)) {
+        std::string filePath = entry.path().string();
+        std::cout << "Processing: " << filePath << " ";
+
+        scrapeService.setFilename(filePath);
+        int result = scrapeService.scrapeRom();
+        if (result == 0) {
+            processRom();
+        }
+    }
+}
+
+void ModeAdd::processRom()
+{
+    scrapeService.convertXML();
+}
+
+
 
 void ModeAdd::openInstallFileHandle() {
     installFile.open(getInstallFilePath().c_str());
@@ -102,7 +136,8 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
             continue;
         }
 
-        std::string shortSystemName = SystemMapper::convertDirectoryNameToSystemName(system);
+
+        std::string shortSystemName = systemMapper.convertDirectoryNameToSystemName(system);
         if (!shortSystemName.empty()) {
             std::string targetRomName = shortSystemName + pad(std::to_string(i), 4, '0');
             EditionCheck ed;
@@ -116,24 +151,14 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                     }
                 }
             }
-            if (!SystemMapper::getSystemRenameFlag(system)) {
+            if (!systemMapper.getSystemRenameFlag(system)) {
                 targetRomName = Fs::stem(romPath);
             }
 
             std::string targetRomDir = targetDir + "/mcgames/" + targetRomName;
-            /*std::string floppy = "\U0001F4BE";
-            std::string cdrom = "\U0001F4C0";
-            int filesize = Fs::filesize(absoluteRomPath) / 1024 / 1024;
-            std::string icon = (filesize <= 50) ? floppy : cdrom;
-            if (getenv("COMSPEC") != nullptr) {
-                std::string comspec = getenv("COMSPEC");
-                if (comspec.find("cmd.exe") != std::string::npos) {
-                    icon = "-";
-                }
-            }*/
             std::string systemName = extractXMLText(provider->FirstChildElement("System"));
             std::cout << "- Found ";
-            SystemMapper::setConsoleColourBySystem(system);
+            systemMapper.setConsoleColourBySystem(system);
             std::cout << systemName;
             std::cout << termcolor::reset;
             std::cout << " ROM: " << romName << " [ " << Fs::basename(romPath);
@@ -143,7 +168,7 @@ void ModeAdd::parseSourceGameXML(const std::string &gameListXml) {
                 Fs::makeDirectory(targetRomDir);
             }
             try {
-                bool rename = SystemMapper::getSystemRenameFlag(system);
+                bool rename = systemMapper.getSystemRenameFlag(system);
                 copyRomToDestination(absoluteRomPath, targetRomDir, rename);
             } catch (...) {
                 std::cout << " ## ERROR COPYING: " << absoluteRomPath << " TO " << targetRomName << "...skipping" << std::endl;
@@ -359,7 +384,9 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     std::string genre = extractXMLText(sourceGame->FirstChildElement("genre"));
     std::string targetXMLFile = romPath + "/" + targetRomName + ".xml";
     std::string targetTXTFile = romPath + "/" + targetRomName + ".txt";
-    bool rename = SystemMapper::getSystemRenameFlag(system);
+
+    bool rename = systemMapper.getSystemRenameFlag(system);
+
     std::string romFileName = relativeRomPath;
     if (rename) {
         romFileName = targetRomName + Fs::extension(relativeRomPath);
@@ -384,10 +411,10 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcXML.setRomDescription(desc);
     mcXML.setLanguage("EN"); //TODO is this always true?
     mcXML.setYear(year);
-    mcXML.setGenre(SystemMapper::getGenre(genre));
+    mcXML.setGenre(systemMapper.getGenre(genre));
     mcXML.setRomDeveloper(developer);
     mcXML.setRomPath(relativeRomPath);
-    mcXML.setSaveState(SystemMapper::getSystemSaveState(system));
+    mcXML.setSaveState(systemMapper.getSystemSaveState(system));
 
     if (!additionalRom.empty()) {
         mcXML.addAdditionalRom(additionalRom);
@@ -403,11 +430,9 @@ void ModeAdd::generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string 
     mcTXT.setRomDescription(desc);
     mcTXT.setLanguage("EN"); //TODO is this always true?
     mcTXT.setYear(year);
-    mcTXT.setGenre(SystemMapper::getGenre(genre));
+    mcTXT.setGenre(systemMapper.getGenre(genre));
     mcTXT.setRomDeveloper(developer);
     mcTXT.setRomPath(relativeRomPath);
     mcTXT.generate(targetTXTFile);
 }
-
-
 

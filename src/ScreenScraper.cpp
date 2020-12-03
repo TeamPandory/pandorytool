@@ -6,16 +6,16 @@
 #include <fstream>
 #include "ScreenScraper.h"
 
-void ScreenScraper::setUsername(const std::string &username) {
-    ScreenScraper::username = username;
+void ScreenScraper::setUsername(const std::string &scraperUsername) {
+    ScreenScraper::username = scraperUsername;
 }
 
-void ScreenScraper::setPassword(const std::string &password) {
-    ScreenScraper::password = password;
+void ScreenScraper::setPassword(const std::string &scraperPassword) {
+    ScreenScraper::password = scraperPassword;
 }
 
-void ScreenScraper::setDestinationFolder(const std::string &destFolder) {
-    ScreenScraper::destFolder = destFolder;
+void ScreenScraper::setDestinationFolder(const std::string &destinationFolder) {
+    ScreenScraper::destFolder = destinationFolder;
 }
 
 void ScreenScraper::setRomFilename(const std::string &filename) {
@@ -28,6 +28,7 @@ void ScreenScraper::setRomHash(const std::string &md5Hash) {
 
 int ScreenScraper::scrape() {
     valid = false;
+    xmlPath = "";
     std::string url = getUrl();
     try {
         curlpp::Cleanup cleaner;
@@ -59,13 +60,8 @@ std::string ScreenScraper::getUrl() {
     std::string url;
     std::string md5Hash;
     std::string base;
-    if (romHash.empty()) {
-        md5Hash = hash.md5_file(romFilename);
-        base = fs.basename(romFilename);
-    } else {
-        md5Hash = romHash;
-        base = "";
-    }
+    base = Fs::basename(romFilename);
+    md5Hash = hash.md5_file(romFilename);
     url = "https://www.screenscraper.fr/api2/jeuInfos.php?devid=Bkg2k&devpassword=H2j26mjFnBN6tFDg"
           "&ssid=" + username + "&sspassword=" + password + "&softname=SkraperUI-1.1.20154&output=xml&neoforceupdate=0"
                                                             "&romtype=rom&romnom=" + base + "&md5=" + md5Hash;
@@ -89,31 +85,24 @@ void ScreenScraper::parseGame() {
     }
 }
 
-
-int ScreenScraper::getGameId() const {
-    return gameId;
-}
-
 bool ScreenScraper::isValid() const {
     return valid;
 }
 
-int ScreenScraper::dumpXML() {
+std::string ScreenScraper::dumpXML() {
     tinyxml2::XMLPrinter printer;
     doc.Print(&printer);
     std::string gameXmlFile = std::to_string(gameId) + ".xml";
     std::ofstream gameXmlStream;
     std::string destRomFolder = destFolder + "/" + std::to_string(gameId);
-    fs.makeDirectory(destRomFolder);
+    Fs::makeDirectory(destRomFolder);
     std::string destFile = destRomFolder + "/" + gameXmlFile;
-    if (fs.exists(destFile)) {
-        return 1;
-    }
     gameXmlStream.open(destFile);
     std::string xmlData = printer.CStr();
     gameXmlStream << xmlData;
     gameXmlStream.close();
-    return 0;
+    xmlPath = destFile;
+    return destFile;
 }
 
 void ScreenScraper::removeServerData() {
@@ -157,19 +146,8 @@ void ScreenScraper::downloadAll() {
                 continue;
             }
             std::string type = media->Attribute("type");
-            if (type == "video" || type == "ss" || type == "sstitle" || type == "screenmarquee") {
-                if (filetype == "png" || filetype == "jpg") {
-                    const char *attrRegion = media->Attribute("region");
-                    const char *attrVersion = media->Attribute("version");
-                    std::string region, version;
-                    if (attrRegion != nullptr) {
-                        region = attrRegion;
-                    }
-                    if (attrVersion != nullptr) {
-                        version = attrVersion;
-                    }
-                    downloadImage(type, region, version, filetype);
-                } else if (filetype == "mp4" && type == "video") {
+            if (type == "video") {
+                if (filetype == "mp4" && type == "video") {
                     downloadVideo(type);
                 }
             }
@@ -177,34 +155,13 @@ void ScreenScraper::downloadAll() {
     }
 }
 
-void ScreenScraper::downloadImage(const std::string &type, const std::string &region, const std::string &version, const std::string &filetype) {
-    const char *versionTmp = version.c_str();
-    CURL *curl = nullptr;
-    versionTmp = curl_easy_escape(curl, versionTmp, version.length());
-    std::string escapedVersion = std::string(versionTmp);
-
-    std::string url = "https://screenscraper.fr/image.php?gameid=" + std::to_string(gameId) +
-                      "&media=" + type + "&hd=0&region=" + region + "&num=&version="+escapedVersion+"&maxwidth=5000&maxheight=5000";
-    std::string targetFolder = destFolder + "/" + std::to_string(gameId);
-    std::string targetFileName = targetFolder + "/" + std::to_string(gameId) + "." + type;
-    if (!region.empty()) {
-        targetFileName.append("." + region);
-    }
-    if (!version.empty()) {
-        targetFileName.append("." + version);
-    }
-
-    targetFileName.append("." + filetype);
-    fs.makeDirectory(targetFolder);
-    downloadFile(url, targetFileName);
-}
 
 void ScreenScraper::downloadVideo(const std::string &video) {
     std::string url = "https://screenscraper.fr/medias/" + std::to_string(systemId) +
                       "/" + std::to_string(gameId) + "/video.mp4";
     std::string targetFolder = destFolder + "/" + std::to_string(gameId);
     std::string targetFileName = targetFolder + "/" + std::to_string(gameId) + ".mp4";
-    fs.makeDirectory(targetFolder);
+    Fs::makeDirectory(targetFolder);
     downloadFile(url, targetFileName);
 }
 
@@ -234,4 +191,8 @@ void ScreenScraper::downloadFile(const std::string &url, const std::string &file
     } catch (curlpp::LogicError &e) {
         std::cout << "Curl Logic Error" << std::endl;
     }
+}
+
+const std::string &ScreenScraper::getXmlPath() const {
+    return xmlPath;
 }
