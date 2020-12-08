@@ -16,8 +16,8 @@ Sticks::Sticks() {
 
     sticks["jailbreak3D"] = {
             "jailbreak3D",
-            "pOTAto1.0.7public",
-            "https://pg3d-hax.uk/downloads/pOTAto1.0.7public.tar.gz",
+            "pOTAto1.0.8fr1",
+            "https://pg3d-hax.uk/downloads/pOTAto1.0.8fr1.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
             "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
             "Insert this USB while booted.\n"
@@ -28,8 +28,8 @@ Sticks::Sticks() {
 
     sticks["jailbreak3DPlus"] = {
             "jailbreak3DPlus",
-            "pOTAtoPlus1.0.7public",
-            "https://pg3d-hax.uk/downloads/pOTAtoPlus1.0.7public.tar.gz",
+            "pOTAtoPlus1.0.8fr1",
+            "https://pg3d-hax.uk/downloads/pOTAtoPlus1.0.8fr1.tar.gz",
             "This USB will patch your system to run `pandory.sh` off the USB drive when inserted.\n"
             "`pandory.sh` is a bash-shellscript. It can be configured to do anything you like.\n\n"
             "Insert this USB while booted.\n"
