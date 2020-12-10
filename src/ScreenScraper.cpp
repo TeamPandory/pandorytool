@@ -64,7 +64,7 @@ std::string ScreenScraper::getUrl() {
     md5Hash = hash.md5_file(romFilename);
     url = "https://www.screenscraper.fr/api2/jeuInfos.php?devid=Bkg2k&devpassword=H2j26mjFnBN6tFDg"
           "&ssid=" + username + "&sspassword=" + password + "&softname=SkraperUI-1.1.20154&output=xml&neoforceupdate=0"
-                                                            "&romtype=rom&romnom=" + base + "&md5=" + md5Hash;
+                                                            "&romtype=rom&romnom=" + curlpp::escape(base) + "&md5=" + md5Hash;
     return url;
 }
 
