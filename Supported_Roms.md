@@ -4,7 +4,7 @@ Folder name|Required filetype|Rom-set|
 dreamcast|CDI||
 fba|ZIP|FBA 0.2.97.42|
 gba|GBA, BIN, AGB, GBZ||
-gbc|GB, SGB||
+gb|GB, SGB||
 gbc|GBC, SGB||
 mame19|ZIP|Mame 0.106|
 mame139|ZIP|Mame 0.139|
