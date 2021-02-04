@@ -1,7 +1,6 @@
 #ifndef PANDORERAPP_H
 #define PANDORERAPP_H
 
-#include <gtkmm/application.h>
 #include "EditionCheck.h"
 
 class PandoryTool {

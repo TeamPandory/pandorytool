@@ -1,4 +1,3 @@
-#include <gtkmm.h>
 #include "CommandLineArguments.h"
 #include "PandoryTool.h"
 #include "modes/ModeAdd.h"

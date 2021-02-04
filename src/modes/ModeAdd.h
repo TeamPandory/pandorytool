@@ -16,12 +16,13 @@ protected:
     Fs fs;
     ScrapeService scrapeService;
     Console console;
+    Hash hash;
     SystemMapper systemMapper;
     std::ofstream installFile;
     std::string& sourceDir;
     std::string& targetDir;
-    std::string screenscrapeUsername = "meepmeepmeep";
-    std::string screenscrapePassword = "meepmeepmeep";
+    std::string screenscrapeUsername;
+    std::string screenscrapePassword;
 
     bool validate();
     bool createTargetDirectory();
@@ -29,24 +30,30 @@ protected:
     void resetInstallFile();
     std::string getInstallFilePath();
     std::string pad(std::string string, const size_t size, const char character);
-    void generateMcGamesMeta(tinyxml2::XMLElement *sourceGame, std::string system, std::string shortSystemName, std::string romPath, std::string targetRomName, std::string additionalRom);
     void parseRomFolder(const std::string& romFolder);
 
 public:
     ModeAdd(std::string &sourceDir, std::string &targetDir);
     int main();
     void parseSourceDirectory();
-    void parseSourceGameXML(const std::string &gameListXml);
     void copyRomToDestination(const std::string &rom, const std::string &destination, bool rename = true);
     void copyRomVideoToDestination(const std::string &absoluteVideoPath, const std::string &destination);
     void getScreenScraperDetails();
-    void processRom();
+    McGamesXML processRom(const std::string& romFolder, const std::string& filePath);
 
     void openInstallFileHandle();
     void closeInstallFileHandle();
     void resetMcGamesFolder();
     std::string extractXMLText(tinyxml2::XMLElement *elem);
 
+    bool checkSharewareLimit(int i);
+
+    void showRomIdentification(const std::string &system, McGamesXML &mcGamesXml);
+
+    std::string &calculateRomName(int i, const std::string &system, const std::string &filePath, McGamesXML &mcGamesXml,
+                                  const std::string &shortSystemName, std::string &targetRomName);
+
+    std::string getRomSuffix(const std::string &romFilename);
 };
 
 #endif //PANDORER_MODEADD_H

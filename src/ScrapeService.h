@@ -4,23 +4,25 @@
 #include "ScreenScraper.h"
 #include "SystemMapper.h"
 #include "McGamesXML.h"
+#include "ScreenScraperXML.h"
+#include "McGamesTXT.h"
 
 class ScrapeService {
 protected:
-    ScreenScraper screenScraper;
     SystemMapper systemMapper;
     Hash hash;
+    ScreenScraperXML screenScraperXml;
+protected:
     std::string filename;
-    std::string username = "meepmeepmeep";
-    std::string password = "meepmeepmeep";
+    std::string username;
+    std::string password;
 public:
     int scrapeRom();
-    void setFilename(const std::string &filename);
+    void setFilename(const std::string &filePath);
     void setUsername(const std::string &scrapeUsername);
     void setPassword(const std::string &scrapePassword);
-    McGamesXML convertXML();
+    ScreenScraperXML * getScreenScraperXml();
+    McGamesXML getMcGamesXML();
+    McGamesTXT getMcGamesTXT();
 };
-
-
-
 #endif //PANDORY_SCRAPESERVICE_H

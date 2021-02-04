@@ -1,23 +1,37 @@
 #include <iostream>
+#include <thread>
 #include "ScrapeService.h"
 #include "ScreenScraperXML.h"
+#include "McGamesTXT.h"
 
 int ScrapeService::scrapeRom() {
     std::string md5 = hash.md5_file(filename);
+    ScreenScraper screenScraper;
     screenScraper.setUsername(username);
     screenScraper.setPassword(password);
     screenScraper.setRomHash(md5);
     screenScraper.setRomFilename(filename);
     screenScraper.setDestinationFolder("scrapes");
-    screenScraper.scrape();
+    bool keepGoing = true;
+    int limit = 0;
+    while (keepGoing && limit < 5) {
+        screenScraper.setScraperSystemId(systemMapper.getScreenScraperId(Fs::basename(Fs::dirname(filename))));
+        int result = screenScraper.scrape();
+        if (result != 500) {
+            keepGoing = false;
+        } else {
+            if (limit == 0) std::cout << std::endl;
+            std::cout << " - Scraper service returned an error. Retrying in 5 seconds..." << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+            limit++;
+        }
+    }
     if (screenScraper.isValid()) {
         std::string xmlPath = screenScraper.dumpXML();
         if (!xmlPath.empty()) {
-            ScreenScraperXML screenScraperXml;
             bool valid = screenScraperXml.load(xmlPath);
             if (valid) {
-                std::cout << "- identified as " << screenScraperXml.getRomName() << std::endl;
-                //screenScraper.downloadAll();
+                screenScraper.downloadVideo();
             }
         }
         return 0;
@@ -25,28 +39,41 @@ int ScrapeService::scrapeRom() {
     return 1;
 }
 
-McGamesXML ScrapeService::convertXML() {
-    std::string directoryName = Fs::basename(Fs::dirname(filename));
-
-    SystemDefinition sysDef = systemMapper.getSystemDefinition(directoryName);
-
+McGamesXML ScrapeService::getMcGamesXML() {
+    const std::string &dirname = Fs::dirname(filename);
+    const std::string &baseDirName = Fs::basename(dirname);
+    SystemDefinition sysDef = systemMapper.getSystemDefinition(baseDirName);
     McGamesXML mcXML;
     mcXML.setEmulatorId(std::to_string(sysDef.getId()));
     mcXML.setEmulatorLoad(std::to_string(sysDef.getLoadTime()));
+    std::string romTitle = screenScraperXml.getRomName();
+    mcXML.setRomTitle(romTitle);
+    mcXML.setPlayers(screenScraperXml.getPlayers());
+    mcXML.setRomDescription(screenScraperXml.getDescription());
+    mcXML.setLanguage("EN");
+    mcXML.setYear(screenScraperXml.getYear());
+    mcXML.setGenre(systemMapper.getGenre(screenScraperXml.getGenre()));
+    mcXML.setSaveState(systemMapper.getSystemSaveState(baseDirName));
+    mcXML.setRomDeveloper(screenScraperXml.getDeveloper());
+    mcXML.setConsole(screenScraperXml.getConsole());
+    mcXML.setRomTitleSuffix(screenScraperXml.getSuffix());
     return mcXML;
-    /*
-    mcXML.setRomTitle(name);
-    mcXML.setRomFileName(romFileName);
-    mcXML.setRomShortId(targetRomName);
-    mcXML.setPlayers(players);
-    mcXML.setRomDescription(desc);
-    mcXML.setLanguage("EN"); //TODO is this always true?
-    mcXML.setYear(year);
-    mcXML.setGenre(SystemMapper::getGenre(genre));
-    mcXML.setRomDeveloper(developer);
-    mcXML.setRomPath(relativeRomPath);
-    mcXML.setSaveState(SystemMapper::getSystemSaveState(system));
-     */
+}
+
+McGamesTXT ScrapeService::getMcGamesTXT() {
+    const std::string &dirname = Fs::dirname(filename);
+    const std::string &baseDirName = Fs::basename(dirname);
+    SystemDefinition sysDef = systemMapper.getSystemDefinition(baseDirName);
+    McGamesTXT mcTXT;
+    mcTXT.setEmulatorId(std::to_string(sysDef.getId()));
+    mcTXT.setEmulatorLoad(std::to_string(sysDef.getLoadTime()));
+    mcTXT.setRomTitle(screenScraperXml.getRomName());
+    mcTXT.setRomDescription(screenScraperXml.getDescription());
+    mcTXT.setLanguage("EN");
+    mcTXT.setYear(screenScraperXml.getYear());
+    mcTXT.setGenre(systemMapper.getGenre(screenScraperXml.getGenre()));
+    mcTXT.setRomDeveloper(screenScraperXml.getDeveloper());
+    return mcTXT;
 }
 
 void ScrapeService::setUsername(const std::string &scrapeUsername) {
@@ -57,8 +84,13 @@ void ScrapeService::setPassword(const std::string &scrapePassword) {
     ScrapeService::password = scrapePassword;
 }
 
-void ScrapeService::setFilename(const std::string &filename) {
-    ScrapeService::filename = filename;
+void ScrapeService::setFilename(const std::string &filePath) {
+    ScrapeService::filename = filePath;
 }
+
+ScreenScraperXML * ScrapeService::getScreenScraperXml() {
+    return &screenScraperXml;
+}
+
 
 

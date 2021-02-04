@@ -7,3 +7,4 @@ build-linux/
 stick/
 winbuild/
 testdata
+config.h

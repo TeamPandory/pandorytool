@@ -10,6 +10,8 @@ public:
 
     std::string convertDirectoryNameToSystemName(std::string dir);
 
+    int getScreenScraperId(const std::string& dir);
+
     void setConsoleColourBySystem(const std::string& dir);
 
     int getSystemSaveState(const std::string &dir);

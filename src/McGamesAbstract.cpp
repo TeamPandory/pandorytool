@@ -28,30 +28,58 @@ void McGamesAbstract::setGenre(int genre) {
     McGamesAbstract::genre = genre;
 }
 
-void McGamesAbstract::setRomDeveloper(const std::string &romDeveloper) {
-    McGamesAbstract::romDeveloper = romDeveloper;
+void McGamesAbstract::setRomDeveloper(const std::string &developerName) {
+    McGamesAbstract::romDeveloper = developerName;
 }
 
-void McGamesAbstract::setRomPath(const std::string &romPath) {
-    McGamesAbstract::romDirectory = romPath;
+void McGamesAbstract::setRomTitle(const std::string &title) {
+    McGamesAbstract::romTitle = title;
 }
 
-void McGamesAbstract::setRomTitle(const std::string &romTitle) {
-    McGamesAbstract::romFullName = romTitle;
+void McGamesAbstract::setPlayers(const std::string &numberOfPlayers) {
+    McGamesAbstract::players = numberOfPlayers;
 }
 
-void McGamesAbstract::setPlayers(const std::string &players) {
-    McGamesAbstract::players = players;
+void McGamesAbstract::setSaveState(bool saveStateStatus) {
+    McGamesAbstract::saveState = saveStateStatus;
 }
 
-void McGamesAbstract::setSaveState(bool saveState) {
-    McGamesAbstract::saveState = saveState;
+void McGamesAbstract::setRomFileName(const std::string &filename) {
+    McGamesAbstract::romFileName = filename;
 }
 
-void McGamesAbstract::setRomFileName(const std::string &romFileName) {
-    McGamesAbstract::romFileName = romFileName;
+void McGamesAbstract::addAdditionalRom(std::string &additionalRomNames) {
+    McGamesAbstract::additionalRomName = additionalRomNames;
 }
 
-void McGamesAbstract::addAdditionalRom(std::string &additionalRomName) {
-    McGamesAbstract::additionalRomName = additionalRomName;
+void McGamesAbstract::setFileHash(const std::string &fileCrc) {
+    McGamesAbstract::fileHash = fileCrc;
+}
+
+std::string McGamesAbstract::getFileHash() {
+    return McGamesAbstract::fileHash;
+}
+
+std::string McGamesAbstract::getRomTitle() {
+    return romTitle;
+}
+
+std::string McGamesAbstract::getConsole() {
+    return McGamesAbstract::console;
+}
+
+void McGamesAbstract::setConsole(const std::string &consoleName) {
+    McGamesAbstract::console = consoleName;
+}
+
+int McGamesAbstract::getYear() const {
+    return year;
+}
+
+void McGamesAbstract::setRomTitleSuffix(const std::string &titleSuffix) {
+    McGamesAbstract::romTitleSuffix = titleSuffix;
+}
+
+const std::string &McGamesAbstract::getRomTitleSuffix() const {
+    return romTitleSuffix;
 }

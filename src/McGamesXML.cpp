@@ -1,12 +1,13 @@
 #include "McGamesXML.h"
 #include <tinyxml2.h>
-#include "Fs.h"
 
 void McGamesXML::generate(std::string filename) {
     std::FILE* fp = std::fopen(filename.c_str(), "w");
     tinyxml2::XMLPrinter xml(fp);
     xml.PushDeclaration("xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"");
 
+    xml.PushComment(" This file was made using PandoryTool. Unlock your Pandora Box! https://pg3d-hax.uk ");
+    xml.PushComment(" Like our work? Support us on Patreon! https://pg3d-hax.uk/donate ");
     // # Game
     xml.OpenElement("game" );
     xml.PushAttribute("emulator", emulatorId.c_str());
@@ -64,7 +65,7 @@ void McGamesXML::generate(std::string filename) {
     xml.OpenElement("string" );
     xml.PushAttribute("language", "EN");
     xml.OpenElement("name" );
-    xml.PushText(romFullName.c_str());
+    xml.PushText(romTitle.c_str());
     xml.CloseElement(); // name
     xml.OpenElement("detail" );
     xml.PushText(romDescription.c_str());
@@ -101,6 +102,3 @@ void McGamesXML::generate(std::string filename) {
     xml.CloseElement(); // game
     fclose(fp);
 }
-
-
-

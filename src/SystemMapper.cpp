@@ -4,7 +4,7 @@
 #include "termcolor/termcolor.hpp"
 
 SystemDefinition SystemMapper::getSystemDefinition(const std::string &dir) {
-    if (dir == "fba") return SystemDefinition(1,2, "FBA", "", true, false);
+    if (dir == "fba") return SystemDefinition(0,2, "FBA", "", true, false);
     if (dir == "mame37") return SystemDefinition(2,0, "MAME37", "", true, false);
     if (dir == "mame139") return SystemDefinition(3,0, "MAME139", "", true, false);
     if (dir == "mame78") return SystemDefinition(4,0, "MAME139", "", true, false);
@@ -15,11 +15,11 @@ SystemDefinition SystemMapper::getSystemDefinition(const std::string &dir) {
     if (dir == "snes") return SystemDefinition(12,0, "SNES", "", true, true);
     if (dir == "gba") return SystemDefinition(13,0, "GBA", "", true, true);
     if (dir == "gb") return SystemDefinition(14,0, "GB", "", true, true);
-    if (dir == "gbc") SystemDefinition(14,0, "GBC", "", true, true);
+    if (dir == "gbc") return SystemDefinition(14,0, "GBC", "", true, true);
     if (dir == "32x") return SystemDefinition(15,3, "32X", "", true, true);
-    if (dir == "gamegear") SystemDefinition(15,0, "GG", "", true, true);
-    if (dir == "mastersystem") SystemDefinition(15,0, "MS", "", true, true);
-    if (dir == "megadrive") SystemDefinition(15,3, "MD", "", true, true);
+    if (dir == "gamegear") return SystemDefinition(15,0, "GG", "", true, true);
+    if (dir == "mastersystem") return SystemDefinition(15,0, "MS", "", true, true);
+    if (dir == "megadrive") return SystemDefinition(15,3, "MD", "", true, true);
     if (dir == "wswan") return SystemDefinition(16,0, "WSWAN", "", true, false);
     if (dir == "pcengine") return SystemDefinition(17,0, "PCE", "", true, true);
     if (dir == "dreamcast") return SystemDefinition(18,3, "DC", "", true, true);
@@ -28,7 +28,10 @@ SystemDefinition SystemMapper::getSystemDefinition(const std::string &dir) {
 }
 
 std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
+    if (dir == "32x") return "32X";
+    if (dir == "dreamcast") return "DC";
     if (dir == "gb") return "GB";
+    if (dir == "gba") return "GBA";
     if (dir == "gbc") return "GBC";
     if (dir == "gamegear") return "GG";
     if (dir == "mastersystem") return "MS";
@@ -45,12 +48,11 @@ std::string SystemMapper::convertDirectoryNameToSystemName(std::string dir) {
     if (dir == "mame139") return "MAME139";
     if (dir == "mame78") return "MAME78";
     if (dir == "wswan") return "WSWAN";
-    //...MAME...
-    //...
     return "";
 }
 
 void SystemMapper::setConsoleColourBySystem(const std::string &dir) {
+    if (dir == "32x") std::cout << termcolor::blue;
     if (dir == "gba") std::cout << termcolor::red;
     if (dir == "gb") std::cout << termcolor::red;
     if (dir == "gbc") std::cout << termcolor::red;
@@ -72,7 +74,6 @@ void SystemMapper::setConsoleColourBySystem(const std::string &dir) {
 }
 
 int SystemMapper::getSystemSaveState(const std::string &dir) {
-    // if (dir == "fba") return false; - My bad, I think this emulator actually saves :o
     if (dir == "n64") return false;
     //if (dir == "mame19") return false;
     //if (dir == "mame37") return false;
@@ -117,5 +118,29 @@ int SystemMapper::getGenre(const std::string &genreString) {
                || genre.find("driving") != std::string::npos) {
         return 6;
     }
+    return 0;
+}
+
+int SystemMapper::getScreenScraperId(const std::string &dir) {
+    if (dir == "32x") return 19;
+    if (dir == "dreamcast") return 23;
+    if (dir == "gb") return 9;
+    if (dir == "gba") return 12;
+    if (dir == "gbc") return 10;
+    if (dir == "gamegear") return 21;
+    if (dir == "mastersystem") return 2;
+    if (dir == "megadrive") return 1;
+    if (dir == "n64") return 14;
+    if (dir == "playstation") return 57;
+    if (dir == "psp") return 61;
+    if (dir == "snes") return 4;
+    if (dir == "nes") return 3;
+    if (dir == "pcengine") return 31;
+    if (dir == "fba") return 75;
+    if (dir == "mame19") return 75;
+    if (dir == "mame37") return 75;
+    if (dir == "mame139") return 75;
+    if (dir == "mame78") return 75;
+    if (dir == "wswan") return 45;
     return 0;
 }

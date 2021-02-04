@@ -2,11 +2,11 @@
 #define PANDORY_CONSOLE_H
 
 
-#include <termios.h>
+//#include <termios.h>
 
 class Console {
 protected:
-    struct termios save;
+    //struct termios save;
 public:
     void enableEcho();
     void disableEcho();
