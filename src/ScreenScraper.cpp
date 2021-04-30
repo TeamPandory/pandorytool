@@ -46,6 +46,8 @@ int ScreenScraper::scrape() {
         request.setOpt(new curlpp::options::Url(url));
         request.setOpt(new curlpp::options::SslVerifyHost(false));
         request.setOpt(new curlpp::options::SslVerifyPeer(false));
+        request.setOpt(new curlpp::options::ConnectTimeout(300));
+        request.setOpt(new curlpp::options::Timeout (300));
         //request.setOpt(new curlpp::options::Verbose(true));
         curlpp::options::WriteStream ws(&xmlContent);
         request.setOpt(ws);
@@ -88,6 +90,7 @@ std::string ScreenScraper::getUrl() {
     url = scrapeUrl + "?devid="+ devId +"&devpassword=" + devPw +
           "&ssid=" + username + "&sspassword=" + password + "&softname=SkraperUI-1.1.20154&output=xml&neoforceupdate=0"
                                                             "&romtype=rom&romnom=" + curlpp::escape(base) + "&md5=" + md5Hash + "&systemeid=" + std::to_string(scraperSystemId);
+    int x=1;
     return url;
 }
 
@@ -205,6 +208,8 @@ void ScreenScraper::downloadFile(const std::string &url, const std::string &file
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 300);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 300);
         curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         fclose(fp);

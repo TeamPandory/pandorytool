@@ -42,7 +42,7 @@ void ModeAdd::getScreenScraperDetails() {
     std::cout << "Password: ";
     //console.disableEcho();
     getline(std::cin, screenscrapePassword);
-    scrapeService.setPassword(screenscrapeUsername);
+    scrapeService.setPassword(screenscrapePassword);
     //console.enableEcho();
 }
 

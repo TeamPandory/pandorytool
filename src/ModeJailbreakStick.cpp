@@ -31,8 +31,9 @@ int ModeJailbreakStick::getBackupChoice() {
     int backupType = 0;
     std::cout << std::endl;
     std::cout << "Please choose the console you wish to backup:" << std::endl;
-    std::cout << "[1] - Pandora Games 3D or other variant (GB3000, PSA-S812-001 boards up to firmware 20200217)" << std::endl;
-    std::cout << "    - Pandora 3D Saga (2650 Games, PSA-S812-001 board, with or without NAND)" << std::endl;
+    std::cout << "[1] - Pandora Games 3D or other variant (GB3000, boards up to firmware 20200217)" << std::endl;
+    std::cout << "    - Pandora 3D Saga (2650 Games, PSA-S812-001 board, WITH NAND)" << std::endl;
+    std::cout << "    - If you want to backup your PSA-S812-001 board without NAND, use Win32Imager!" << std::endl;
     std::cout << "    - 3D Pandora Saga Wifi TV Game Box 3000" << std::endl;
     std::cout << "    - ..other \"Moorechip\" Pandora clones (3D Saga/X/Key7 - PSA-S812/GB3000 boards)" << std::endl;
     std::cout << "[2] - Pandora Games 3D+ (4018 Games, GB3000 board with firmware 20200704 onwards)" << std::endl;
