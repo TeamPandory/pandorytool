@@ -153,6 +153,12 @@ void PandoryTool::usage() {
               << std::endl;
     std::cout << "\t\tpandory pspfix stage2 <destDrive>" << std::endl;
     std::cout << std::endl;
+
+    std::cout << "6) => PandoryDX" << std::endl;
+    std::cout << "      Install a set of improved settings to your Pandora DX micro-sd or usb-stick." << std::endl;
+    std::cout << "\t\tpandory stick dx <destDrive>" << std::endl;
+    std::cout << "\t\tExample: pandory stick dx F:\\" << std::endl;
+    std::cout << std::endl;
 }
 
 int PandoryTool::add() {
