@@ -76,6 +76,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::cout << "https://pg3d-hax.uk/discord" << std::endl;
             exit;
         } else {
+            std::cout << "Checking if your DX storage is compatible. This may take a moment..." << std::endl;
             std::string hadHash = hash.md5_file(had+".zip");
             std::string hadcHash = hash.md5_file(hadc+".zip");
             std::string radeHash = hash.md5_file(rade+".zip");
@@ -83,7 +84,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::cout << "Counting potatoes ";
             for (int i=0;i<3;i++) {
                 std::cout << "." << std::flush;
-                std::this_thread::sleep_for(std::chrono::milliseconds(500));
+                std::this_thread::sleep_for(std::chrono::milliseconds(400));
             }
             std::cout << " 1!" << std::endl;
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
@@ -98,7 +99,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             downloadPatchFile(hadcHash, target);
             downloadPatchFile(radeHash, target);
 
-            std::string backupFolder = target + "/pandory_backups/";
+            /*std::string backupFolder = target + "/pandory_backups/";
             Fs::makeDirectory(backupFolder);
             if (!Fs::exists(backupFolder+"/demo.avi")) {
                 backup(target, "demo.avi", backupFolder);
@@ -113,7 +114,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
                 backup(target + "/roms", "had.zip", backupFolder);
                 backup(target + "/roms", "hadc.zip", backupFolder);
                 backup(target + "/roms/", "rade.zip", backupFolder);
-            }
+            }*/
 
             std::string curDir = Fs::getCurrentPath();
             // Extract patches.

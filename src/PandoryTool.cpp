@@ -156,6 +156,7 @@ void PandoryTool::usage() {
 
     std::cout << "6) => PandoryDX" << std::endl;
     std::cout << "      Install a set of improved settings to your Pandora DX micro-sd or usb-stick." << std::endl;
+    std::cout << "      WARNING: BACK UP YOUR SD-CARD/USB-STICK WITH WIN32IMAGER BEFORE YOU CONTINUE!" << std::endl;
     std::cout << "\t\tpandory stick dx <destDrive>" << std::endl;
     std::cout << "\t\tExample: pandory stick dx F:\\" << std::endl;
     std::cout << std::endl;
