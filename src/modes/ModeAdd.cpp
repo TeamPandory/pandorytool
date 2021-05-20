@@ -139,23 +139,23 @@ void ModeAdd::parseRomFolder(const std::string &romFolder) {
         int x = 1;
 
         if (checkSharewareLimit(i)) break;
-        std::cout << Fs::basename(filePath);
-        scrapeService.setFilename(filePath);
+        std::cout << Fs::basename(filePath.string());
+        scrapeService.setFilename(filePath.string());
         int result = scrapeService.scrapeRom();
 
         if (result == 0) {
             McGamesXML mcGamesXml = scrapeService.getMcGamesXML();
             McGamesTXT mcGamesTxt = scrapeService.getMcGamesTXT();
-            std::string md5 = hash.md5_file(filePath);
+            std::string md5 = hash.md5_file(filePath.string());
             mcGamesXml.setFileHash(md5.substr(0,8));
 
             if (!shortSystemName.empty()) {
                 std::string targetRomName;
-                targetRomName = calculateRomName(i, system, filePath, mcGamesXml, shortSystemName, targetRomName);
+                targetRomName = calculateRomName(i, system, filePath.string(), mcGamesXml, shortSystemName, targetRomName);
 
-                std::string targetFilePath = targetRomName + Fs::extension(filePath);
+                std::string targetFilePath = targetRomName + Fs::extension(filePath.string());
 
-                std::string baseFilename = Fs::basename(filePath);
+                std::string baseFilename = Fs::basename(filePath.string());
                 std::string titleSuffix = getRomSuffix(baseFilename);
                 std::string romTitle = mcGamesXml.getRomTitle();
                 if (!titleSuffix.empty()) {
@@ -204,7 +204,7 @@ void ModeAdd::parseRomFolder(const std::string &romFolder) {
 
                 try {
                     bool rename = systemMapper.getSystemRenameFlag(system);
-                    copyRomToDestination(filePath, targetRomDir, rename);
+                    copyRomToDestination(filePath.string(), targetRomDir, rename);
 
                     std::string targetBase;
                     targetBase.append(targetRomDir);
