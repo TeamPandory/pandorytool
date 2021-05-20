@@ -6,7 +6,6 @@
 class Hash {
 public:
     std::string md5_file(std::string filename);
-
 };
 
 #endif //RESCRAPE_HASH_H

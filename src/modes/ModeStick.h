@@ -7,6 +7,7 @@
 #include "../EditionCheck.h"
 #include "../ModeJailbreakStick.h"
 #include "../definitions/Sticks.h"
+#include "../ModeDXStick.h"
 
 class ModeStick {
 protected:
@@ -14,6 +15,7 @@ protected:
     std::string &targetDir;
     EditionCheck editionCheck;
     ModeJailbreakStick modeJailbreakStick;
+    ModeDXStick modeDXStick;
     Sticks sticks;
 
 public:

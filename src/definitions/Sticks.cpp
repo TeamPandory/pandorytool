@@ -79,6 +79,12 @@ Sticks::Sticks() {
             "pandory-jailbreak-ppsspp-master",
             "https://github.com/emuchicken/pandory-jailbreak-ppsspp/archive/master.tar.gz",
     };
+
+    sticks["dx"] = {
+            "dx",
+            "dx",
+            "https://pg3d-hax.uk/downloads/dx/dxFR1.tar.gz",
+    };
 }
 
 downloadDefinition Sticks::getStickByName(const std::string &name) {

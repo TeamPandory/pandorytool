@@ -48,6 +48,10 @@ int ModeStick::makeStick(const downloadDefinition &stickData) {
         } else {
             exit(0);
         }
+    } else if (stickData.name == "dx") {
+        modeDXStick.startDXPatch(targetDir);
+
+        return 0;
     } else {
         stickToDownload = stickData;
     }

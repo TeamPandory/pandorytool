@@ -126,15 +126,18 @@ void ModeAdd::parseRomFolder(const std::string &romFolder) {
     }
     std::cout << "Processing: " << system << std::endl;
 
-    std::vector<std::string> filenames;
+    std::vector<std::filesystem::path> filenames;
     for (const auto &entry : std::filesystem::directory_iterator(romFolder)) {
-        if (!entry.is_directory()) {
-            filenames.push_back(entry.path().string());
+        if (entry.path().extension() != ".txt") {
+            filenames.push_back(entry.path());
         }
     }
     std::sort(filenames.begin(), filenames.end());
 
     for (const auto &filePath : filenames) {
+
+        int x = 1;
+
         if (checkSharewareLimit(i)) break;
         std::cout << Fs::basename(filePath);
         scrapeService.setFilename(filePath);
