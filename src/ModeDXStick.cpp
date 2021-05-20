@@ -127,7 +127,6 @@ int ModeDXStick::startDXPatch(std::string &target) {
             Fs::remove(radeHash);
             chdir(curDir.c_str());
 
-            // Extract release data
             chdir(target.c_str());
             extract("pandoryDX.tgz");
             Fs::remove("pandoryDX.tgz");
