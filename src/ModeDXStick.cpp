@@ -104,7 +104,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::string hadcTmp = downloadPatchFile(hadcHash, target);
             std::string radeTmp = downloadPatchFile(radeHash, target);
 
-            std::string backupFolder = target + "pandory_backups";
+            std::string backupFolder = target + "/pandory_backups";
             Fs::makeDirectory(backupFolder);
             if (!Fs::exists(backupFolder+"/demo.avi")) {
                 backup(target, "demo.avi", backupFolder);
@@ -153,7 +153,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
 bool ModeDXStick::backup(const std::string &srcFolder, const std::string &srcFile, const std::string &backupFolder) {
     std::string sourceFile = srcFolder + srcFile;
-    std::cout << "Backing up " << srcFile << " to " << backupFolder << std::endl;
+    std::cout << "Backing up " << srcFile << " to folder 'pandory_backups'" << std::endl;
     if (Fs::exists(sourceFile)) {
         Fs::copy(sourceFile, backupFolder + "/" + srcFile);
     }
