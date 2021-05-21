@@ -69,6 +69,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
         std::cout << "Please make sure it is inserted. " << std::endl;
         exit;
     } else {
+        std::cout << "Checking if your DX storage is compatible. This may take a moment..." << std::endl;
         if (!dxPatches.isValidZip(had) || !dxPatches.isValidZip(hadc) || !dxPatches.isValidZip(rade)) {
             std::cout << "Your DX storage medium seems to be incompatible or has already been patched." << std::endl;
             if (Fs::exists(target+"/pandory_backups/had.zip")) {
@@ -80,8 +81,6 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::cout << "https://pg3d-hax.uk/discord" << std::endl;
             exit;
         } else {
-            std::cout << "Checking if your DX storage is compatible. This may take a moment..." << std::endl;
-            std::cout << std::flush;
             std::string hadHash = hash.md5_file(had+".zip");
             std::string hadcHash = hash.md5_file(hadc+".zip");
             std::string radeHash = hash.md5_file(rade+".zip");
@@ -105,7 +104,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::string hadcTmp = downloadPatchFile(hadcHash, target);
             std::string radeTmp = downloadPatchFile(radeHash, target);
 
-            std::string backupFolder = target + "/pandory_backups/";
+            std::string backupFolder = target + "/pandory_backups";
             Fs::makeDirectory(backupFolder);
             if (!Fs::exists(backupFolder+"/demo.avi")) {
                 backup(target, "demo.avi", backupFolder);
