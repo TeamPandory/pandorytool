@@ -139,7 +139,6 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             chdir(target.c_str());
             extract(dxTmp.c_str());
-            Fs::remove(dxTmp);
             chdir(curDir.c_str());
 
             std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
@@ -152,7 +151,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 }
 
 bool ModeDXStick::backup(const std::string &srcFolder, const std::string &srcFile, const std::string &backupFolder) {
-    std::string sourceFile = srcFolder + "/" + srcFile;
+    std::string sourceFile = srcFolder + srcFile;
     std::cout << "Backing up " << srcFile << " to " << backupFolder << std::endl;
     if (Fs::exists(sourceFile)) {
         Fs::copy(sourceFile, backupFolder + "/" + srcFile);
