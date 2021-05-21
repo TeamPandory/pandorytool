@@ -104,7 +104,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::string hadcTmp = downloadPatchFile(hadcHash, target);
             std::string radeTmp = downloadPatchFile(radeHash, target);
 
-            std::string backupFolder = target + "/pandory_backups";
+            std::string backupFolder = target + "pandory_backups";
             Fs::makeDirectory(backupFolder);
             if (!Fs::exists(backupFolder+"/demo.avi")) {
                 backup(target, "demo.avi", backupFolder);
@@ -116,9 +116,10 @@ int ModeDXStick::startDXPatch(std::string &target) {
                 backup(target, "demo_en_640x480.avi", backupFolder);
                 backup(target, "demo_en_1024x600.avi", backupFolder);
                 backup(target, "user_bg.bmp", backupFolder);
-                backup(target + "/roms", "had.zip", backupFolder);
-                backup(target + "/roms", "hadc.zip", backupFolder);
+                backup(target + "/roms/", "had.zip", backupFolder);
+                backup(target + "/roms/", "hadc.zip", backupFolder);
                 backup(target + "/roms/", "rade.zip", backupFolder);
+                std::cout << std::endl;
             }
 
             std::string curDir = Fs::getCurrentPath();
