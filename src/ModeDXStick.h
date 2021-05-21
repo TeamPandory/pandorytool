@@ -9,10 +9,9 @@ protected:
     Fs fs;
     Hash hash;
     DXPatches dxPatches;
-    bool downloadPatchFile(const std::string &patchName, const std::string &target);
+    std::string downloadPatchFile(const std::string &patchName, const std::string &target);
     void downloadFile(const std::string &url, const std::string &filename);
     bool backup(const std::string &srcFolder, const std::string &srcFile, const std::string &backupFolder);
-    bool replaceZip(std::string &path);
 public:
     int startDXPatch(std::string &target);
 };
