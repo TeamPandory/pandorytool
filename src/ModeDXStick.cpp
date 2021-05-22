@@ -36,8 +36,8 @@ void ModeDXStick::downloadFile(const std::string &url, const std::string &filena
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 300);
-        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 300);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 6000);
+        curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 6000);
         curl_easy_perform(curl);
         curl_easy_cleanup(curl);
         fclose(fp);
@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://pg3d-hax.uk/downloads/dx/patches/";
+    std::string patchUrl = "https://github.com/emuchicken/pandory-media/raw/58fc963484890177e6a5bb055f8b7c440c2c5267/patches/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
@@ -129,10 +129,13 @@ int ModeDXStick::startDXPatch(std::string &target) {
             chdir(targetDir.c_str());
             std::cout << "Extracting patch data: 30%" << std::endl;
             extract(hadTmp.c_str());
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             std::cout << "Extracting patch data: 70%" << std::endl;
             extract(hadcTmp.c_str());
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             std::cout << "Extracting patch data: 100%" << std::endl << std::endl;
             extract(radeTmp.c_str());
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             Fs::remove(hadTmp);
             Fs::remove(hadcTmp);
             Fs::remove(radeTmp);
@@ -140,6 +143,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             chdir(target.c_str());
             extract(dxTmp.c_str());
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             chdir(curDir.c_str());
 
             std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
