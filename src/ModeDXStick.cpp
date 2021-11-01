@@ -147,9 +147,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             chdir(curDir.c_str());
 
             std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
-            std::cout << "All original files have been copied to the pandory_backups folder." << std::endl;
-            std::cout << "Please make sure to disable \"Quality Optimization\" in your Pandora DX settings menu" << std::endl;
-            std::cout << "for best results. (Settings => System-Config => Quality Optimization=no)" << std::endl << std::endl;
+            std::cout << "All original files have been copied to the pandory_backups folder." << std::endl << std::endl;
         }
     }
     return 0;
