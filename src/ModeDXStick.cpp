@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://github.com/emuchicken/pandory-media/raw/58fc963484890177e6a5bb055f8b7c440c2c5267/patches/";
+    std::string patchUrl = "https://github.com/emuchicken/pandory-media/raw/0f2567e6efd7b3c370515e62a667c6338ae090f6/patches/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
@@ -60,9 +60,13 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
 
 int ModeDXStick::startDXPatch(std::string &target) {
     UserFolders uf;
-    std::string had = target+"/roms/had";
-    std::string hadc = target+"/roms/hadc";
-    std::string rade = target+"/roms/rade";
+    std::string base = "roms";
+    if (Fs::exists(target+"/pandory_backups/hadc.zip")) {
+        base = "/pandory_backups/";
+    }
+    std::string had = target+"/"+base+"/had";
+    std::string hadc = target+"/"+base+"/hadc";
+    std::string rade = target+"/"+base+"/rade";
 
     if (!Fs::exists(had+".zip") || !Fs::exists(hadc+".zip") || !Fs::exists(rade+".zip")) {
         std::cout << "Cannot detect your DX USB stick/SD card at location: " + target << std::endl;
@@ -95,9 +99,12 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
 
+            std::cout << "Removing useless ROM \"WinningEleven4\" to gain some space ..." << std::endl;
+            unlink(std::string(target+"/romsp/WinningEleven4.bin").c_str());
+
             std::cout << "Downloading PandoryDX release data..." << std::endl;
             std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-FR1.tgz", dxTmp);
+            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-1.11.tgz", dxTmp);
             std::cout << std::endl << std::endl;
 
             std::string hadTmp = downloadPatchFile(hadHash, target);
