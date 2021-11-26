@@ -25,6 +25,9 @@ protected:
         std::string("9EB812D6530E13113418122F7670ABA7"),
         std::string("8B52524CAC994866B36083BE460741DA"),
         std::string("7DEF0E6CB22B743962FCB50F0333D5C6"),
+        std::string("EF1A6C45D8E31C8D203E4D790E8722E8"), //dxsagaplus hadc
+        std::string("85180B4195A9BE494E80816E39434EB0"), //dxsagaplus rade
+        std::string("2D1B365539F6BD63ED85BCE6EBE493F7"), //1.4 rade
     };
 
 public:
