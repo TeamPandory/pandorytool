@@ -99,8 +99,21 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
 
-            std::cout << "Removing useless ROM \"WinningEleven4\" to gain some space ..." << std::endl;
-            unlink(std::string(target+"/romsp/WinningEleven4.bin").c_str());
+            int x;
+            std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
+            while ((x = getchar())) {
+                if (x == 121 || x == 89) {
+                    // delete
+                    std::cout << "Removing useless ROM \"Barbie-Explorer\" ..." << std::endl;
+                    unlink(std::string(target+"/romsp/Barbie-Explorer.bin").c_str());
+                    unlink(std::string(target+"/romsp/Barbie-Explorer.srm").c_str());
+                    break;
+                }
+                if (x == 78 || x == 110) {
+                    // don't delete. just soldier on.
+                    break;
+                }
+            }
 
             std::cout << "Downloading PandoryDX release data..." << std::endl;
             std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
