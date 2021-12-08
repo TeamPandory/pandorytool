@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://github.com/emuchicken/pandory-media/raw/0f2567e6efd7b3c370515e62a667c6338ae090f6/patches/";
+    std::string patchUrl = "https://pg3d-hax.uk/downloads/dx/patches/1.11/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
@@ -162,9 +162,24 @@ int ModeDXStick::startDXPatch(std::string &target) {
             chdir(curDir.c_str());
 
             chdir(target.c_str());
+            // Cleanup old FR1/110 files
+            if (Fs::exists("pandory/pandory.sh")) {
+                std::cout << "Cleaning up old Pandory DX FR1/1.10 files... (they're in pandory_backups now!)" << std::endl << std::endl;
+
+                if (Fs::exists("pandory/pandory-options.cfg-noaccelerate")) {
+                    moveOld("pandory", "pandory_backups/pandory_110");
+                }
+            }
+            chdir(curDir.c_str());
+
+
+            chdir(target.c_str());
+            std::cout << "Extracting Pandory DX release data..." << std::endl << std::endl;
+
             extract(dxTmp.c_str());
             std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             chdir(curDir.c_str());
+
 
             std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
             std::cout << "All original files have been copied to the pandory_backups folder." << std::endl << std::endl;
@@ -181,3 +196,9 @@ bool ModeDXStick::backup(const std::string &srcFolder, const std::string &srcFil
     }
     return true;
 }
+
+bool ModeDXStick::moveOld(const std::string &srcFile, const std::string &destFile) {
+    return rename(srcFile.c_str(), destFile.c_str());
+}
+
+
