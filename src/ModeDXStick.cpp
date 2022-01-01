@@ -98,7 +98,6 @@ int ModeDXStick::startDXPatch(std::string &target) {
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
             std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
-
             int x;
             std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
             while ((x = getchar())) {
@@ -164,7 +163,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
             chdir(target.c_str());
             // Cleanup old FR1/110 files
             if (Fs::exists("pandory/pandory.sh")) {
-                std::cout << "Cleaning up old Pandory DX FR1/1.10 files... (they're in pandory_backups now!)" << std::endl << std::endl;
+                std::cout << "Cleaning up old Pandory DX FR1/1.10 files... (they're in pandory_backups now!!)" << std::endl << std::endl;
 
                 if (Fs::exists("pandory/pandory-options.cfg-noaccelerate")) {
                     moveOld("pandory", "pandory_backups/pandory_110");
