@@ -153,7 +153,9 @@ void ModeAdd::parseRomFolder(const std::string &romFolder) {
                 std::string targetRomName;
                 targetRomName = calculateRomName(i, system, filePath.string(), mcGamesXml, shortSystemName, targetRomName);
 
-                std::string targetFilePath = targetRomName + Fs::extension(filePath.string());
+                std::string newExt = Fs::extension(filePath.string());
+                std::transform(newExt.begin(), newExt.end(), newExt.begin(), ::tolower);
+                std::string targetFilePath = targetRomName + newExt;
 
                 std::string baseFilename = Fs::basename(filePath.string());
                 std::string titleSuffix = getRomSuffix(baseFilename);
