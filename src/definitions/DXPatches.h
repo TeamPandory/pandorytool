@@ -31,6 +31,11 @@ protected:
         std::string("9EB812D6530E13113418122F7670ABA7"), //dx special 1.4 hadc jamma
         std::string("D5E3386A978CBF7E67C582896138213E"), //dx special 1.4 rade jamma
 
+        std::string("35FCB5FC5A383670D38338EAC31453E4"), //dx special 1.4b hadc
+
+        std::string("226C5D3B46228D3019A119136A8E5737"), //dx special 1.4b jamma hadc
+        std::string("B0B0E0D34E488F2FE8A31B1F1F692496"), //dx special 1.4b jamma rade
+
     };
 
 public:
