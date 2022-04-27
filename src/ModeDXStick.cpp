@@ -116,7 +116,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             std::cout << "Downloading PandoryDX release data..." << std::endl;
             std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-1.11.tgz", dxTmp);
+            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-1.11-public.tgz", dxTmp);
             std::cout << std::endl << std::endl;
 
             std::string hadTmp = downloadPatchFile(hadHash, target);

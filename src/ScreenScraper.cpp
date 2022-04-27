@@ -91,6 +91,7 @@ std::string ScreenScraper::getUrl() {
           "&ssid=" + username + "&sspassword=" + password + "&softname=SkraperUI-1.1.20154&output=xml&neoforceupdate=0"
                                                             "&romtype=rom&romnom=" + curlpp::escape(base) + "&md5=" + md5Hash + "&systemeid=" + std::to_string(scraperSystemId);
     int x=1;
+    std::cout << url << std::endl;
     return url;
 }
 
