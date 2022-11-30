@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://pg3d-hax.uk/downloads/dx/patches/1.11/";
+    std::string patchUrl = "https://teampandory.com/downloads/dx/patches/1.11/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
@@ -116,7 +116,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             std::cout << "Downloading PandoryDX release data..." << std::endl;
             std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-1.11-public.tgz", dxTmp);
+            downloadFile("https://teampandory.com/downloads/dx/releases/pandoryDX-1.12-public.tgz", dxTmp);
             std::cout << std::endl << std::endl;
 
             std::string hadTmp = downloadPatchFile(hadHash, target);
