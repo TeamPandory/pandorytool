@@ -90,8 +90,6 @@ std::string ScreenScraper::getUrl() {
     url = scrapeUrl + "?devid="+ devId +"&devpassword=" + devPw +
           "&ssid=" + username + "&sspassword=" + password + "&softname=SkraperUI-1.1.20154&output=xml&neoforceupdate=0"
                                                             "&romtype=rom&romnom=" + curlpp::escape(base) + "&md5=" + md5Hash + "&systemeid=" + std::to_string(scraperSystemId);
-    int x=1;
-    std::cout << url << std::endl;
     return url;
 }
 
@@ -205,7 +203,8 @@ void ScreenScraper::downloadFile(const std::string &url, const std::string &file
         fp = fopen(filename.c_str(), "wb");
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, scrapeWriteCallback);
-        curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0");
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Android 13; Mobile; rv:68.0) Gecko/68.0 Firefox/105.0");
+        curl_easy_setopt(curl, CURLOPT_REFERER, "https://screenscraper.fr/");
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);

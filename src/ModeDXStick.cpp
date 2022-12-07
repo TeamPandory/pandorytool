@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://pg3d-hax.uk/downloads/dx/patches/1.11/";
+    std::string patchUrl = "https://teampandory.com/downloads/dx/patches/1.11/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
