@@ -74,115 +74,121 @@ int ModeDXStick::startDXPatch(std::string &target) {
         exit;
     } else {
         std::cout << "Checking if your DX storage is compatible. This may take a moment..." << std::endl;
+
+        std::string hadHash;
+        std::string hadcHash;
+        std::string radeHash;
+
+		hadHash = hash.md5_file(had+".zip");
+		hadcHash = hash.md5_file(hadc+".zip");
+		radeHash = hash.md5_file(rade+".zip");
+
         if (!dxPatches.isValidZip(had) || !dxPatches.isValidZip(hadc) || !dxPatches.isValidZip(rade)) {
             std::cout << "Your DX storage medium seems to be incompatible or has already been patched." << std::endl;
-            if (Fs::exists(target+"/pandory_backups/had.zip")) {
-                std::cout << "This device contains backup files in \"pandory_backups\". Restore these if" << std::endl;
-                std::cout << "you need to re-patch or reset your DX." << std::endl;
-            }
-            std::cout << std::endl;
-            std::cout << "If you still have trouble, please contact @dajoho or @emuchicken via Discord." << std::endl;
-            std::cout << "https://pg3d-hax.uk/discord" << std::endl;
-            exit;
-        } else {
-            std::string hadHash = hash.md5_file(had+".zip");
-            std::string hadcHash = hash.md5_file(hadc+".zip");
-            std::string radeHash = hash.md5_file(rade+".zip");
 
-            std::cout << "Counting potatoes ";
-            for (int i=0;i<3;i++) {
-                std::cout << "." << std::flush;
-                std::this_thread::sleep_for(std::chrono::milliseconds(400));
-            }
-            std::cout << " 1!" << std::endl;
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            std::cout << "Pandory will continue, but will patch your system using generic patches instead" << std::endl;
+            std::cout << "of system-specific patches. This is usually fine, but if you experience " << std::endl;
+            std::cout << "problems or quirks, get in touch with @dajoho or @emuchicken via Discord." << std::endl;
 
-            std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
-            int x;
-            std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
-            while ((x = getchar())) {
-                if (x == 121 || x == 89) {
-                    // delete
-                    std::cout << "Removing useless ROM \"Barbie-Explorer\" ..." << std::endl;
-                    unlink(std::string(target+"/romsp/Barbie-Explorer.bin").c_str());
-                    unlink(std::string(target+"/romsp/Barbie-Explorer.srm").c_str());
-                    break;
-                }
-                if (x == 78 || x == 110) {
-                    // don't delete. just soldier on.
-                    break;
-                }
-            }
-
-            std::cout << "Downloading PandoryDX release data..." << std::endl;
-            std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-            downloadFile("https://pg3d-hax.uk/downloads/dx/releases/pandoryDX-1.11-public.tgz", dxTmp);
-            std::cout << std::endl << std::endl;
-
-            std::string hadTmp = downloadPatchFile(hadHash, target);
-            std::string hadcTmp = downloadPatchFile(hadcHash, target);
-            std::string radeTmp = downloadPatchFile(radeHash, target);
-
-            std::string backupFolder = target + "/pandory_backups";
-            Fs::makeDirectory(backupFolder);
-            if (!Fs::exists(backupFolder+"/demo.avi")) {
-                backup(target, "demo.avi", backupFolder);
-                backup(target, "demo_384x224.avi", backupFolder);
-                backup(target, "demo_640x480.avi", backupFolder);
-                backup(target, "demo_1024x600.avi", backupFolder);
-                backup(target, "demo_en.avi", backupFolder);
-                backup(target, "demo_en_384x224.avi", backupFolder);
-                backup(target, "demo_en_640x480.avi", backupFolder);
-                backup(target, "demo_en_1024x600.avi", backupFolder);
-                backup(target, "user_bg.bmp", backupFolder);
-                backup(target + "/roms/", "had.zip", backupFolder);
-                backup(target + "/roms/", "hadc.zip", backupFolder);
-                backup(target + "/roms/", "rade.zip", backupFolder);
-                std::cout << std::endl;
-            }
-
-            std::string curDir = Fs::getCurrentPath();
-            // Extract patches.
-            std::string targetDir = target + "/roms";
-            std::cout << "Extracting patch data: 0%" << std::endl;
-            chdir(targetDir.c_str());
-            std::cout << "Extracting patch data: 30%" << std::endl;
-            extract(hadTmp.c_str());
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-            std::cout << "Extracting patch data: 70%" << std::endl;
-            extract(hadcTmp.c_str());
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-            std::cout << "Extracting patch data: 100%" << std::endl << std::endl;
-            extract(radeTmp.c_str());
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-            Fs::remove(hadTmp);
-            Fs::remove(hadcTmp);
-            Fs::remove(radeTmp);
-            chdir(curDir.c_str());
-
-            chdir(target.c_str());
-            // Cleanup old FR1/110 files
-            if (Fs::exists("pandory/pandory.sh")) {
-                std::cout << "Cleaning up old Pandory DX FR1/1.10 files... (they're in pandory_backups now!!)" << std::endl << std::endl;
-
-                if (Fs::exists("pandory/pandory-options.cfg-noaccelerate")) {
-                    moveOld("pandory", "pandory_backups/pandory_110");
-                }
-            }
-            chdir(curDir.c_str());
-
-
-            chdir(target.c_str());
-            std::cout << "Extracting Pandory DX release data..." << std::endl << std::endl;
-
-            extract(dxTmp.c_str());
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-            chdir(curDir.c_str());
-
-
-            std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
-            std::cout << "All original files have been copied to the pandory_backups folder." << std::endl << std::endl;
+            // just get patches for generic roms.
+            hadcHash = "9EB812D6530E13113418122F7670ABA7";
+            hadHash = "34A2F2CAF9DE3B79541B7D22795213F7";
+            radeHash = "C33947D5980D9753190909543D48A974";
         }
+
+		std::cout << "Counting potatoes ";
+		for (int i=0;i<3;i++) {
+			std::cout << "." << std::flush;
+			std::this_thread::sleep_for(std::chrono::milliseconds(400));
+		}
+		std::cout << " 1!" << std::endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+		std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
+		int x;
+		std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
+		while ((x = getchar())) {
+			if (x == 121 || x == 89) {
+				// delete
+				std::cout << "Removing useless ROM \"Barbie-Explorer\" ..." << std::endl;
+				unlink(std::string(target+"/romsp/Barbie-Explorer.bin").c_str());
+				unlink(std::string(target+"/romsp/Barbie-Explorer.srm").c_str());
+				break;
+			}
+			if (x == 78 || x == 110) {
+				// don't delete. just soldier on.
+				break;
+			}
+		}
+
+		std::cout << "Downloading PandoryDX release data..." << std::endl;
+		std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
+		downloadFile("https://teampandory.com/downloads/dx/releases/pandoryDX-1.12-public.tgz", dxTmp);
+		std::cout << std::endl << std::endl;
+
+		std::string hadTmp = downloadPatchFile(hadHash, target);
+		std::string hadcTmp = downloadPatchFile(hadcHash, target);
+		std::string radeTmp = downloadPatchFile(radeHash, target);
+
+		std::string backupFolder = target + "/pandory_backups";
+		Fs::makeDirectory(backupFolder);
+		if (!Fs::exists(backupFolder+"/demo.avi")) {
+			backup(target, "demo.avi", backupFolder);
+			backup(target, "demo_384x224.avi", backupFolder);
+			backup(target, "demo_640x480.avi", backupFolder);
+			backup(target, "demo_1024x600.avi", backupFolder);
+			backup(target, "demo_en.avi", backupFolder);
+			backup(target, "demo_en_384x224.avi", backupFolder);
+			backup(target, "demo_en_640x480.avi", backupFolder);
+			backup(target, "demo_en_1024x600.avi", backupFolder);
+			backup(target, "user_bg.bmp", backupFolder);
+			backup(target + "/roms/", "had.zip", backupFolder);
+			backup(target + "/roms/", "hadc.zip", backupFolder);
+			backup(target + "/roms/", "rade.zip", backupFolder);
+			std::cout << std::endl;
+		}
+
+		std::string curDir = Fs::getCurrentPath();
+		// Extract patches.
+		std::string targetDir = target + "/roms";
+		std::cout << "Extracting patch data: 0%" << std::endl;
+		chdir(targetDir.c_str());
+		std::cout << "Extracting patch data: 30%" << std::endl;
+		extract(hadTmp.c_str());
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		std::cout << "Extracting patch data: 70%" << std::endl;
+		extract(hadcTmp.c_str());
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		std::cout << "Extracting patch data: 100%" << std::endl << std::endl;
+		extract(radeTmp.c_str());
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		Fs::remove(hadTmp);
+		Fs::remove(hadcTmp);
+		Fs::remove(radeTmp);
+		chdir(curDir.c_str());
+
+		chdir(target.c_str());
+		// Cleanup old FR1/110 files
+		if (Fs::exists("pandory/pandory.sh")) {
+			std::cout << "Cleaning up old Pandory DX FR1/1.10 files... (they're in pandory_backups now!!)" << std::endl << std::endl;
+
+			if (Fs::exists("pandory/pandory-options.cfg-noaccelerate")) {
+				moveOld("pandory", "pandory_backups/pandory_110");
+			}
+		}
+		chdir(curDir.c_str());
+
+
+		chdir(target.c_str());
+		std::cout << "Extracting Pandory DX release data..." << std::endl << std::endl;
+
+		extract(dxTmp.c_str());
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		chdir(curDir.c_str());
+
+
+		std::cout << "PandoryDX has been successfully installed to your storage medium." << std::endl;
+		std::cout << "All original files have been copied to the pandory_backups folder." << std::endl << std::endl;
     }
     return 0;
 }
