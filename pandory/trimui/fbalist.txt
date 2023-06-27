@@ -559,7 +559,6 @@ sfiiij	街霸3新的时代	Street Fighter III	스트리프파이터 III
 sfiii3	街霸3最终冲击	Street Fighter III	스트리트파이터 III
 jojonr2	奇妙冒险	Jojo's Venture	조조의기묘한모험 V
 jojoban	奇妙冒险2	Jojo's Bizarre Adv	조조의기묘한모험 B
-s1945	彩京1945	Strikers 1945	스트라이커스 1945
 s1945p	彩京1945 Plus	Strikes 1945 Plus	스트라이커즈 1945 플러스
 s1945ii	彩京1945II	Strikers 1945 II	스트라이커스 1945 II
 s1945iii	彩京1945III	Strikers 1945 III	스트라이커스 1945 III
@@ -579,7 +578,6 @@ svg	圣魔世纪	SPECTRAL VS GENERATION	SPECTRAL VS GENERATION
 dmnfrnt	魔域战线	Demon Front	Demon Front
 baddudes	龙行忍者	Dragonninja	드래곤닌자
 eswatbl	霹雳双警	E-Swat Cyber Police	E스왓사이버폴리스
-ssriders	西部牛仔	Sunset Riders	선셋라이더스
 ctribe	流氓大混战	The Combatribes	컴뱃트라이브스
 ddragon3	双截龙III	Double Dragon III	더블드래곤 3
 aodk	热血进行曲	Aggressors of Dark Kombat	A.D.K공급사
@@ -589,3 +587,460 @@ batsugunsp	疯狂枪支特别版	Batsugun-Special	바츠군SP
 sfa	少年街霸 	Street Fighter Alpha 	스트리트 파이터 알파
 sfa2	少年街霸 2 	Street Fighter Alpha 2 	스트리트 파이터 알파 2 	
 sfa3	少年街霸 3 	Street Fighter Alpha 3 	스트리트 파이터 알파 3
+mrheli	希利大冒险	Mr. HELI no Dai-Bouken	미스터 헬리의 대모험	
+mrkougar	鬼灵精先生	Mr. Kougar	미스터 쿠가	
+mrviking	失落的维京人 	Mister Viking 	미스터 바이킹 
+msbingo	宾果小姐拼图方块	Miss Bingo	미스 빙고	
+mschamps	吃豆人 超级女孩版	Ms. Pacman Champion Edition	미즈 팩맨 챔피언 에디션	
+msgogo	老鼠射击 GoGo	Mouse Shooter GoGo	마우스 슈터 고고	
+msgundam	机动战士高达	Mobile Suit Gundam	기동전사 건담	
+mspacman	吃豆人	Ms. Pac-Man	미즈 팩맨	
+mspacmnf	吃豆人 II	Ms. Pac-Man II	미즈 팩맨 II 	
+mspacpls	吃豆人 Plus	Ms. Pac-Man Plus	미즈 팩맨 Plus	
+mspuzzleg	美少女解谜拼图 	Miss Puzzle 	미스 퍼즐 	
+mstadium	世界棒球 	Main Stadium 	메인 스타디움 	
+mstworld	妖怪世界 	Monsters World 	몬스터 월드 	
+msword	魔法剑 - 英雄的幻想 	Magic Sword: Heroic Fantasy 	매직 소드 - 영웅 판타지 	
+mtwins	双麒儿 	Mega Twins 	치키치키 보이즈 / 메가 트윈스 	
+mugsmash	火线追缉	Mug Smashers	머그 스매셔즈	
+multchmpk	Multi 冠军 	Multi Champ 	멀티 챔프 	
+mvpj	棒球 MVP  I 	MVP (set 1)	MVP (세트 1)	
+mvp	棒球 MVP  II	MVP (set 2)	MVP (세트 2)	
+mwarr	世纪战士	Mighty Warriors	마이티 워리어즈	
+myhero	我的英雄 	My Hero 	청춘 1번지 / 마이 히어로 	
+myqbert	立体跳方块 - 米勒耶勒	Mello Yello Q*bert	멜로 옐로 큐*버트	
+mystwarr	怒之忍者 	Mystic Warriors 	미스틱 워리어즈 	
+naname	娜娜米魔法方块 	Naname de Magic! 	대각선으로 매직! 	
+navarone	战舰	Navarone	나바론	
+nemo	梦幻冒险 	Nemo 	니모 	
+neobattl	SD高达 - 新的战斗 	SD Gundam Neo Battling 	기동전사 SD 건담 네오 배틀링 	
+news	魔法美女气泡 	News 	뉴스 	
+newsa	魔法美女气泡 II 	News (set 2)	뉴스 (세트 2)	
+newsin7	新辛巴达 7	New Sinbad 7	뉴 신밧드 7	
+ninjak	忍者小子 	The Ninja Kids 	닌자 키즈 	
+ninjakd2	忍者君 II 	Ninja-Kid II 	닌자군 아수라의 장 	
+ninjakun	忍者君 - 魔城冒险	Ninjakun Majou no Bouken	닌자군 마성의 모험	
+nmg5	益智五合一	Multi 5 / New Multi Game 5	멀티 5	
+nob	怪叔叔救美 	Noboranka 	오르는거야 / 노보랑카 	
+nrallyx	新迷魂车 X	New Rally X	뉴 랠리 X / 뉴 방구차	
+nspirit	最后忍道	Ninja Spirit	최후의 인도 / 닌자 스피릿	
+nunchaku	功夫少女	Nunchackun	눈챠크군	
+ohmygod	天神方块 	Oh My God! 	오 마이 갓! 	
+oisipuzl	益智博士	Oishii Puzzle Ha Irimasenka	맛있는 퍼즐은 필요하지 않습니까	
+omegaf	欧米加战机	Omega Fighter	오메가 파이터	
+omegafs	欧米加战机 特别版	Omega Fighter Special	오메가 파이터 스페셜	
+onetwo	消除牌 - 1+2	One + Two	원 + 투	
+orbs	转动球盘 	Orbs 	오브 	
+oscar	钢铁金刚 	Psycho-Nics Oscar 	사이코닉스 오스카 	
+outzonea	异域战将 II 	Out Zone (set 2)	아웃 존 (세트 2)	
+ozon1	自走炮 1	Ozon I	오존 I	
+p47	P-47 - 野马中队 	P-47 - The Phantom Fighter 	P 47 - 팬텀 파이터 	
+pacgal	吃豆人 Pac-Gal	Pac-Gal	팩-걸	
+pacland	小精灵世界 	Pac-Land 	팩 랜드 	
+pacmania	疯狂小精灵	Pac-Mania	팩매니아	
+pacplus	吃豆人 Plus	Pac-Man Plus	팩맨 Plus	
+pang	魔鬼气泡 	Pang (set 1)	팡 (세트 1)	
+pangpang	乓乓	Pang Pang	팡 팡	
+pangpoms	气球小子	Pang Pom's	팡 폼즈	
+parodius	Q版沙罗曼蛇 	Parodius DA! 	파로디우스다! - 신화에서 웃음으로 	
+pass	长舌超人	Pass	패스	
+pbancho	番长大逆转方块 	Gyakuten!! Puzzle Bancho 	역전! 퍼즐대장 	
+pbillrd	完美撞球	Perfect Billiard	퍼팩트 빌리어드	
+penbros	企鹅兄弟 	Penguin Brothers 	펭귄 브러더스 	
+pengo	企鹅推冰 	Pengo 	펭고 	
+percuss	太空杀机	The Percussor	퍼커서	
+perfrman	火蚁超人 	Performan 	퍼포맨 	
+phoenix	火凤凰 	Phoenix 	피닉스 	
+photof	赛马	Photo Finish	포토 피니시	
+phozon	原子图形 	Phozon 	포존 	
+pipibibs	皮皮与比比	Pipi & Bibis 	피피 & 비비스 	
+pipibibsa	皮皮与比比 II  	Pipi & Bibis II	피피 & 비비스 II	
+pirates	海盗 	Pirates	해적들	
+pitfall2	玛雅历险记  	Pitfall  	핏폴  	
+pitfall2a	玛雅历险记 II 	Pitfall II 	핏폴 II 	
+pktgaldx	美女花式桌球 	Pocket Gal Deluxe 	포켓 걸 디럭스 	
+pkunwar	企鹅大战 	Penguin-Kun Wars 	펭귄군 워즈 	
+pleiads	火凤凰 2 	Pleiads 	플리어즈 	
+plgirls	美女砖王	Play Girls	플레이 걸스	
+plusalph	趣味战机	Plus Alpha	플러스 알파	
+poitto	魔法宝瓶	Poitto!	포이또!	
+pollux	雷霆旋风 	Pollux 	폴룩스 	
+polluxa	雷霆旋风 II 	Pollux (set 2)	폴룩스 (세트 2)	
+ponpoko	欢乐碰碰鸟	Ponpoko	너구리	
+pooyan	猪仔射狼	Pooyan	뿌얀	
+popbounc	跳跳球 	Pop 'n Bounce 	팝 앤 바운스	
+popeye	大力水手 	Popeye 	뽀빠이 	
+popflame	老鼠灭气球 	Pop Flamer 	팝 플레이머 	
+porky	小猪历险	Porky	포키	
+porter	海男 	Port Man 	포트맨 	
+preisle2	原始岛 2	Prehistoric Isle 2	원시도 2 / 프리히스토릭 아일 2	
+progress	大战车	Progress	프로그래스	
+psurge	电路小精灵	Power Surge	파워 서지	
+pturn	平行滑雪	Parallel Turn	패러럴 턴	
+pulirula	普利路拉传说 	PuLiRuLa 	푸리룰라 	
+punkshot	庞克篮球 (4 Players)	Punk Shot (4 Players)	펑크 샷 ( 4인용)	
+punkshot2	庞克篮球 (2 Players)	Punk Shot (2 Players)	펑크 샷 ( 2인용)	
+pururun	普路路魔咒	Pururun	푸루룬	
+pushman	推石超人 	Pushman 	푸쉬맨 	
+pushmana	推石超人 II  	Pushman (set 2)	푸쉬맨 (세트 2)	
+puzznic	宝石仓库番 	Puzznic 	퍼즈닉 	
+pyros	瓦德纳森林 	Pyros 	파이로스 	
+pzlbowl	泡泡保龄球 	Puzzle De Bowling 	퍼즐로 볼링 	
+pzlbreak	益智游戏	Puzzle Break	퍼즐 브레이크	
+qbert	立体跳方块 	Q*bert 	큐*버트 	
+qberta	立体跳方块 II	Q*bert (set 2)	큐*버트 ( 세트 2)	
+qcrayon	问答 蜡笔小新 	Quiz Crayon Shinchan 	퀴즈 크레용 신쨩 	
+quartet	星战四人组 	Quartet 	쿼텟 	
+quester	打砖块卫星 	Quester 	퀘스터 	
+rabiolep	兔战士 	Rabio Lepus 	라비오 리퍼스 
+radrad	无敌风火轮	Radical Radial	래디칼 래디얼	
+raflesia	银河系战机 	Rafflesia 	라플레시아 	
+riot	雷轧斗	Riot	라이엇	
+raiders5	大战略 5	Raiders5	레이더스5	
+raiga	雷牙 	Raiga - Strato Fighter 	뇌아 	
+raimais	光速飞跃车 	Raimais 	레이메이스 	
+raphero	雷豹英雄	Rapid Hero	라피드 히어로	
+redhawk	红鹰 	Red Hawk 	레드 호크 	
+redrobin	红色知更鸟	Red Robin	레드 로빈	
+repulse	凤凰之子 - 星际联邦	Repulse	리펄스	
+retofinv	侵略者回归	Return of the Invaders	돌아온 인베이더	
+rezon	雷杀之星	Rezon	레존	
+vsgongf	战斗拳击	Gong Fight	링 파이터	
+ringfgt	VS 战斗拳击 	Ring Fighter 	링 파이터 	
+ringfgt2	VS 战斗拳击 II 	Ring Fighter (set 2)	링 파이터 (세트 2)	
+riotcity	暴乱之城 	Riot City 	라이엇 시티 	
+roadf	马路英雄 	Road Fighter 	로드 파이터 	
+roadf2	马路英雄 II	Road Fighter (set 2)	로드 파이터 (세트 2)	
+robocop	铁甲威龙 	Robocop 	로보캅 	
+rockn	摇滚乐队 1 	Rock'n  1	로큰 1	
+rockn4	摇滚乐队 4 	Rock'n 4 	로큰 4 	
+rockrage	恋爱热摇滚 	Rock'n Rage 	사랑의 핫 락 	
+rocktris	摇摆俄罗斯方块	Rock Tris	락 트리스	
+rollerg	暴力溜冰 	Rollergames 	롤러게임스 	
+rompers	吊带小子 	Rompers 	롬퍼즈 	
+rshark	太空飞鲨	R-Shark	R-샤크	
+rthunder	滚雷	Rolling Thunder	롤링 썬더	
+rtype2	异形战机 II	R-Type II	R 타입 II	
+rundeep	深水炸弹	Run Deep	런 딥	
+rushatck	绿色兵团 	Rush'n Attack 	러쉬 앤 어택 	
+rygar	阿尔卑斯古战士 	Rygar 	아르고스의 전사 / 라이거 	
+ryukyu	琉球 	RyuKyu 	유구 	
+s1945	彩京1945	Strikers 1945	스트라이커스 1945
+s1945k	打击者 1945K 	Strikers 1945 K 	스트라이커즈 1945k 	
+sabotenb	仙人掌兄弟 	Saboten Bombers 	선인장 봄버스 	
+sabotenba	仙人掌兄弟 II 	Saboten Bombers (set 2)	선인장 봄버스 (세트 2)	
+sadari	沙达利方块	Sadari	사다리	
+sailormn	美少女战士 - 水手月亮 	Pretty Soldier Sailor Moon 	미소녀전사 세일러문 	
+samuraia	战国世纪 	Samurai Aces	전국 에이스 / 사무라이 에이스 	
+sandscrp	沙漠之蝎	Sand Scorpion	샌드 스콜피온	
+savgbees	超浮游要塞 - 致命大黄蜂	Savage Bees	세비지 비즈	
+sbbros	超级魔鬼气泡 	Super Buster Bros. 	슈퍼 버스터 브러더스 	
+schmeisr	格斗机器人 	Schmeiser Robo 	슈마이저 로보 	
+scobra	超级眼镜蛇	Super Cobra	슈퍼 코브라	
+scotrsht	未来滑车大对决	Scooter Shooter	스쿠터 슈터	
+scramblb	紧急起飞 混乱 	Scramble 	스크램블 	
+sdfight	SD斗士 	SD Fighters 	SD 파이터즈 	
+sdgndmps	机动战士SD高达 - 塞可沙拉曼达的威胁	SD Gundam Psycho Salamander no Kyoui	기동전사 SD 건담 사이코 사라만사의 위협	
+searcharu	异型大作战 	SAR - Search And Rescue	SAR - 구조대 	
+searchp2	超级找一找 - 搜寻之眼 Plus 	Search Eye Plus 	숨은그림찾기 Plus 	
+sectionz	Z 地带 	Section Z 	섹션 Z 	
+sectionza	Z 地带 II	Section Z (set 2)	섹션 Z (세트 2)	
+semibase	棒球 (SemiCom Baseball) 	MuHanSeungBu (SemiCom Baseball) 	무한승부 - 전원국제리그전 	
+shadoww	忍者龙剑传 	Shadow Warriors 	닌자용검전 / 쉐도우 워리어즈 	
+shaolins	少林之道 	Shao-lin's Road 	샤오린의 길	
+shinobi	超级忍 	Shinobi	 시노비 	
+shocking	狼人王	Shocking	쇼킹	
+shogwarr	幕府快打 	Shogun Warriors 	쇼군 워리어즈 	
+sidepckt	瞄准腰袋 	Side Pocket 	사이드 포켓 	
+sonson	西游记	Son Son	손 손	
+chinagat	西游降魔录 - 流棒妖技之章 	China Gate 	서유항마록	
+simpsons	辛普森家庭 (4 Players )	The Simpsons (4 Players )	심슨 가족 (4인용 )	
+simpsons2p	辛普森家庭 (2 Players )	The Simpsons (2 Players )	심슨 가족 (2인용 )	
+skyadvntu	天空大冒险 	Sky Adventure 	스카이 어드벤처 	
+skyalert	天空防卫队	Sky Alert	스카이 얼럿	
+skyarmy	天空军队	Sky Army	스카이 아미	
+skybase	天空基地	Sky Base	스카이 베이스	
+skykid	天堂鸟 	Sky Kid 	스카이 키드 	
+skylancr	天空雷射枪	Sky Lancer	스카이 랜서	
+skyskipr	天空船长	Sky Skipper	스카이 스키퍼	
+skysmash	空中打击	Sky Smasher	스카이 스매셔	
+skywolf2	天狼 II	Sky Wolf (set 2)	스카이 울프 (세트 2)	
+skywolf3	天狼 III	Sky Wolf (set 3)	스카이 울프 (세트 3)	
+snapjack	外星小精灵	Snap Jack	스냅 잭	
+snapper	贪食蛇 - 鳄龟 	Snapper 	스내퍼 	
+sngkace	战国世纪 	Sengoku Ace 	전국 에이스	
+snowbros	雪人兄弟 - 尼克和汤姆 	Snow Bros. - Nick & Tom 	스노우 브러더스 - 닉 & 톰 	
+snowbro2	雪人兄弟 2 	Snow Bros. 2 	스노우 브러더스 2 	
+sokonuke	心愿猫咪对战游戏 	Sokonuke Taisen Game 	소코누케 대전 게임 	
+soldam	苏登益智方块	Soldam	솔담	
+solomon	所罗门之钥 	Solomon's Key 	솔로몬의 열쇠 	
+sonicwi	音速之翼 	Sonic Wings 	소닉 윙즈 	
+sonicwi2	音速之翼 2	Sonic Wings 2 	소닉 윙즈 2	
+sonicwi3	音速之翼 3	 Sonic Wings 3	소닉 윙스 3	
+sonofphx	凤凰之子	Son of Phoenix	피닉스의 아들	
+sotsugyo	卒业证书	Sotsugyo Shousho	졸업증서	
+spang	超级魔鬼气泡 	Super Pang 	슈퍼 팡 	
+speedspn	真实乒乓球	Speed Spin	스피드 스핀	
+spelunk2	洞穴探险 II	Spelunker II	스페랑카 II	
+spelunkr	洞穴探险	Spelunker	스페랑카	
+spinlbrk	时空英雄 	Spinal Breakers 	스파이널 브레이커즈 	
+springer	跳跃者	Springer	스프링거	
+spy	S.P.Y. - 特别计划 Y 	S.P.Y. - Special Project Y 	S.P.Y. - 스페셜 프로젝트 Y 	
+sraider	太空雷达	Space Raider	스페이스 레이더	
+srdmissn	S.R.D. 任务	S.R.D. Mission	S.R.D. 미션	
+srumbler	高速追击令 	The Speed Rumbler 	스피드 럼블러	
+ssmissin	SS 任务 - 特命编	S.S. Mission	S.S. 미션	
+ssriders	落日骑士 (4 Players )	Sunset Riders (4 Players ) 	선셋 라이더스 ( 4인용 버전 )	
+ssridersubc	落日骑士 (2 Players )	Sunset Riders (2 Players ) 	선셋 라이더스 ( 2인용 버전 )	
+ssridersuda	落日骑士II (4 Players )	Sunset RidersII (4 Players ) 	선셋 라이더스 II( 4인용 버전 )	
+stagger1	红鹰 	Stagger I 	스테거 I 	
+starfght	小蜜蜂	Star Fighter	스타 파이터	
+starjack	星际母舰 	Star Jacker 	스타 재커 	
+stg	重装战机 S.T.G	Strike Gunner S.T.G	스트라이크 거너 S.T.G	
+stinger	赤猬战机	Stinger	스팅거	
+stlforce	钢铁力量	Steel Force	스틸 포스	
+stratof	雷牙 	Raiga - Strato Fighter 	뇌아	
+strider	出击飞龙 	Strider 	스트라이더 비룡	
+sub	潜艇	Submarine	서브마린	
+supbtime	超级汉堡时代 	Super Burger Time 	슈퍼 버거 타임	
+supbtimea	超级汉堡时代 II	Super Burger Time (set 2)	슈퍼 버거 타임 (세트 2)	
+superman	超人	Superman	슈퍼맨	
+superx	超级战机 (NTC)	Super-X (NTC)	슈퍼 X (NTC 판)	
+suprridr	超级车手	Super Rider	슈퍼 라이더	
+suprtrio	超级三重奏	Super Trio	슈퍼 트리오	
+suratk	奇袭 - 星战大怒吼 	Surprise Attack 	서프라이즈 어택 	
+survarts	死亡艺术 	Survival Arts 	서바이벌 아츠 	
+svf	超级对战足球	Super Visual Football: European Sega Cup	슈퍼 비주얼 풋볼: 유럽 세가컵	
+swat	超能战警 	SWAT 	스왓 	
+sws	超级世界棒球 	Super World Stadium 	슈퍼 월드 스타디움 	
+sws93	超级世界棒球 '93 	Super World Stadium '93 	슈퍼 월드 스타디움 '93 	
+tangtang	堂堂 	Tang Tang 	탕 탕 	
+tankfrce	坦克部队 (2 Player)	Tank Force ( 2 Player)	탱크 포스 ( 2인용)	
+taotaido	苏婆诃格斗 - 太鸥体道	Tao Taido 	타오 체도 	
+tetrisp2	俄罗斯方块 Plus 2 	Tetris Plus 2 	테트리스 Plus 2 	
+thedeep	水雷艇 	The Deep 	딥 	
+pwrinst2j	豪血寺一族 2 	Gouketsuji Ichizoku 2 	호혈사일족 2 	
+theend	射蜘蛛	The End	디 엔드	
+thehustl	撞球高手 - 骗子	The Hustler 	허슬러 	
+thndrx2	雷霆战机 2 	Thunder Cross 2	썬더 크로스 2 	
+thndrx2a	雷霆战机 2a 	Thunder Cross 2a 	썬더 크로스 2a 	
+thoop	闪电投篮	Thunder Hoop 	썬더 후프 	
+thunderl	雷与电砖块物语	Thunder & Lightning	썬더 & 라이트닝	
+thunderx	雷霆战机  	Thunder Cross  	썬더 크로스 	
+thunderxa	雷霆战机 II	Thunder Cross II	썬더 크로스 II	
+thunderxb	雷霆战机 III	Thunder Cross III	썬더 크로스 III	
+thundfox	雷狐行动 	Thunder Fox 	썬더 폭스 	
+tigerh	老虎直升机 	Tiger Heli 	타이거 헬리 	
+timelimt	刻不容缓	Time Limit	타임 리미트	
+timeplt	时空大战	Time Pilot	타임 파일럿	
+tmnt	忍者神龟 (4 Players)	Teenage Mutant Ninja Turtles (4 Players)	닌자거북이 (4인용)	
+tmnt2	忍者神龟 2 (4 Players )	Teenage Mutant Ninja Turtles (4 Players)	닌자거북이 - 시간 속의 거북이 (4인용)	
+tmht22pe	忍者神龟 2 (2 Players)	Teenage Mutant Hero Turtles (2 Players)	닌자거북이 - 시간 속의 거북이 (2인용)	
+tndrcade	特殊部队	Thundercade	특수부대 U.A.G. 	
+toki	人猿泰山	Toki	타잔	
+tokisens	时间战士	Toki no Senshi - Chrono Soldier	시간의 전사 - 크로노 솔져	
+toppyrap	兔与龟	Toppy & Rappy	토피 & 래피	
+toride2g	牌砦 II - 仇讨外传	Toride II Adauchi Gaiden	패채 2 - 구토외전	
+toryumon	登龙门	Toryumon	등용문 (登龍門)	
+transfrm	变形金刚 	Transformer	트랜스포머	
+travrusa	横越美国	Traverse USA	트래버스 USA	
+triothep	艳拳三强男 - 胜负拳 	Trio The Punch - Never Forget Me... 	트리오 더 펀치 - 나를 잊지 마세요... 	
+triothepj	艳拳三强男 - 胜负拳 II	Trio The Punch - Never Forget Me... II	트리오 더 펀치 - 나를 잊지 마세요... II	
+triplfun	三倍乐趣	Triple Fun	트리플 펀	
+trojan	斗者挽歌 - 特洛伊 	Trojan 	트로젠	
+turtship	海底大冒险 	Turtle Ship 	거북선 	
+tutankhm	图坦卡门	Tutankham	투탕카멘	
+twinactn	孪生劫	Twin Action	트윈 액션	
+twinadv	哥俩好大冒险 	Twin Adventure 	트윈 어드벤쳐 	
+twinbrat	捣蛋兄弟 	Twin Brats 	트윈 브래츠 	
+twinbrata	捣蛋兄弟 II	Twin Brats II	트윈 브래츠 II	
+twineag2	双鹰 II	Twin Eagle II - The Rescue Mission	트윈 이글 II - 구출임무	
+twineagl	双鹰	Twin Eagle - Revenge Joe's Brother	트윈 이글 - 조 형제의 복수	
+twinfalc	双隼	Twin Falcons	트윈 팰콘스	
+twinkle	闪亮小精灵	Twinkle	트윙클	
+ringfgt2	VS 战斗拳击 II 	Ring Fighter (set 2)	링 파이터 (세트 2)
+uballoon	终极气球	Ultra Balloon	울트라 벌룬	
+ufosensi	幽浮战士	Ufo Senshi Yohko Chan	UFO 전사 요코짱	
+ultrax	 科幻特效游戏	Ultra X Weapons 	울트라 경비대 - 공상특촬게임	
+umanclub	战斗! 奥特曼兄弟	Tatakae! Ultraman Kyoudai	울트라맨 클럽 - 싸워라! 울트라맨 형제!!	
+unclepoo	Poo 叔叔	Uncle Poo	푸 삼촌	
+unsquad	战区 88 	U.N. Squadron 	에어리어 88	
+uopoko	小猫钓鱼 	Puzzle Uo Poko 	퍼즐 물고기 포코 	
+utoukond	奥特曼斗魂传说 	Ultra Toukon Densetsu 	울트라 투혼전설 	
+vangrd2	先锋号 II	Vanguard II	뱅가드 II	
+vanvan	冲冲车	Van-Van Car	방방 카	
+vanvank	冲冲车 I	Van-Van Car I	방방 카 I	
+vanvanb	冲冲车 II	Van-Van Car II	방방 카 II	
+varth	雷暴行动 	Operation Thunderstorm 	오퍼레이션 썬더스톰 	
+vasara	婆裟罗	Vasara	바사라 (婆裟羅)	
+vasara2	婆裟罗  I	Vasara 2 (set 1)	바사라 2 (婆裟羅 2) (세트 1)	
+vasara2a	婆裟罗  II 	Vasara 2 (set 2)	바사라 2 (婆裟羅 2) (세트 2)	
+viofight	暴力格斗 	Violence Fight 	바이얼런스 파이트 	
+vmetal	钢铁任务	Varia Metal	바리아 메탈	
+wanted	勇闯印第安	Wanted	원티드	
+wardner	瓦德纳森林	Wardner 	와드너 	
+watrball	水球	Water Balls	워터 볼	
+wboy	神奇男孩	Wonder Boy 	원더보이 	
+wb3	神奇男孩 III - 在魔界 	Wonder Boy III - Monster Lair 	원더보이 III - 몬스터 레어	
+wbdeluxe	神奇男孩 豪华版	Wonder Boy Deluxe	원더보이 디럭스	
+wc90b1	欧洲联盟 	Euro League 	유로리그 	
+wc90b2	世界杯足球 '90	Worldcup '90	월드컵  '90	
+welltris	立体空间俄罗斯 	Welltris 	웰트리스 	
+wheelrun	狂奔之轮	Wheels Runner	휠즈 러너	
+whizz	双隼 Whizz	Whizz	휘즈	
+wildfang	邪城风云	Wild Fang	와일드 팽	
+wintbob	雪人兄弟 - 尼克和汤姆 	The Winter Bobble 	윈터 보블 	
+wits	维兹超人 	Wit's 	윗츠 	
+wiz	巫师	Wiz	위즈	
+wndrmomo	神奇女孩	Wonder Momo	원더 모모	
+worldwar	世界大战 	World Wars 	세계대전 	
+wrally	世界拉力赛车 	World Rally 	월드 랠리 	
+wrallya	世界拉力赛车 II  	World Rally II	월드 랠리 II	
+wrestwar	摔跤大战	Wrestle War	레슬 워 	
+wrestwar1	摔跤大战 II	Wrestle War II	레슬 워 II	
+wrofaero	空战 	War of Aero 	워 오브 에어로	
+wwjgtin	趣味赛马	Wai Wai Jockey Gate-In 	와이와이 조키 게이트인	
+xexex	新锐惑星 	Xexex  	젝세스 	
+xexexj	新锐惑星 II	Xexex II	젝세스 II	
+xmultipl	X 再生战机 	X Multiply 	X 멀티플라이	
+xorworld	XOR 世界 	Xor World 	Xor 월드 	
+xxmissio	XX 任务	XX Mission	XX 미션	
+yamagchi	山口君大冒险	Yuke Yuke Yamaguchi-kun	결사의 탐험 서바이벌 가자 가자!	
+yiear	功夫小子 	Yie Ar Kung-Fu 	이 얼 쿵후	
+youjyudn	妖兽传 	Youjyuden 	요수전 	
+zingzip	真真急炮	Zing Zing Zip	징 징 집	
+zoar	隐形战机 Zoar	Zoar	조어	
+zodiack	太空飞艇	Zodiack	조디악	
+bigtwin	大蛮生	Big Twin	빅 트윈	
+birdtry	博蒂物语 	Birdie Try 	버디 트라이 	
+blkdrgon	暗黑之龙	Black Dragon 	블랙 드래곤 	
+changes	毛毛虫 - 变幻	Changes	체인지	
+ctribe	流氓大混战 	The Combatribes 	컴뱃라이브스 	
+cworld2j	问答 卡普空世界 2 	Adventure Quiz Capcom World 2 	어드벤쳐 퀴즈 캡콤 월드 2 	
+dacholer	鸵鸟	Dacholer	다촐러	
+desertbr	沙漠王 	Desert Breaker 	데저트 브레이커 	
+dinorex	恐龙传说 	Dino Rex 	디노 렉스 	
+djboy	DJ 男孩 	DJ Boy 	DJ 보이 	
+dorodon	迷宫精灵 	Dorodon 	도로돈 	
+dorodon2	迷宫精灵 II	Dorodon (set 2)	도로돈 (세트 2)	
+dorunrun	小丑贝洛 	Do! Run Run	도! 런 런 	
+f1gp	一级方程式 GP 大赛	F-1 Grand Prix	F-1 그랑프리	
+galaxian	小蜜蜂 	Galaxian 	갤럭시안 	
+zerotime	小蜜蜂 - 难度加强版	Zero Time	제로 타임	
+genpeitd	源平讨魔传	Genpei ToumaDen	원평토마전	
+invaders	宇宙侵略者 M	Space Invaders M	스페이스 인베이더 M	
+jailbrek	越狱 - 曼哈顿 24 分署	Jail Break	맨하탄 24분서 / 제일 브레이크	
+loht	汤玛魔界历险	Legend of Hero Tonma	영웅 톤마의 전설	
+mainevt	拳击擂台	The Main Event 	링의 왕자 	
+megadon	马嘉登火箭	Megadon	메가돈	
+ninjemak	妖魔忍法帖 	Ninja Emaki 	요마인법첩 	
+ozmawars	奥兹玛战争 	Ozma Wars 	오즈마 워즈 	
+redufo	红飞碟	Red UFO	붉은 UFO		
+speakres	太空防卫 - Speak & Rescue	Speak & Rescue	스피크 & 레스큐	
+tazmania	疯狂塔斯 	Tazz-Mania 	태즈매니아 	
+toypop	童话世界	Toypop	토이팝	
+tsamurai	侍日本一 	Samurai Nihon-ichi 	사무라이 일본 제일	
+warpwarp	娃娃兵	Warp & Warp	워프 & 워프	
+wiping	吸尘器	Wiping	와이핑	
+yamato	大和号 	Yamato 	야마토	
+eagle	月冠登陆艇 	Eagle  	이글	
+eagle2	月冠登陆艇 II	Eagle II	이글 II	
+eagle3	月冠登陆艇 III	Eagle III	이글 III	
+mooncrst	月冠登陆艇 - 三台合体  	Moon Cresta 	문 크레스타	
+uniwars	银河帝国的反击	UniWar S	유니워 S	
+devilfsh	魔神鱼类	Devil Fish	데빌 피쉬	
+mshuttle	登月火箭	Moon Shuttle	문 셔틀	
+nemesis	宇宙巡航舰	Nemesis	그라디우스	
+nprinces	忍者公主	Ninja Princess	닌자 공주	
+pisces	双鱼座	Pisces	피시즈	
+pootan	猪仔射狼	Pootan	뿌탄	
+anteater	食蚁兽	Anteater	앤트이터	
+drakton	迷宫飞机 	Drakton 	드랙톤 	
+fightrol	滚轴王牌	Fighting Roller	파이팅 롤러	
+horekid	太空宝宝大作战	Kid no Hore Hore Daisakusen	키드의 호레호레 대작전	
+kittenk	猫咪仓库番	Kitten Kaboodle	키튼 커부들	
+mmonkey	恶搞猴王	Minky Monkey	밍키 몽키	
+mplanets	疯狂星球	Mad Planets	매드 플래닛스	
+mustache	胡须男孩	Mustache Boy	마스타슈 소년	
+paddlema	球拍也疯狂	Paddle Mania	패들매니아	
+pairlove	爱的纸牌对对碰	Pairs Love	페어즈 러브	
+hustler	电视撞球	Video Hustler	비디오 허슬러	
+timescan	时空弹珠台 	Time Scanner 	타임 스캐너 	
+trckydoc	机智博士 	Tricky Doc 	트릭키 덕 	
+wilytowr	威利电厂	Wily Tower	와일리 타워	
+puzlclub	解谜俱乐部 	Puzzle Club 	퍼즐 클럽 	
+qcrayon2	蜡笔小新	Crayon Shinchan Orato Asobo	크레용 신쨩 나랑 놀자	
+sgladiat	神鬼战士 1984	Gladiator 1984	글라디에이터 1984	
+shtrider	射击机车手	Shot Rider	샷 라이더	
+tshingen	武田信玄 	Shingen Samurai-Fighter 	신겐 사무라이 파이터 	
+tshingena	武田信玄 II	Takeda Shingen II	다케다 신겐 II	
+wjammers	超级飞碟球	Windjammers	윈드잼머스	
+bwingso	B-计划 II 	B-Wings II	B-윙즈 II 	
+cawing	雌虎战机 	Carrier Air Wing 	캐리어 에어윙 	
+cawingu	雌虎战机 II	Carrier Air Wing II	캐리어 에어윙 II	
+dambustr	皇家空军中队 - 丹巴斯特 	Dambusters 	댐버스터즈 	
+forgottn	失落的世界 	Forgotten Worlds 	포가튼 월드 (세계판)	
+kicker	踢球者	Kicker	소림사로 가는길 / 키커	
+kungfut	功夫大君	Kung-Fu Taikun	쿵후대군	
+lkage	影子传说	The Legend of Kage	카게의 전설	
+mimonkey	世纪猴王	Mighty Monkey	마이티 몽키	
+mrjong	麻将先生 	Mr. Jong 	미스터 종 	
+pistoldm	手枪大名冒险 	Pistol Daimyo no Bouken 	피스톨 대명의 모험  	
+rocnrope	凤凰猎人	Roc'n Rope	락 앤 로프	
+gdfs	机动战士高达 - 最后射击	Mobil Suit Gundam Final Shooting	기동전사 건담 파이널 슈팅	
+altbeast2	兽王记 (第2套)	Altered Beast (set 2)	얼터드 비스트 (세트 2)	
+altbeast4	兽王记 (第4套)	Altered Beast (set 4)	얼터드 비스트 (세트 4)	
+armorcar	装甲车 (第1套)	Armored Car (set 1)	아머드 카 (세트 1)	
+buzzard	猎鹰直升机	Buzzard	버자드	
+ckongg	大金刚	Crazy Kong	크레이지 콩	
+crazycop	疯狂警察	Crazy Cop 	크레이지 캅 	
+downtown	城市快打 - 目击	DownTown	목격자	
+edfu	E.D.F. - 地球防卫军	E.D.F. : Earth Defense Force	E.D.F. : 지구방위군	
+koshien	呜呼荣光甲子园 	Ah Eikou no Koshien 	오호 영광의 갑자원	
+lgtnfght	火龙 	Lightning Fighters 	라이트닝 파이터즈 	
+logicpro	逻辑 PRO	Logic Pro 	로직 프로 	
+mrtnt	炸药先生	Mr. TNT	미스터 TNT	
+quartet2	星战四人组 2 	Quartet 2 	쿼텟 2 	
+trigon	火龙-激光战机 	Trigon 	트라이곤 	
+airwolf	飞狼	Airwolf	에어울프	
+hippodrm	竞技场 	Hippodrome 	히포드롬 	
+ladykill	美女杀手	Lady Killer	레이디 킬러	
+quizo	问答奥林匹克 	Quiz Olympic 	퀴즈 올림픽 	
+qzquest	问答搜查 - 英雄美女物语 	Quiz Quest - Hime to Yuusha no Monogatari 	퀴즈 퀘스트 - 공주와 용자의 이야기 	
+yesnoj	心电图	Yes/No Sinri Tokimeki Chart	예스.노 심리 두근두근 차트	
+garuka	饿流祸 II	Garuka II	약탈자 II		
+dinou	恐龙新世纪	Cadillacs and Dinosaurs 	캐딜락 & 다이노소어 	
+gaia	征战者	Gaia Crusaders	가이아 크루세이더	
+mia2	绿色军团2	Missing In Action II	Missing In Action II	
+eswatbl	霹雳双警	E-Swat Cyber Police	E-Swat Cyber Police	
+astorm	异形风暴	Alien Storm	Alien Storm	
+altbeast	兽王记	Altered Beast	Altered Beast	
+swatpolc	超级特警	Swat Police	Swat Police	
+batsuguna	疯狂枪支	Batsugun	Batsugun	
+batsugunsp	疯狂枪支特别版	Batsugun-Special	Batsugun-Special	
+pacman	吃豆精灵1	Pac-Man	Pac-Man	
+gradius2	宇宙巡航舰2	Vulcan Venture2	Vulcan Venture2	
+dremshpr	购物梦语	Dream Shopper	드림쇼퍼 	
+drtomy	汤米医生	Dr.Tomy	닥터토미	
+eggor	射蛋	Eggor	에거 	
+fantzone	神奇地带	Fantasy Zone	판타존 	
+fghtbskt	战斗篮球	Fighting Basketball	파이팅바스켓볼	
+finalb	最终打击	Final Blow	파이널 블로	
+forgottnu	失落的世界	Forgotten Worlds	잊혀진세계	
+fpoint	世嘉俄罗斯方块解谜	Flash Point	플래시포인트		
+guwange	狱门山物语	Guwange	 구완지	
+guzzler	水精灵	Guzzler	 거즐러	
+gwarrior	银河战士	Galactic Warriors	 갈락틱워리어	
+gyruss	太空射击战	Gyruss	 쥐러스		
+hedpanic	头槌小子	Head Panic	 헤드패닉 	
+hitice	暴力冰上曲棍球	Hit the Ice	 바이런스온더아이스하키 	
+hookj	铁钩船长	Hook	 미털비크캡틴	
+hotshock	惊悚狂热	Hot Shocker	 핫쇼커 	
+hunchbkg	驼背骑士 (小蜜蜂 硬件)	Hunchback	 헌치백 	
+hunchbks	驼背骑士	Hunchback	 헌츠백	
+imsorry	课长捡砖块	I'm Sorry	 아임쏘리 	
+1943kai	1943加强版	1943 Kai : Midway Kaisen	 1943카이	
+agressb	阿古雷司-导弹大战略	Agress	 어그레스 	
+aligatorun	鳄鱼猎手	Alligator Hunt	 엘리게이터 헌터 	
+armwrest	超越巅峰	Arm Wrestling	 비얀드더타프 	
+asterix	美丽新世界	Asterix	 아스테릭스 	
