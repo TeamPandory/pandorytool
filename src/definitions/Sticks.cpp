@@ -40,7 +40,7 @@ Sticks::Sticks() {
 
     sticks["jailbreak7"] = {
             "jailbreak7",
-            "pandorytool-jb7-1.0.6",
+            "pandorytool-jb7-1.14",
             "https://github.com/emuchicken/pandorytool/archive/jb7-1.14.tar.gz",
             "The jailbreak also enables telnet on port 4444, which enables you to\n"
             "remotely log in using:\n"
