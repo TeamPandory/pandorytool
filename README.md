@@ -1,101 +1,41 @@
-# Pandorytool + Jailbreak
-A tool to automate ROM installation for the Pandora Games 3D / Saga 3D compatible systems / GOLDENSKY G6 / 3D RRTV 12S / PANDORA 9H*)
+# PandoryTool
+PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 
-* No jailbreak yet on the 9H.
+- automate ROM installation for the Pandora Games 3D / Saga 3D compatible systems / GOLDENSKY G6 / 3D RRTV 12S / PANDORA 9H)
+- install the Pandory3D "jailbreak" to improve your Pandora Games 3D and compatible models, add 4:3, android-mode and much more.
+- install the PandoryDX set of improvements for the Pandora Box DX / King of Air 2
 
 <p align="center">
   <img width="600" src="https://raw.githubusercontent.com/emuchicken/pandorytool/master/docs/pandory.gif">
 </p>
 
 ## License
-pandorytool is "shareware", licensed under the Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0), with the additional condition that you do not provide/redistribute compiled binaries of the source code. 
-If you wish to use pandorytool commercially, exceptions to this license are available from @emuchicken.
+Pandory is licensed under the GPL 2.0. You are free to distribute Pandory how you please, for free or at cost, with the condition that you provide any source-code changes to the public.
 
 ## IMPORTANT:
 We will not take any responsibility on the destruction of your device, or for anything done with this tool.
 A backup of your system is recommended - so clone your microsd with win32imager before any alterations are made.  Removing 2 PLAYER PSP titles at this time is IRREVERSIBLE!  Be careful of what you remove from your original PANDORA system.
 
 ## Contact & Feedback
-If you wish to provide feedback, need help, or just come to say hi! - Please join the Discord channel @ https://discord.gg/rPKhJCT Any major issues can be added to the github.
+If you wish to provide feedback, need help, or just come to say hi! - Please join the Discord channel @ https://teampandory.com/discord. Any major issues can be added to the github.
 
 ## Support Us!
 Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
-*1 coffee* : The current, *unlocked*, version of Pandory will sent.  (more than 20 roms per system limit lifted)
-*3 coffees* : As above, and your email will be saved to a maillist, where you will be sent all major revisions of the UNLOCKED Pandorytool.  
-*5 coffees+* : All of above, and shall be remembered forever in the HIGHSCORE CHART underneath *with optional message*
 
-## Clone and compile
-```
-git clone https://github.com/emuchicken/pandorytool.git
-mkdir build
-cd build
-cmake ..
-```
-
-Pandory will also compile on operating systems for grown-ups, such as MacOS/Linux, as long as you have a gcc toolchain, make, cmake and the relevant libraries installed.
-
-## USE *Windows*
-**1. Target Drive preparation for roms.**
-Note: - Your Pandora device searches for a main games folder in the order of drive: "USB Stick" > "microSD".  If it finds no such folder it will try installing it to the Pandora internal memory.
-
-*(choose one from below)*  
-
-**1a. Add to current microSD in Pandora**
-May break games, so be careful.  It is recommended to CLONE your microsd before you alter it! (use win32imager or alternative).
-- Format a USB stick, exfat unit size 32kb
-- Keep microSD with Pandora games in system when you insert USB stick in step 5.
-
-**1b. "Notty stick"**
-Prep USB stick for rom installation- Does not alter Pandora microSD.  When removed, original Pandora games from the microsd are playable.
-- Format a USB stick, exfat unit size 32kb
-- Create a folder in the root of the USB Stick, named "games" then continue to step 2.
-
-**1c. Creating a fresh microSD**
-No Chinese games, but will miss 2 player functionality on PSP titles. (currently not supported)
-Users who have destroyed their Pandora games library can start here.
-
-- Format a USB stick, exfat unit size 32kb
-- Format your microSD, exfat unit size 32kb.
-- Create a folder in the root of ONLY the microSD, named "games"
-- Make sure no games folder exists in the root folder of your USB STICK in step 5.
-
-**2. Prepare a ROM directory on your hard drive, and distribute your roms accordingly:**
-- Pandory already has the folder ready in the release build.  You can easily extract it from the archive.
-- Pandory can also create the required folders by using the argument "prepare", for example: "pandory prepare c:/roms" will create the directory tree in your c:/roms folder.
-
-Please see the Supported_Roms.md for more info on which roms and systems Pandory can install.
-
-**3. Scrape the game data.**
-
-*Attention: don't add 14000 roms on your first go! It will crash the menu!*
-
-	-Download Skraper (skraper.net)
-	-Use the setup wizard. Create RECALBOX file type, select the root ROM folder (step 2), and check "include non-Recalbox rom folders".  Check NEXT, then FINISH.
-	-Add missing arcade MAME systems using the add system option.  Click the + button next to the "Wizard", Under "Emulation Arcade" click MAME, then OK.  The new box should be highlighted, click the "GAMES & FRONTEND" then change the folder to the first mame139 directory.  Repeat this step for mame37 and mame78.
-	-Click ALL SYSTEMS on the left, then MEDIA.  Click on the 4 IMAGES MIX, then change MEDIA TYPE to VIDEO.  Click on BOX 3D, then the minus to remove it.
-	-HIT THE PLAY BUTTON (bottom right) to start scraping.
-
-**4. Run pandory tool to prepare the USB stick**
-	-Load up command prompt (Windows key & R, then type in CMD), navigate to the folder you have extracted pandory to.
-	-Use the tool.  (If roms directory was C:/roms, and the USB stick was drive O:)
-			pandory add c:/roms o:/
-	-Let the tool prepare the stick, then safely remove.
-
-**5. Install the games!**
-	-Turn on your Pandora Games 3D.
-	-When on the games menu, insert USB stick to the BOTTOM USB port of the Pandora Games 3D.
-	-Hit the A button to install games
-
-**6. Play!**
 
 ## TUTORIAL GUIDE
 A step-by-step tutorial video can be found here:
 
-[![Pandory tutorial](https://raw.githubusercontent.com/emuchicken/pandorytool/assets/videos/youtube-10naz1ZUOC4.jpg)](https://www.youtube.com/watch?v=10naz1ZUOC4)
+[![Add games to Pandora Games 3D, 3D+, EX2 and more using PandoryTool](https://i1.ytimg.com/vi/L_SA9xyiG9g/hqdefault.jpg)](https://www.youtube.com/watch?v=L_SA9xyiG9g)
 
-or here: https://www.bitchute.com/video/AgxJKugYWDU4/
+[![Jailbreak the Pandora Games 3D, 3D+ EX2 using PandoryTool](https://i1.ytimg.com/vi/cWdxBeuhXKU/hqdefault.jpg)](https://www.youtube.com/watch?v=cWdxBeuhXKU)
 
-## Installation fail
+[![Install PandoryDX improvements for the Pandora Box DX / King of Air 2 using PandoryTool](https://i1.ytimg.com/vi/yOsBYnR4bzg/hqdefault.jpg)](https://www.youtube.com/watch?v=yOsBYnR4bzg)
+
+
+## TROUBLESHOOTING
+
+## Installation of games does not work
 There is a possibility that the install will fail.  Please go through this checklist before asking for further assistance.
 
 1. No more space on destination drive.  Make some space by hitting the back "settings" button on the back of your Pandora device, then go to Games Settings, remove game.
@@ -106,7 +46,6 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 3. MAME title has multiple entries.  Even if the folder is separate, the Pandora unit places the MAME/FBA titles in the same folder, and the filenames cannot be altered.  Please go through your selection and select one title- OR use a rom with another filename.  An example being captcomm.zip (parent rom) and captcommu.zip (the USA release)
 
 ## Note:
-- The restricted free build will only support up to 20 titles per system.  Unrestrict this by donating a cup of coffee @ https://www.buymeacoffee.com/CKZbiXa
 - This method will install games to the MicroSD inside the unit.  Please make sure you have enough space for the added titles.  If you would like to install them to the same USB stick, you need to create a folder in the root of the stick named "games", and then inside this, "download".
 
 # STICK
@@ -126,7 +65,7 @@ In order to automate the process, our tool renames files in bulk.  Starting the 
 *note: It SHOULD reboot then load up into an Android robot screen backing up.  It usually takes around 10 minutes for the whole processe to complete.  If you get Chinese writing, please reboot and try once again.  It may hang on the Android robot screen-  if this is the case, please wait a little longer, longer than 30 minutes? Then try a reboot and start once more.
 *note2: If the usbstick doesn't load up, reset the Pandora, try again.  Try copying the file over, try another usb stick... The Chinese jank is real with this box!
 
-## 2. JAILBREAK (1.2)
+## 2. JAILBREAK
 ## PLEASE BACKUP using STICK BACKUP (in the section above) BEFORE trying this!
 
 Version 1.2 of the Pandory Jailbreak includes many new features.
@@ -134,10 +73,10 @@ Version 1.2 of the Pandory Jailbreak includes many new features.
 ## 2A. Android / Switch
 - We now can enter Android / pull back to the Pandora Games menu, by tapping 5x the pause button.
 
-## 2B. 4:3 Automatic Aspect mode switch (Pandory Ultimate only)
+## 2B. 4:3 Automatic Aspect mode switch
 - Our jailbreak now automatically chooses either stretch, or 4:3 aspect mode depending on the emulator which is called.  PPSSPP, Dreamcast are left as they are, but MAME, FBA and the others will be set to 4:3.  When creating the Pandory Jailbreak stick, the user will get a choice.  If you already have a 4:3 monitor, please hit V.  On a 16:9 or 16:10, use any other key.
 
-## 2C. 4:3 Aspect mode Switch (Pandory Ultimate only)
+## 2C. 4:3 Aspect mode Switch
 - P1 START and button E together. It will switch from stretch to 4:3 and vice versa.  Some MAME vertical shooters may need this when automatic switch fails.
 
 ## 2D. Pause menu switch
@@ -200,7 +139,7 @@ am start -n com.android.launcher/com.android.launcher2.Launcher
 - Kingdom Hearts, Daxter, Monster Hunter, and the Dynasty Warrior / Orochi titles are all now playable as the left stick controls have been fixed.
 - Button *6* on P2 controller will flip P1 stick controls from an analogue stick to a dpad.  If you find that you cannot control the player, push this button.
 - Start button on P2 controller will throw you into the PPSSPP settings screen.  Here you can save states, load states, or mess with graphics settings.  This has been removed for 2P titles.
-- 2 Player titles are also configured, but this feature is only for (Pandory Ultimate only)
+- 2 Player titles are also configured
 
 ## 4B. PSP Settings fixes / optimizing
 - We have altered some settings which should gain a few fps, or fix some stock titles.
@@ -284,6 +223,6 @@ As it alters a files, it is wise to make sure you have a backup, just in case th
 - Dirty Clide: Allowing us to use their music @ https://dirtyclide.bandcamp.com/
 - Lyndsay Bullock: Allowing the use of her "Pyro" work on our default skin @ https://www.facebook.com/lyndsaybullock.artist/
 - Supercoco: For his work on the Pandory Nitro skin, and helping us out with bits re: arcade goodness.  Go check his store in Spain! https://www.okcomputeronline.com/
-- OCRemix - for allowing us to share awesome remixes, not pissing on content creators
+- OCRemix - for allowing us to share awesome remixes.
 - FilePirate: Providing information re: game configs, the headaches.
 - and... YOU!  To anyone who has supported us, and continues to help share info with other Pandora users.
