@@ -1,0 +1,54 @@
+FROM fedora:40
+RUN dnf -y update
+RUN dnf -y install \
+  mingw64-gcc \
+  mingw64-gcc-c++ \
+  cmake \
+  meson \
+  wget \
+  tar \
+  rsync \
+  git \
+;
+RUN dnf -y install \
+  mingw64-winpthreads.noarch \
+  mingw64-zlib.noarch \
+  mingw64-curl.noarch  \
+  mingw64-filesystem.noarch \
+  mingw64-boost \
+#  mingw32-win-iconv.noarch \
+#  mingw32-libidn2.noarch
+#  mingw32-winpthreads-static.noarch \
+#  mingw32-win-iconv-static.noarch \
+#  mingw32-zlib-static.noarch \
+#  mingw32-curl-static.noarch \
+#  mingw32-libssh2-static.noarch \
+#  mingw32-libidn2-static \
+;
+
+# Install mingw version of tinyxml2
+RUN cd /tmp \
+    && wget https://github.com/leethomason/tinyxml2/archive/10.0.0.tar.gz         \
+    && tar xvf 10.0.0.tar.gz                                                      \
+    && pushd tinyxml2-10.0.0/                                                     \
+    && mingw64-cmake . -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF  \
+    && make -j$(nproc) && make install
+
+# Install mingw version of libarchive
+RUN cd /tmp                                                                                                \
+    && wget https://github.com/libarchive/libarchive/releases/download/v3.7.4/libarchive-3.7.4.tar.gz      \
+    && tar xvf libarchive-3.7.4.tar.gz                                                                     \
+    && pushd libarchive-3.7.4/                                                                             \
+    && mingw64-configure --without-lzma --without-xml2                                                     \
+       --without-expat --without-libb2 --without-openssl --without-bz2lib --without-cng                    \
+    && make -j$(nproc) && make install
+
+# Install mingw version of curlpp
+RUN cd /tmp                                                                                                \
+    && wget https://github.com/jpbarrette/curlpp/archive/v0.8.1.tar.gz                                     \
+    && tar xvf v0.8.1.tar.gz                                                                               \
+    && pushd curlpp-0.8.1/                                                                                 \
+    && mkdir build && pushd build && mingw64-cmake ..                                                      \
+    && make -j$(nproc) && make install                                                                                \
+    && rsync -av /tmp/curlpp-0.8.1/build/winbuild/ /usr/x86_64-w64-mingw32/sys-root/mingw/
+

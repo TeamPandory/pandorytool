@@ -1,0 +1,5 @@
+FROM debian:bookworm
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y nsis nsis-doc nsis-pluginapi git && \
+    rm -rf /var/lib/apt/lists/*

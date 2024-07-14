@@ -1,0 +1,98 @@
+Please check the README Document for more information
+
+-----------------------------------------------------------------
+1. 	INITIAL SETUP
+
+2. 	PANDORA BOX DX / KING OF AIR 2 SYSTEMS
+i. 		Backing up
+ii.		Installing Pandory
+iii.	Configuring Pandory
+iv.		Adding Games
+v.		BIOS Files
+
+3.	PG3D / SAGA GAMES 3D / SAGA EX2 SYSTEMS
+i.	Backing up...
+ii. 	Systems that NEED microsd to boot
+iii. 	Systems that DON'T NEED microsd to boot
+iv.		Installing Pandory
+v.		Adding Games
+vi.		Hotkeys
+vii.	Pandory Remote
+
+-----------------------------------------------------------------
+1. INITIAL SETUP
+	1 - Extract contents of latest pandorytool zip to c:\pandorytool
+	2 - Enter c:\pandorytool folder
+
+-----------------------------------------------------------------
+2. 	PANDORA BOX DX / KING OF AIR 2 SYSTEMS
+i.	Backing up
+	Insert DX MicroSD into PC, copy over files to a folder for safe keeping
+
+ii. Installing Pandory
+	1 - Insert DX MicroSD, take note of the MicroSD drive letter
+	2 - Right click !PandoryDX.bat > Edit > Change the letter i: to your USB MicroSD letter
+	3 - Save the file
+	4 - Right click !PandoryDX.bat > Run as Administrator
+
+iii. Configuring Pandory
+	<< Here we can alter dip settings, attractmode, stretch screen, video options, change core, scanlines etc >>
+	1 - Navigate to your pandory folder on your DX microsd
+	2 - Right click on pandory.xml > Edit
+	
+iv.	Adding Games
+	<< Here we can add games to the newly supported systems that have been added once Pandory has been installed >>
+	1 - Navigate to the roms_pandory folder on your microsd
+	2 - Copy in game roms into the correct folders.  Check readme in each folder to check on supported files.
+
+v.	BIOS Files
+	<< Some emulators, such as the Amiga will need you to add bios files to this folder >>
+	1 - Navigate to the roms_pandory/bios folder on your microsd
+	2 - Copy in bios files here.
+	
+-----------------------------------------------------------------
+3.	PG3D / SAGA GAMES 3D / SAGA EX2 SYSTEMS
+i.	Backing up...
+ii. 	Systems that NEED microsd to boot (SAGA 3D/ 18S...)
+	1 - Insert MicroSD into computer, make sure to NOT format / repair if it asks
+	2 - Use Win32Imager to make a backup on a Windows Machine (use other software on other OS)
+
+iii. 	Systems that DON'T NEED microsd to boot (PG3D / PG3D+)
+	<< The GAMES are on the microsd.  You can either back these up with win32imager, or copy the files over with Windows Explorer etc. >>
+	
+	1 - Insert EXFAT formatted RELIABLE usb stick (8GB+) - Note USB drive letter
+	2 - Right click !Pandory3D-Backup.bat > Edit > Change the letter i: to your USB drive letter
+	3 - Save file
+	4 - Right click !Pandory3D-Backup.bat > Run as Administrator
+	5 - Load up Pandora box, then insert USB stick.  The bar may not increase, but it IS working
+	6 - Wait around 30 minutes for the auto restart, unplug usb then check it for your backup files
+
+iv.		Installing Pandory
+	1 - Insert a reliable EXFAT formatted usb stick (8GB+) - Take note of USB drive letter
+	2 - Right click !Pandory3D.bat > Edit > Change the letter i: to your USB drive letter
+	3 - Save the file
+	4 - Right click !Pandory3D.bat > Run as Administrator
+
+v.		Adding Games
+	1 - Copy in game rom files to the roms folder (check SUPPORTED FILES in documentation)
+	2 - Insert a reliable EXFAT formatted usb stick (8GB+) - Take note of USB drive letter
+	3 - Right click addgames.bat > Edit > change the letter i: to your USB drive letter
+	4 - Save the file
+	5 - Right click addgames.bat > Run as Administrator
+	
+vi.		Hotkeys
+	<< Only if your controls are plugged up via Pandora harness >>
+	<< You can alternatively use the Pandory Remote.  See next section >>
+	
+		Dip Switch shortcut = P1 Start + Button D (MAME & FBA)
+		Aspect Ratio Switch = P1 Start + Button E
+		Pause Menu Switch = P1 Start + Button F
+		System Settings Switch = P1 Start + Button D, E and F
+		Android Access = Tap PAUSE (P2 Coin) 5 times
+		
+vii.	Pandory Remote
+	<< If you're on the network via either WiFi or Ethernet LAN >>
+	<< You can use the Remote to switch aspect ratio, install apps, load retroarch etc >>
+	<< We have a video guide: https://youtu.be/Y-mSHdqTWbg >>
+	
+	To use, simply check the IP of your pandora box, and insert it into a webbrowser of a device on your network.  Smart phone, computer, anything is fine.

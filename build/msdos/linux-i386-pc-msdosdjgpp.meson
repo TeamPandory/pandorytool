@@ -1,0 +1,13 @@
+[binaries]
+c = '/usr/local/cross/bin/i386-pc-msdosdjgpp-gcc'
+cpp = '/usr/local/cross/bin/i386-pc-msdosdjgpp-g++'
+ar = '/usr/local/cross/bin/i386-pc-msdosdjgpp-ar'
+strip = '/usr/local/cross/bin/i386-pc-msdosdjgpp-strip'
+cmake = '/usr/bin/cmake'
+
+[host_machine]
+system = 'msdos'
+cpu_family = 'x86'
+cpu = 'i386'
+endian = 'little'
+

@@ -1,0 +1,257 @@
+# Changelog
+
+# Pandory v1.1.4 - 29-JUN-2023
+- 3D: Fixes for Scraper
+- Key 7: 455 Additional games converted to use pixels!
+
+# Pandory v1.1.2 - 12-DEC-2022
+- DX: Generic support for all Saga DX models
+- DX: nvrams added to fix Mortal Kombat sound etc
+- 3D: Fixes for Scraper
+- 3D: Fixes for Flycast APK
+- 3D: Fixes for PPSSPP
+
+# Pandory v1.1.1b - 01-JUN-2022 
+- Fixed scraper.  New stuff coming soon!
+
+# Pandory v1.1.1 - 28-APR-2022 
+- Added Pandora Box DX Special, DX 1.4, SAGA DX Support
+
+Pandory DX:
+- Added: Additional Systems
+	- Atari 2600
+	- Atari ST
+	- Amiga 500
+	- Amiga 1200
+	- Gameboy
+	- Gameboy Color
+	- Gameboy Link
+	- Gameboy Advance
+	- PC-Engine
+	- Sega 32X
+- Added: Bios folder for retroarch
+- Added: Can now see custom games in the gameslist when running from internal MicroSD card slot.  Free one USB port!
+- Added: Attract mode.  MAME/ FBA titles, coin no longer is forced on load.
+- Added: Can now disable dipswitches from pandory.xml.  Add the line <setting name="disableDipswitches" value="true"/> to your pandory.xml file
+- Improved: Scanlines "JPINO Royale" (Thanks Joe!)
+- Fixed: Two roms added to roms_pandory with the same name in different subfolders would cause the first game to be started when you started the second game.
+- Fixed: Loading screen for 1.2 and 1.3 models
+- Improved: KOA2 HQ filter disabled
+- Improved: Custom settings
+- Added: TATE MODE.
+	- Rotate any title you wish- At any angle.  Includes horizontal games.
+	- Many games preconfigured to work in TATE (One setting will rotate all vertical games)
+	- Any DX model
+	- HDMI / VGA OR CGA!
+- Fixed: MAME Samples Folder
+- Added: Custom Cores can be selected per game.  Check pandory.xml if you wish to try others out
+	- Turtles, Sunset Riders, The Simpsons, X-Men switched to FBA
+	- Turtles in Time switched to FBNEO
+	- Mortal Kombat switched to MAME2003
+- Improved: Many games remapped for better controls, and custom remaps possible.
+	- ALL NeoGeo games.  correct "classic" button layout
+	- Konami brawlers A/B buttons controls streamlined
+	- Kung Fu Master controls fixed
+	- Mortal Kombat 1-3 controls fixed
+- Fixed: Street Fighter titles running too fast
+- Fixed: Some audio glitches
+- Added: Run shell scripts from menu
+- Added: Freeware / Homebrew titles
+	- XRick (Rick Dangerous)
+	- Crazy Balloon 4K
+	- Tobu Tobu Girl
+	- Inwaders
+	- Acoman
+	- Duux
+	- uCity (SimCity)
+	- Blowfish (Awesome fish.. Music Box)
+	- Reflectron
+	- Santatlantean (Defender Style X-Mas fun!)
+	- Quake
+- Added: Background menu music!
+	- Music swappable
+	- Custom sleep settings
+	- Custom volume settings
+	- Looped music is now played as a playlist, saves spawning new mplayer instances.
+	- WontFix: If you hide all games but one, and have custom menu music, the box will boot directly into the game with the MP3 playing over it. Cannot fix this, but it can be avoided by disabling music in the pandory.xml, so not really too bad.
+	
+Pandory PG3D:
+- Fixed: PS1 adding bug (PBP filetype with CAPS fixed)	
+- Fixed: 3D EX2 Jailbreak Skin not working
+- Added: MAME 139 configs
+	- The King of Fighters series
+	- Metal Slug series
+	- Pole Position
+
+# Pandory v1.1.1 Beta Patch 4 - 15-APR-2022
+# Pandory v1.1.1 Beta Patch 3 - 02-APR-2022
+# Pandory v1.1.1 Beta Patch 2 - 01-APR-2022
+# Pandory v1.1.1 Beta (Patreon) - 04-JAN-2022
+
+# Pandory v1.1.0 - 02-Nov-2021 (First Major DX release)
+- Added Pandora Box DX Support
+- Added King of Air 2 Support
+	Display features (Aspect ratio, Sharp Pixels, Integer Scaling etc)
+	Removed Bilinear blur (VGA / HDMI)
+	Reduced screen tearing
+	Hold START for dipswitches
+	FBA core clock boost
+	FBA Presets (Uncensor Metal Slug, King of Fighters etc)
+	Playstation Save Games (Character unlocks / Controllers set up)
+	New Skin for UI / Boot Video
+	Removed annoying clunk sound
+	Changed menu music
+	Full root access via Pandory.sh
+	Removed forced HD filter on KOA2
+	Loading Screen fixes
+- Fixed FBA Core boost (PG3D / SAGA)
+
+# Pandory v1.1.0-FR1 - 23-Mar-2021 (Patreon)
+
+# Pandory v1.0.8b - 6-Apr-2021
+- Added addroms.bat
+- Improvements made to scraper routines
+
+# Pandory v1.0.8 - 14-Mar-2021
+- Shortcut switch to Retroarch
+- Dreamcast save support
+- Savestates for DC games / character unlocks + control fixes
+- Savestate support for stock games: MAME, FBA, Megadrive, Playstation (3d+), N64 (3d+)
+- Fixed Tekken 1 on the Plus
+- Fixed PS Bios on the Plus
+- Inbuilt Scraper
+- Overclock newly added FBA titles
+- Mame 139 configs for NBA JAM, NBA JAM TE, NBA Hangtime, Galaga, Galaga 88, Galaxian, Asteroids, Asteroids Deluxe, Aztarac, Guerella War, The Simpsons, Teenage Mutant Ninja Turtles, Teenage Mutant Ninja Turtles 2, Sol Divide - The Sword Of Darkness (BrainFodder), Bosconian - Star Destroyer (BrainFodder) and Crazy Climber (Skylerz)
+- Linux Build
+- Pandory Remote Control
+    - Access to Pandora Settings
+    - Access to hidden factory settings
+    - Access to media center/video player
+    - Aspect Ratio fixes (Also in the FREE version)
+    - Safe Shutdown
+    - Remote Control Buttons
+    - Automatic WIFI Application Installers!
+        - Retroarch
+        - Flycast
+        - OpenBOR
+        - Magic DOSBox
+        - PPSSPP
+        - ScummVM
+        - VLC
+    - Hidden options to disable button-shortcuts:
+        - Android switch
+        - Settings switch
+        - Safe shutdown
+        - Dipswitch shortcut
+        - Aspect resolution toggle
+        - Pause button
+    - New and shiny official Android Launcher
+    - Youtube support via browser-bookmark! Stream Youtube without Ads directly to your Pandora.
+    - Local device playback of videos - put videos in a "media" folder on SD/USB and play them via the web interface.
+
+
+# Pandory v1.0.8-FR2 - 26-Jan-2021 (Patreon)
+# Pandory v1.0.8-FR1 - 05-Dec-2020 (Patreon)
+
+# Pandory v1.0.7 - 04-Nov-2020
+
+Added JB support:
+	- Pandora Games 3D+ 4018 (Current known boards / firmware @ 25 Sept 2020)
+	- Pandora Games 3D 4018 (GB3000 Boards up to firmware 20200217)
+	- Pandora 3D Saga (2650 Games, PSA-S812-001 board, with or without NAND)
+	- 3D Pandora Saga Wifi TV Game Box 3000
+	- SAGA DIY
+	- Other "Moorechip" Pandora clones (3D Saga/X/Key7/RRTV?/18S?, based on the PSA-S812/GB3000 board)
+	
+Added : Backup stick for PG3D+ / Saga DIY
+Added : DIP switch shortcut.  P1 Start + button D (MAME & FBA)  - Note: PG3D+ only supports compatible MAME titles
+Added : 3rd aspect ratio for vertical shooters.
+Added : Safe Shutdown. P1 Start & buttons A B C
+Improved : GPU Speed Up - Now uses Hardware for graphics, more responsive!
+Improved : MSAA 4x - 3D titles on (PSP etc)
+Improved : Hue/saturation/contrast
+Fixed : 3D Pandora Saga Wifi TV Game Box 3000/ PSP 2 Player modes (Use PSP Fix)
+Added : Openlauncher (Android)
+Fixed : Screen rotation issue (PG3D+)
+Fixed : APK install from other sources (PG3D+)
+Added : FTP access.  Use port 7777
+Added : Telnet access.  Use port 4444
+Added : Skin support for PG3D+.  Place in /data/config
+Added : MAME139 configurations: 
+	- Chase HQ chasehq.zip
+	- SCI (Special Criminal Investigation) 	sci.zip
+	- Lucky n' Wild 						luckywld.zip
+	- Super Chase 							superchs.zip
+	- Power Drift 							pdrift.zip
+	- TMHT Europe (2P) 						tmht2p.zip
+
+# Pandory v1.0.7-FR3 - 28-Oct-2020 (Patreon)
+# Pandory v1.0.7-FR2 - 25-Sep-2020 (Patreon)
+# Pandory v1.0.7-FR1 - 21-Sep-2020 (Patreon)
+
+# Pandory v1.0.6 - 06-Sep-2020 (Pandora's Key 7 release)
+- Key 7 -
+1. Added: KEY 7 stick backup
+2. Added: Key 7 stick jailbreak
+2. Added: 4:3 aspect ratio
+3. Changed: All possible games from stock list 1-1000, smoothing removed.
+4. Changed: Given the FBA titles a CPU boost. (mslug2 less slowdown, more responsive)
+5. Added: Remote telnet access for Key 7 (for compatible network adapters)
+6. Changed: Start video.  Much faster bootup.
+6. Removed: Unneeded files.  Saving space on the SYSTEM drive, improved reliability
+7. Added: Pixel configs- For added FBA roms via usb drive.
+
+- PG3D -
+1. Added: A multitude of MAME139 fixes
+2. Changed: Security holes patched.
+
+# Pandory v1.0.5b - 13-June-2020
+1. Fixed: Bug when adding FBA games.
+
+# Pandory v1.0.5a - 09-June-2020
+1. Fixed: When adding additional games to the list, sometimes games would not be added.
+2. Fixed: Games list not showing on some systems.  Blue jailbreak intro lengthened slightly.
+
+# Pandory v1.0.5 - 06-June-2020 (Major PSP & Jailbreak update)
+1. Added: PSP fixes, controls, optimizations.  Many more games playable with arcade sticks (FinalFantasy, Monster Hunter 3, Daxter, KingdomHearts, Dynasty series etc...)
+2. Added: MORE 2 PLAYER functionality for stock PSP titles.  PES2012, Soul Calibur and NBA06. *ultimate only
+3. Enhanced JAILBREAK 1.2!
+4. Added: Switch out to android EASILY! (one button!)
+5. Added: Automatic 4:3 aspect ratio switch *ultimate only
+6. Added: Manual 4:3 aspect ratio switch *ultimate only
+7. Added: PAUSE button shortcut
+8. Added: System settings shortcut
+9. Added: Remote ADB! *via WIFI
+10. Added: Remote Telnet!  *via WIFI
+11. Added: USB HUB LAN network fix.  Internet without WIFI!
+12. Added: VGA unbrick!  Easily un-mess your system!
+13. Added: New skin.  Pandory Nitro!  *thanks Supercoco*
+14. Changed: Adding additional games to the list is now possible *ultimate only
+
+# Pandory v1.0.4a - 06-May-2020
+1. Changed: removed UPX compression to stop pandory being falsely reported as a trojan.
+
+# Pandory v1.0.4 - 19-Apr-2020 (JAILBREAK!)
+1. Added JAILBREAK.  Bumps system into Android 4.4.  Custom APK installation now possible- can also load up scripts from gamemenu.
+2. Added BACKUP AUTOMATION.  Pandory can now create a quick and easy way to automate the backup process.
+3. Added GB folder. Now we can easily separate the GB and GBC titles.
+4. New MAME139 cfgs added to the stack (aburner, aburner2, btimem, captcomm, gangwars, indyheat, mspacman, offroadt, qbert, ssprint)
+
+# Pandory v1.0.3 - 20-Mar-2020
+1. Added genre automation.  Automatically applies genre generated from the scrape.
+2. Added Sega 32X emulation (32x folder)
+3. Added Mame 0.190 emulation (mame19 folder) - Tested with some 0.185 roms.  The 3-4 player titles stock on the system are using this emulator.
+4. Added Sega Mastersystem emulation (mastersystem folder)
+5. Added controller cfg automation for mame139 games.  Insert your cfg files into /controls/mame139/ and it'll inject them in when adding your games.
+6. Added a "prepare" modifier to the pandory command line.  This will create a rom folder tree for all your roms to go in, and also make it default for pandory.
+7. Changed: More comprehensive help given from the command line (when the command "pandory" alone is given, a help message is given)
+8. Changed: Switched out the x64 build for the x86 build for Windows. - Best compatibility for all windows users.
+9. Added: Skin folder.  Place folder at the root of the rom destination drive (microsd/usbstick) to show some skin.
+
+# Pandory v1.0.2 - 05-Mar-2020
+1. LOADTIME settings altered for compatibility.
+2. MAME SAVE STATE setting has been enabled to allow fixes for some titles.
+3. PS1 / .PBP files now work.  The filename in CAPS won't run successfully, so Pandory now automatically changes filename from uppercase to lowercase.
+
+# Pandory v1.0.1 - 25-Feb-2020
+- First public release

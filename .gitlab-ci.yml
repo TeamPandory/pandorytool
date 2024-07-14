@@ -1,0 +1,43 @@
+stages:
+  - build
+  - pack
+
+build-windows:
+  stage: build
+  image: code.teampandory.com:5050/pandory/pandorytool/buildwin
+  when: manual
+  script:
+    - build/windows/build-win.sh
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+
+pack-windows:
+  stage: pack
+  image: code.teampandory.com:5050/pandory/pandorytool/packwin
+  when: on_success
+  script:
+    - build/windows/pack-win.sh
+  needs:
+    - build-windows
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week
+
+build-linux:
+  stage: build
+  image: code.teampandory.com:5050/pandory/pandorytool/buildlinux
+  when: manual
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}-flatpak-deps
+    paths:
+      - .flatpak-builder
+      - /root/.cache/.flatpak
+  script:
+    - build/linux/build-linux.sh
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 week

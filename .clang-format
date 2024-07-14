@@ -1,0 +1,25 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializersBeforeComma: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+PointerAlignment: Left
+IndentPPDirectives: BeforeHash
+ColumnLimit: 120
+
+# Ensure braces after if and for statements are on the same line
+BraceWrapping:
+  AfterControlStatement: false
+
+# Ensure classes and functions are on a new line
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: Yes

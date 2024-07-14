@@ -1,0 +1,43 @@
+app-id: com.teampandory.pandorytool
+runtime: org.freedesktop.Platform//23.08
+sdk: org.freedesktop.Sdk//23.08
+command: pandorytool
+
+modules:
+  - name: tinyxml2
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/leethomason/tinyxml2/archive/refs/tags/10.0.0.tar.gz
+        sha256: 3bdf15128ba16686e69bce256cc468e76c7b94ff2c7f391cc5ec09e40bff3839
+  - name: libarchive
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/libarchive/libarchive/archive/refs/tags/v3.7.4.tar.gz
+        sha256: cf7fc85b9f663c06dc2b7036b7ee54d02712167e04b07bdcc4c27553abf2d6ff
+  - name: curlpp
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/jpbarrette/curlpp/archive/refs/tags/v0.8.1.tar.gz
+        sha256: 97e3819bdcffc3e4047b6ac57ca14e04af85380bd93afe314bee9dd5c7f46a0a
+  - name: boost
+    buildsystem: simple
+    sources:
+      - type: archive
+        url: https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.xz
+        sha256: 2e64e5d79a738d0fa6fb546c6e5c2bd28f88d268a2a080546f74e5ff98f29d0e
+    build-commands:
+      - ./bootstrap.sh
+      - ./b2 install --prefix="/app" --with-filesystem
+  - name: pandorytool
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: ../../
+    build-options:
+      env:
+        SCRAPE_USERNAME: "SCRAPE_USERNAME"
+        SCRAPE_PASSWORD: "SCRAPE_PASSWORD"
+        SCRAPE_URL: "SCRAPE_URL"

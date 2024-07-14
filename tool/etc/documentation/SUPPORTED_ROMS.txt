@@ -1,0 +1,21 @@
+System / Folder name / Required filetype / Rom-set
+
+Sega 32X / 32x / 32X
+Sega Dreamcast / dreamcast / CDI
+Final Burn Alpha / fba / ZIP / FBA 0.2.97.42
+Gameboy Advance / gba / GBA, BIN, AGB, GBZ
+Gameboy / gb / GB, SGB
+Gameboy Color / gbc / GBC, SGB
+MAME / mame19 / ZIP / Mame 0.106
+MAME / mame139 / ZIP / Mame 0.139
+MAME / mame37 / ZIP / Mame 0.37b5
+MAME / mame78 / ZIP / Mame 0.78
+Sega Master System / mastersystem / SMS
+Sega Megadrive (Genesis) / megadrive / MD, SMD, GEN, BIN
+Nintendo 64 / n64 / N64
+NES (Famicom) / nes / FDS, NES, UNF, UNIF
+PC-Engine / pcengine / PCE, CUE, CCD, CHD
+Sony Playstation / playstation / IMG, PBP
+Sony Playstation Portable / psp / ISO
+Super Nintendo (Super Famicom) / snes / SMC, SFC, SWC, FIG, BS
+Wonderswan / wswan / WSC

@@ -1,0 +1,1 @@
+Filetypes: .gb, .sgb
