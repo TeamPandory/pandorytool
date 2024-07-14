@@ -38,9 +38,9 @@ modules:
         path: ../../
     build-options:
       env:
-        SCRAPE_USERNAME: "SCRAPE_USERNAME"
-        SCRAPE_PASSWORD: "SCRAPE_PASSWORD"
-        SCRAPE_URL: "SCRAPE_URL"
+        SCRAPE_USERNAME: "REPLACE_SCRAPE_USERNAME"
+        SCRAPE_PASSWORD: "REPLACE_SCRAPE_PASSWORD"
+        SCRAPE_URL: "REPLACE_SCRAPE_URL"
 
 finish-args:
   - --filesystem=host

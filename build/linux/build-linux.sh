@@ -1,4 +1,9 @@
 #!/bin/bash
+cp -f build/linux/com.teampandory.pandorytool.yaml.in build/linux/com.teampandory.pandorytool.yaml
+sed -i "s#REPLACE_SCRAPE_USERNAME#$SCRAPE_USERNAME#g" build/linux/com.teampandory.pandorytool.yaml
+sed -i "s#REPLACE_SCRAPE_PASSWORD#$SCRAPE_PASSWORD#g" build/linux/com.teampandory.pandorytool.yaml
+sed -i "s#REPLACE_SCRAPE_URL#$SCRAPE_URL#g" build/linux/com.teampandory.pandorytool.yaml
+
 flatpak-builder --repo=repo --install --user --force-clean build-dir build/linux/com.teampandory.pandorytool.yaml
 flatpak build-bundle repo pandorytool.flatpak com.teampandory.pandorytool
 
