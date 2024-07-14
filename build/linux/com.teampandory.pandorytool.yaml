@@ -41,3 +41,8 @@ modules:
         SCRAPE_USERNAME: "SCRAPE_USERNAME"
         SCRAPE_PASSWORD: "SCRAPE_PASSWORD"
         SCRAPE_URL: "SCRAPE_URL"
+
+finish-args:
+  - --filesystem=host
+  - --socket=x11
+  - --share=network
