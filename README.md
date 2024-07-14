@@ -3,7 +3,8 @@ PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 
 - automate ROM installation for the Pandora Games 3D / Saga 3D compatible systems / GOLDENSKY G6 / 3D RRTV 12S / PANDORA 9H)
 - install the Pandory3D "jailbreak" to improve your Pandora Games 3D and compatible models, add 4:3, android-mode and much more.
-- install the PandoryDX set of improvements for the Pandora Box DX / King of Air 2
+- install the PandoryDX set of improvements for the Pandora Box DX / King of Air 2, add 4:3, new emulators and much more.
+- install the PandorySeven improvements for the Pandora Key 7 (sharp pixels, 4:3)
 
 <p align="center">
   <img width="600" src="https://raw.githubusercontent.com/emuchicken/pandorytool/master/docs/pandory.gif">
