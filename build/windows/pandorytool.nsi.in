@@ -132,4 +132,5 @@ SectionEnd
 Function .onInstSuccess
   ; Run the command after the installer closes
   Exec '"$WINDIR\explorer.exe" "$INSTDIR"'
+  ExecShell "open" "https://teampandory.com/pandorytool/thanks.php"
 FunctionEnd
