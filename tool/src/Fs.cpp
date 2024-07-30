@@ -1,31 +1,31 @@
-#include "Fs.h"
-#include <algorithm>
-#include <boost/filesystem/convenience.hpp>
-#include <boost/filesystem/operations.hpp>
-#include <iostream>
-#include <filesystem>
-#include <string>
 #include <sys/stat.h>
+#include <filesystem>
+#include <iostream>
+#include <algorithm>
+#include "Fs.h"
 
-bool Fs::exists(const std::string& file)
-{
-    return boost::filesystem::exists(file);
+bool Fs::exists(const std::string& file) {
+    struct stat buffer{};
+    int result = (stat (file.c_str(), &buffer) == 0);
+    return (bool)result;
 }
 
-bool Fs::makeDirectory(const std::string& dir)
-{
-    return boost::filesystem::create_directory(dir);
+bool Fs::makeDirectory(const std::string& dir) {
+#ifdef __MINGW32__
+    const int error = mkdir(dir.c_str());
+#else
+    const int error = mkdir(dir.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+#endif
+    return -1 != error;
 }
 
-std::string winSlashes(std::string path)
-{
-    std::replace(path.begin(), path.end(), '/', '\\');
+std::string winSlashes(std::string path) {
+    std::replace(path.begin(),path.end(),'/','\\');
     return path;
 }
 
-bool Fs::remove(const std::string& file)
-{
-    return boost::filesystem::remove_all(file);
+bool Fs::remove(const std::string &file) {
+    return std::filesystem::remove_all(file.c_str());
 }
 
 std::string Fs::getCurrentPath()
@@ -34,49 +34,55 @@ std::string Fs::getCurrentPath()
     return currentPath;
 }
 
-std::string Fs::stem(const std::string& file)
-{
+std::string Fs::stem(const std::string &file) {
     std::string base = std::filesystem::path(file).stem().string();
     return base;
 }
 
-std::string Fs::basename(const std::string& file)
-{
+std::string Fs::basename(const std::string &file) {
     std::string base = std::filesystem::path(file).filename().string();
     return base;
 }
 
-std::string Fs::dirname(const std::string& file)
-{
+std::string Fs::dirname(const std::string &file) {
     std::string dirname = std::filesystem::path(file).parent_path().string();
     return dirname;
 }
 
-std::string Fs::extension(const std::string& file)
-{
-    return boost::filesystem::extension(file);
+std::string Fs::extension(const std::string &file) {
+    std::string extension = std::filesystem::path(file).extension().string();
+    return extension;
 }
 
 int Fs::copy(std::string source, std::string destination)
 {
-    // 107100 is ubuntu focal
-    #if BOOST_VERSION > 107100
-        return boost::filesystem::copy_file(source, destination, boost::filesystem::copy_options::overwrite_existing);
-    #else
-        return boost::filesystem::copy_file(source, destination, boost::filesystem::copy_options::overwrite_if_exists);
-    #endif
+#ifdef __MINGW32__
+    // Windows users... get forked!
+    std::string cmd = "copy /Y \"" + winSlashes(source + "\" " + destination + " > NUL");
+    system(cmd.c_str());
+#else
+    // Proper operating systems
+    std::filesystem::copy_file(source, destination, std::filesystem::copy_options::overwrite_existing);
+#endif
+    return 0; // this is fine
 }
 
-int Fs::copyRecursive(const std::string& src, const std::string& target)
+int Fs::copyRecursive(const std::filesystem::path &src, const std::filesystem::path &target)
 {
-    boost::filesystem::path copySrc(src);
-    boost::filesystem::path copyTarget(target);
+    std::filesystem::path copySrc = src.lexically_normal();
+    std::filesystem::path copyTarget = target.lexically_normal();
 
     try
     {
-        boost::filesystem::copy(copySrc.lexically_normal(), copyTarget.lexically_normal(),
-                                boost::filesystem::copy_options::overwrite_existing
-                                    | boost::filesystem::copy_options::recursive);
+#ifdef __MINGW32__
+        // Windows users... get forked!
+        // It is terrible we have to do this to get reliable copy_recursive.
+        std::string cmd = "xcopy /E /Y \"" + copySrc.string() + "\" \"" + copyTarget.string() + "\" > NUL";
+        system(cmd.c_str());
+#else
+        std::filesystem::copy(copySrc, copyTarget, std::filesystem::copy_options::overwrite_existing | std::filesystem::copy_options::recursive);
+#endif
+
     }
     catch (std::exception& e)
     {
@@ -86,7 +92,6 @@ int Fs::copyRecursive(const std::string& src, const std::string& target)
     return 0;
 }
 
-int Fs::filesize(std::string src)
-{
-    return boost::filesystem::file_size(src);
+int Fs::filesize(std::string src) {
+    return std::filesystem::file_size(src.c_str());
 }
