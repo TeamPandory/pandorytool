@@ -123,7 +123,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
 		std::cout << "Downloading PandoryDX release data..." << std::endl;
 		std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-		downloadFile("https://teampandory.com/downloads/dx/releases/pandoryDX-1.12-public.tgz", dxTmp);
+		downloadFile("https://downloads.teampandory.com/pandoryDX/jailbreak/pandoryDX-jailbreak-20240730.tgz", dxTmp);
 		std::cout << std::endl << std::endl;
 
 		std::string hadTmp = downloadPatchFile(hadHash, target);
