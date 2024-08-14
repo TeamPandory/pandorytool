@@ -1,4 +1,4 @@
-# PandoryTool Ultimate
+# PandoryTool Ultimate 2.2
 PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 
 - automate ROM installation for the Pandora Games 3D / Saga 3D compatible systems / GOLDENSKY G6 / 3D RRTV 12S / PANDORA 9H)
