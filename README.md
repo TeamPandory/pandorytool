@@ -7,6 +7,14 @@ PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 - install the PandorySeven improvements for the Pandora Key 7 (sharp pixels, 4:3)
 
 <p align="center">
+  <a href="https://teampandory.itch.io/pandorytool"><strong>Get it on itch.io</strong><br><br>
+  <img width="200" src="https://img.itch.zone/aW1nLzE3NjMzMTM2LnBuZw==/original/5W04Pb.png">
+  </a>
+</p>
+
+
+
+<p align="center">
   <img width="600" src="https://raw.githubusercontent.com/emuchicken/pandorytool/master/docs/pandory.gif">
 </p>
 
