@@ -1,6 +1,5 @@
 #include "UserFolders.h"
 #include <filesystem>
-#include <iostream>
 
 std::string UserFolders::getTemporaryFolder()
 {
