@@ -49,7 +49,7 @@ std::string ModeDXStick::downloadPatchFile(const std::string &patchName, const s
     UserFolders uf;
     std::string targetFile = uf.getTemporaryFolder() + patchName + ".tgz";
     std::string lowerCase = patchName;
-    std::string patchUrl = "https://downloads.teampandory.com/pandoryDX/patches/20230629-d812db4/";
+    std::string patchUrl = "https://downloads.teampandory.com/pandoryDX/patches/20250608-eeeeee/";
     std::cout << "Downloading "<< patchName << " patch file:" << std::endl;
     std::transform(lowerCase.begin(), lowerCase.end(), lowerCase.begin(),
                    [](unsigned char c){ return std::tolower(c); });
@@ -88,7 +88,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
             std::cout << "Pandory will continue, but will patch your system using generic patches instead" << std::endl;
             std::cout << "of system-specific patches. This is usually fine, but if you experience " << std::endl;
-            std::cout << "problems or quirks, get in touch with @dajoho or @emuchicken via Discord." << std::endl;
+            std::cout << "problems or quirks, get in touch with @dajoho or @emuchicken via Discord." << std::endl << std::endl;
 
             // just get patches for generic roms.
             hadcHash = "9EB812D6530E13113418122F7670ABA7";
@@ -104,26 +104,28 @@ int ModeDXStick::startDXPatch(std::string &target) {
 		std::cout << " 1!" << std::endl;
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-		std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
-		int x;
-		std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
-		while ((x = getchar())) {
-			if (x == 121 || x == 89) {
-				// delete
-				std::cout << "Removing useless ROM \"Barbie-Explorer\" ..." << std::endl;
-				unlink(std::string(target+"/romsp/Barbie-Explorer.bin").c_str());
-				unlink(std::string(target+"/romsp/Barbie-Explorer.srm").c_str());
-				break;
-			}
-			if (x == 78 || x == 110) {
-				// don't delete. just soldier on.
-				break;
+		if (Fs::exists(target+"/romsp/Barbie-Explorer.bin")) {
+			std::cout << "Found a supported DX storage device in " << target << ". Let's rock!" << std::endl << std::endl;
+			int x;
+			std::cout << "Pandory needs a bit of space. Would you like to delete the PS1 Barbie Explorer game? [Y/N]" << std::endl;
+			while ((x = getchar())) {
+				if (x == 121 || x == 89) {
+					// delete
+					std::cout << "Removing useless ROM \"Barbie-Explorer\" ..." << std::endl;
+					unlink(std::string(target+"/romsp/Barbie-Explorer.bin").c_str());
+					unlink(std::string(target+"/romsp/Barbie-Explorer.srm").c_str());
+					break;
+				}
+				if (x == 78 || x == 110) {
+					// don't delete. just soldier on.
+					break;
+				}
 			}
 		}
 
 		std::cout << "Downloading PandoryDX release data..." << std::endl;
 		std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-		downloadFile("https://code.teampandory.com/pandorydx/dxstick/archive/4a07242ddad0b8b6e23f677c8dee569e62273420.tar.gz", dxTmp);
+		downloadFile("https://code.teampandory.com/pandorydx/dxstick/archive/master.tar.gz", dxTmp);
 		std::cout << std::endl << std::endl;
 
 		std::string hadTmp = downloadPatchFile(hadHash, target);
