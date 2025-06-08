@@ -1,0 +1,45 @@
+name: Windows
+on: [push]
+
+jobs:
+  build-windows:
+    name: Build Windows
+    runs-on: docker
+    container:
+      image: code.teampandory.com/pandorytool/pandorytool/buildwin:latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Windows Build Script
+        env:
+          SCRAPE_USERNAME: ${{ secrets.SCRAPE_USERNAME }}
+          SCRAPE_PASSWORD: ${{ secrets.SCRAPE_PASSWORD }}
+          SCRAPE_URL: ${{ secrets.SCRAPE_URL }}
+        run: build/windows/build-win.sh
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-windows
+          path: dist
+          retention-days: 7
+
+  pack-windows:
+    name: Pack Windows
+    runs-on: docker
+    container:
+      image: code.teampandory.com/dajoho/pandorytool/packwin:latest
+    needs: build-windows
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Windows Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-windows
+          path: dist
+      - name: Run Windows Pack Script
+        run: build/windows/pack-win.sh
+      - name: Upload Packed Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-packed-windows
+          path: dist
+          retention-days: 7

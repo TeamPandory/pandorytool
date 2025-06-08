@@ -9,6 +9,8 @@ RUN dnf -y install \
   tar \
   rsync \
   git \
+  npm \
+  nodejs \
 ;
 RUN dnf -y install \
   mingw64-winpthreads.noarch \

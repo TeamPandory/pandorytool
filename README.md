@@ -1,4 +1,4 @@
-# PandoryTool Ultimate 2.2
+# PandoryTool Source Code
 PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 
 - automate ROM installation for the Pandora Games 3D / Saga 3D compatible systems / GOLDENSKY G6 / 3D RRTV 12S / PANDORA 9H)
@@ -7,7 +7,7 @@ PandoryTool is a swiss-army-knife for your Pandora Arcade Box:
 - install the PandorySeven improvements for the Pandora Key 7 (sharp pixels, 4:3)
 
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/emuchicken/pandorytool/master/docs/pandory.gif">
+  <img width="600" src="https://code.teampandory.com/dajoho/pandorytool/raw/branch/master/docs/pandory.gif">
 </p>
 
 ## License

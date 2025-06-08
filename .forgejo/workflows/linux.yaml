@@ -1,0 +1,26 @@
+name: Linux
+on: [push]
+
+jobs:
+  build-linux:
+    name: Build Linux
+    runs-on: docker
+    container:
+      image: code.teampandory.com/pandorytool/pandorytool/buildlinux-flatpak:20250601
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore Flatpak Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            .flatpak-builder
+            /root/.cache/.flatpak
+          key: ${{ github.ref_name }}-flatpak-deps
+      - name: Run Linux Build Script
+        run: build/linux/build-linux-flatpak.sh
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-linux-flatpak
+          path: dist
+          retention-days: 7
