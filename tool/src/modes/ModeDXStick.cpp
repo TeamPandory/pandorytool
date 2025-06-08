@@ -178,23 +178,36 @@ int ModeDXStick::startDXPatch(std::string &target) {
 				moveOld("pandory", "pandory_backups/pandory_110");
 			}
 		}
-		chdir(curDir.c_str());
-
-
 		chdir(target.c_str());
 		std::cout << "Extracting Pandory DX release data..." << std::endl << std::endl;
 
 		extract(dxTmp.c_str());
+
 		fs::path source = "dxstick";
-    	fs::path destination = ".";
-		for (const auto& entry : fs::directory_iterator(source)) {
-            fs::path dest_path = destination / entry.path().filename();
-            if (fs::exists(dest_path)) {
-                fs::remove_all(dest_path);
-            }
-            fs::rename(entry.path(), dest_path);
-        }
-        fs::remove_all(source);
+		fs::path destination = ".";
+
+		for (const auto& entry : fs::recursive_directory_iterator(source)) {
+			fs::path relative_path = fs::relative(entry.path(), source);
+			fs::path dest_path = destination / relative_path;
+			try {
+				if (fs::is_directory(entry.status())) {
+					if (!fs::exists(dest_path)) {
+						fs::create_directories(dest_path);
+					}
+				} else {
+					if (fs::exists(dest_path)) {
+						fs::remove(dest_path);
+					} else {
+						fs::create_directories(dest_path.parent_path());
+					}
+					fs::rename(entry.path(), dest_path);
+				}
+			} catch (const std::exception& e) {
+				std::cerr << "Error moving " << entry.path() << " to " << dest_path << ": " << e.what() << std::endl;
+			}
+		}
+
+		fs::remove_all(source);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 		chdir(curDir.c_str());
