@@ -7,7 +7,7 @@
 #include <thread>
 #include "libarchive.h"
 #include "UserFolders.h"
-
+namespace fs = std::filesystem;
 
 int dxWriteCount = 0;
 size_t dlWriteCallback(char *ptr, size_t size, size_t nmemb, void *f) {
@@ -123,7 +123,7 @@ int ModeDXStick::startDXPatch(std::string &target) {
 
 		std::cout << "Downloading PandoryDX release data..." << std::endl;
 		std::string dxTmp = uf.getTemporaryFolder() + "pandoryDX.tgz";
-		downloadFile("https://downloads.teampandory.com/pandoryDX/jailbreak/pandoryDX-jailbreak-20240730.tgz", dxTmp);
+		downloadFile("https://code.teampandory.com/pandorydx/dxstick/archive/4a07242ddad0b8b6e23f677c8dee569e62273420.tar.gz", dxTmp);
 		std::cout << std::endl << std::endl;
 
 		std::string hadTmp = downloadPatchFile(hadHash, target);
@@ -183,6 +183,17 @@ int ModeDXStick::startDXPatch(std::string &target) {
 		std::cout << "Extracting Pandory DX release data..." << std::endl << std::endl;
 
 		extract(dxTmp.c_str());
+		fs::path source = "dxstick";
+    	fs::path destination = ".";
+		for (const auto& entry : fs::directory_iterator(source)) {
+            fs::path dest_path = destination / entry.path().filename();
+            if (fs::exists(dest_path)) {
+                fs::remove_all(dest_path);
+            }
+            fs::rename(entry.path(), dest_path);
+        }
+        fs::remove_all(source);
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 		chdir(curDir.c_str());
 
