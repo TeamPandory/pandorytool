@@ -23,7 +23,6 @@ If you wish to provide feedback, need help, or just come to say hi! - Please joi
 ## Support Us!
 Pandorytool has been worked on with blood, sweat and tears.  If you would like us to continue work on this tool, please consider grabbing us a Coffee at https://www.buymeacoffee.com/CKZbiXa.  
 
-
 ## TUTORIAL GUIDE
 A step-by-step tutorial video can be found here:
 
